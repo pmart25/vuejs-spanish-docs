@@ -1,4 +1,4 @@
-# Fundamentos de los Componentes
+# Fundamentos de los Componentes {#components-basics}
 
 Los componentes nos permiten dividir la interfaz de usuario en piezas independientes y reutilizables, y pensar en cada pieza de forma aislada. Es común que una aplicación se organice en un árbol de componentes anidados:
 
@@ -8,7 +8,7 @@ Los componentes nos permiten dividir la interfaz de usuario en piezas independie
 
 Esto es muy similar a cómo anidamos los elementos HTML nativos, pero Vue implementa su propio modelo de componentes que nos permite encapsular contenido y lógica personalizados en cada componente. Vue también juega muy bien con los Componentes Web nativos. Si tienes curiosidad por saber la relación entre los Componentes de Vue y los Componentes Web nativos, [lee más aquí](/guide/extras/web-components.html).
 
-## Definiendo un Componente
+## Definiendo un Componente {#defining-a-component}
 
 Cuando usamos un paso de compilación, normalmente definimos cada componente de Vue en un archivo dedicado usando la extensión `.vue` conocido como [Componente de un Solo Archivo](/guide/scaling-up/sfc.html) (abreviado SFC):
 
@@ -90,7 +90,7 @@ La plantilla se alinea aquí como una cadena de JavaScript, que Vue compilará s
 
 El ejemplo anterior define un único componente y lo exporta como la exportación por defecto de un archivo `.js`, pero puedes usar exportaciones nominales para exportar múltiples componentes desde el mismo archivo.
 
-## Usando un Componente
+## Usando un Componente {#using-a-component}
 
 :::tip
 Utilizaremos la sintaxis SFC para el resto de esta guía. Los conceptos en torno a los componentes son los mismos independientemente de si está utilizando un paso de compilación o no. La sección [Ejemplos](/examples/) muestra el uso de componentes en ambos escenarios.
@@ -175,7 +175,7 @@ Si estás creando tus plantillas directamente en un DOM (por ejemplo, como el co
 
 Consulta [análisis de advertencias de la plantilla del DOM](#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom) para más detalles.
 
-## Pasando Props
+## Pasando Props {#passing-props}
 
 Si estamos construyendo un blog, probablemente necesitaremos un componente que represente una entrada del blog. Queremos que todas las entradas del blog compartan el mismo diseño visual, pero con diferente contenido. Dicho componente no será útil a menos que puedas pasarle datos, como el título y el contenido de la entrada específica que queremos mostrar. Es ahí donde entran los props.
 
@@ -301,7 +301,7 @@ Observa cómo podemos usar `v-bind` para pasar props dinámicos. Esto resulta es
 
 Eso es todo lo que necesitas saber sobre los props por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Props](/guide/components/props.html).
 
-## Escuchando los Eventos
+## Escuchando los Eventos {#listening-to-events}
 
 Según vayamos desarrollando nuestro componente `<BlogPost>`, algunas características pueden requerir comunicarse con el padre. Por ejemplo, podemos decidir incluir una función de accesibilidad para ampliar el texto de las entradas del blog, dejando el resto de la página en su tamaño por defecto.
 
@@ -447,7 +447,7 @@ export default {
 
 Eso es todo lo que necesitas saber sobre los eventos de componentes personalizados por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Eventos Personalizados](/guide/components/events).
 
-## Distribución de Contenidos con Slots
+## Distribución de Contenidos con Slots {#content-distribution-with-slots}
 
 Al igual que con los elementos HTML, a menudo es útil poder pasar contenido a un componente, de esta manera:
 
@@ -495,7 +495,7 @@ Como verás arriba, usamos el `<slot>` como marcador de posición donde queremos
 
 Esto es todo lo que necesitas saber sobre las ranuras por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Slots](/guide/components/slots).
 
-## Componentes Dinámicos
+## Componentes Dinámicos {#dynamic-components}
 
 A veces, es útil cambiar dinámicamente entre componentes, como en una interfaz con pestañas:
 
@@ -538,7 +538,7 @@ También puedes utilizar el atributo "is" para crear elementos HTML normales.
 
 Cuando se cambia entre varios componentes con `<component :is="...">`, un componente será desmontado cuando se cambie de lugar. Podemos forzar que los componentes inactivos permanezcan "vivos" con el componente integrado [`<KeepAlive>`](/guide/built-ins/keep-alive.html).
 
-## Advertencias sobre el Procesamiento de las Plantillas del DOM
+## Advertencias sobre el Procesamiento de las Plantillas del DOM {#dom-template-parsing-caveats}
 
 Si estás escribiendo tus plantillas de Vue directamente en el DOM, Vue tendrá que recuperar la cadena de la plantilla desde el DOM. Esto conduce a algunas advertencias debido al comportamiento de análisis nativo de HTML de los navegadores.
 
@@ -550,7 +550,7 @@ Debe tenerse en cuenta que las limitaciones discutidas a continuación sólo se 
 - `<script type="text/x-template">`
   :::
 
-### Insensibilidad a las Mayúsculas y Minúsculas
+### Insensibilidad a las Mayúsculas y Minúsculas {#case-insensitivity}
 
 Las etiquetas HTML y los nombres de atributos no distinguen entre mayúsculas y minúsculas, por lo que los navegadores interpretarán cualquier carácter en mayúscula como en minúscula. Esto significa que cuando se utilizan plantillas en el DOM, los nombres de componentes en PascalCase y los nombres de props en camelCase o los nombres de eventos `v-on` deben utilizar sus equivalentes en kebab-cased (delimitados por guiones):
 
@@ -570,7 +570,7 @@ const BlogPost = {
 <blog-post post-title="¡hola!" @update-post="onUpdatePost"></blog-post>
 ```
 
-### Etiquetas de Autocierre
+### Etiquetas de Autocierre {#self-closing-tags}
 
 Ya hemos utilizado etiquetas de autocierre para los componentes en los ejemplos de código anteriores:
 
@@ -601,7 +601,7 @@ se interpretará como:
 </my-component> <!-- pero el navegador lo cerrará aquí. -->
 ```
 
-### Restricciones para la Colocación de Elementos
+### Restricciones para la Colocación de Elementos {#element-placement-restrictions}
 
 Algunos elementos HTML, como `<ul>`, `<ol>`, `<table>` y `<select>` tienen restricciones sobre qué elementos pueden aparecer dentro de ellos, y algunos elementos como `<li>`, `<tr>` y `<option>` solo pueden aparecer dentro de ciertos otros elementos.
 

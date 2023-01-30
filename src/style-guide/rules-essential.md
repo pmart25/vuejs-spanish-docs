@@ -1,8 +1,8 @@
-# Reglas de Prioridad A: Esencial
+# Reglas de Prioridad A: Esencial {#priority-a-rules-essential}
 
 Estas reglas ayudan a prevenir errores; apréndelas y apégate a ellas a toda costa. Pueden existir excepciones, pero deberían ser muy raras y solo las deben realizar por personas expertas tanto en JavaScript como en Vue.
 
-## Usar nombres de componentes de varias palabras
+## Usar nombres de componentes de varias palabras {#use-multi-word-component-names}
 
 Los nombres de los componentes de usuario siempre deben tener varias palabras, excepto los componentes `App` raíz. Esto [previene conflictos](https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name) con elementos HTML existentes y futuros, ya que todos los elementos HTML tienen una sola palabra.
 
@@ -32,7 +32,7 @@ Los nombres de los componentes de usuario siempre deben tener varias palabras, e
 
 </div>
 
-## Usar definiciones detalladas de las props
+## Usar definiciones detalladas de las props {#use-detailed-prop-definitions}
 
 En el código comprometido, las definiciones de props siempre deberían ser lo más detalladas posible, especificando al menos los tipos.
 
@@ -83,7 +83,7 @@ props: {
 
 </div>
 
-## Usar `v-for` con Clave
+## Usar `v-for` con Clave {#use-keyed-v-for}
 
 El uso de `key` con `v-for` _siempre_ es necesaria en los componentes para mantener el estado interno del componente en el subárbol. Sin embargo, incluso para los elementos, es una buena práctica para mantener un comportamiento predecible, tal como la [constancia del objeto](https://bost.ocks.org/mike/constancy/) en las animaciones.
 
@@ -143,7 +143,7 @@ Según nuestra experiencia, _siempre_ es mejor agregar una key única, para que 
 
 </div>
 
-## Evitar usar `v-if` con `v-for`
+## Evitar usar `v-if` con `v-for` {#avoid-v-if-with-v-for}
 
 **Nunca utilices `v-if` en el mismo elemento que `v-for`.**
 
@@ -248,7 +248,7 @@ Alternativamente, podemos usar una etiqueta `<template>` con `v-for` para envolv
 
 </div>
 
-## Usar estilo de ámbito de componente
+## Usar estilo de ámbito de componente {#use-component-scoped-styling}
 
 Para las aplicaciones, los estilos en un componente `App` de nivel superior y en los componentes layout pueden ser globales, pero todos los demás componentes deberían tener siempre un scope.
 
@@ -340,7 +340,7 @@ Más allá del atributo `scoped`, el uso de nombres de clase únicos puede ayuda
 
 </div>
 
-## Evitar exponer funciones privadas en mixins
+## Evitar exponer funciones privadas en mixins 
 
 Utiliza siempre el prefijo `$_` para propiedades privadas personalizadas en un plugin, mixin, etc. que no deberían considerarse API públicas. Luego, para evitar conflictos con el código de otros autores, incluye también un scope con nombre (por ejemplo, `$_yourPluginName_`).
 

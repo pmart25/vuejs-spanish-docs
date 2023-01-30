@@ -1,6 +1,6 @@
-# Directivas Integradas
+# Directivas Integradas {#built-in-directives}
 
-## v-text
+## v-text {#v-text}
 
 Actualiza el texto de un elemento.
 
@@ -20,7 +20,7 @@ Actualiza el texto de un elemento.
 
 - **Ver también:** [Sintaxis de la Plantilla - interpolación de Texto](/guide/essentials/template-syntax.html#interpolacion-de-texto)
 
-## v-html
+## v-html {#v-html}
 
 Actualiza la propiedad [innerHTML](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML) del elemento.
 
@@ -44,7 +44,7 @@ Actualiza la propiedad [innerHTML](https://developer.mozilla.org/en-US/docs/Web/
 
 - **Ver también:** [Sintáxis de la Plantilla - HTML Puro](/guide/essentials/template-syntax.html#html-puro)
 
-## v-show
+## v-show {#v-show}
 
 Cambia la visibilidad de un elemento basado en la veracidad del valor de la expresión.
 
@@ -56,7 +56,7 @@ Cambia la visibilidad de un elemento basado en la veracidad del valor de la expr
 
 - **Ver también:** [Renderizado Condicional - v-show](/guide/essentials/conditional.html#v-show)
 
-## v-if
+## v-if {#v-if}
 
 Renderiza condicionalmente un elemento o un fragmento de plantilla basado en la veracidad del valor de la expresión.
 
@@ -74,7 +74,7 @@ Renderiza condicionalmente un elemento o un fragmento de plantilla basado en la 
 
 - **Ver también:** [Renderizado Condicional - v-if](/guide/essentials/conditional.html#v-if)
 
-## v-else
+## v-else {#v-else}
 
 Denota el "bloque else" para `v-if` o para un encadenamiento `v-if` / `v-else-if`.
 
@@ -99,7 +99,7 @@ Denota el "bloque else" para `v-if` o para un encadenamiento `v-if` / `v-else-if
 
 - **Ver también:** [Renderizado Condicional - v-else](/guide/essentials/conditional.html#v-else)
 
-## v-else-if
+## v-else-if {#v-else-if}
 
 Denota el "bloque else if" para `v-if`. Se puede encadenar.
 
@@ -130,7 +130,7 @@ Denota el "bloque else if" para `v-if`. Se puede encadenar.
 
 - **Ver también:** [Renderizado Condicional - v-else-if](/guide/essentials/conditional.html#v-else-if)
 
-## v-for
+## v-for {#v-for}
 
 Renderiza el elemento o bloque de plantilla varias veces en función de los datos de origen.
 
@@ -167,7 +167,7 @@ Renderiza el elemento o bloque de plantilla varias veces en función de los dato
 - **Ver también:**
   - [Renderizado de listas](/guide/essentials/list.html)
 
-## v-on
+## v-on {#v-on}
 
 Adjunta un escuchador de eventos al elemento.
 
@@ -253,7 +253,7 @@ Adjunta un escuchador de eventos al elemento.
   - [Manejando Eventos](/guide/essentials/event-handling.html)
   - [Componentes - Escuchando los Eventos](/guide/essentials/component-basics.html#escuchando-los-eventos)
 
-## v-bind
+## v-bind {#v-bind}
 
 Vincula dinámicamente uno o más atributos, o una prop de un componente a una expresión.
 
@@ -340,7 +340,7 @@ Vincula dinámicamente uno o más atributos, o una prop de un componente a una e
   - [Vinculación de Clases y Estilos](/guide/essentials/class-and-style.html)
   - [Componentes - Detalles del Pase del Prop](/guide/components/props.html#detalles-del-pase-del-prop)
 
-## v-model
+## v-model {#v-model}
 
 Crear un enlace bidireccional en un elemento de entrada del formulario o un componente.
 
@@ -364,7 +364,7 @@ Crear un enlace bidireccional en un elemento de entrada del formulario o un comp
   - [Vinculación de Entradas de Formularios](/guide/essentials/forms.html)
   - [Eventos de los Componentes - Uso con `v-model`](/guide/components/v-model.html)
 
-## v-slot
+## v-slot {#v-slot}
 
 Denota slots con nombre o slots asignados que esperan recibir props.
 
@@ -415,7 +415,7 @@ Denota slots con nombre o slots asignados que esperan recibir props.
 - **Ver también:**
   - [Componentes - Slots](/guide/components/slots.html)
 
-## v-pre
+## v-pre {#v-pre}
 
 Omite la compilación para este elemento y todos sus hijos.
 
@@ -431,7 +431,7 @@ Omite la compilación para este elemento y todos sus hijos.
   <span v-pre>{{ esto no será compilado }}</span>
   ```
 
-## v-once
+## v-once {#v-once}
 
 Renderiza el elemento y el componente una sola vez, y omite futuras actualizaciones.
 
@@ -463,7 +463,7 @@ Renderiza el elemento y el componente una sola vez, y omite futuras actualizacio
   - [Sintaxis de la Plantilla - interpolaciones](/guide/essentials/template-syntax.html#interpolacion-de-texto)
   - [v-memo](#v-memo)
 
-## v-memo <sup class="vt-badge" data-text="3.2+" />
+## v-memo <sup class="vt-badge" data-text="3.2+" /> {#v-memo}
 
 - **Espera:** `any[]`
 
@@ -503,7 +503,7 @@ Renderiza el elemento y el componente una sola vez, y omite futuras actualizacio
 - **Ver también:**
   - [v-once](#v-once)
 
-## v-cloak
+## v-cloak {#v-cloak}
 
 Se utiliza para ocultar la plantilla no compilada hasta que esté lista.
 

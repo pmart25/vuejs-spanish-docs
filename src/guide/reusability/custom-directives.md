@@ -1,4 +1,4 @@
-# Directivas Personalizadas
+# Directivas Personalizadas {#custom-directives}
 
 <script setup>
 const vFocus = {
@@ -8,7 +8,7 @@ const vFocus = {
 }
 </script>
 
-## Introducción
+## Introducción {#introduction}
 
 Además del conjunto de directivas por defecto incluidas en el core (como `v-model` o `v-show`), Vue también te permite registrar tus propias directivas personalizadas.
 
@@ -103,7 +103,7 @@ app.directive('focus', {
 Las directivas personalizadas deberían usarse únicamente cuando la funcionalidad deseada solo puede lograrse mediante la manipulación directa del DOM. Siempre que sea posible, es preferible utilizar directivas integradas como `v-bind`, ya que son más eficientes y fáciles de procesar por el servidor.
 :::
 
-## Hooks de la Directiva
+## Hooks de la Directiva {#directive-hooks}
 
 Un objeto que defina la directiva puede proporcionar varias funciones de hook (todas ellas opcionales):
 
@@ -131,7 +131,7 @@ const myDirective = {
 }
 ```
 
-### Argumentos del Hook
+### Argumentos del Hook {#hook-arguments}
 
 A los hooks de directivas se les pasan estos argumentos
 
@@ -178,7 +178,7 @@ En este caso, el argumento de la directiva se actualizará de forma reactiva en 
 A parte de `el`, debes tratar estos argumentos como de sólo lectura y nunca modificarlos. Si necesitas compartir información entre hooks, se recomienda hacerlo a través del elemento [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).
 :::
 
-## Abreviatura de la Función
+## Abreviatura de la Función {#function-shorthand}
 
 Es habitual que una directiva personalizada tenga el mismo comportamiento para `mounted` y `updated`, sin necesidad de los otros hooks. En estos casos podemos definir la directiva como una función:
 
@@ -193,7 +193,7 @@ app.directive('color', (el, binding) => {
 })
 ```
 
-## Object Literals
+## Object Literals {#object-literals}
 
 Si tu directiva necesita varios valores, puedes pasar también un objeto literal de JavaScript. Recuerda que las directivas pueden tomar cualquier expresión válida de JavaScript.
 
@@ -208,7 +208,7 @@ app.directive('demo', (el, binding) => {
 })
 ```
 
-## Uso en Componentes
+## Uso en Componentes {#usage-on-components}
 
 Cuando se utilizan en componentes, las directivas personalizadas siempre se aplicarán al nodo raíz de un componente, de forma similar a los [Atributos Fallthrough](/guide/components/attrs.html).
 

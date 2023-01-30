@@ -1,4 +1,4 @@
-# Reactividad: Núcleo (Core) {#reactividad-nucleo-core}
+# Reactividad: Núcleo (Core) {#reactivity-api-core}
 
 :::info Véase también
 Para comprender mejor las API de Reactividad, se recomienda leer los siguientes capítulos de la guía:

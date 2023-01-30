@@ -1,4 +1,4 @@
-# Componentes
+# Componentes {#components}
 
 Hasta ahora, sólo hemos trabajado con un único componente. Las verdaderas aplicaciones Vue se crean usualmente con componentes anidados.
 

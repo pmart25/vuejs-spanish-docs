@@ -2,11 +2,11 @@
 import SwitchComponent from './keep-alive-demos/SwitchComponent.vue'
 </script>
 
-# KeepAlive
+# KeepAlive {#keepalive}
 
 `<KeepAlive>` es un componente integrado que nos permite cachear condicionalmente las instancias de los componentes cuando dinámicamente intercambiamos entre varios componentes.
 
-## Uso Básico
+## Uso Básico {#basic-usage}
 
 En el capítulo de Componentes Básicos, introdujimos la sintaxis de los [Componentes Dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos), utilizando el elemento especial `<component>`:
 
@@ -50,7 +50,7 @@ Ahora, el estado será persistente a través de los cambios de componentes:
 Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), debería ser referenciado como `<keep-alive>`.
 :::
 
-## Include / Exclude
+## Include / Exclude {#include-exclude}
 
 Por defecto, `<KeepAlive>` almacenará en caché cualquier instancia que se encuentre dentro del componente. Podemos personalizar este comportamiento a través de las props `include` y `exclude`. Ambas props pueden ser un string delimitado por comas, una `RegExp` o un array que contenga cualquiera de los dos tipos:
 
@@ -77,7 +77,7 @@ La verificación de la coincidencia se realiza con la opción [`name`](/api/opti
 Desde la versión 3.2.34, un componente de un solo archivo que utilice `<script setup>` inferirá automáticamente su opción `name` basándose en el nombre del archivo, eliminando la necesidad de declarar manualmente el nombre.
 :::
 
-## Instancias Máximas en Caché
+## Instancias Máximas en Caché {#max-cached-instances}
 
 Podemos limitar el número máximo de instancias del componente que pueden ser almacenadas en caché a través de la proposición `max`. Cuando se especifica `max`, `<KeepAlive>` se comporta como una [caché LRU](<https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU)>): si el número de instancias en caché está a punto de exceder el número máximo especificado, la instancia en caché a la que se haya accedido menos recientemente será destruida para hacer sitio a la nueva.
 
@@ -87,7 +87,7 @@ Podemos limitar el número máximo de instancias del componente que pueden ser a
 </KeepAlive>
 ```
 
-## Ciclo de Vida de la Instancia en Caché
+## Ciclo de Vida de la Instancia en Caché {#lifecycle-of-cached-instance}
 
 Cuando se elimina una instancia de un componente del DOM pero esta forma parte de un árbol de componentes almacenado en caché por `<KeepAlive>`, pasa a un estado **desactivado** en lugar de ser desmontado. Cuando se inserta una instancia de componente en el DOM como parte de un árbol en caché, esta es **activada**.
 

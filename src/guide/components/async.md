@@ -1,6 +1,6 @@
-# Componentes Asíncronos
+# Componentes Asíncronos {#async-components}
 
-## Uso Básico
+## Uso Básico {#basic-usage}
 
 En aplicaciones grandes, podemos necesitar dividir la aplicación en trozos más pequeños y sólo cargar un componente desde el servidor cuando sea necesario. Para hacer esto posible, Vue tiene una función [`defineAsyncComponent`](/api/general.html#defineasynccomponent):
 
@@ -83,7 +83,7 @@ const AdminPage = defineAsyncComponent(() =>
 
 </div>
 
-## Estados de Carga y Error
+## Estados de Carga y Error {#loading-and-error-states}
 
 Las operaciones asíncronas implican inevitablemente estados de carga y error; `defineAsyncComponent()` soporta el manejo de estos estados a través de opciones avanzadas:
 
@@ -109,6 +109,6 @@ Si se proporciona un componente de carga, se mostrará primero mientras se carga
 
 Si se proporciona un componente de error, se mostrará cuando la promesa devuelta por la función de carga sea rechazada. También puede especificar un tiempo de espera para mostrar el componente de error cuando la petición esté tardando demasiado.
 
-## Uso con Suspense
+## Uso con Suspense {#using-with-suspense}
 
 Los componentes asíncronos pueden utilizarse con el componente incorporado `<Suspense>`. La interacción entre `<Suspense>` y los componentes asíncronos está documentada en el [capítulo dedicado a `<Suspense>`] (/guide/built-ins/suspense.html).

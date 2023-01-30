@@ -1,8 +1,8 @@
-# Reglas de Prioridad D: Utilizar con Precaución
+# Reglas de Prioridad D: Utilizar con Precaución {#priority-d-rules-use-with-caution}
 
 Algunas características de Vue existen para acomodar casos excepcionales o migraciones fluidas desde una base de código heredada. Sin embargo, cuando se usan en exceso, pueden hacer que tu código sea más difícil de mantener o incluso convertirse en una fuente de errores. Estas reglas arrojan luz sobre las características potencialmente arriesgadas, describiendo cuándo y por qué deben evitarse.
 
-## Selectores de elementos con `ámbito`
+## Selectores de elementos con `ámbito` {#element-selectors-with-scoped}
 
 **Deben evitarse los selectores de elementos con `ámbito`.**
 
@@ -48,7 +48,7 @@ button {
 
 </div>
 
-## Comunicación implícita padre-hijo
+## Comunicación implícita padre-hijo {#implicit-parent-child-communication}
 
 **Se debería preferir la utilización de props y eventos para la comunicación entre componentes padre-hijo, en lugar de `this.$parent` o la mutación de props.**
 

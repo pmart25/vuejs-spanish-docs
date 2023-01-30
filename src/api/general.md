@@ -1,6 +1,6 @@
-# Globales de la API: General
+# Globales de la API: General {#global-api-general}
 
-## version
+## version {#version}
 
 Expone la versión actual de Vue.
 
@@ -14,7 +14,7 @@ Expone la versión actual de Vue.
   console.log(version)
   ```
 
-## nextTick()
+## nextTick() {#nexttick}
 
 Una utilidad para esperar la próxima actualización del DOM.
 
@@ -95,7 +95,7 @@ Una utilidad para esperar la próxima actualización del DOM.
 
 - **Ver también:** [`this.$nextTick()`](/api/component-instance.html#nexttick)
 
-## defineComponent()
+## defineComponent() {#definecomponent}
 
 Un ayudante de tipo para definir un componente Vue con inferencia de tipo.
 
@@ -137,7 +137,7 @@ Un ayudante de tipo para definir un componente Vue con inferencia de tipo.
 
 - **Ver también:** [Guía - Usando Vue con TypeScript](/guide/typescript/overview.html#general-usage-notes)
 
-## defineAsyncComponent()
+## defineAsyncComponent() {#defineasynccomponent}
 
 Define un componente asíncrono que se carga dinámicamente sólo cuando se renderiza. El argumento puede ser una función de carga o un objeto de opciones para un control más avanzado del comportamiento de carga.
 
@@ -168,7 +168,7 @@ Define un componente asíncrono que se carga dinámicamente sólo cuando se rend
 
 - **Ver también:** [Guía - Componentes Asíncronos](/guide/components/async.html)
 
-## defineCustomElement()
+## defineCustomElement() {#definecustomelement}
 
 Este método acepta el mismo argumento que [`defineComponent`](#definecomponent), pero en su lugar devuelve un constructor nativo de la clase [Custom Element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
 

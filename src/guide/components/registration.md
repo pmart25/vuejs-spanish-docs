@@ -1,4 +1,4 @@
-# Registro de Componentes
+# Registro de Componentes {#component-registration}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
@@ -6,7 +6,7 @@
 
 Un componente de Vue necesita ser "registrado" para que Vue sepa dónde localizar su implementación cuando se encuentre en una plantilla. Hay dos maneras de registrar componentes: global y local.
 
-## Registro Global
+## Registro Global {#global-registration}
 
 Podemos hacer que los componentes estén disponibles globalmente en la [aplicación Vue](/guide/essentials/application.html) actual usando el método `app.component()`:
 
@@ -53,7 +53,7 @@ Los componentes registrados globalmente pueden ser utilizados en la plantilla de
 
 Esto se aplica incluso a todos los subcomponentes, lo que significa que estos tres componentes también estarán disponibles _dentro de cada uno_.
 
-## Registro Local
+## Registro Local {#local-registration}
 
 Aunque es conveniente, el registro global tiene algunos puntos débiles:
 
@@ -128,7 +128,7 @@ export default {
 
 Ten en cuenta que **los componentes registrados localmente _no_ están disponibles también en los componentes descendientes**. En este caso, `ComponentA` estará disponible sólo para el componente actual, no para ninguno de sus componentes hijos o descendientes.
 
-## Nomenclatura de los Componentes
+## Nomenclatura de los Componentes {#component-name-casing}
 
 A lo largo de la guía, utilizamos nombres PascalCase al registrar componentes. Esto se debe a que:
 

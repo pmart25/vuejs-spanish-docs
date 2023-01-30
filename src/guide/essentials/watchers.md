@@ -1,6 +1,6 @@
-# Watchers
+# Watchers {#watchers}
 
-## Ejemplo Básico
+## Ejemplo Básico {#basic-example}
 
 Las propiedades computadas nos permiten calcular declarativamente valores derivados. Sin embargo, hay casos en los que necesitamos producir "efectos secundarios" como reacción a los cambios de estado; por ejemplo, mutando el DOM o cambiando otra parte del estado en función del resultado de una operación asíncrona.
 
@@ -102,7 +102,7 @@ watch(question, async (newQuestion, oldQuestion) => {
 
 [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgd2F0Y2ggfSBmcm9tICd2dWUnXG5cbmNvbnN0IHF1ZXN0aW9uID0gcmVmKCcnKVxuY29uc3QgYW5zd2VyID0gcmVmKCdRdWVzdGlvbnMgdXN1YWxseSBjb250YWluIGEgcXVlc3Rpb24gbWFyay4gOy0pJylcblxud2F0Y2gocXVlc3Rpb24sIGFzeW5jIChuZXdRdWVzdGlvbikgPT4ge1xuICBpZiAobmV3UXVlc3Rpb24uaW5kZXhPZignPycpID4gLTEpIHtcbiAgICBhbnN3ZXIudmFsdWUgPSAnVGhpbmtpbmcuLi4nXG4gICAgdHJ5IHtcbiAgICAgIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKCdodHRwczovL3llc25vLnd0Zi9hcGknKVxuICAgICAgYW5zd2VyLnZhbHVlID0gKGF3YWl0IHJlcy5qc29uKCkpLmFuc3dlclxuICAgIH0gY2F0Y2ggKGVycm9yKSB7XG4gICAgICBhbnN3ZXIudmFsdWUgPSAnRXJyb3IhIENvdWxkIG5vdCByZWFjaCB0aGUgQVBJLiAnICsgZXJyb3JcbiAgICB9XG4gIH1cbn0pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8cD5cbiAgICBBc2sgYSB5ZXMvbm8gcXVlc3Rpb246XG4gICAgPGlucHV0IHYtbW9kZWw9XCJxdWVzdGlvblwiIC8+XG4gIDwvcD5cbiAgPHA+e3sgYW5zd2VyIH19PC9wPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59In0=)
 
-### Observar Tipos de Fuentes
+### Observar Tipos de Fuentes {#watch-source-types}
 
 El primer argumento de `watch` pueden ser diferentes tipos de "fuentes" reactivas: puede ser una ref (incluyendo refs computadas), un objeto reactivo, una función getter, o un array de múltiples fuentes:
 
@@ -154,7 +154,7 @@ watch(
 
 </div>
 
-## Watchers Profundos
+## Watchers Profundos {#deep-watchers}
 
 <div class="options-api">
 
@@ -223,7 +223,7 @@ watch(
 La vigilancia profunda requiere recorrer todas las propiedades anidadas en el objeto vigilado, y puede ser costosa cuando se utiliza en estructuras de datos grandes. Utilízala sólo cuando sea necesario y ten cuidado con las implicaciones de rendimiento.
 :::
 
-## Watchers "Entusiastas" (Eager Watchers) {#watchers-entusiastas-eager-watchers}
+## Watchers "Entusiastas" (Eager Watchers) {#eager-watchers}
 
 La función `watch` es perezosa por defecto: el callback no será llamado hasta que la fuente observada haya cambiado. Pero en algunos casos podemos querer que la misma lógica de callback se ejecute con urgencia; por ejemplo, podemos querer obtener algunos datos iniciales, y luego volver a obtener los datos cada vez que el estado relevante cambie.
 
@@ -308,7 +308,7 @@ Para ejemplos como estos, con una sola dependencia, el beneficio de `watchEffect
 `watchEffect` sólo rastrea las dependencias durante su ejecución **sincrónica**. Cuando se utiliza con un callback asíncrono, sólo se rastrean las propiedades a las que se accede antes del primer paso del `await`.
 :::
 
-### `watch` vs. `watchEffect`
+### `watch` vs. `watchEffect` {#watch-vs-watcheffect}
 
 Tanto `watch` como `watchEffect` nos permiten producir efectos secundarios de forma reactiva. Su principal diferencia es la forma en que rastrean sus dependencias reactivas:
 
@@ -318,7 +318,7 @@ Tanto `watch` como `watchEffect` nos permiten producir efectos secundarios de fo
 
 </div>
 
-## Temporización del Flujo del Callback
+## Temporización del Flujo del Callback {#callback-flush-timing}
 
 Cuando mutas el estado reactivo, puede desencadenar tanto las actualizaciones de los componentes de Vue como los callbacks de los watchers creados por ti.
 
@@ -368,7 +368,7 @@ watchPostEffect(() => {
 
 <div class="options-api">
 
-## `this.$watch()` \*
+## `this.$watch()` \* {#this-watch}
 
 También es posible crear imperativamente watchers utilizando el [método de instancia `$watch()`](/api/component-instance.html#watch):
 
@@ -386,7 +386,7 @@ Esto resulta útil cuando se necesita configurar condicionalmente un watcher, o 
 
 </div>
 
-## Detención de un Watcher
+## Detención de un Watcher {#stopping-a-watcher}
 
 <div class="options-api">
 

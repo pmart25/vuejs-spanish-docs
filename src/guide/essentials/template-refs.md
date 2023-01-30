@@ -1,4 +1,4 @@
-# Refs de la Plantilla
+# Refs de la Plantilla {#template-refs}
 
 Aunque el modelo de renderizado declarativo de Vue abstrae la mayor parte de las operaciones directas del DOM, puede haber casos en los que necesitemos acceso directo a los elementos subyacentes del DOM. Para ello, podemos utilizar el atributo especial `ref`:
 
@@ -8,7 +8,7 @@ Aunque el modelo de renderizado declarativo de Vue abstrae la mayor parte de las
 
 `ref` es un atributo especial, similar al atributo `key` comentado en el capítulo `v-for`. Nos permite obtener una referencia directa a un elemento DOM específico o a una instancia de componente hijo después de que se haya montado. Esto puede ser útil cuando se quiere, por ejemplo, enfocar programáticamente una entrada al montar un componente, o inicializar una biblioteca de terceros en un elemento.
 
-## Acceso a las Refs
+## Acceso a las Refs {#accessing-the-refs}
 
 <div class="composition-api">
 
@@ -88,7 +88,7 @@ Mira también: [Escritura de Refs de la Plantilla](/guide/typescript/composition
 
 </div>
 
-## Refs dentro de `v-for`
+## Refs dentro de `v-for` {#refs-inside-v-for}
 
 > Requiere v3.2.25 o superior
 
@@ -156,7 +156,7 @@ export default {
 
 Hay que tener en cuenta que el array de la ref **no** garantiza el mismo orden que el array de origen.
 
-## Refs de una Función
+## Refs de una Función {#function-refs}
 
 En lugar de una clave de cadena, el atributo `ref` también puede vincularse a una función, que será llamada en cada actualización del componente y te ofrece total flexibilidad sobre dónde almacenar la referencia del elemento. La función recibe la referencia del elemento como primer argumento:
 
@@ -166,7 +166,7 @@ En lugar de una clave de cadena, el atributo `ref` también puede vincularse a u
 
 Observa que estamos utilizando un enlace dinámico `:ref` para poder pasarle una función en lugar de una cadena de nombre ref. Cuando el elemento es desmontado, el argumento será `null`. Por supuesto, puedes utilizar un método en lugar de una función inline.
 
-## Ref en un Componente
+## Ref en un Componente {#ref-on-component}
 
 > Esta sección supone el conocimiento de [Componentes](/guide/essentials/component-basics). Siéntete libre de saltarla y volver más tarde.
 

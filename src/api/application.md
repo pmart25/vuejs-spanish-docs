@@ -1,6 +1,6 @@
-# API de la aplicación
+# API de la aplicación {#application-api}
 
-## createApp()
+## createApp() {#createapp}
 
 Crea una instancia de la aplicación.
 
@@ -37,11 +37,11 @@ Crea una instancia de la aplicación.
 
 - **Ver también:** [Guía - Creando una Aplicación Vue](/guide/essentials/application.html)
 
-## createSSRApp()
+## createSSRApp() {#createssrapp}
 
 Crea una instancia de la aplicación en modo [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html#client-hydration). Su uso es exactamente igual a `createApp()`.
 
-## app.mount()
+## app.mount() {#app-mount}
 
 Monta la instancia de la aplicación en un elemento contenedor.
 
@@ -78,7 +78,7 @@ Monta la instancia de la aplicación en un elemento contenedor.
   app.mount(document.body.firstChild)
   ```
 
-## app.unmount()
+## app.unmount() {#app-unmount}
 
 Desmonta una instancia de una aplicación montada, activando el hook del ciclo de vida unmount para todos los componentes en el árbol de componentes de la aplicación.
 
@@ -90,7 +90,7 @@ Desmonta una instancia de una aplicación montada, activando el hook del ciclo d
   }
   ```
 
-## app.provide()
+## app.provide() {#app-provide}
 
 Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de la aplicación.
 
@@ -148,7 +148,7 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
   - [Provide / Inject](/guide/components/provide-inject.html)
   - [Nivel de Aplicación de Provide](/guide/components/provide-inject.html#nivel-de-aplicacion-de-provide)
 
-## app.component()
+## app.component() {#app-component}
 
 Registra un componente global si se le pasa tanto un nombre como la definición del componente, o recupera uno ya registrado si solo se pasa el nombre.
 
@@ -179,7 +179,7 @@ Registra un componente global si se le pasa tanto un nombre como la definición 
 
 - **Ver también:** [Registro de Componentes](/guide/components/registration.html)
 
-## app.directive()
+## app.directive() {#app-directive}
 
 Registra una directiva personalizada global si se le pasa tanto un nombre y la definición de la directiva, o recupera una ya registrada si solo se pasa el nombre.
 
@@ -217,7 +217,7 @@ Registra una directiva personalizada global si se le pasa tanto un nombre y la d
 
 - **Ver también:** [Directivas Personalizadas](/guide/reusability/custom-directives.html)
 
-## app.use()
+## app.use() {#app-use}
 
 Instala un [plugin](/guide/reusability/plugins.html).
 
@@ -252,7 +252,7 @@ Instala un [plugin](/guide/reusability/plugins.html).
 
 - **Ver también:** [Plugins](/guide/reusability/plugins.html)
 
-## app.mixin()
+## app.mixin() {#app-mixin}
 
 Aplica un mixin global (con alcance a la aplicación). Un mixin global aplica sus opciones incluidas a cada instancia de componente en la aplicación.
 
@@ -270,7 +270,7 @@ Para la reutilización de lógica, usar preferentemente [Composables](/guide/reu
   }
   ```
 
-## app.version
+## app.version {#app-version}
 
 Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil dentro de [plugins](/guide/reusability/plugins.html), donde podrías necesitar lógica condicional basada en diferentes versiones de Vue.
 
@@ -299,7 +299,7 @@ Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil
 
 - **Ver también:** [API Global - Versión](/api/general.html#version)
 
-## app.config
+## app.config {#app-config}
 
 Cada instancia de la aplicación expone un objeto `config` que contiene las opciones de configuración para esa aplicación. Puedes modificar sus propiedades (documentadas a continuación) antes de montar tu aplicación.
 
@@ -311,7 +311,7 @@ const app = createApp(/* ... */)
 console.log(app.config)
 ```
 
-## app.config.errorHandler
+## app.config.errorHandler {#app-config-errorhandler}
 
 Asigna un manejador global para los errores no capturados que se propagan desde la aplicación.
 
@@ -351,7 +351,7 @@ Asigna un manejador global para los errores no capturados que se propagan desde 
   }
   ```
 
-## app.config.warnHandler
+## app.config.warnHandler {#app-config-warnhandler}
 
 Asigna un manejador personalizado para advertencias de vue en tiempo de ejecución.
 
@@ -385,7 +385,7 @@ Asigna un manejador personalizado para advertencias de vue en tiempo de ejecuci�
   }
   ```
 
-## app.config.performance
+## app.config.performance {#app-config-performance}
 
 Asigna este valor a `true` para activar el seguimiento del inicio del componente, compilación, renderizado y seguimiento de la performance en el panel rentimiento/tiempo de las herramientas del desarrollador en el navegador. Solo funciona en el modo desarrollo y en navegadores que soporten la API de [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark).
 
@@ -393,7 +393,7 @@ Asigna este valor a `true` para activar el seguimiento del inicio del componente
 
 - **Ver también:** [Guía - Guía de Optimización del Rendimiento](/guide/best-practices/performance.html)
 
-## app.config.compilerOptions
+## app.config.compilerOptions {#app-config-compileroptions}
 
 Configurar las opciones del compilador en tiempo de ejecución. Las opciones establecidas en este objeto se pasarán al compilador de plantillas del navegador y afectarán a todos los componentes de la aplicación configurada. Ten en cuenta que también puedes anular estas opciones por componente utilizando la opción [`compilerOptions`] (/api/options-rendering.html#compileroptions).
 
@@ -405,7 +405,7 @@ Esta opción de configuración solo es respetada cuando se usa la compilación c
 - Para `vite`: [paralo a través de la opción `@vitejs/plugin-vue`](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#options).
   :::
 
-### app.config.compilerOptions.isCustomElement
+### app.config.compilerOptions.isCustomElement {#app-config-compileroptions-iscustomelement}
 
 Especifica un método de comprobación para reconocer elementos nativos personalizados.
 
@@ -428,7 +428,7 @@ Especifica un método de comprobación para reconocer elementos nativos personal
 
 - **Ver también:** [Vue y Componentes Web](/guide/extras/web-components.html)
 
-### app.config.compilerOptions.whitespace
+### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
 Ajusta el comportamiento del manejo de los espacios en blanco de la plantilla.
 
@@ -452,7 +452,7 @@ Ajusta el comportamiento del manejo de los espacios en blanco de la plantilla.
   app.config.compilerOptions.whitespace = 'preserve'
   ```
 
-### app.config.compilerOptions.delimiters
+### app.config.compilerOptions.delimiters {#app-config-compileroptions-delimiters}
 
 Ajusta los delimitadores utilizados para la interpolación del texto dentro de la plantilla.
 
@@ -471,7 +471,7 @@ Ajusta los delimitadores utilizados para la interpolación del texto dentro de l
   app.config.compilerOptions.delimiters = ['${', '}']
   ```
 
-### app.config.compilerOptions.comments
+### app.config.compilerOptions.comments {#app-config-compileroptions-comments}
 
 Ajusta el tratamiento de los comentarios HTML en las plantillas.
 
@@ -489,7 +489,7 @@ Ajusta el tratamiento de los comentarios HTML en las plantillas.
   app.config.compilerOptions.comments = true
   ```
 
-## app.config.globalProperties
+## app.config.globalProperties {#app-config-globalproperties}
 
 Un objeto que se puede utilizar para registrar propiedades globales a las que se puede acceder en cualquier instancia de componente dentro de la aplicación.
 
@@ -523,7 +523,7 @@ Un objeto que se puede utilizar para registrar propiedades globales a las que se
   }
   ```
 
-## app.config.optionMergeStrategies
+## app.config.optionMergeStrategies {#app-config-optionmergestrategies}
 
 Un objeto para definir las estrategias de mergeo para componentes personalizados.
 

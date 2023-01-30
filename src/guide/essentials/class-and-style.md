@@ -1,8 +1,8 @@
-# Vinculación de Clases y Estilos
+# Vinculación de Clases y Estilos {#class-and-style-bindings}
 
 Una necesidad común de la vinculación de datos es el manejo de la lista de clases de un elemento y sus estilos en línea. Puesto que `class` y `style` son atributos, podemos utilizar `v-bind` para asignarles un valor de cadena de forma dinámica, al igual que con otros atributos. Sin embargo, tratar de generar esos valores utilizando la concatenación de cadenas puede ser molesto y propenso a errores. Por esta razón, Vue proporciona mejoras especiales cuando se utiliza `v-bind` con `class` y `style`. Además de cadenas, las expresiones también pueden evaluarse a objetos o arrays.
 
-## Vinculación de Clases HTML
+## Vinculación de Clases HTML {#binding-html-classes}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/dynamic-css-classes-with-vue-3" title="Lección gratuita de Clases Dinámicas de CSS con Vue.js"/>
@@ -12,7 +12,7 @@ Una necesidad común de la vinculación de datos es el manejo de la lista de cla
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-dynamic-css-classes-with-vue" title="Lección gratuita de Clases Dinámicas de CSS con Vue.js"/>
 </div>
 
-### Vinculación a Objetos
+### Vinculación a Objetos {#binding-to-objects}
 
 Podemos pasar un objeto a `:class` (abreviatura de `v-bind:class`) para alternar dinámicamente las clases:
 
@@ -136,7 +136,7 @@ computed: {
 <div :class="classObject"></div>
 ```
 
-### Vinculación a Arrays
+### Vinculación a Arrays {#binding-to-arrays}
 
 Podemos vincular `:class` a un array para aplicar una lista de clases:
 
@@ -186,7 +186,7 @@ Sin embargo, esto puede ser un poco pesado si tienes varias clases condicionales
 <div :class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### Con Componentes
+### Con Componentes {#with-components}
 
 > Esta sección supone el conocimiento de [Componentes](/guide/essentials/component-basics). Siéntete libre de saltarla y volver más tarde.
 
@@ -245,9 +245,9 @@ Renderizará:
 
 Puedes aprender más sobre la herencia de atributos de los componentes en la sección [Atributos Fallthrough](/guide/components/attrs.html).
 
-## Vinculación de Estilos en Línea
+## Vinculación de Estilos en Línea {#binding-inline-styles}
 
-### Vinculación a Objetos
+### Vinculación a Objetos {#auto-prefixing}
 
 `:style` admite la vinculación a valores de objetos de JavaScript. Esto corresponde a una [propiedad `style` del elemento HTML](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style):
 
@@ -317,7 +317,7 @@ data() {
 
 De nuevo, la vinculación al estilo de los objetos se utiliza a menudo junto con las propiedades computadas que devuelven objetos.
 
-### Vinculación a Arrays
+### Vinculación a Arrays {#multiple-values}
 
 Podemos vincular `:style` a un array de múltiples objetos de estilo. Estos objetos se fusionarán y se aplicarán al mismo elemento:
 
@@ -325,11 +325,11 @@ Podemos vincular `:style` a un array de múltiples objetos de estilo. Estos obje
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefijado
+### Auto-prefijado 
 
 Cuando uses una propiedad CSS que requiera un [prefijo de proveedor](https://developer.mozilla.org/es/docs/Glossary/Vendor_Prefix) en `:style`, Vue añadirá automáticamente el prefijo apropiado. Esto lo hace Vue comprobando en tiempo de ejecución qué propiedades de estilo están soportadas en el navegador actual. Si el navegador no soporta una propiedad en particular, entonces se probarán distintas variantes de prefijo para tratar de encontrar una que sí sea soportada.
 
-### Valores Múltiples
+### Valores Múltiples 
 
 Puedes proporcionar un array de múltiples valores (prefijados) a una propiedad de estilo, por ejemplo:
 

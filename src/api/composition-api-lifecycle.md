@@ -1,10 +1,10 @@
-# Composition API: Hooks del Ciclo de Vida
+# Composition API: Hooks del Ciclo de Vida {#composition-api-lifecycle-hooks}
 
 :::info Nota de Uso
 Todas las APIs listadas en esta página deben ser llamadas en forma sincrónica durante la ejecución de la función `setup()`. Ver [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html) para más detalles.
 :::
 
-## onMounted()
+## onMounted() {#onmounted}
 
 Registra un callback que será llamado una vez que el componente se haya montado.
 
@@ -46,7 +46,7 @@ Registra un callback que será llamado una vez que el componente se haya montado
   </template>
   ```
 
-## onUpdated()
+## onUpdated() {#onupdated}
 
 Registra un callback que será llamado luego de que el componente ha actualizado su estrucutra de DOM debido a un cambio de estado reactivo.
 
@@ -89,7 +89,7 @@ Registra un callback que será llamado luego de que el componente ha actualizado
   </template>
   ```
 
-## onUnmounted()
+## onUnmounted() {#onunmounted}
 
 Registra un callback que será llamado una vez que el componente haya sido desmontado.
 
@@ -128,7 +128,7 @@ Registra un callback que será llamado una vez que el componente haya sido desmo
   </script>
   ```
 
-## onBeforeMount()
+## onBeforeMount() {#onbeforemount}
 
 Registra un hook que será llamado justo antes de que el componente sea montado.
 
@@ -144,7 +144,7 @@ Registra un hook que será llamado justo antes de que el componente sea montado.
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
-## onBeforeUpdate()
+## onBeforeUpdate() {#onbeforeupdate}
 
 Registra un hook que será llamado justo antes de que el componente actualize su árbol de DOM debido a un cambio en su estado reactivo.
 
@@ -160,7 +160,7 @@ Registra un hook que será llamado justo antes de que el componente actualize su
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
-## onBeforeUnmount()
+## onBeforeUnmount() {#onbeforeunmount}
 
 Registra un hook que será llamado justo antes de que el componente sea desmontado.
 
@@ -176,7 +176,7 @@ Registra un hook que será llamado justo antes de que el componente sea desmonta
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
-## onErrorCaptured()
+## onErrorCaptured() {#onerrorcaptured}
 
 Registra un hook que será llamado cuando se capture un error que fue propagado por un componente hijo.
 
@@ -220,7 +220,7 @@ Registra un hook que será llamado cuando se capture un error que fue propagado 
 
   - Un hook `errorCaptured` puede retornar `false` para prevenir que el error se siga propagando. Esto es, básicamente, "este error ya ha sido manejado por lo que debe ser ignorado." Esto evitará cualquier llamada adicional a otros hooks `errorCaptured` o que `app.config.errorHandler` sea invocada a causa de este error.
 
-## onRenderTracked() <sup class="vt-badge dev-only" />
+## onRenderTracked() <sup class="vt-badge dev-only" /> {#onrendertracked}
 
 Registra un hook de depuración que será llamado cuando una dependencia reactiva ha sido rastreada por el efecto de renderizado del componente.
 
@@ -243,7 +243,7 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
 
 - **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
 
-## onRenderTriggered() <sup class="vt-badge dev-only" />
+## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
 Registra un hook de depuración que será llamado cuando una dependencia reactiva dispare el efecto de renderizado del componente para que se vuelva a ejecutar.
 
@@ -269,7 +269,7 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
 
 - **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
 
-## onActivated()
+## onActivated() {#onactivated}
 
 Registra un callback que será llamado luego de que la instancia del componente es insertada en el DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
@@ -283,7 +283,7 @@ Registra un callback que será llamado luego de que la instancia del componente 
 
 - **Ver también:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
 
-## onDeactivated()
+## onDeactivated() {#ondeactivated}
 
 Registra un callback que será llamado luego de que la instancia del componente es removida del DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
@@ -297,7 +297,7 @@ Registra un callback que será llamado luego de que la instancia del componente 
 
 - **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
 
-## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" />
+## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
 Registra una función asíncrona que será resuelta antes de que la instancia del componente sea renderizada del lado del servidor.
 

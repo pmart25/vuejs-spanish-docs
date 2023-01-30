@@ -1,6 +1,6 @@
-# Opciones: Renderizado
+# Opciones: Renderizado {#options-rendering}
 
-## template
+## template {#template}
 
 Un modelo de cadena para el componente.
 
@@ -26,7 +26,7 @@ Un modelo de cadena para el componente.
   Utilice únicamente fuentes de plantillas en las que pueda confiar. No utilice contenido proporcionado por otros usuarios como tu plantilla. Consulte la [Guía de Seguridad](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) para más detalles.
   :::
 
-## render
+## render {#render}
 
 Una función que devuelve mediante programación el árbol DOM virtual del componente.
 
@@ -61,7 +61,7 @@ Una función que devuelve mediante programación el árbol DOM virtual del compo
   - [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html)
   - [Funciones de Renderizado y JSX](/guide/extras/render-function.html)
 
-## compilerOptions
+## compilerOptions {#compileroptions}
 
 Configurar las opciones del compilador en tiempo de ejecución para la plantilla del componente.
 

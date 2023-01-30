@@ -1,8 +1,8 @@
-# Provide / Inject
+# Provide / Inject {#provide-inject}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
-## Profundización de Prop
+## Profundización de Prop {#prop-drilling}
 
 Normalmente, cuando necesitamos pasar datos del componente padre a un componente hijo, utilizamos [props](/guide/components/props). Sin embargo, imaginemos el caso en el que tenemos un gran árbol de componentes, y un componente profundamente anidado necesita algo de un componente ancestral lejano. Con sólo props, tendríamos que pasar la misma prop a través de toda la cadena de padres:
 
@@ -18,7 +18,7 @@ Podemos resolver la profundización de props con `provide` e `inject`. Un compon
 
 <!-- https://www.figma.com/file/PbTJ9oXis5KUawEOWdy2cE/provide-inject -->
 
-## Provide
+## Provide {#provide}
 
 <div class="composition-api">
 
@@ -95,7 +95,7 @@ Sin embargo, tenga en cuenta que esto **no** hace que la inyección sea reactiva
 
 </div>
 
-## Nivel de Aplicación de Provide
+## Nivel de Aplicación de Provide {#app-level-provide}
 
 Además de proporcionar datos en un componente, también podemos hacerlo a nivel de la aplicación:
 
@@ -109,7 +109,7 @@ app.provide(/* key */ 'message', /* value */ 'hola!')
 
 Los valores del nivel de la aplicación están disponibles para todos los componentes renderizados en la aplicación. Esto es especialmente útil cuando se escriben [plugins](/guide/reusability/plugins.html), ya que los plugins normalmente no podrían proporcionar valores usando componentes.
 
-## Inject
+## Inject {#inject}
 
 <div class="composition-api">
 
@@ -171,7 +171,7 @@ export default {
 
 [Ejemplo de provide + inject total](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBDaGlsZCBmcm9tICcuL0NoaWxkLnZ1ZSdcblxuZXhwb3J0IGRlZmF1bHQge1xuICBjb21wb25lbnRzOiB7IENoaWxkIH0sXG4gIHByb3ZpZGUoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIG1lc3NhZ2U6ICdoZWxsbydcbiAgICB9XG4gIH1cbn1cbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIDxDaGlsZCAvPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiQ2hpbGQudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBHcmFuZENoaWxkIGZyb20gJy4vR3JhbmRDaGlsZC52dWUnXG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgY29tcG9uZW50czoge1xuICAgIEdyYW5kQ2hpbGRcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPEdyYW5kQ2hpbGQgLz5cbjwvdGVtcGxhdGU+IiwiR3JhbmRDaGlsZC52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuICBpbmplY3Q6IFsnbWVzc2FnZSddXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8cD5cbiAgICBNZXNzYWdlIHRvIGdyYW5kIGNoaWxkOiB7eyBtZXNzYWdlIH19XG4gIDwvcD5cbjwvdGVtcGxhdGU+In0=)
 
-### Asignación de Injection \*
+### Asignación de Injection \* {#injection-aliasing}
 
 Cuando se utiliza la sintaxis de array para `inject`, las propiedades inyectadas se exponen en la instancia del componente utilizando la misma key. En el ejemplo anterior, la propiedad se ha proporcionado bajo la key `"message"`, y se ha inyectado como `this.message`. La key local es la misma que la key de inyección.
 
@@ -191,7 +191,7 @@ Aquí, el componente localizará una propiedad proporcionada con la key `"messag
 
 </div>
 
-### Valores Default de Injection
+### Valores Default de Injection {#injection-default-values}
 
 Por defecto, `inject` supone que la key inyectada se proporciona en algún lugar de la cadena padre. En el caso de que no se proporcione la key, habrá una advertencia en tiempo de ejecución.
 
@@ -236,7 +236,7 @@ export default {
 
 </div>
 
-## Trabajando con Reactividad {#trabajando-con-reactividad}
+## Trabajando con Reactividad {#working-with-reactivity}
 
 <div class="composition-api">
 
@@ -320,7 +320,7 @@ El uso anterior requiere establecer `app.config.unwrapInjectedRef = true` para q
 
 </div>
 
-## Trabajando con Symbol Keys
+## Trabajando con Symbol Keys {#working-with-symbol-keys}
 
 Hasta ahora, hemos estado utilizando key de inyección de cadenas en los ejemplos. Si estás trabajando en una aplicación grande con muchos proveedores de dependencias, o estás creando componentes que van a ser utilizados por otros desarrolladores, es mejor utilizar keys de inyección de Symbol para evitar potenciales conflictos.
 

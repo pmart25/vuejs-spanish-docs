@@ -1,4 +1,4 @@
-# Props
+# Props {#props}
 
 Un componente hijo puede aceptar entradas del padre a través de **props**. En primer lugar, es necesario declarar las props que recibe:
 

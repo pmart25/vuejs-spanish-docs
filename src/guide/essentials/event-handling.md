@@ -1,4 +1,4 @@
-# Manejando Eventos
+# Manejando Eventos {#event-handling}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/user-events-in-vue-3" title="Lección gratuita de Eventos de Vue.js"/>
@@ -8,7 +8,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-user-events-in-vue-3" title="Lección gratuita de Eventos de Vue.js "/>
 </div>
 
-## Escuchando Eventos
+## Escuchando Eventos {#listening-to-events}
 
 Podemos utilizar la directiva `v-on`, que normalmente acortamos con el símbolo `@`, para escuchar los eventos del DOM y ejecutar JavaScript cuando se activen. El uso sería `v-on:click="handler"` o con el atajo, `@click="handler"`.
 
@@ -18,7 +18,7 @@ El valor del manejador puede ser uno de los siguientes:
 
 2. **Manejadores de métodos:** Un nombre de propiedad o ruta que apunta a un método definido en el componente.
 
-## Manejadores en Línea
+## Manejadores en Línea {#inline-handlers}
 
 Los manejadores en línea suelen utilizarse en casos sencillos, por ejemplo:
 
@@ -57,7 +57,7 @@ data() {
 
 </div>
 
-## Manejadores de Métodos
+## Manejadores de Métodos {#method-handlers}
 
 La lógica de muchos manejadores de eventos será más compleja aún, y probablemente no sea factible con manejadores en línea. Por eso, `v-on` también puede aceptar el nombre o la ruta de un método del componente que quieras llamar.
 
@@ -129,11 +129,11 @@ Mira también: [Manejadores de Eventos de Escritura](/guide/typescript/options-a
 
 </div>
 
-### Método vs. la Detección en Línea
+### Método vs. la Detección en Línea {#method-vs-inline-detection}
 
 El compilador de plantillas detecta los manejadores de métodos comprobando si la cadena de valores `v-on` es un identificador JavaScript válido o una ruta de acceso a una propiedad. Por ejemplo, `foo`, `foo.bar` y `foo['bar']` se tratan como manejadores de métodos, mientras que `foo()` y `count++` se tratan como manejadores en línea.
 
-## Llamando Métodos en Manejadores en Línea
+## Llamando Métodos en Manejadores en Línea {#calling-methods-in-inline-handlers}
 
 En lugar de vincularlos directamente a un nombre de un método, también podemos llamar a los métodos en un manejador en línea. Esto nos permite pasar los argumentos personalizados del método en lugar del evento nativo:
 
@@ -174,7 +174,7 @@ methods: {
 
 </div>
 
-## Acceso al Argumento del Evento en los Manejadores en Línea
+## Acceso al Argumento del Evento en los Manejadores en Línea {#accessing-event-argument-in-inline-handlers}
 
 A veces también necesitamos acceder al evento original del DOM en un manejador en línea. Puedes pasarlo a un método usando la variable especial `$event`, o usar una función de flecha en línea:
 
@@ -219,7 +219,7 @@ methods: {
 
 </div>
 
-## Modificadores de Eventos
+## Modificadores de Eventos {#event-modifiers}
 
 Es una necesidad muy común llamar a `event.preventDefault()` o `event.stopPropagation()` dentro de los manejadores de eventos. Aunque podemos hacer esto fácilmente dentro de los métodos, sería mejor si los métodos pueden ser puramente sobre la lógica de los datos en lugar de tener que lidiar con los detalles de los eventos del DOM.
 
@@ -276,7 +276,7 @@ El modificador `.passive` se suele utilizar con los escuchadores de eventos tác
 No utilice `.passive` y `.prevent` juntos, porque `.passive` ya le indica al navegador que _no_ pretendes impedir el comportamiento por defecto del evento, y es probable que veas una advertencia del navegador si lo haces.
 :::
 
-## Modificadores Clave
+## Modificadores Clave {#key-modifiers}
 
 Cuando escuchamos eventos de teclado, a menudo necesitamos comprobar teclas específicas. Vue permite añadir modificadores de tecla para `v-on` o `@` al escuchar eventos de teclado:
 
@@ -293,7 +293,7 @@ Puedes utilizar directamente cualquier nombre de tecla válido expuesto a travé
 
 En el ejemplo anterior, el controlador sólo será llamado si `$event.key` es igual a `'PageDown'`.
 
-### Alias de las Teclas
+### Alias de las Teclas {#key-aliases}
 
 Vue proporciona alias para las teclas más utilizadas:
 
@@ -307,7 +307,7 @@ Vue proporciona alias para las teclas más utilizadas:
 - `.left`
 - `.right`
 
-### Teclas Modificadoras del Sistema
+### Teclas Modificadoras del Sistema {#system-modifier-keys}
 
 Puedes utilizar los siguientes modificadores para activar los receptores de eventos del ratón o del teclado sólo cuando se pulse la tecla modificadora correspondiente:
 
@@ -334,7 +334,7 @@ Por ejemplo:
 Ten en cuenta que las teclas modificadoras son diferentes de las teclas normales y cuando se usan con eventos `keyup`, tienen que estar pulsadas cuando se emite el evento. En otras palabras, `keyup.ctrl` sólo se activará si sueltas una tecla mientras mantienes pulsada `ctrl`. No se activará si sueltas la tecla "ctrl" sola.
 :::
 
-### Modificador `.exact`
+### Modificador `.exact` {#exact-modifier}
 
 El modificador `.exact` permite controlar la combinación exacta de modificadores del sistema necesarios para activar un evento.
 
@@ -349,7 +349,7 @@ El modificador `.exact` permite controlar la combinación exacta de modificadore
 <button @click.exact="onClick">A</button>
 ```
 
-## Modificadores del Botón del Ratón
+## Modificadores del Botón del Ratón {#mouse-button-modifiers}
 
 - `.left`
 - `.right`

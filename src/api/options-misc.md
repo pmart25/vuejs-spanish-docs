@@ -1,6 +1,6 @@
-# Opciones: Misceláneas
+# Opciones: Misceláneas {#options-misc}
 
-## name
+## name {#name}
 
 Declara explícitamente un nombre de visualización para el componente.
 
@@ -32,7 +32,7 @@ Declara explícitamente un nombre de visualización para el componente.
   Desde la versión 3.2.34, un componente de un solo archivo que utilice `<script setup>` inferirá automáticamente su opción `name` basándose en el nombre del archivo, eliminando la necesidad de declarar manualmente el nombre incluso cuando se utilice con `<KeepAlive>`.
   :::
 
-## inheritAttrs
+## inheritAttrs {#inheritattrs}
 
 Controla si el comportamiento por defecto de los atributos de los componentes debe ser activado.
 
@@ -106,7 +106,7 @@ Controla si el comportamiento por defecto de los atributos de los componentes de
 
 - **Ver también:** [Attributos Fallthrough](/guide/components/attrs.html)
 
-## components
+## components {#components}
 
 Un objeto que registra los componentes que se pondrán a disposición de la instancia del componente.
 
@@ -136,7 +136,7 @@ Un objeto que registra los componentes que se pondrán a disposición de la inst
 
 - **Ver también:** [Registro de Componentes](/guide/components/registration.html)
 
-## directives
+## directives {#directives}
 
 Un objeto que registra las directivas que se pondrán a disposición de la instancia del componente.
 

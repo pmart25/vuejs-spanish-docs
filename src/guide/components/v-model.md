@@ -145,7 +145,7 @@ const value = computed({
 
 </div>
 
-### Argumentos de `v-model` {#argumentos-de-v-model}
+### Argumentos de `v-model` {#v-model-arguments}
 
 Por defecto, `v-model` en un componente utiliza `modelValue` como prop y `update:modelValue` como evento. Podemos modificar estos nombres pasando un argumento a `v-model`:
 
@@ -200,7 +200,7 @@ export default {
 
 </div>
 
-### Múltiples Vinculaciones `v-model` {#multiples-vinculaciones-v-model}
+### Múltiples Vinculaciones `v-model` {#multiple-v-model-bindings}
 
 Aprovechando la capacidad de apuntar a una prop y a un evento en particular como aprendimos antes en [argumentos de `v-model`](#argumentos-de-v-model), ahora podemos crear múltiples vinculaciones v-model en una sola instancia del componente.
 
@@ -273,7 +273,7 @@ export default {
 
 </div>
 
-### Manejo de los Modificadores de `v-model` {#manejo-de-los-modificadores-de-v-model}
+### Manejo de los Modificadores de `v-model` {#handling-v-model-modifiers}
 
 Cuando aprendimos sobre los enlaces de entrada de formularios, vimos que `v-model` tiene [modificadores integrados](/guide/essentials/forms.html#modificadores): `.trim`, `.number` y `.lazy`. En algunos casos, es posible que también quieras que el `v-model` de tu componente de entrada personalizado soporte modificadores personalizados.
 

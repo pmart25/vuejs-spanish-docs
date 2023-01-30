@@ -2,9 +2,9 @@
 import TestingApiSwitcher from './TestingApiSwitcher.vue'
 </script>
 
-# Testing
+# Testing {#testing}
 
-## ¿Por Qué Hacer Pruebas?
+## ¿Por Qué Hacer Pruebas? {#why-test}
 
 Las pruebas automatizadas te ayudan a ti y a tu equipo a crear aplicaciones de Vue complejas de forma rápida y segura, ya que evitan las regresiones y te animan a dividir tu aplicación en funciones, módulos, clases y componentes comprobables. Al igual que con cualquier aplicación, tu nueva aplicación de Vue puede fallar de muchas maneras, y es importante que puedas detectar estos problemas y solucionarlos antes de su lanzamiento.
 
@@ -12,11 +12,11 @@ En esta guía, cubriremos la terminología básica y brindaremos nuestras recome
 
 Hay una sección específica de Vue que cubre los composables. Consulta [Pruebas de Composables](#pruebas-de-composables) más adelante para más detalles.
 
-## Cuándo Probar
+## Cuándo Probar {#when-to-test}
 
 ¡Empieza a hacer pruebas pronto! Te recomendamos que comiences a escribir pruebas tan pronto como puedas. Cuanto más esperes para añadir pruebas a tu aplicación, más dependencias tendrá tu aplicación y más difícil será empezar.
 
-## Tipos de Pruebas
+## Tipos de Pruebas {#testing-types}
 
 Cuando diseñes la estrategia de pruebas de tu aplicación Vue, debes aprovechar los siguientes tipos de pruebas:
 
@@ -26,11 +26,11 @@ Cuando diseñes la estrategia de pruebas de tu aplicación Vue, debes aprovechar
 
 Cada tipo de prueba desempeña un papel en la estrategia de pruebas de tu aplicación y cada una te protegerá contra diferentes tipos de problemas.
 
-## Generalidades
+## Generalidades {#overview}
 
 Discutiremos brevemente qué es cada uno de ellas, cómo pueden implementarse para las aplicaciones Vue, y proporcionaremos algunas recomendaciones generales.
 
-## Pruebas Unitarias
+## Pruebas Unitarias {#unit-testing}
 
 Las pruebas unitarias se escriben para verificar que pequeñas unidades de código aisladas funcionan como se espera. Una prueba unitaria suele abarcar una única función, clase, composable o módulo. Las pruebas unitarias se centran en la corrección lógica y sólo se ocupan de una pequeña parte de la funcionalidad global de la aplicación. Pueden simular grandes partes del entorno de la aplicación (por ejemplo, el estado inicial, clases complejas, módulos de terceros y peticiones de red).
 
@@ -80,11 +80,11 @@ Hay dos instancias en los que SÍ hay que hacer pruebas unitarias de caracterís
 1. Composables
 2. Componentes
 
-### Composables
+### Composables {#composables}
 
 Una categoría de funciones específicas de las aplicaciones de Vue son los [Composables](/guide/reusability/composables.html), que pueden requerir un manejo especial durante las pruebas. Consulta la sección [Pruebas de Composables](#pruebas-de-composables) más adelante para más detalles.
 
-### Pruebas Unitarias en Componentes
+### Pruebas Unitarias en Componentes {#unit-testing-components}
 
 Un componente puede ser probado de dos maneras:
 
@@ -96,19 +96,19 @@ Un componente puede ser probado de dos maneras:
 
    Las pruebas que son "pruebas de caja negra" ignoran los detalles de implementación de un componente. Estas pruebas simulan lo menos posible para probar la integración de su componente y todo el sistema. Suelen renderizar todos los componentes hijos y se consideran más bien una "prueba de integración ". Vea las [Recomendaciones para las Pruebas de Componentes](#pruebas-de-componentes) más adelante.
 
-### Recomendación
+### Recomendación {#recommendation}
 
 - [Vitest](https://vitest.dev/)
 
   Dado que la configuración oficial creada por `create-vue` se basa en [Vite](https://vitejs.dev/), recomendamos usar un framework de pruebas unitarias que pueda aprovechar la misma configuración y transformar la fuente de información directamente desde Vite. [Vitest](https://vitest.dev/) es un framework de pruebas unitarias diseñado específicamente para este propósito, creado y mantenido por los miembros del equipo de Vue / Vite. Se integra con proyectos basados en Vite con un esfuerzo mínimo y es increíblemente rápido.
 
-### Otras opciones
+### Otras opciones {#other-options}
 
 - [Peeky](https://peeky.dev/) es otro rápido ejecutor de pruebas unitarias con integración de primera clase con Vite. También ha sido creado por un miembro del equipo central de Vue y ofrece una interfaz de pruebas basada en una GUI.
 
 - [Jest](https://jestjs.io/) es un popular framework de pruebas unitarias y se puede hacer funcionar con Vite a través del paquete [vite-jest](https://github.com/sodatea/vite-jest). Sin embargo, solo recomendamos Jest si tienes un conjunto de pruebas de Jest existente que necesita ser migrado a un proyecto basado en Vite, ya que Vitest ofrece una integración más fluida y un mejor rendimiento.
 
-## Pruebas de Componentes
+## Pruebas de Componentes {#component-testing}
 
 En las aplicaciones de Vue, los componentes son los principales bloques de construcción de la interfaz de usuario. Por lo tanto, los componentes son la unidad natural de aislamiento cuando se trata de validar el comportamiento de la aplicación. Desde una perspectiva de granularidad, las pruebas de componentes se encuentran en algún lugar por encima de las pruebas unitarias y pueden considerarse una forma de prueba de integración. Gran parte de tu aplicación de Vue debe estar cubierta por una prueba de componente y recomendamos que cada componente de Vue tenga su propio archivo de especificaciones.
 
@@ -208,7 +208,7 @@ cy.get(valueSelector)
 
   Si un método debe probarse a fondo, considera extraerlo en una función de utilidad independiente y escriba una prueba unitaria dedicada para él. Si no se puede extraer limpiamente, se puede probar como parte de un componente, integración o prueba de extremo a extremo que lo cubra.
 
-### Recomendación
+### Recomendación {#recommendation-1}
 
 - [Vitest](https://vitest.dev/) para componentes o composables que se renderizan sin el head (por ejemplo, la función [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) en VueUse). Los componentes y el DOM se pueden probar usando [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro).
 
@@ -216,7 +216,7 @@ cy.get(valueSelector)
 
 Las principales diferencias entre Vitest y los ejecutores de pruebas basados en el navegador son la velocidad y el contexto de ejecución. En resumen, los ejecutores basados en navegador, como Cypress, pueden detectar problemas que los ejecutores basados en nodos, como Vitest, no pueden (por ejemplo, problemas de estilo, eventos reales nativos del DOM, cookies, almacenamiento local y fallas de red), pero los ejecutores basados en el navegador son _órdenes de magnitud más lentos que Vitest_ porque abren un navegador, compilan sus hojas de estilo y más. Cypress es un ejecutor basado en el navegador que soporta pruebas de componentes. Por favor, lee la [página de comparación de Vitest](https://vitest.dev/guide/comparisons.html#cypress) para obtener la información más reciente que compara Vitest y Cypress.
 
-### Librerías de Montaje
+### Librerías de Montaje {#mounting-libraries}
 
 La prueba de componentes a menudo implica montar el componente que se está probando de forma aislada, desencadenar eventos simulados de entrada de usuario y la realización de pruebas en la salida del DOM renderizado. Existen librerías dedicadas que simplifican estas tareas.
 
@@ -226,11 +226,11 @@ La prueba de componentes a menudo implica montar el componente que se está prob
 
 Recomendamos usar `@testing-library/vue` para probar componentes en aplicaciones, ya que su enfoque se alinea mejor con las prioridades de prueba de las aplicaciones. Usa `@vue/test-utils` solo si estás creando componentes avanzados que requieren pruebas internas específicas de Vue.
 
-### Otras opciones
+### Otras opciones {#other-options-1}
 
 - [Nightwatch](https://v2.nightwatchjs.org/) es un ejecutor de pruebas E2E con soporte para Pruebas de componentes de Vue. ([Proyecto de ejemplo](https://github.com/nightwatchjs-community/todo-vue) en Nightwatch v2)
 
-## Pruebas E2E
+## Pruebas E2E {#e2e-testing}
 
 Si bien las pruebas unitarias brindan a los desarrolladores cierto grado de confianza, las pruebas unitarias y de componentes tienen una capacidad limitada para proporcionar una cobertura global de una aplicación cuando se despliega en producción. Como resultado, las pruebas de extremo a extremo (E2E) brindan cobertura sobre lo que podría decirse que es el aspecto más importante de una aplicación: lo que sucede cuando los usuarios realmente usan sus aplicaciones.
 
@@ -246,41 +246,41 @@ Las pruebas de extremo a extremo validan muchas de las capas de tu aplicación. 
 
 Al probar cómo las acciones del usuario afectan su aplicación, las pruebas E2E suelen ser la clave para aumentar la confianza en el buen funcionamiento de una aplicación.
 
-### Eligiendo una solución de pruebas E2E
+### Eligiendo una solución de pruebas E2E {#choosing-an-e2e-testing-solution}
 
 Si bien las pruebas de extremo a extremo (E2E) en la web se han ganado una reputación negativa por las pruebas poco confiables (inestables) y la ralentización de los procesos de desarrollo, las herramientas modernas de E2E han avanzado para crear pruebas más confiables, interactivas y útiles. Al elegir un framework de pruebas E2E, las siguientes secciones ofrecen algunas orientaciones sobre las cosas que hay que tener en cuenta al elegir un framework de pruebas para su aplicación.
 
-#### Pruebas entre navegadores
+#### Pruebas entre navegadores {#cross-browser-testing}
 
 Uno de los principales beneficios por los que se conocen las pruebas de extremo a extremo (E2E) es su capacidad para probar su aplicación en múltiples navegadores. Si bien puede parecer conveniente tener una cobertura del 100% entre navegadores, es importante tener en cuenta que las pruebas entre navegadores tienen rendimientos decrecientes en los recursos de un equipo debido al tiempo adicional y la potencia de la máquina que se requiere para ejecutarlas de forma consistente. Como resultado, es importante tener en cuenta esta compensación a la hora de elegir la cantidad de pruebas entre navegadores que necesita su aplicación.
 
-#### Ciclos de retroalimentación más rápidos
+#### Ciclos de retroalimentación más rápidos {#faster-feedback-loops}
 
 Uno de los principales problemas con las pruebas extremo a extremo (E2E) y el desarrollo de estas, es que ejecutar todo el paquete lleva mucho tiempo. Por lo general, esto solo se realiza en canalizaciones de integración e implementación continuas (CI/CD). Los frameworks de prueba E2E modernos han ayudado a resolver esto al agregar funciones como la paralelización, que permite que las canalizaciones de CI/CD a menudo ejecuten magnitudes más rápido que antes. Además, cuando se desarrolla localmente, la capacidad de ejecutar selectivamente una sola prueba para la página en la que se está trabajando, y al mismo tiempo producir una recarga en caliente de las pruebas puede ayudar a impulsar el flujo de trabajo y la productividad de un desarrollador.
 
-#### Experiencia de depuración de primera clase
+#### Experiencia de depuración de primera clase {#first-class-debugging-experience}
 
 Si bien los desarrolladores tradicionalmente se han basado en escanear registros en una ventana de terminal para ayudar a determinar qué salió mal en una prueba, los frameworks de prueba modernos de extremo a extremo (E2E) permiten a los desarrolladores aprovechar las herramientas con las que ya están familiarizados, por ejemplo, las herramientas de desarrollo del navegador.
 
-#### Visibilidad en el modo libre
+#### Visibilidad en el modo libre {#visibility-in-headless-mode}
 
 Cuando las pruebas de extremo a extremo (E2E) se ejecutan en canalizaciones de implementación/integración continua, a menudo se ejecutan en navegadores sin interfaz (es decir, no se abre ningún navegador visible para que el usuario lo vea). Una característica crítica de los frameworks de prueba E2E modernos es la capacidad de ver instantáneas y/o videos de la aplicación durante las pruebas, lo que brinda una idea de por qué se producen los errores. Históricamente, era tedioso mantener estas integraciones.
 
-### Recomendación
+### Recomendación {#recommendation-2}
 
 - [Cypress](https://www.cypress.io/)
 
   En general, creemos que Cypress proporciona la solución E2E más completa con características como una interfaz gráfica informativa, excelente capacidad de depuración, aserciones y stubs integrados, resistencia a las fallas, paralelización e instantáneas. Como se mencionó anteriormente, también proporciona soporte para la [Prueba de Componentes](https://docs.cypress.io/guides/component-testing/introduction). Sin embargo, solo es compatible con navegadores basados en Chrome y Firefox.
 
-### Otras opciones
+### Otras opciones {#other-options-2}
 
 - [Playwright](https://playwright.dev/) también es una excelente solución de pruebas E2E con una mayor compatibilidad con los navegadores (principalmente WebKit). Vea [Por qué Playwright](https://playwright.dev/docs/why-playwright) para más detalles.
 
 - [Nightwatch v2](https://v2.nightwatchjs.org/) es una solución de pruebas E2E basada en [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Esto le da un rango más amplio de compatibilidad con los navegadores.
 
-## Instrucciones
+## Instrucciones {#recipes}
 
-### Añadir Vitest a un proyecto
+### Añadir Vitest a un proyecto {#adding-vitest-to-a-project}
 
 En un proyecto de Vue basado en Vite, ejecute:
 
@@ -355,7 +355,7 @@ Finalmente, actualice `package.json` para agregar el script de prueba y ejecúte
 > npm test
 ```
 
-### Pruebas de Composables
+### Pruebas de Composables {#testing-composables}
 
 > Esta sección supone que has leído la sección [Composables](/guide/reusability/composables.html).
 

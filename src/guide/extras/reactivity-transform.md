@@ -1,4 +1,4 @@
-# Transformación de la Reactividad {#transformacion-de-la-reactividad}
+# Transformación de la Reactividad {#reactivity-transform}
 
 :::warning Característica Experimental
 La Transformación de la Reactividad es actualmente una función experimental. Está desactivada por defecto y requiere [opt-in explícito](#opt-in-explicito). También podría cambiar antes de ser finalizada. Para estar al día, sigue su [propuesta y discusión en GitHub](https://github.com/vuejs/rfcs/discussions/369).
@@ -8,7 +8,7 @@ La Transformación de la Reactividad es actualmente una función experimental. E
 La Transformación de la Reactividad es una característica específica de la Composition-API y requiere un paso de compilación.
 :::
 
-## Refs vs. Variables Reactivas {#refs-vs-variables-reactivas}
+## Refs vs. Variables Reactivas {#refs-vs-reactive-variables}
 
 Desde la introducción de la Composition API, una de las principales cuestiones sin resolver es el uso de objetos refs vs. objetos reactive. Es fácil perder la reactividad cuando se desestructuran los objetos reactive, mientras que puede ser engorroso utilizar `.value` en todas partes cuando se utilizan refs. Además, `.value` es fácil de omitir si no se utiliza un sistema de tipos.
 
@@ -62,7 +62,7 @@ import { $ref } from 'vue/macros'
 let count = $ref(0)
 ```
 
-## Desestructuración con `$()` {#desestructuracion-con}
+## Desestructuración con `$()` {#destructuring-with}
 
 Es habitual que una función de composición devuelva un objeto de refs, y que utilice la desestructuración para recuperar estas refs. Para este propósito, la transformación de la reactividad proporciona la macro **`$()`**:
 
@@ -91,7 +91,7 @@ Observa que si `x` ya es una ref, `toRef(__temp, 'x')` simplemente la devolverá
 
 La desestructuración de `$()` funciona tanto en objetos reactivos **como** en objetos simples que contienen refs.
 
-## Convertir las Referencias Existentes en Variables Reactivas con `$()` {#convertir-las-referencias-existentes-en-variables-reactivas-con}
+## Convertir las Referencias Existentes en Variables Reactivas con `$()` {#convert-existing-refs-to-reactive-variables-with}
 
 En algunos casos podemos tener funciones envueltas que también devuelven refs. Sin embargo, el compilador de Vue no podrá saber de antemano que una función va a devolver una ref. En estos casos, también se puede utilizar la macro `$()` para convertir las refs existentes en variables reactivas:
 
@@ -103,7 +103,7 @@ function myCreateRef() {
 let count = $(myCreateRef())
 ```
 
-## Desestructuración de Props Reactivas {#desestructuración-de-props-reactivas}
+## Desestructuración de Props Reactivas {#reactive-props-destructure}
 
 Hay dos puntos problemáticos con el uso actual de `defineProps()` en `<script setup>`:
 
@@ -154,11 +154,11 @@ export default {
 }
 ```
 
-## Mantener la Reactividad a través de los Límites de la Función {#mantener-la-reactividad-a-traves-de-los-limites-de-la-funcion}
+## Mantener la Reactividad a través de los Límites de la Función {#retaining-reactivity-across-function-boundaries}
 
 Mientras que las variables reactivas nos liberan de tener que usar `.value` en todas partes, se crea un problema de "pérdida de reactividad" cuando pasamos variables reactivas a través de los límites de la función. Esto puede ocurrir en dos casos:
 
-### Introducir una Función como Argumento {#introducir-una-funcion-como-argumento}
+### Introducir una Función como Argumento {#passing-into-function-as-argument}
 
 Dada una función que espera una ref como argumento, por ejemplo:
 
@@ -199,7 +199,7 @@ trackChange(count)
 
 Como podemos ver, `$$()` es una macro que sirve como **punto de escape**: a las variables reactivas dentro de `$$()` no se les añadirá `.value`.
 
-### Retorno en el Ámbito de la Función {#retorno-en-el-ambito-de-la-funcion}
+### Retorno en el Ámbito de la Función {#returning-inside-function-scope}
 
 La reactividad también puede perderse si las variables reactivas se utilizan directamente en una expresión retornada:
 
@@ -246,7 +246,7 @@ function useMouse() {
 }
 ```
 
-### Uso de `$$()` en Props Destructuradas {#uso-de-en-props-desestructuradas}
+### Uso de `$$()` en Props Destructuradas {#using-on-destructured-props}
 
 `$$()` funciona en props desestructuradas ya que son variables reactivas también. El compilador lo convertirá con `toRef` por eficiencia:
 
@@ -265,7 +265,7 @@ setup(props) {
 }
 ```
 
-## Integración con TypeScript <sup class="vt-badge ts" /> {#integracion-con-typescript}
+## Integración con TypeScript <sup class="vt-badge ts" /> {#typescript-integration}
 
 Vue proporciona tipificaciones para estas macros (disponibles globalmente) y todos los tipos funcionarán como se espera. No hay incompatibilidades con la semántica estándar de TypeScript, por lo que la sintaxis funcionará con todas las herramientas existentes.
 
@@ -279,7 +279,7 @@ Dado que las macros están disponibles globalmente, sus tipos necesitan ser refe
 
 Si se importan explícitamente las macros desde `vue/macros`, el tipo funcionará sin declarar las globales.
 
-## Opt-in Explícito {#opt-in-explicito}
+## Opt-in Explícito {#explicit-opt-in}
 
 Actualmente, la Transformación de la Reactividad está desactivada por defecto y requiere un opt-in explícito. Además, todas las siguientes configuraciones requieren `vue@^3.2.25`.
 
@@ -300,7 +300,7 @@ export default {
 }
 ```
 
-### `vue-cli` {#vite-cli}
+### `vue-cli` {#vue-cli}
 
 - Actualmente sólo afecta a los SFC
 - Requiere `vue-loader@>=17.0.0`
@@ -322,7 +322,7 @@ module.exports = {
 }
 ```
 
-### `webpack` Plano + `vue-loader` {#webpack-plano-vue-loader}
+### `webpack` Plano + `vue-loader` {#plain-webpack-vue-loader}
 
 - Actualmente sólo afecta a los SFC
 - Requiere `vue-loader@>=17.0.0`

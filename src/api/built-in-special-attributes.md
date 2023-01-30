@@ -1,6 +1,6 @@
-# Atributos especiales integrados
+# Atributos especiales integrados {#built-in-special-attributes}
 
-## key
+## key {#key}
 
 El atributo especial `key` es usado primeramente por el algoritmo de DOM virtual de Vue como una marca para identificar vnodes para comparar la nueva lista de nodos contra la antigua lista.
 
@@ -37,7 +37,7 @@ El atributo especial `key` es usado primeramente por el algoritmo de DOM virtual
 
 - **Ver también:** [Guía - Renderizado de Listas - Manteniendo el estado con `key`](/guide/essentials/list.html#manteniendo-el-estado-con-key)
 
-## ref
+## ref {#ref}
 
 Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
 
@@ -82,7 +82,7 @@ Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
 
 - **Ver también:** [Refs de la Plantilla](/guide/essentials/template-refs.html)
 
-## is
+## is {#is}
 
 Usado para vincular [componentes dinámicos](/guide/essentials/component-basics.html#dynamic-components).
 

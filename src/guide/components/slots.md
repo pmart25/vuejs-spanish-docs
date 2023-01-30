@@ -1,10 +1,10 @@
-# Slots
+# Slots {#slots}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
 <VueSchoolLink href="https://vueschool.io/lessons/vue-3-component-slots" title="Lección gratuita de Slots de Vue.js"/>
 
-## Contenido y Salida del Slot
+## Contenido y Salida del Slot {#slot-content-and-outlet}
 
 Ya aprendimos que los componentes pueden aceptar props, que pueden ser valores de JavaScript de cualquier tipo. Pero, ¿qué pasa con el contenido de las plantillas? Es posible que en algunos casos queramos pasar un fragmento de plantilla a un componente hijo, y dejar que el componente hijo renderice el fragmento dentro de su propia plantilla.
 
@@ -87,7 +87,7 @@ Al usar slots, nuestro `<FancyButton>` es más flexible y reutilizable. Ahora po
 
 El mecanismo de slots de los componentes de Vue está inspirado en el [elemento nativo de Componentes Web `<slot>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot), pero con capacidades adicionales que veremos más adelante.
 
-## Ámbito de Renderizado
+## Ámbito de Renderizado {#render-scope}
 
 El contenido del slot tiene acceso al ámbito de datos del componente padre, porque está definido en el padre. Por ejemplo:
 
@@ -102,7 +102,7 @@ El contenido del slot **no** tiene acceso a los datos del componente hijo. Las e
 
 > Las expresiones en la plantilla padre sólo tienen acceso al ámbito padre; las expresiones en la plantilla hijo sólo tienen acceso al ámbito hijo.
 
-## Contenido Alternativo
+## Contenido Alternativo {#fallback-content}
 
 Hay casos en los que es útil especificar el contenido por defecto de un slot, que se mostrará sólo cuando no se proporcione ningún contenido. Por ejemplo, en un componente `<SubmitButton>`:
 
@@ -157,7 +157,7 @@ En ese caso, el contenido proporcionado se mostrará en su lugar:
 
 </div>
 
-## Slots Asignados
+## Slots Asignados {#named-slots}
 
 Hay ocasiones en las que es útil tener varias salidas de slots en un mismo componente. Por ejemplo, en un componente `<BaseLayout>` con la siguiente plantilla:
 
@@ -296,7 +296,7 @@ function BaseLayout(slots) {
 }
 ```
 
-## Nombres de Slots Dinámicos
+## Nombres de Slots Dinámicos {#dynamic-slot-names}
 
 [Los argumentos de la directiva dinámica](/guide/essentials/template-syntax.md#argumentos-dinamicos) también funcionan con `v-slot`, permitiendo la definición de nombres de slots dinámicos:
 
@@ -315,7 +315,7 @@ function BaseLayout(slots) {
 
 Ten en cuenta que la expresión está sujeta a las [restricciones sintácticas](/guide/essentials/template-syntax.html#directivas) de los argumentos de la directiva dinámica.
 
-## Slots con Ámbito
+## Slots con Ámbito {#scoped-slots}
 
 Como se discutió en [Ámbito de Renderizado](#ambito-de-renderizado), el contenido de los slots no tiene acceso al estado del componente hijo.
 
@@ -384,7 +384,7 @@ Observa cómo `v-slot="slotProps"` coincide con la firma de la función slot. Al
 </MyComponent>
 ```
 
-### Slots de Ámbito Asignado
+### Slots de Ámbito Asignado {#named-scoped-slots}
 
 Los slots de ámbito asignado funcionan de forma similar; las props de los slots son accesibles como el valor de la directiva `v-slot`: `v-slot:name="slotProps"`. Cuando se utiliza la abreviatura, se ve así:
 
@@ -412,7 +412,7 @@ Pasando props a un slot asignado:
 
 Ten en cuenta que el `nombre` de un slot no se incluirá en las props porque está reservado; así que el `headerProps` resultante sería `{ message: 'hola' }`.
 
-### Ejemplo de Lista Elegante
+### Ejemplo de Lista Elegante {#fancy-list-example}
 
 Te estarás preguntando cuál sería un buen caso de uso para los slots de ámbito. Aquí tienes un ejemplo: imagina un componente `<FancyList>` que muestra una lista de elementos; puede encapsular la lógica para cargar datos remotos, utilizar los datos para mostrar una lista, o incluso características avanzadas como la paginación o el desplazamiento infinito. Sin embargo, queremos que sea flexible con el aspecto de cada elemento y dejar el estilo de cada elemento al componente padre que lo consume. Así que el uso deseado puede ser así:
 
@@ -448,7 +448,7 @@ Dentro de `<FancyList>`, podemos renderizar el mismo `<slot>` varias veces con d
 
 </div>
 
-### Componentes sin Renderizado
+### Componentes sin Renderizado {#renderless-components}
 
 El caso de uso de `<FancyList>` que comentamos anteriormente incluye tanto la lógica reutilizable (obtención de datos, paginación, etc.) como la salida visual, mientras que delega parte de la salida visual al componente consumidor a través de slots de ámbito.
 

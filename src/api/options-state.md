@@ -1,6 +1,6 @@
-# Opciones: Estado
+# Opciones: Estado {#options-state}
 
-## data
+## data {#data}
 
 Una función que devuelve el estado reactivo inicial para la instancia del componente.
 
@@ -47,7 +47,7 @@ Una función que devuelve el estado reactivo inicial para la instancia del compo
 
 - **Ver también:** [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html)
 
-## props
+## props {#props}
 
 Declarar las propiedades de un componente.
 
@@ -127,7 +127,7 @@ Declarar las propiedades de un componente.
 
 - **Ver también:** [Propiedades](/guide/components/props.html)
 
-## computed
+## computed {#computed}
 
 Declara las propiedades computadas que se expondrán en la instancia del componente.
 
@@ -207,7 +207,7 @@ Declara las propiedades computadas que se expondrán en la instancia del compone
 
 - **Ver también:** [Computed Properties](/guide/essentials/computed.html)
 
-## methods
+## methods {#methods}
 
 Declara los métodos que se mezclan en la instancia del componente.
 
@@ -248,7 +248,7 @@ Declara los métodos que se mezclan en la instancia del componente.
 
 - **Ver también:** [Manejo de Eventos](/guide/essentials/event-handling.html)
 
-## watch
+## watch {#watch}
 
 Declara funciones de vigilancia que se invocan cuando cambian los datos.
 
@@ -364,7 +364,7 @@ Declara funciones de vigilancia que se invocan cuando cambian los datos.
 
 - **Ver también:** [Watchers](/guide/essentials/watchers.html)
 
-## emits
+## emits {#emits}
 
 Declara los eventos personalizados emitidos por el componente.
 
@@ -429,7 +429,7 @@ Declara los eventos personalizados emitidos por el componente.
 
 * **Ver también:** [Attributos Fallthrough](/guide/components/attrs.html)
 
-## expose
+## expose {#expose}
 
 Declara las propiedades públicas expuestas cuando la instancia del componente es accedida por un padre a través de las referencias de la plantilla.
 

@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# Mecanismo de Renderizado
+# Mecanismo de Renderizado {#rendering-mechanism}
 
 ¿Cómo toma Vue una plantilla y la convierte en verdaderos nodos del DOM? ¿Cómo actualiza Vue esos nodos del DOM de forma eficiente? Intentaremos arrojar algo de luz sobre estas preguntas aquí, sumergiéndonos en el mecanismo de renderizado interno de Vue.
 
-## Virtual DOM
+## Virtual DOM {#virtual-dom}
 
 Probablemente hayas oído hablar del término virtual DOM, en el que se basa el sistema de renderizado de Vue.
 
@@ -34,7 +34,7 @@ Si tenemos dos copias de árboles virtuales del DOM, el renderizador también pu
 
 El principal beneficio del virtual DOM es que da al desarrollador la posibilidad de crear, inspeccionar y componer mediante programación las estructuras de UI deseadas de forma declarativa, mientras que deja la manipulación directa del DOM al renderizador.
 
-## Proceso de Renderizado
+## Proceso de Renderizado {#render-pipeline}
 
 A alto nivel, esto es lo que ocurre cuando se monta un componente Vue:
 
@@ -48,7 +48,7 @@ A alto nivel, esto es lo que ocurre cuando se monta un componente Vue:
 
 <!-- https://www.figma.com/file/elViLsnxGJ9lsQVsuhwqxM/Rendering-Mechanism -->
 
-## Plantillas vs. Funciones de Renderizado
+## Plantillas vs. Funciones de Renderizado {#templates-vs-render-functions}
 
 Las plantillas de Vue se compilan en funciones de renderizado del virtual DOM. Vue también proporciona APIs que nos permiten omitir el paso de compilación de plantillas y crear directamente funciones de renderizado. Las funciones de renderización son más flexibles que las plantillas cuando se trata de una lógica altamente dinámica, porque se puede trabajar con vnodos utilizando toda la potencia de JavaScript.
 
@@ -60,7 +60,7 @@ Entonces, ¿por qué Vue recomienda las plantillas por defecto? Hay varias razon
 
 En la práctica, las plantillas son suficientes para la mayoría de los casos de uso en las aplicaciones. Las funciones de renderizado se utilizan normalmente sólo en componentes reutilizables que necesitan tratar con una lógica de renderizado altamente dinámica. El uso de las funciones de renderizado se discute con más detalle en [Funciones de Renderizado y JSX](./render-function).
 
-## El Virtual DOM Informado por el Compilador
+## El Virtual DOM Informado por el Compilador {#compiler-informed-virtual-dom}
 
 La implementación del virtual DOM en React y la mayoría de las otras implementaciones del virtual DOM son puramente de tiempo de ejecución: el algoritmo de reconciliación no puede hacer ninguna suposición sobre el árbol del virtual DOM entrante, así que tiene que atravesar completamente el árbol y difundir las props de cada vnode para asegurar la corrección. Además, aunque una parte del árbol no cambie nunca, siempre se crean nuevos nodos virtuales para ellos en cada nueva renderización, lo que supone una carga de memoria innecesaria. Este es uno de los aspectos más criticados de los virtual DOM: el proceso de reconciliación, un tanto forzado, sacrifica la eficiencia a cambio de la declaratividad y la corrección.
 
@@ -68,7 +68,7 @@ Pero no tiene por qué ser así. En Vue, el framework controla tanto el compilad
 
 A continuación, discutiremos algunas de las principales optimizaciones realizadas por el compilador de plantillas de Vue para mejorar el rendimiento del virtual DOM en tiempo de ejecución.
 
-### Hoisting Estático
+### Hoisting Estático {#static-hoisting}
 
 A menudo habrá partes en una plantilla que no contengan ningún enlace dinámico:
 
@@ -86,7 +86,7 @@ Los divs `foo` y `bar` son estáticos; no es necesario volver a crear los vnodes
 
 Además, cuando hay suficientes elementos estáticos consecutivos, se condensan en un único "vnode estático" que contiene la cadena HTML simple para todos estos nodos ([Ejemplo](https://vue-next-template-explorer.netlify.app/#eyJzcmMiOiI8ZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImZvb1wiPmZvbzwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiZm9vXCI+Zm9vPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJmb29cIj5mb288L2Rpdj5cbiAgPGRpdj57eyBkeW5hbWljIH19PC9kaXY+XG48L2Rpdj4iLCJzc3IiOmZhbHNlLCJvcHRpb25zIjp7ImhvaXN0U3RhdGljIjp0cnVlfX0=)). Estos vnodos estáticos son montados directamente estableciendo `innerHTML`. También se almacenan en caché sus correspondientes nodos DOM en el montaje inicial; si la misma pieza de contenido se reutiliza en otra parte de la aplicación, los nuevos nodos del DOM se crean utilizando la función nativa `cloneNode()`, que es extremadamente eficiente.
 
-### Banderas de Parches
+### Banderas de Parches {#patch-flags}
 
 Para un único elemento con enlaces dinámicos, también podemos inferir mucha información de él en tiempo de compilación:
 
@@ -133,7 +133,7 @@ export function render() {
 
 De este modo, el tiempo de ejecución puede omitir por completo la reconciliación del orden de los hijos para el fragmento raíz.
 
-### Aplanamiento de Árboles
+### Aplanamiento de Árboles {#tree-flattening}
 
 Si volvemos a ver el código generado en el ejemplo anterior, nos daremos cuenta de que la raíz del árbol del virtual DOM devuelto se crea mediante una llamada especial `createElementBlock()`:
 
@@ -183,7 +183,7 @@ Las directivas `v-if` y `v-for` crearán nuevos nodos de bloque:
 
 Un bloque hijo es rastreado dentro de la matriz de descendientes dinámicos del bloque padre. De este modo se mantiene una estructura estable para el bloque padre.
 
-### Impacto sobre la Hidratación del SSR
+### Impacto sobre la Hidratación del SSR {#impact-on-ssr-hydration}
 
 Tanto las banderas de parche como el aplanamiento del árbol mejoran en gran medida el rendimiento la [Hidratación del SSR](/guide/scaling-up/ssr.html#hidratacion-del-cliente) de Vue:
 

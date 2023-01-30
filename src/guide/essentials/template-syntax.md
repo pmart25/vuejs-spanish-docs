@@ -1,4 +1,4 @@
-# Sintaxis de la Plantilla
+# Sintaxis de la Plantilla {#template-syntax}
 
 Vue utiliza una sintaxis de plantilla basada en HTML que te permite vincular declarativamente el renderizado del DOM con los datos de la instancia del componente subyacente. Todas las plantillas de Vue son HTML sintácticamente válido que puede ser analizado por navegadores y por analizadores de HTML que cumplan las especificaciones.
 
@@ -6,7 +6,7 @@ Entre bastidores, Vue compila las plantillas en código JavaScript altamente opt
 
 Si estás familiarizado con los conceptos de Virtual DOM y prefieres la potencia bruta de JavaScript, también puedes [escribir directamente funciones de renderizado](/guide/extras/render-function.html) en lugar de plantillas, con soporte opcional para JSX. Sin embargo, ten en cuenta que no disfrutarás el mismo nivel de optimizaciones en tiempo de compilación como con las plantillas.
 
-## Interpolación de Texto
+## Interpolación de Texto {#text-interpolation}
 
 La forma más básica de vinculación de datos es la interpolación de texto utilizando la sintaxis de "Mostacho" o bigotes (dobles llaves):
 
@@ -16,7 +16,7 @@ La forma más básica de vinculación de datos es la interpolación de texto uti
 
 La etiqueta del mostacho se reemplazará con el valor de la propiedad `msg` de la instancia del componente correspondiente. También se actualizará cada vez que cambie la propiedad `msg`.
 
-## HTML Puro
+## HTML Puro {#raw-html}
 
 Los dobles mostachos interpretan los datos como texto sin formato, no como HTML. Para generar HTML real, necesitarás usar la [directiva `v-html`](/api/built-in-directives.html#v-html):
 
@@ -42,7 +42,7 @@ El contenido de `span` se reemplazará con el valor de la propiedad `rawHtml`, i
 El HTML arbitrario renderizado dinámicamente en tu sitio web puede ser muy peligroso porque puede conducir fácilmente a [vulnerabilidades XSS](https://es.wikipedia.org/wiki/Cross-site_scripting). Utiliza `v-html` solo en contenido confiable y **nunca** en contenido proporcionado por el usuario.
 :::
 
-## Vinculación de Atributos
+## Vinculación de Atributos {#attribute-bindings}
 
 Los mostachos no se pueden usar dentro de los atributos HTML. En su lugar, utiliza una directiva [`v-bind`](/api/built-in-directives.html#v-bind):
 
@@ -52,7 +52,7 @@ Los mostachos no se pueden usar dentro de los atributos HTML. En su lugar, utili
 
 La directiva `v-bind` le indica a Vue que mantenga el atributo `id` del elemento sincronizado con la propiedad `dynamicId` del componente. Si el valor vinculado es `null` o `undefined`, el atributo se eliminará del elemento renderizado.
 
-### Abreviatura
+### Abreviatura {#shorthand}
 
 Debido a que `v-bind` se usa con tanta frecuencia, tiene una sintaxis abreviada dedicada:
 
@@ -64,7 +64,7 @@ Los atributos que comienzan con `:` pueden verse un poco diferentes del HTML nor
 
 > Para el resto de la guía, usaremos la sintaxis abreviada en los ejemplos de código, ya que es la más comúnmente usada por los desarrolladores de Vue.
 
-### Atributos Booleanos
+### Atributos Booleanos {#boolean-attributes}
 
 Los [atributos booleanos](https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes) son atributos que pueden indicar valores verdadero/falso por su presencia en un elemento. Por ejemplo, [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) es uno de los atributos booleanos más comúnmente utilizados.
 
@@ -76,7 +76,7 @@ Los [atributos booleanos](https://html.spec.whatwg.org/multipage/common-microsyn
 
 El atributo `disabled` se incluirá si `isButtonDisabled` tiene un [valor verdadero (thruty)](https://developer.mozilla.org/es/docs/Glossary/Truthy). También se incluirá si el valor es una cadena vacía, manteniendo la coherencia con `<button disabled="">`. Para otros valores falsos, se omitirá el atributo.
 
-### Vinculación Dinámica de Múltiples Atributos
+### Vinculación Dinámica de Múltiples Atributos {#dynamically-binding-multiple-attributes}
 
 Si tienes un objeto de JavaScript representando múltiples atributos que se ve así:
 
@@ -111,7 +111,7 @@ Puedes vincularlos a un único elemento usando `v-bind` sin un argumento:
 <div v-bind="objectOfAttrs"></div>
 ```
 
-## Usando Expresiones JavaScript
+## Usando Expresiones JavaScript {#using-javascript-expressions}
 
 Hasta ahora, solo hemos estado vinculando claves de propiedad simples en nuestras plantillas. Pero Vue en realidad admite todo el poder de las expresiones de JavaScript dentro de todos los enlaces de datos:
 
@@ -132,7 +132,7 @@ En las plantillas de Vue, las expresiones de JavaScript se pueden usar en las si
 - Interpolaciones de texto interior (mostachos)
 - En el valor del atributo de cualquier directiva de Vue (atributos especiales que comienzan con `v-`)
 
-### Solo Expresiones
+### Solo Expresiones {#expressions-only}
 
 Cada enlace solo puede contener **una única expresión**. Una expresión es un trozo de código que puede evaluarse a un valor. Una comprobación sencilla es si puede utilizarse después de `return`.
 
@@ -146,7 +146,7 @@ Por lo tanto, lo siguiente **NO** funcionará:
 {{ if (ok) { return message } }}
 ```
 
-### Llamado de Funciones
+### Llamado de Funciones {#calling-functions}
 
 Es posible llamar a un método expuesto a componentes dentro de una expresión vinculante:
 
@@ -160,13 +160,13 @@ Es posible llamar a un método expuesto a componentes dentro de una expresión v
 Las funciones llamadas dentro de las expresiones vinculantes se llamarán cada vez que se actualice el componente, por lo que **no** deberían tener ningún efecto secundario, como cambiar datos o disparar operaciones asincrónicas.
 :::
 
-### Acceso Global Restringido
+### Acceso Global Restringido {#restricted-globals-access}
 
 Las expresiones de plantillas están en un espacio aislado y solo tienen acceso a una [lista restringida de elementos globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La lista expone métodos globales integrados de uso común, como `Math` y `Date`.
 
 Los elementos globales no incluidos explícitamente en la lista, por ejemplo, las propiedades adjuntas por el usuario en `window`, no serán accesibles en las expresiones de la plantilla. Sin embargo, explícitamente, puedes definir métodos globales adicionales para todas las expresiones de Vue agregándolos a [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
 
-## Directivas
+## Directivas {#directives}
 
 Las directivas son atributos especiales con el prefijo `v-`. Vue proporciona una serie de [directivas integradas](/api/built-in-directives.html), incluidas `v-html` y `v-bind`, que hemos presentado anteriormente.
 
@@ -178,7 +178,7 @@ Se espera que los valores de los atributos de una directiva sean expresiones Jav
 
 Aquí, la directiva `v-if` eliminaría/insertaría el elemento `<p>` en función de la veracidad del valor de la expresión `seen`.
 
-### Argumentos
+### Argumentos {#arguments}
 
 Algunas directivas pueden tomar un "argumento", indicado por dos puntos después del nombre de la directiva. Por ejemplo, la directiva `v-bind` se utiliza para actualizar de forma reactiva un atributo HTML:
 
@@ -202,7 +202,7 @@ Otro ejemplo es la directiva `v-on`, que escucha eventos del DOM:
 
 Aquí el argumento es el nombre del evento a escuchar: `clic`. `v-on` es una de las pocas directivas que también tienen una abreviatura correspondiente, siendo su carácter abreviado `@`. También hablaremos sobre el manejo de eventos con más detalle.
 
-### Argumentos Dinámicos
+### Argumentos Dinámicos {#dynamic-arguments}
 
 Es posible utilizar también una expresión de JavaScript en un argumento de directiva envolviéndola entre corchetes:
 
@@ -232,11 +232,11 @@ De manera similar, puedes usar argumentos dinámicos para vincular un manejador 
 
 En este ejemplo, cuando el valor de `eventName` es `"focus"`, `v-on:[eventName]` será equivalente a `v-on:focus`.
 
-#### Restricciones del Valor de un Argumento Dinámico
+#### Restricciones del Valor de un Argumento Dinámico {#dynamic-argument-value-constraints}
 
 Se espera que los argumentos dinámicos se evalúen como una cadena, con la excepción de `null`. El valor especial `null` se puede usar para eliminar explícitamente el enlace. Cualquier otro valor que no sea una cadena disparará una advertencia.
 
-#### Restricciones de la Sintaxis de un Argumento Dinámico
+#### Restricciones de la Sintaxis de un Argumento Dinámico {#dynamic-argument-syntax-constraints}
 
 Las expresiones de argumentos dinámicos tienen algunas restricciones de sintaxis porque ciertos caracteres, como espacios y comillas, no son válidos dentro de los nombres de atributos HTML. Por ejemplo, lo siguiente no es válido:
 
@@ -255,7 +255,7 @@ Cuando utilices plantillas del DOM (plantillas escritas directamente en un archi
 
 Lo anterior se convertirá a `:[someattr]` en las plantillas del DOM. Si tu componente tiene una propiedad `someAttr` en lugar de `someattr`, tu código no funcionará. Las plantillas dentro de los Componentes de un Solo Archivo **no** están sujetas a esta restricción.
 
-### Modificadores
+### Modificadores {#modifiers}
 
 Los modificadores son sufijos especiales indicados por un punto, que indican que una directiva debe vincularse de alguna manera especial. Por ejemplo, el modificador `.prevent` le dice a la directiva `v-on` que llame a `event.preventDefault()` en el evento desencadenado:
 

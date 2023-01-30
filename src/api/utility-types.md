@@ -1,10 +1,10 @@
-# Tipos de utilidades
+# Tipos de utilidades {#utility-types}
 
 :::info Información
 En esta página sólo se enumeran algunos tipos de utilidad comúnmente utilizados que pueden necesitar una explicación para su uso. Para obtener una lista completa de los tipos exportados, consulta el [código fuente](https://github.com/vuejs/core/blob/main/packages/runtime-core/src/index.ts#L131).
 :::
 
-## PropType\<T>
+## PropType\<T> {#proptype-t}
 
 Se usa para anotar una prop con tipos más avanzados cuando se usan declaraciones de props en tiempo de ejecución.
 
@@ -32,7 +32,7 @@ Se usa para anotar una prop con tipos más avanzados cuando se usan declaracione
 
 - **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api.html#escritura-de-las-props-de-componentes)
 
-## ComponentCustomProperties
+## ComponentCustomProperties {#componentcustomproperties}
 
 Se utiliza para aumentar el tipo de instancia del componente para admitir propiedades globales personalizadas.
 
@@ -55,7 +55,7 @@ Se utiliza para aumentar el tipo de instancia del componente para admitir propie
 
 - **Véase también:** [Guía - Aumento de las Propiedades Globales](/guide/typescript/options-api.html#aumento-de-las-propiedades-globales)
 
-## ComponentCustomOptions
+## ComponentCustomOptions {#componentcustomoptions}
 
 Se utiliza para aumentar el tipo de opciones del componente para admitir opciones personalizadas.
 
@@ -77,7 +77,7 @@ Se utiliza para aumentar el tipo de opciones del componente para admitir opcione
 
 - **Véase también:** [Guía - Aumento de las Opciones Personalizadas](/guide/typescript/options-api.html#aumento-de-las-opciones-personalizadas)
 
-## ComponentCustomProps
+## ComponentCustomProps {#componentcustomprops}
 
 Se utiliza para aumentar las props TSX permitidas para usar props no declaradas en elementos TSX.
 
@@ -102,7 +102,7 @@ Se utiliza para aumentar las props TSX permitidas para usar props no declaradas 
   Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api.html#ubicacion-del-aumento-de-tipo) para obtener más detalles.
   :::
 
-## CSSProperties
+## CSSProperties {#cssproperties}
 
 Se utiliza para aumentar los valores permitidos en los enlaces de propiedades de estilo.
 

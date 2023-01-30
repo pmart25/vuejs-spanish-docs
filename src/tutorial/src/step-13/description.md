@@ -1,4 +1,4 @@
-# Emits
+# Emits {#emits}
 
 Además de recibir props, un componente hijo puede también emitir eventos hacia el padre:
 

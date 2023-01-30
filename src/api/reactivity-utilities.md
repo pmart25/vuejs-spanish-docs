@@ -1,6 +1,6 @@
-# Reactividad: Utilidades
+# Reactividad: Utilidades {#reactivity-api-utilities}
 
-## isRef()
+## isRef() {#isref}
 
 Comprueba si un valor es un objeto ref.
 
@@ -20,7 +20,7 @@ Comprueba si un valor es un objeto ref.
   }
   ```
 
-## unref()
+## unref() {#unref}
 
 Devuelve el valor interno si el argumento es una ref, de lo contrario devuelve el argumento en sí. Esta es una función de azúcar sintáctica para `val = isRef(val) ? val.value : val`.
 
@@ -39,7 +39,7 @@ Devuelve el valor interno si el argumento es una ref, de lo contrario devuelve e
   }
   ```
 
-## toRef()
+## toRef() {#toref}
 
 Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de origen. La ref creada se sincroniza con su propiedad de origen: al mutar la propiedad de origen se actualizará la ref y viceversa.
 
@@ -100,7 +100,7 @@ Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de
 
   `toRef()` devolverá una ref utilizable incluso si la propiedad de origen no existe actualmente. Esto hace posible trabajar con propiedades opcionales, que no serían recogidas por [`toRefs`](#torefs).
 
-## toRefs()
+## toRefs() {#torefs}
 
 Convierte un objeto reactivo en un objeto simple donde cada propiedad del objeto resultante es una ref que apunta a la propiedad correspondiente del objeto original. Cada ref individual se crea utilizando [`toRef()`](#toref).
 
@@ -161,7 +161,7 @@ Convierte un objeto reactivo en un objeto simple donde cada propiedad del objeto
 
   `toRefs` solo generará refs para las propiedades que se pueden enumerar en el objeto de origen en el momento de la llamada. Para crear una ref para una propiedad que quizás aún no exista, utiliza [`toRef`](#toref) en su lugar.
 
-## isProxy()
+## isProxy() {#isproxy}
 
 Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](./reactivity-advanced.html#shallowreactive) o [`shallowReadonly()`](./reactivity-advanced.html#shallowreadonly).
 
@@ -171,7 +171,7 @@ Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.h
   function isProxy(value: unknown): boolean
   ```
 
-## isReactive()
+## isReactive() {#isreactive}
 
 Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.html#reactive) o [`shallowReactive()`](./reactivity-advanced.html#shallowreactive).
 
@@ -181,7 +181,7 @@ Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.h
   function isReactive(value: unknown): boolean
   ```
 
-## isReadonly()
+## isReadonly() {#isreadonly}
 
 Comprueba si un objeto es un proxy creado por [`readonly()`](./reactivity-core.html#readonly) o [`shallowReadonly()`](./reactivity-advanced.html#shallowreadonly).
 

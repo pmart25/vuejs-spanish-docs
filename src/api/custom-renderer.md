@@ -1,6 +1,6 @@
-# API del Renderizador Personalizado (Custom Renderer API)
+# API del Renderizador Personalizado (Custom Renderer API) {#custom-renderer-api}
 
-## createRenderer()
+## createRenderer() {#createrenderer}
 
 Crea un renderizador personalizado. Al proporcionar APIs de creación y manipulación de nodos específicos de la plataforma, puedes aprovechar el tiempo de ejecución del núcleo de Vue para apuntar a entornos que no son de DOM.
 

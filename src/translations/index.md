@@ -2,21 +2,21 @@
 aside: false
 ---
 
-# Traducciones {#traducciones}
+# Traducciones {#translations}
 
-## Idiomas Disponibles {#idiomas-disponibles}
+## Idiomas Disponibles {#available-languages}
 
 - [Inglés](https://vuejs.org/) [[fuente](https://github.com/vuejs/docs)]
 - [简体中文 / Chino Simplificado](https://cn.vuejs.org/) [[fuente](https://github.com/vuejs-translations/docs-zh-cn)]
 - [日本語 / Japonés](https://ja.vuejs.org/) [[fuente](https://github.com/vuejs-translations/docs-ja)]
 
-## Idiomas en Curso {#idiomas-en-curso}
+## Idiomas en Curso {#work-in-progress-languages}
 
 - [Українська / Ucraniano](https://ua.vuejs.org) [[fuente](https://github.com/vuejs-translations/docs-ua)]
 - [Français / Francés](https://vuejs-docs-fr.netlify.app) [[fuente](https://github.com/vuejs-translations/docs-fr)]
 - [Español / Español](https://vue3-spanish.netlify.app/) [[fuente](https://github.com/drfcozapata/docs/tree/spanish-translation)]
 
-## Iniciar una nueva Traducción {#iniciar-una-nueva-traduccion}
+## Iniciar una nueva Traducción {#starting-a-new-translation}
 
 La documentación de Vue ha sido sometida recientemente a una importante revisión, por lo que aún faltan traducciones en otros idiomas o se está trabajando en ellas.
 

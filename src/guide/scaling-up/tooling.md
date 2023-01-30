@@ -1,6 +1,6 @@
-# Herramientas
+# Herramientas {#tooling}
 
-## Pruébalo en Línea
+## Pruébalo en Línea {#try-it-online}
 
 No necesitas instalar nada en tu máquina para probar los SFC de Vue: hay una zona de prácticas en línea que te permite hacerlo directamente en el navegador:
 
@@ -13,9 +13,9 @@ No necesitas instalar nada en tu máquina para probar los SFC de Vue: hay una zo
 
 También se recomienda utilizar estas zonas de práctica en línea para proveer reproducciones cuando se reporten errores.
 
-## Andamiaje de Proyectos
+## Andamiaje de Proyectos {#project-scaffolding}
 
-### Vite
+### Vite {#vite}
 
 [Vite](https://vitejs.dev/) es una herramienta de construcción ligera y rápida con soporte de primera clase para los SFC de Vue. ¡Está creado por Evan You, quien también es el autor de Vue!
 
@@ -30,7 +30,7 @@ Este comando instalará y ejecutará [create-vue](https://github.com/vuejs/creat
 
 Las dos zonas de práctica mencionadas arriba, también soportan la descarga de archivos como un proyecto de Vite.
 
-### Vue CLI
+### Vue CLI {#vue-cli}
 
 [Vue CLI](https://cli.vuejs.org/) es el conjunto de herramientas oficial basada en webpack para Vue. Ahora está en modo de mantenimiento y recomendamos comenzar los nuevos proyectos con Vite a menos que dependas de características específicas de webpack. Vite proporcionará una experiencia de desarrollo superior en la mayoría de los casos.
 
@@ -39,7 +39,7 @@ Para información sobre la migración de Vue CLI a Vite:
 - [Vue CLI -> Guía de migración a Vite de VueSchool.io](https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/)
 - [Herramientas / Complementos que ayudan a la migración automática](https://github.com/vitejs/awesome-vite#vue-cli)
 
-### Nota sobre la Compilación de Plantillas en el Navegador
+### Nota sobre la Compilación de Plantillas en el Navegador {#note-on-in-browser-template-compilation}
 
 Cuando se utiliza Vue sin un paso de compilación, las plantillas de los componentes se escriben directamente en el HTML de la página o como cadenas de texto de JavaScript en línea. En estos casos, Vue necesita enviar el compilador de plantillas al navegador para realizar la compilación de las plantillas sobre la marcha. Por otro lado, el compilador sería innecesario si compilamos previamente las plantillas con un paso de compilación. Para reducir el tamaño del paquete del cliente, Vue provee [diferentes "compilaciones"](https://unpkg.com/browse/vue@3/dist/) optimizadas para diferentes casos de uso.
 
@@ -51,7 +51,7 @@ Nuestras configuraciones de herramientas por defecto utilizan la compilación s�
 
 Si estás buscando una alternativa más liviana para el uso sin pasos de compilación, consulta [petite-vue](https://github.com/vuejs/petite-vue).
 
-## Soporte para IDE {#soporte-para-ide}
+## Soporte para IDE {#ide-support}
 
 - La configuración recomendada del IDE es [VSCode](https://code.visualstudio.com/) + la extensión [Volar](https://github.com/johnsoncodehk/volar). Volar proporciona resaltado de sintaxis, soporte para TypeScript, intellisense para expresiones de plantillas y props de componentes.
 
@@ -69,7 +69,7 @@ Si estás buscando una alternativa más liviana para el uso sin pasos de compila
 
   - Soporte para emacs a través de [lsp-mode](https://emacs-lsp.github.io/lsp-mode/page/lsp-volar/)
 
-## Devtools del Navegador
+## Devtools del Navegador {#browser-devtools}
 
 <VueSchoolLink href="https://vueschool.io/lessons/using-vue-dev-tools-with-vuejs-3" title="Lección gratuita de Devtools de Vue.js"/>
 
@@ -82,7 +82,7 @@ La extensión de herramientas de desarrollo del navegador (Devtools) de Vue le p
 - [Complemento para Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
 - [Aplicación independiente de Electron](https://devtools.vuejs.org/guide/installation.html#standalone)
 
-## TypeScript
+## TypeScript {#typescript}
 
 Artículo principal: [Usando Vue con TypeScript](/guide/typescript/overview).
 
@@ -90,7 +90,7 @@ Artículo principal: [Usando Vue con TypeScript](/guide/typescript/overview).
 
 - Utiliza [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc) para realizar la misma comprobación de tipos desde la línea de comandos, o para generar archivos `d.ts` para SFC.
 
-## Testing
+## Testing {#testing}
 
 Artículo principal: [Guía de Testing](/guide/scaling-up/testing).
 
@@ -100,7 +100,7 @@ Artículo principal: [Guía de Testing](/guide/scaling-up/testing).
 
 - [Jest](https://jestjs.io/) puede trabajar con Vite a través de [vite-jest](https://github.com/sodatea/vite-jest). Sin embargo, esto solo se recomienda si tienes suites de pruebas existentes basadas en Jest que necesitan migrar a una configuración basada en Vite, ya que Vitest proporciona funcionalidades similares con una integración mucho más eficiente.
 
-## Limpieza (Linting)
+## Limpieza (Linting) {#linting}
 
 El equipo de Vue mantiene [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue), un complemento de [ESLint](https://eslint.org/) que soporta reglas de linting específicas de SFC.
 
@@ -114,13 +114,13 @@ Los usuarios que anteriormente usaban Vue CLI pueden estar acostumbrados a tener
 
 4. (Opcional) Configura herramientas como [lint-staged](https://github.com/okonet/lint-staged) para que los archivos modificados por git commit sean automáticamente corregidos.
 
-## Formateo (Formatting)
+## Formateo (Formatting) {#formatting}
 
 - La extensión [Volar](https://github.com/johnsoncodehk/volar) de VSCode permite formatear los SFC de Vue de forma inmediata.
 
 - Alternativamente, [Prettier](https://prettier.io/) proporciona soporte de formato integrado para SFC de Vue.
 
-## Integraciones de Bloques Personalizados del SFC
+## Integraciones de Bloques Personalizados del SFC {#sfc-custom-block-integrations}
 
 Los bloques personalizados se compilan en importaciones al mismo archivo de Vue con diferentes consultas de solicitudes de consulta. Depende de la herramienta de compilación subyacente manejar estas solicitudes de importación.
 
@@ -128,9 +128,9 @@ Los bloques personalizados se compilan en importaciones al mismo archivo de Vue 
 
 - Si estás usando Vue CLI o webpack simple, se debe configurar un cargador de webpack para transformar los bloques coincidentes. [Ejemplo](https://vue-loader.vuejs.org/guide/custom-blocks.html)
 
-## Paquetes de Bajo Nivel
+## Paquetes de Bajo Nivel {#lower-level-packages}
 
-### `@vue/compiler-sfc`
+### `@vue/compiler-sfc` {#vue-compiler-sfc}
 
 - [Documentación](https://github.com/vuejs/core/tree/main/packages/compiler-sfc)
 
@@ -142,19 +142,19 @@ El paquete en sí proporciona utilidades de bajo nivel para procesar los SFC de 
 Siempre es preferible usar este paquete a través de la importación profunda de `vue/compiler-sfc` ya que esto asegura que su versión está sincronizada con el tiempo de ejecución de Vue.
 :::
 
-### `@vitejs/plugin-vue`
+### `@vitejs/plugin-vue` {#vitejs-plugin-vue}
 
 - [Documentación](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 
 Complemento oficial que proporciona soporte a los SFC de Vue en Vite.
 
-### `vue-loader`
+### `vue-loader` {#vue-loader}
 
 - [Documentación](https://vue-loader.vuejs.org/)
 
 El cargador oficial que proporciona soporte a los SFC de Vue en webpack. Si estás usando Vue CLI, consulta también [los documentos sobre cómo modificar las opciones de `vue-loader` en Vue CLI](https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-loader).
 
-## Otras Zonas de Práctica en Línea
+## Otras Zonas de Práctica en Línea {#other-online-playgrounds}
 
 - [Zona de Práctica en VueUse](https://play.vueuse.org)
 - [Vue + Vite en Repl.it](https://replit.com/@templates/VueJS-with-Vite)

@@ -1,4 +1,4 @@
-# Reglas de Prioridad C: Recomendado
+# Reglas de Prioridad C: Recomendado {#priority-c-rules-recommended}
 
 Cuando existen varias opciones igualmente buenas, se puede hacer una elección arbitraria para garantizar la coherencia. En estas reglas, describimos cada opción aceptable y sugerimos una elección por defecto. Esto significa que puedes sentirte libre de hacer una elección diferente en tu propia base de código, siempre y cuando seas coherente y tengas una buena razón. Pero por favor, ¡ten una buena razón! Al adaptarte al estándar de la comunidad, podrás
 
@@ -6,7 +6,7 @@ Cuando existen varias opciones igualmente buenas, se puede hacer una elección a
 2. Ser capaz de copiar y pegar la mayoría de los ejemplos de código de la comunidad sin modificarlos
 3. Encontrar a menudo que los nuevos empleados ya están acostumbrados a su estilo de codificación preferido, al menos en lo que respecta a Vue
 
-## Orden de las opciones de los componentes/instancias
+## Orden de las opciones de los componentes/instancias {#component-instance-options-order}
 
 **Las opciones de componentes/instancias deberían estar ordenadas de forma consistente.**
 
@@ -71,7 +71,7 @@ Este es el orden por defecto que recomendamos para las opciones de los component
 10. **Renderización** (la descripción declarativa de la salida del componente)
     - `template`/`render`
 
-## Orden de los atributos de los elementos
+## Orden de los atributos de los elementos {#element-attribute-order}
 
 **Los atributos de los elementos (incluidos los componentes) deben estar ordenados de forma coherente.**
 
@@ -121,7 +121,7 @@ Este es el orden por defecto que recomendamos para las opciones de los component
     - `v-html`
     - `v-text`
 
-## Líneas vacías en las opciones del componente/instancia
+## Líneas vacías en las opciones del componente/instancia {#empty-lines-in-component-instance-options}
 
 **Es posible que quieras añadir una línea vacía entre las propiedades multilíneas, sobre todo si las opciones ya no caben en tu pantalla sin hacer scroll.**
 
@@ -184,7 +184,7 @@ computed: {
 
 </div>
 
-## Orden de los elementos de nivel superior de los SFC
+## Orden de los elementos de nivel superior de los SFC {#single-file-component-top-level-element-order}
 
 **Los [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html) deben ordenar siempre las etiquetas `<script>`, `<template>` y `<style>` de forma consistente, con `<style>` en último lugar, porque al menos una de las otras dos es siempre necesaria.**
 

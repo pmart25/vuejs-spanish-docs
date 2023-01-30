@@ -1,8 +1,8 @@
-# Hooks del Ciclo de Vida
+# Hooks del Ciclo de Vida {#lifecycle-hooks}
 
 Cada instancia de un componente de Vue pasa por una serie de pasos de inicialización cuando se crea; por ejemplo, debe configurar la observación de datos, compilar la plantilla, montar la instancia en el DOM y actualizar el DOM cuando cambien los datos. En el camino, también ejecuta funciones llamadas hooks del ciclo de vida, dando a los usuarios la oportunidad de añadir su propio código en etapas específicas.
 
-## Registrando los Hooks del Ciclo de Vida
+## Registrando los Hooks del Ciclo de Vida {#registering-lifecycle-hooks}
 
 Por ejemplo, el hook <span class="composition-api">`onMounted`</span><span class="options-api">`mounted`</span> se puede usar para ejecutar código después que el componente haya terminado el renderizado inicial y creado los nodos del DOM:
 
@@ -55,7 +55,7 @@ Ten en cuenta que esto no significa que la llamada deba colocarse léxicamente d
 
 </div>
 
-## Diagrama del Ciclo de Vida
+## Diagrama del Ciclo de Vida {#lifecycle-diagram}
 
 A continuación se muestra un diagrama del ciclo de vida de la instancia. En este momento no es necesario que entiendas completamente todo lo que sucede, pero a medida que aprendas y construyas más, será una referencia útil.
 

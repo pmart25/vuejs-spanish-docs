@@ -1,4 +1,4 @@
-# Renderizado de Listas
+# Renderizado de Listas {#list-rendering}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/list-rendering-in-vue-3" title="Lección gratuita de Renderizado de Listas en Vue.js"/>
@@ -8,7 +8,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-list-rendering-in-vue" title="Lección gratuita de Renderizado de Listas en Vue.js"/>
 </div>
 
-## `v-for`
+## `v-for` {#v-for}
 
 Podemos utilizar la directiva `v-for` para representar una lista de elementos basada en un array. La directiva `v-for` requiere una sintaxis especial en forma de `item in items`, donde `items` es el array de datos fuente y `item` es un **alias** para el elemento del array sobre el que se está iterando:
 
@@ -132,7 +132,7 @@ También puedes utilizar `of` como delimitador en lugar de `in`, para que se ace
 <div v-for="item of items"></div>
 ```
 
-## `v-for` con un Objeto
+## `v-for` con un Objeto {#v-for-with-an-object}
 
 También puedes utilizar `v-for` para iterar a través de las propiedades de un objeto. El orden de iteración se basará en el resultado de llamar a `Object.keys()` sobre el objeto:
 
@@ -198,7 +198,7 @@ Y otra para el índice:
 
 </div>
 
-## `v-for` con un Rango
+## `v-for` con un Rango {#v-for-with-a-range}
 
 `v-for` también puede tomar un entero. En este caso se repetirá la plantilla tantas veces, basado en un rango de `1...n`.
 
@@ -208,7 +208,7 @@ Y otra para el índice:
 
 Observa que aquí `n` comienza con un valor inicial de `1` en lugar de `0`.
 
-## `v-for` en `<template>`
+## `v-for` en `<template>` {#v-for-on-template}
 
 De forma similar a la etiqueta `v-if`, también puedes utilizar una etiqueta `<template>` con `v-for` para representar un bloque de múltiples elementos. Por ejemplo:
 
@@ -221,7 +221,7 @@ De forma similar a la etiqueta `v-if`, también puedes utilizar una etiqueta `<t
 </ul>
 ```
 
-## `v-for` con `v-if`
+## `v-for` con `v-if` {#v-for-with-v-if}
 
 :::warning Nota
 **No** es recomendado usar `v-if` y `v-for` en el mismo elemento debido a la precedencia implícita. Consulta la [guía de estilo](/style-guide/rules-essential.html#evitar-usar-v-if-con-v-for) para más detalles.
@@ -249,7 +249,7 @@ Esto puede arreglarse moviendo `v-for` a una etiqueta envolvente `<template>` (q
 </template>
 ```
 
-## Manteniendo el Estado con `key`
+## Manteniendo el Estado con `key` {#maintaining-state-with-key}
 
 Cuando Vue está actualizando una lista de elementos renderizados con `v-for`, por defecto utiliza una estrategia de "parche en el lugar". Si el orden de los elementos de datos ha cambiado, en lugar de mover los elementos del DOM para que coincidan con el orden de los elementos, Vue parchará cada elemento en su lugar y se asegurará de que refleje lo que debe ser renderizado en ese índice en particular.
 
@@ -279,7 +279,7 @@ Cuando se usa `<template v-for>`, la `key` debe colocarse en el contenedor `<tem
 
 El enlace `key` espera valores primitivos, es decir, cadenas y números. No utilice objetos como claves `v-for`. Para un uso detallado del atributo `key`, por favor consulta la [documentación de la API `key`](/api/built-in-special-attributes.html#key).
 
-## `v-for` con un Componente
+## `v-for` con un Componente {#v-for-with-a-component}
 
 > Esta sección supone el conocimiento de [Componentes](/guide/essentials/component-basics). Siéntete libre de saltarla y volver más tarde.
 
@@ -313,9 +313,9 @@ Mira [este ejemplo de una simple lista de tareas](https://sfc.vuejs.org/#eyJBcHA
 
 </div>
 
-## Detección de Cambios en Arrays
+## Detección de Cambios en Arrays {#array-change-detection}
 
-### Métodos de Mutación
+### Métodos de Mutación {#mutation-methods}
 
 Vue envuelve los métodos de mutación de un array observado para que también activen las actualizaciones de la vista. Los métodos envueltos son:
 
@@ -327,7 +327,7 @@ Vue envuelve los métodos de mutación de un array observado para que también a
 - `sort()`
 - `reverse()`
 
-### Reemplazo de un Array
+### Reemplazo de un Array {#replacing-an-array}
 
 Los métodos de mutación, como su nombre indica, mutan el array original sobre el que son llamados. En comparación, también hay métodos que no mutan, como `filter()`, `concat()` y `slice()`, que no mutan el array original sino que **siempre devuelven un nuevo array**. Cuando se trabaja con métodos que no mutan, debemos sustituir el array antiguo por el nuevo:
 
@@ -349,7 +349,7 @@ this.items = this.items.filter((item) => item.message.match(/Foo/))
 
 Podrías pensar que esto hará que Vue tire el DOM existente y vuelva a renderizar toda la lista; afortunadamente, no es el caso. Vue implementa algunas heurísticas inteligentes para maximizar la reutilización de elementos del DOM, por lo que reemplazar un array con otro array que contenga objetos superpuestos es una operación muy eficiente.
 
-## Visualización de Resultados Filtrados/Ordenados
+## Visualización de Resultados Filtrados/Ordenados {#displaying-filtered-sorted-results}
 
 A veces queremos mostrar una versión filtrada u ordenada de un array sin mutar o reiniciar los datos originales. En este caso, puedes crear una propiedad computada que devuelva el array filtrado u ordenado.
 

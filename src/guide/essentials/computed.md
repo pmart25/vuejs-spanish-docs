@@ -1,4 +1,4 @@
-# Propiedades Computadas
+# Propiedades Computadas {#computed-properties}
 
 <div class="options-api">
   <VueSchoolLink href="https://vueschool.io/lessons/computed-properties-in-vue-3" title="Lección gratuita de Propiedades Computadas de Vue.js"/>
@@ -8,7 +8,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-fundamentals-capi-computed-properties-in-vue-with-the-composition-api" title="Lección gratuita de Propiedades Computadas de Vue.js"/>
 </div>
 
-## Ejemplo Básico
+## Ejemplo Básico {#basic-example}
 
 Las expresiones en las plantillas son muy convenientes, pero están pensadas para operaciones simples. Poner demasiada lógica en tus plantillas puede hacerlas infladas y difíciles de mantener. Por ejemplo, si tenemos un objeto con un array anidado:
 
@@ -138,7 +138,7 @@ Véase también: [Escritura de computed()](/guide/typescript/composition-api.htm
 
 </div>
 
-## Almacenamiento en Caché Computado vs. Métodos
+## Almacenamiento en Caché Computado vs. Métodos {#computed-caching-vs-methods}
 
 Te habrás dado cuenta de que podemos conseguir el mismo resultado invocando un método en la expresión:
 
@@ -198,7 +198,7 @@ En comparación, una invocación a un método ejecutará **siempre** la función
 
 ¿Por qué necesitamos el almacenamiento en caché? Imagina que tenemos una costosa propiedad computada `lista`, que requiere recorrer un enorme array y hacer muchos cálculos. Luego podemos tener otras propiedades computadas que a su vez dependen de `list`. Sin la caché, estaríamos ejecutando el getter de `list` muchas más veces de las necesarias. En los casos en los que no quieras almacenar en caché, en su lugar utiliza una llamada a un método.
 
-## "Escribible" Computado
+## "Escribible" Computado {#writable-computed}
 
 Las propiedades computadas son, por defecto, de tipo getter. Si intentas asignar un nuevo valor a una propiedad computada, recibirás una advertencia en tiempo de ejecución. En los raros casos en los que necesites una propiedad computada "escribible", puedes crear una proporcionando tanto un getter como un setter:
 
@@ -259,12 +259,12 @@ Ahora cuando ejecutes `fullName.value = 'John Doe'`, el setter será invocado y 
 
 </div>
 
-## Mejores Prácticas
+## Mejores Prácticas {#best-practices}
 
-### Los getters deben estar libres de efectos secundarios
+### Los getters deben estar libres de efectos secundarios {#getters-should-be-side-effect-free}
 
 Es importante recordar que las funciones getter computadas sólo deben realizar cálculos puros y estar libres de efectos secundarios. Por ejemplo, no hagas peticiones asíncronas ni mutes el DOM dentro de un getter computado. Piensa en una propiedad computada como una descripción declarativa de cómo derivar un valor basado en otros valores: su única responsabilidad debe ser calcular y devolver ese valor. Más adelante en la guía discutiremos cómo podemos realizar efectos secundarios en reacción a los cambios de estado con los [watchers](./watchers).
 
-### Evitar la mutación del valor computado
+### Evitar la mutación del valor computado {#avoid-mutating-computed-value}
 
 El valor devuelto de una propiedad computada es un estado derivado. Piensa en ello como una instantánea temporal: cada vez que el estado fuente cambia, se crea una nueva instantánea. No tiene sentido mutar una instantánea, por lo que un valor de retorno computado debe ser tratado como de sólo lectura y nunca ser mutado; en su lugar, actualizar el estado fuente del que depende para desencadenar nuevos cálculos.

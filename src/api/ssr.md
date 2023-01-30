@@ -1,6 +1,6 @@
-# Renderizado del Lado del Servidor
+# Renderizado del Lado del Servidor {#server-side-rendering-api}
 
-## renderToString()
+## renderToString() {#rendertostring}
 
 - **Exportado desde `vue/server-renderer`**
 
@@ -45,7 +45,7 @@
 
 - **Véase también:** [Guía - Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
 
-## renderToNodeStream()
+## renderToNodeStream() {#rendertonodestream}
 
 Renderiza la entrada como una [secuencia legible de Node.js](https://nodejs.org/api/stream.html#stream_class_stream_readable).
 
@@ -71,7 +71,7 @@ Renderiza la entrada como una [secuencia legible de Node.js](https://nodejs.org/
   Este método no está soportado en la compilación ESM de `vue/server-renderer`, que está desacoplado de los entornos de Node.js. Utiliza [`pipeToNodeWritable`](#pipetonodewritable) en su lugar.
   :::
 
-## pipeToNodeWritable()
+## pipeToNodeWritable() {#pipetonodewritable}
 
 Renderiza y canaliza una instancia existente de [Node.js escribible](https://nodejs.org/api/stream.html#stream_writable_streams).
 
@@ -94,7 +94,7 @@ Renderiza y canaliza una instancia existente de [Node.js escribible](https://nod
   pipeToNodeWritable(app, {}, res)
   ```
 
-## renderToWebStream()
+## renderToWebStream() {#rendertowebstream}
 
 Renderiza la entrada como un [Web ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API).
 
@@ -120,7 +120,7 @@ Renderiza la entrada como un [Web ReadableStream](https://developer.mozilla.org/
   En entornos que no exponen el constructor `ReadableStream` en el ámbito global, se debe usar [`pipeToWebWritable()`](#pipetowebwritable) en su lugar.
   :::
 
-## pipeToWebWritable()
+## pipeToWebWritable() {#pipetowebwritable}
 
 Renderizar y canalizar a una instancia [Web WritableStream](https://developer.mozilla.org/en-US/docs/Web/API/WritableStream) existente.
 
@@ -149,7 +149,7 @@ Renderizar y canalizar a una instancia [Web WritableStream](https://developer.mo
   return new Response(readable)
   ```
 
-## renderToSimpleStream()
+## renderToSimpleStream() {#rendertosimplestream}
 
 Renderiza la entrada en modo streaming utilizando una interfaz sencilla de leer.
 
@@ -194,7 +194,7 @@ Renderiza la entrada en modo streaming utilizando una interfaz sencilla de leer.
   )
   ```
 
-## useSSRContext()
+## useSSRContext() {#usessrcontext}
 
 Una API en tiempo de ejecución utilizada para recuperar el objeto de contexto pasado a `renderToString()` u otras API de renderización del servidor.
 

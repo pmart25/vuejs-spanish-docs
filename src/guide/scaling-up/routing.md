@@ -1,6 +1,6 @@
-# Enrutamiento
+# Enrutamiento {#routing}
 
-## Enrutamiento del Lado del Cliente vs. del Lado del Servidor
+## Enrutamiento del Lado del Cliente vs. del Lado del Servidor {#client-side-vs-server-side-routing}
 
 El enrutamiento en el lado del servidor significa que el servidor envía una respuesta basada en la ruta de la URL que está visitando el usuario. Cuando hacemos clic en un enlace de una aplicación web tradicional renderizada por un servidor, el navegador recibe una respuesta HTML del servidor y vuelve a cargar toda la página con el nuevo HTML.
 
@@ -8,7 +8,7 @@ Sin embargo, en una [Aplicación de una Sola página](https://developer.mozilla.
 
 En estas SPA, el "enrutamiento" se realiza en el lado del cliente, en el navegador. Un enrutador del lado del cliente se encarga de administrar la vista renderizada de la aplicación utilizando las API del navegador, como la [API del historial](https://developer.mozilla.org/en-US/docs/Web/API/History) o el [evento `hashchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event).
 
-## Router Oficial
+## Router Oficial {#official-router}
 
 <!-- TODO update links -->
 <div>
@@ -19,7 +19,7 @@ En estas SPA, el "enrutamiento" se realiza en el lado del cliente, en el navegad
 
 Vue es muy adecuado para construir SPA. Para la mayoría de las SPA, se recomienda utilizar la [librería Vue Router](https://github.com/vuejs/router), que cuenta con soporte oficial. Para más detalles, consulta la [documentación](https://router.vuejs.org/) de Vue Router.
 
-## Enrutamiento simple desde cero
+## Enrutamiento simple desde cero {#simple-routing-from-scratch}
 
 Si solo necesitas un enrutamiento muy simple y no deseas involucrar una librería de enrutamiento completa, puedes hacerlo con [Componentes Dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos) y actualizar el estado del componente escuchando los [eventos de `hashchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event) del navegador o usando la [API de historial](https://developer.mozilla.org/en-US/docs/Web/API/History).
 
