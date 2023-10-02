@@ -112,7 +112,7 @@ Observa que la interpolación dentro del `<textarea>` no funcionará. En su luga
 <textarea v-model="text"></textarea>
 ```
 
-### Checkbox {#checkbox}
+### Checkbox {#checkbox-1}
 
 Un único checkbox, con valor booleano:
 
@@ -199,7 +199,7 @@ En este caso, el array `checkedNames` siempre contendrá los valores de las casi
 
 </div>
 
-### Radio {#radio}
+### Radio {#radio-1}
 
 ```vue-html
 <div>Seleccionado: {{ picked }}</div>
