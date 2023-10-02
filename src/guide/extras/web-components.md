@@ -1,20 +1,20 @@
-# Vue y Componentes Web
+# Vue y Componentes Web {#vue-and-web-components}
 
 [Componentes Web](https://developer.mozilla.org/es/docs/Web/Web_Components) es un término que engloba un conjunto de APIs nativas de la web que permiten a los desarrolladores crear elementos personalizados reutilizables.
 
 Consideramos que Vue y los Componentes Web son tecnologías esencialmente complementarias. Vue tiene un excelente soporte tanto para consumir como para crear elementos personalizados. Tanto si integras elementos personalizados en una aplicación Vue existente, como si utilizas Vue para crear y distribuir elementos personalizados, tienes buena compañía.
 
-## Uso de Elementos Personalizados en Vue
+## Uso de Elementos Personalizados en Vue {#using-custom-elements-in-vue}
 
 Vue [obtiene una puntuación perfecta del 100% en las pruebas de Elementos Personalizados en Cualquier Lugar](https://custom-elements-everywhere.com/libraries/vue/results/results.html). El consumo de elementos personalizados dentro de una aplicación Vue funciona en gran medida igual que el uso de elementos HTML nativos, con algunas cosas a tener en cuenta:
 
-### Omisión de la Resolución del Componente
+### Omisión de la Resolución del Componente {#skipping-component-resolution}
 
 Por defecto, Vue intentará resolver una etiqueta HTML no nativa como un componente Vue registrado antes de volver a renderizarlo como un elemento personalizado. Esto hará que Vue emita una advertencia de "fallo en la resolución del componente" durante el desarrollo. Para que Vue sepa que ciertos elementos deben ser tratados como elementos personalizados y saltarse la resolución de componentes, podemos especificar la opción [`compilerOptions.isCustomElement`](/api/application.html#app-config-compileroptions).
 
 Si estás usando Vue con una versión de compilación, la opción debe pasarse a través de las configuraciones de compilación, ya que esta es una opción en tiempo de compilación.
 
-#### Ejemplo de Configuración en el Navegador
+#### Ejemplo de Configuración en el Navegador {#example-in-browser-config}
 
 ```js
 // Sólo funciona si se utiliza la compilación en el navegador.
@@ -23,7 +23,7 @@ Si estás usando Vue con una versión de compilación, la opción debe pasarse a
 app.config.compilerOptions.isCustomElement = (tag) => tag.includes('-')
 ```
 
-#### Ejemplo de Configuración de Vite
+#### Ejemplo de Configuración de Vite {#example-vite-config}
 
 ```js
 // vite.config.js
@@ -43,7 +43,7 @@ export default {
 }
 ```
 
-#### Ejemplo de Configuración de Vue CLI
+#### Ejemplo de Configuración de Vue CLI {#example-vue-cli-config}
 
 ```js
 // vue.config.js
@@ -64,7 +64,7 @@ module.exports = {
 }
 ```
 
-### Paso de Propiedades del DOM
+### Paso de Propiedades del DOM {#passing-dom-properties}
 
 Dado que los atributos DOM sólo pueden ser strings, necesitamos pasar datos complejos a los elementos personalizados como propiedades del DOM. Al establecer props en un elemento personalizado, Vue 3 comprueba automáticamente la presencia de la propiedad del DOM utilizando el operador `in` y preferirá establecer el valor como una propiedad del DOM si la key está presente. Esto significa que, en la mayoría de los casos, no tendrás que pensar en esto si el elemento personalizado sigue las [prácticas recomendadas](https://web.dev/custom-elements-best-practices/).
 
@@ -77,11 +77,11 @@ Sin embargo, puede haber casos raros en los que los datos deban pasarse como una
 <my-element .user="{ nombre: 'jack' }"></my-element>
 ```
 
-## Creación de Elementos Personalizados con Vue
+## Creación de Elementos Personalizados con Vue {#building-custom-elements-with-vue}
 
 El principal beneficio de los elementos personalizados es que pueden ser utilizados con cualquier framework, o incluso sin un framework. Esto los hace ideales para distribuir componentes donde el consumidor final puede no estar usando la misma pila de frontend, o cuando se quiere aislar la aplicación final de los detalles de implementación de los componentes que utiliza.
 
-### defineCustomElement
+### defineCustomElement {#definecustomelement}
 
 Vue soporta la creación de elementos personalizados utilizando exactamente las mismas APIs de los componentes de Vue a través del método [`defineCustomElement`](/api/general.html#definecustomelement). El método acepta el mismo argumento que [`defineComponent`](/api/general.html#definecomponent), pero en su lugar devuelve un constructor de elemento personalizado que extiende `HTMLElement`:
 
@@ -116,7 +116,7 @@ document.body.appendChild(
 )
 ```
 
-#### Ciclo de Vida
+#### Ciclo de Vida {#lifecycle}
 
 - Un elemento personalizado de Vue montará una instancia interna de componente Vue dentro de su shadow root cuando el [`connectedCallback`](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements#using_the_lifecycle_callbacks) del elemento sea llamado por primera vez.
 
@@ -126,7 +126,7 @@ document.body.appendChild(
 
   - Si el elemento se separa del documento, es una eliminación y la instancia del componente será desmontada.
 
-#### Props
+#### Props {#props}
 
 - Todas las props declaradas usando la opción `props` serán definidas en el elemento personalizado como propiedades. Vue manejará automáticamente el proceso de reflexión entre atributos y propiedades cuando sea apropiado.
 
@@ -151,11 +151,11 @@ document.body.appendChild(
 
   En el componente, `selected` se convertirá en `true` ( boolean) e `index` se convertirá en `1` (number).
 
-#### Eventos
+#### Eventos {#events}
 
 Los eventos emitidos a través de `this.$emit` o setup `emit` se envían como [CustomEvents](https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events#adding_custom_data_%E2%80%93_customevent) nativos al elemento personalizado. Los argumentos adicionales del evento (payload) serán expuestos como un array en el objeto CustomEvent como su propiedad `detail`.
 
-#### Slots
+#### Slots {#slots}
 
 Dentro del componente, los slots pueden ser renderizados usando el elemento `<slot/>` como es habitual. No obstante, al consumir el elemento resultante, este solo acepta la [sintaxis nativa de los slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots):
 
@@ -169,11 +169,11 @@ Dentro del componente, los slots pueden ser renderizados usando el elemento `<sl
   </my-element>
   ```
 
-#### Provide / Inject
+#### Provide / Inject {#provide-inject}
 
 La [API Provide / Inject](/guide/components/provide-inject.html#provide-inject) y su [equivalente de la Composition API](/api/composition-api-dependency-injection.html#provide) también funcionan entre elementos personalizados definidos por Vue. Sin embargo, ten en cuenta que esto funciona **sólo entre elementos personalizados**; es decir, un elemento personalizado definido por Vue no podrá inyectar propiedades proporcionadas por un componente Vue que no sea un elemento personalizado.
 
-### SFC como Elemento Personalizado
+### SFC como Elemento Personalizado {#sfc-as-custom-element}
 
 `defineCustomElement` también funciona con Componentes de un Solo Archivo (SFC) de Vue. Sin embargo, con la configuración de herramientas por defecto, el `<style>` dentro de los SFCs seguirá siendo extraído y fusionado en un único archivo CSS durante la compilación para producción. Cuando se utiliza un SFC como elemento personalizado, a menudo es deseable inyectar las etiquetas `<style>` en la shadow root del elemento personalizado.
 
@@ -199,7 +199,7 @@ Si deseas personalizar qué archivos deben ser importados en el modo de elemento
 - [@vitejs/plugin-vue](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#using-vue-sfcs-as-custom-elements)
 - [vue-loader](https://github.com/vuejs/vue-loader/tree/next#v16-only-options)
 
-### Tips para una Librería de Elementos Personalizados de Vue
+### Tips para una Librería de Elementos Personalizados de Vue {#tips-for-a-vue-custom-elements-library}
 
 Al construir elementos personalizados con Vue, los elementos dependerán del tiempo de ejecución de Vue. Hay un coste de tamaño de base de ~16kb dependiendo de cuántas características se estén utilizando. Esto significa que no es ideal usar Vue si estás enviando un solo elemento personalizado; puedes querer usar JavaScript vanilla, [petite-vue](https://github.com/vuejs/petite-vue), o frameworks que se especializan en un tamaño de tiempo de ejecución pequeño. Sin embargo, el tamaño base es más que justificable si estás enviando una colección de elementos personalizados con lógica compleja, ya que Vue permitirá que cada componente sea creado con mucho menos código. Cuantos más elementos se envíen juntos, mejor será la compensación.
 
@@ -226,7 +226,7 @@ export function register() {
 
 Si tienes muchos componentes, también puedes aprovechar las características de las herramientas de construcción como [glob import](https://vitejs.dev/guide/features.html#glob-import) de Vite o [`require.context`](https://webpack.js.org/guides/dependency-management/#requirecontext) de webpack para cargar todos los componentes de un directorio.
 
-## Componentes Web vs. Componentes de Vue
+## Componentes Web vs. Componentes de Vue {#web-components-vs-vue-components}
 
 Algunos desarrolladores creen que hay que evitar los modelos de componentes propietarios del framework, y que el uso exclusivo de elementos personalizados hace que una aplicación sea "a prueba de futuro". Aquí intentaremos explicar por qué creemos que esta es una visión demasiado simplista del problema.
 

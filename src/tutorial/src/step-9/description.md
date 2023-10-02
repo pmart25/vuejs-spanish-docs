@@ -1,4 +1,4 @@
-# Ciclo de Vida y Refs de la Plantilla
+# Ciclo de Vida y Refs de la Plantilla {#lifecycle-and-template-refs}
 
 Hasta ahora, Vue ha manejado todas las actualizaciones del DOM por nosotros, gracias a la reactividad y al renderizado declarativo. Pero, inevitablemente, habrá casos en los que necesitemos trabajar manualmente con el DOM.
 

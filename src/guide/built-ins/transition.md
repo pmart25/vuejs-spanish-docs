@@ -8,7 +8,7 @@ import BetweenElements from './transition-demos/BetweenElements.vue'
 import BetweenComponents from './transition-demos/BetweenComponents.vue'
 </script>
 
-# Transition
+# Transition {#transition}
 
 Vue ofrece dos componentes incorporados que pueden ayudar a trabajar con transiciones y animaciones en respuesta al cambio de estado:
 
@@ -18,7 +18,7 @@ Vue ofrece dos componentes incorporados que pueden ayudar a trabajar con transic
 
 Ademas de estos dos componentes, también podemos aplicar animaciones en Vue usando otras técnicas como alternar clases CSS o animaciones impulsadas por el estado a través de enlaces de estilo. Estas técnicas adicionales se tratan en el capítulo [Técnicas de animación](/guide/extras/animation.html).
 
-## El Componente `<Transition>`
+## El Componente `<Transition>` {#the-transition-component}
 
 `<Transition>` es un componente integrado: esto significa que está disponible en la plantilla de cualquier componente sin tener que registrarlo. Se puede utilizar para aplicar animaciones de entrada y salida en elementos o componentes pasados a través de un slot por defecto. La entrada o salida puede ser activada por una de las siguientes opciones:
 
@@ -73,9 +73,9 @@ Cuando se inserta o elimina un elemento en un componente `<Transition>`, esto es
 
 3. Si no se detectan transiciones / animaciones CSS y no se proporcionan hooks de JavaScript, las operaciones del DOM para la inserción y/o eliminación se ejecutarán en el siguiente frame de animación del navegador.
 
-## Transiciones Basadas en CSS
+## Transiciones Basadas en CSS {#css-based-transitions}
 
-### Clases de Transición
+### Clases de Transición {#transition-classes}
 
 Hay seis clases aplicadas para las transiciones de entrada/salida.
 
@@ -97,7 +97,7 @@ Hay seis clases aplicadas para las transiciones de entrada/salida.
 
 `v-enter-active` y `v-leave-active` nos dan la posibilidad de especificar diferentes curvas de atenuación para las transiciones de entrada/salida, de las que veremos un ejemplo en las siguientes secciones.
 
-### Transiciones Asignadas
+### Transiciones Asignadas {#named-transitions}
 
 Una transición puede ser nombrada a través de la proposición `name`:
 
@@ -121,7 +121,7 @@ Para una transición asignada, sus clases de transición llevarán el prefijo de
 }
 ```
 
-### Transiciones CSS
+### Transiciones CSS {#css-transitions}
 
 La propiedad `<Transition>` se utiliza más comúnmente en combinación con [transiciones CSS nativas](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions), como se ve en el ejemplo básico anterior. La propiedad CSS `transition` es una abreviatura que nos permite especificar múltiples aspectos de una transición, incluyendo las propiedades que deben ser animadas, la duración de la transición y las [curvas de atenuación](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
 
@@ -166,7 +166,7 @@ Aquí hay un ejemplo más avanzado que transiciona múltiples propiedades, con d
 
 </div>
 
-### Animaciones CSS
+### Animaciones CSS {#css-animations}
 
 Las [animaciones CSS nativas](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Animations/Using_CSS_animations) se aplican de la misma manera que las transiciones CSS, con la diferencia de que `*-enter-from` no se elimina inmediatamente después de insertar el elemento, sino en un evento `animationend`.
 
@@ -213,7 +213,7 @@ Para la mayoría de las animaciones CSS, podemos simplemente declararlas bajo la
 
 </div>
 
-### Clases para Transición Personalizadas
+### Clases para Transición Personalizadas {#custom-transition-classes}
 
 También puedes especificar clases de transición personalizadas pasando las siguientes props a `<Transition>`:
 
@@ -248,7 +248,7 @@ Estas sobreescriben los nombres de clase convencionales. Esto es especialmente �
 
 </div>
 
-### Uso Conjunto de Transiciones y Animaciones
+### Uso Conjunto de Transiciones y Animaciones {#using-transitions-and-animations-together}
 
 Vue necesita adjuntar escuchadores de eventos para saber cuándo ha terminado una transición. Estos pueden ser `transitionend` o `animationend`, dependiendo del tipo de reglas CSS aplicadas. Si sólo utilizas una u otra, Vue puede detectar automáticamente el tipo correcto.
 
@@ -259,7 +259,7 @@ Sin embargo, en algunos casos puedes querer tener ambos en el mismo elemento, po
 
 ```
 
-### Transiciones Anidadas y Duraciones de Transición Explícitas
+### Transiciones Anidadas y Duraciones de Transición Explícitas {#nested-transitions-and-explicit-transition-durations}
 
 Aunque las clases de transición sólo se aplican al elemento hijo directo de `<Transition>`, podemos realizar transiciones en elementos anidados utilizando selectores CSS anidados:
 
@@ -316,7 +316,7 @@ Si es necesario, también puede especificar valores separados para las duracione
 <Transition :duration="{ enter: 500, leave: 800 }">...</Transition>
 ```
 
-### Consideraciones sobre el Rendimiento
+### Consideraciones sobre el Rendimiento {#performance-considerations}
 
 Puedes observar que las animaciones mostradas anteriormente utilizan principalmente propiedades como `transform` y `opacity`. Estas propiedades son eficientes para animar porque:
 
@@ -326,7 +326,7 @@ Puedes observar que las animaciones mostradas anteriormente utilizan principalme
 
 En comparación, propiedades como `height` o `margin` activarán la maquetación CSS, por lo que son mucho más costosas de animar, y deben utilizarse con precaución. Podemos consultar recursos como [CSS-Triggers](https://csstriggers.com/) para ver qué propiedades activarán el maquetado si las animamos.
 
-## Hooks de JavaScript
+## Hooks de JavaScript {#javascript-hooks}
 
 Podemos usar hooks en el proceso de transición con JavaScript escuchando los eventos del componente `<Transition>`:
 
@@ -461,7 +461,7 @@ Aquí hay una demostración que utiliza la [librería GreenSock](https://greenso
 
 </div>
 
-## Transiciones Reutilizables
+## Transiciones Reutilizables {#reusable-transitions}
 
 Las transiciones pueden ser reutilizadas a través del sistema de componentes de Vue. Para crear una transición reutilizable, podemos crear un componente que envuelve el componente `<Transition>` y pasa el contenido del slot:
 
@@ -498,7 +498,7 @@ Ahora `MyTransition` puede importarse y utilizarse igual que la versión integra
 </MyTransition>
 ```
 
-## Transición al Aparecer
+## Transición al Aparecer {#transition-on-appear}
 
 Si también quieres aplicar una transición en el renderizado inicial de un nodo, puedes añadir la prop `appear`:
 
@@ -508,7 +508,7 @@ Si también quieres aplicar una transición en el renderizado inicial de un nodo
 </Transition>
 ```
 
-## Transición Entre Elementos
+## Transición Entre Elementos {#transition-between-elements}
 
 Además de alternar un elemento con `v-if` / `v-show`, también podemos hacer una transición entre dos elementos utilizando `v-if` / `v-else` / `v-else-if`, siempre y cuando nos aseguremos de que sólo se está mostrando un elemento en cada momento:
 
@@ -524,7 +524,7 @@ Además de alternar un elemento con `v-if` / `v-show`, también podemos hacer un
 
 [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiB9IGZyb20gJ3Z1ZSdcblxuY29uc3QgZG9jU3RhdGUgPSByZWYoJ3NhdmVkJylcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG5cdDxzcGFuIHN0eWxlPVwibWFyZ2luLXJpZ2h0OiAyMHB4XCI+Q2xpY2sgdG8gY3ljbGUgdGhyb3VnaCBzdGF0ZXM6PC9zcGFuPlxuICA8ZGl2IGNsYXNzPVwiYnRuLWNvbnRhaW5lclwiPlxuXHRcdDxUcmFuc2l0aW9uIG5hbWU9XCJzbGlkZS11cFwiPlxuICAgICAgPGJ1dHRvbiB2LWlmPVwiZG9jU3RhdGUgPT09ICdzYXZlZCdcIlxuICAgICAgICAgICAgICBAY2xpY2s9XCJkb2NTdGF0ZSA9ICdlZGl0ZWQnXCI+RWRpdDwvYnV0dG9uPlxuICAgICAgPGJ1dHRvbiB2LWVsc2UtaWY9XCJkb2NTdGF0ZSA9PT0gJ2VkaXRlZCdcIlxuICAgICAgICAgICAgICBAY2xpY2s9XCJkb2NTdGF0ZSA9ICdlZGl0aW5nJ1wiPlNhdmU8L2J1dHRvbj5cbiAgICAgIDxidXR0b24gdi1lbHNlLWlmPVwiZG9jU3RhdGUgPT09ICdlZGl0aW5nJ1wiXG4gICAgICAgICAgICAgIEBjbGljaz1cImRvY1N0YXRlID0gJ3NhdmVkJ1wiPkNhbmNlbDwvYnV0dG9uPlxuICAgIDwvVHJhbnNpdGlvbj5cbiAgPC9kaXY+XG48L3RlbXBsYXRlPlxuXG48c3R5bGU+XG4uYnRuLWNvbnRhaW5lciB7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBoZWlnaHQ6IDFlbTtcbn1cblxuYnV0dG9uIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xufVxuXG4uc2xpZGUtdXAtZW50ZXItYWN0aXZlLFxuLnNsaWRlLXVwLWxlYXZlLWFjdGl2ZSB7XG4gIHRyYW5zaXRpb246IGFsbCAwLjI1cyBlYXNlLW91dDtcbn1cblxuLnNsaWRlLXVwLWVudGVyLWZyb20ge1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMzBweCk7XG59XG5cbi5zbGlkZS11cC1sZWF2ZS10byB7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMzBweCk7XG59XG48L3N0eWxlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0ifQ==)
 
-## Modos de Transición
+## Modos de Transición {#transition-modes}
 
 En el ejemplo anterior, los elementos que entran y salen se animan al mismo tiempo, y hemos tenido que hacerlos `position: absolute` para evitar el problema de diseño cuando ambos elementos están presentes en el DOM.
 
@@ -542,7 +542,7 @@ Aquí está la demostración anterior con `mode="out-in"`:
 
 `<Transition>` también soporta `mode="in-out"`, aunque se utiliza con mucha menos frecuencia.
 
-## Transición Entre Componentes
+## Transición Entre Componentes {#transition-between-components}
 
 `<Transition>` también puede utilizarse alrededor de [componentes dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos):
 
@@ -565,7 +565,7 @@ Aquí está la demostración anterior con `mode="out-in"`:
 
 </div>
 
-## Transiciones Dinámicas
+## Transiciones Dinámicas {#dynamic-transitions}
 
 ¡Las props de `<Transition>` como `name` también pueden ser dinámicas! Esto nos permite aplicar transiciones diferentes de forma dinámica en función al cambio de estado:
 

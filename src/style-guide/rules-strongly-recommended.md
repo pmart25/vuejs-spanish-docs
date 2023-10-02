@@ -1,8 +1,8 @@
-# Reglas de Prioridad B: Muy Recomendado {#reglas-de-prioridad-b-muy-recomendado}
+# Reglas de Prioridad B: Muy Recomendado {#priority-b-rules-strongly-recommended}
 
 Se ha encontrado que estas reglas mejoran la legibilidad y/o la experiencia del desarrollador en la mayoría de los proyectos. Tu código se ejecutará aún si no las respetas, pero las violaciones deberían ser raras y estar bien justificadas.
 
-## Archivos de componentes {#archivos-de-componentes}
+## Archivos de componentes {#component-files}
 
 **Siempre que haya un sistema de compilación disponible para concatenar archivos, cada componente debe estar en su propio archivo.**
 
@@ -40,7 +40,7 @@ components/
 
 </div>
 
-## Formato de nombre de los Componente de un Solo Archivo (SFC) {#formato-de-nombre-de-los-componente-de-un-solo-archivo-sfc}
+## Formato de nombre de los Componente de un Solo Archivo (SFC) {#single-file-component-filename-casing}
 
 **Los nombres de archivo de los [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html) deben ser siempre PascalCase o siempre kebab-case.**
 
@@ -76,7 +76,7 @@ components/
 
 </div>
 
-## Nombres de componentes base {#nombres-de-componentes-base}
+## Nombres de componentes base {#base-component-names}
 
 **Los componentes base (también conocidos como componentes de presentación, "silentes" o puros) que aplican estilos y convenciones específicos de la aplicación deben comenzar todos con un prefijo específico, como `Base`, `App` o `V`.**
 
@@ -156,7 +156,7 @@ components/
 
 </div>
 
-## Nombres de componentes de instancia única {#nombres-de-componentes-de-instancia-unica}
+## Nombres de componentes de instancia única {#single-instance-component-names}
 
 **Los componentes que solo deben tener una única instancia activa deben comenzar con el prefijo `The`, para indicar que solo puede haber uno.**
 
@@ -184,7 +184,7 @@ components/
 
 </div>
 
-## Nombres de componentes fuertemente acoplados {#nombres-de-componentes-fuertemente-acoplados}
+## Nombres de componentes fuertemente acoplados {#tightly-coupled-component-names}
 
 **Los componentes hijos que están fuertemente acoplados con su padre deben incluir el nombre del componente padre como prefijo.**
 
@@ -255,7 +255,7 @@ components/
 
 </div>
 
-## Orden de las palabras en los nombres de componentes {#orden-de-las-palabras-en-los-nombres-de-componentes}
+## Orden de las palabras en los nombres de componentes {#order-of-words-in-component-names}
 
 **Los nombres de los componentes deben comenzar con las palabras del nivel más alto (a menudo el más general) y terminar con palabras descriptivas.**
 
@@ -335,7 +335,7 @@ components/
 
 </div>
 
-## Componentes de cierre automático {#componentes-de-cierre-automatico}
+## Componentes de cierre automático {#self-closing-components}
 
 **Los componentes sin contenido deben cerrarse automáticamente en [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html), plantillas de cadena y [JSX](/guide/extras/render-function.html#jsx-tsx), pero nunca en plantillas del DOM.**
 
@@ -373,7 +373,7 @@ Desafortunadamente, HTML no permite que los elementos personalizados se cierren 
 
 </div>
 
-## Formato de nombre de componentes en plantillas {#formato-de-nombre-de-componentes-en-plantillas}
+## Formato de nombre de componentes en plantillas {#component-name-casing-in-templates}
 
 **En la mayoría de los proyectos, los nombres de los componentes siempre deben estar en PascalCase en [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html) y plantillas de cadenas, pero en kebab-case en las plantillas del DOM.**
 
@@ -429,7 +429,7 @@ O
 
 </div>
 
-## Formato de nombre de componentes en JS/JSX {#formato-de-nombre-de-componentes-en-js-jsx}
+## Formato de nombre de componentes en JS/JSX {#component-name-casing-in-js-jsx}
 
 **Los nombres de los componentes en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) deben ir siempre en PascalCase, aunque pueden ir en kebab-cased dentro de las cadenas para aplicaciones más sencillas que sólo utilizan el registro global de componentes a través de `app.component`.**
 
@@ -499,7 +499,7 @@ export default {
 
 </div>
 
-## Nombres de componentes de palabras completas {#nombres-de-componentes-de-palabras-completas}
+## Nombres de componentes de palabras completas {#full-word-component-names}
 
 **Deben preferirse los nombres de componentes con palabras completas en lugar de abreviaturas.**
 
@@ -527,7 +527,7 @@ components/
 
 </div>
 
-## Formato de nombre de props {#formato-de-nombre-de-props}
+## Formato de nombre de props {#prop-name-casing}
 
 **Los nombres de props siempre deben usar camelCase durante la declaración. Cuando se utilizan dentro de plantillas dentro del DOM, las props deben ir en kebab-case. Las plantillas de los Componentes de un Solo Archivo y [JSX](/guide/extras/render-function.html#jsx-tsx) pueden utilizar props en kebab-case o camelCase. El uso de mayúsculas y minúsculas debe ser coherente: si eliges utilizar props con camelCase, asegúrate de no utilizar props con kebab-case en tu aplicación**.
 
@@ -599,7 +599,7 @@ const props = defineProps({
 
 </div>
 
-## Elementos multi-atributo {#elementos-multi-atributo}
+## Elementos multi-atributo {#multi-attribute-elements}
 
 **Los elementos con múltiples atributos deben abarcar varias líneas, con un atributo por línea.**
 
@@ -638,7 +638,7 @@ En JavaScript, dividir los objetos con múltiples propiedades en varias líneas 
 
 </div>
 
-## Expresiones simples en plantillas {#expresiones-simples-en-plantillas}
+## Expresiones simples en plantillas {#simple-expressions-in-templates}
 
 **Las plantillas de los componentes sólo deben incluir expresiones simples, con expresiones más complejas refactorizadas en propiedades o métodos computados.**
 
@@ -696,7 +696,7 @@ const normalizedFullName = computed(() =>
 
 </div>
 
-## Propiedades computadas simples {#propiedades-computadas-simples}
+## Propiedades computadas simples {#simple-computed-properties}
 
 **Las propiedades computadas complejas deben dividirse en tantas propiedades más simples como sea posible.**
 
@@ -789,7 +789,7 @@ const finalPrice = computed(() => basePrice.value - discount.value)
 
 </div>
 
-## Comillas en los valores de los atributos {#comillas-en-los-valores-de-los-atributos}
+## Comillas en los valores de los atributos {#quoted-attribute-values}
 
 **Los valores de atributos HTML no vacíos deben ir siempre entre comillas (simples o dobles, lo que no se utilice en JS).**
 
@@ -821,7 +821,7 @@ Mientras que los valores de atributos sin espacios no están obligados a tener c
 
 </div>
 
-## Abreviatura de directivas {#abreviatura-de-directivas}
+## Abreviatura de directivas {#directive-shorthands}
 
 **Las abreviaturas de las directivas (`:` para `v-bind:`, `@` para `v-on:` y `#` para `v-slot`) deben utilizarse siempre o nunca.**
 

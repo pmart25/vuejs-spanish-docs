@@ -1,6 +1,6 @@
-# Manejo del Estado
+# Manejo del Estado {#state-management}
 
-## ¿Qué es el Manejo del Estado?
+## ¿Qué es el Manejo del Estado? {#what-is-state-management}
 
 Técnicamente, cada instancia de un componente de Vue ya "gestiona" su propio estado reactivo. Tomemos como ejemplo un simple componente contador:
 
@@ -73,7 +73,7 @@ Para el segundo caso, a menudo nos encontramos recurriendo a soluciones como alc
 
 Una solución más sencilla y directa es extraer el estado compartido de los componentes y administrarlo en una única instancia global. Con esto, nuestro árbol de componentes se convierte en una gran "vista", y cualquier componente puede acceder al estado o desencadenar acciones, ¡sin importar en qué parte del árbol se encuentre!
 
-## Gestión Sencilla del Estado con la API de Reactividad
+## Gestión Sencilla del Estado con la API de Reactividad {#simple-state-management-with-reactivity-api}
 
 <div class="options-api">
 
@@ -221,11 +221,11 @@ export function useCount() {
 
 El hecho de que el sistema de reactividad de Vue esté desacoplado del modelo del componente lo hace extremadamente flexible.
 
-## Consideraciones sobre el SSR
+## Consideraciones sobre el SSR {#ssr-considerations}
 
 Si estás creando una aplicación que aprovecha el [Renderizado del Lado del Servidor (SSR)](./ssr), el patrón anterior puede generar problemas debido a que el store es una única instancia compartida entre varias solicitudes. Esto se analiza con [más detalle](./ssr.html#contaminacion-del-estado-por-solicitudes-cruzadas) en la guía de SSR.
 
-## Pinia
+## Pinia {#pinia}
 
 Si bien nuestra solución de administración del estado manual será suficiente en escenarios sencillos, hay muchas más cosas a considerar en aplicaciones de producción a gran escala:
 

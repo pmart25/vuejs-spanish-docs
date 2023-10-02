@@ -2,7 +2,7 @@
 pageClass: api
 ---
 
-# Componentes Integrados
+# Componentes Integrados {#built-in-components}
 
 :::info Registración y Uso
 Los componentes integrados pueden ser usados directamente en las plantillas sin necesidad de registrarlos. Cabe destacar que solo se incluyen en el build cuando son usados.
@@ -19,7 +19,7 @@ h(Transition, {
 
 :::
 
-## `<Transition>`
+## `<Transition>` {#transition}
 
 Proporciona efectos de transición animados a un **solo** elemento o componente.
 
@@ -120,7 +120,7 @@ Proporciona efectos de transición animados a un **solo** elemento o componente.
 
 - **Ver también:** [Transition](/guide/built-ins/transition.html)
 
-## `<TransitionGroup>`
+## `<TransitionGroup>` {#transitiongroup}
 
 Proporciona efectos de transición para **múltiples** elementos o componentes en una lista.
 
@@ -166,7 +166,7 @@ Proporciona efectos de transición para **múltiples** elementos o componentes e
 
 - **Ver también:** [Guía - TransitionGroup](/guide/built-ins/transition-group.html)
 
-## `<KeepAlive>`
+## `<KeepAlive>` {#keepalive}
 
 Almacena los componentes que alternan dinámicamente en su interior.
 
@@ -259,7 +259,7 @@ Almacena los componentes que alternan dinámicamente en su interior.
 
 - **Ver también:** [Guía - KeepAlive](/guide/built-ins/keep-alive.html)
 
-## `<Teleport>`
+## `<Teleport>` {#teleport}
 
 Renderiza su contenido en otra parte del DOM.
 
@@ -301,7 +301,7 @@ Renderiza su contenido en otra parte del DOM.
 
 - **Ver también:** [Guía - Teleport](/guide/built-ins/teleport.html)
 
-## `<Suspense>` <sup class="vt-badge experimental" />
+## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
 Se utiliza para orquestar dependencias asíncronas anidadas en un árbol de componentes.
 

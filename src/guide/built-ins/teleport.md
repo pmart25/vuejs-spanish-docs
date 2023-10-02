@@ -1,10 +1,10 @@
-# Teleport
+# Teleport {#teleport}
 
  <VueSchoolLink href="https://vueschool.io/lessons/vue-3-teleport" title="Free Vue.js Teleport Lesson"/>
 
 `<Teleport>` es un componente integrado que nos permite "teletransportar" una parte de la plantilla de un componente a un nodo del DOM que existe fuera de la jerarquía del DOM de ese componente.
 
-## Uso Básico
+## Uso Básico {#basic-usage}
 
 A veces podemos encontrarnos con el siguiente escenario: una parte de la plantilla de un componente le pertenece lógicamente, pero desde un punto de vista visual, debería mostrarse en otro lugar del DOM, fuera de la aplicación Vue.
 
@@ -152,13 +152,13 @@ Puedes combinar `<Teleport>` con [`<Transition>`](./transition) para crear modal
 El destino `to` del teletransporte debe estar ya en el DOM cuando se monta el componente `<Teleport>`. Lo ideal es que sea un elemento fuera de toda la aplicación Vue. Si el objetivo es otro elemento renderizado por Vue, tienes que asegurarte de que ese elemento se monta antes del `<Teleport>`.
 :::
 
-## Uso con Componentes
+## Uso con Componentes {#using-with-components}
 
 La función `<Teleport>` sólo altera la estructura del DOM renderizado, y no afecta a la jerarquía lógica de los componentes. Es decir, si `<Teleport>` contiene un componente, ese componente seguirá siendo hijo lógico del componente padre que contiene el `<Teleport>`. El paso de objetos y la emisión de eventos seguirán funcionando de la misma manera.
 
 Esto también significa que las inyecciones desde un componente padre funcionan como se espera, y que el componente hijo será anidado debajo del componente padre en las Vue Devtools, en lugar de ser colocado a donde se movió el contenido actual.
 
-## Desactivación de Teleport
+## Desactivación de Teleport {#disabling-teleport}
 
 En algunos casos, podemos querer desactivar condicionalmente `<Teleport>`. Por ejemplo, podemos querer renderizar un componente como una superposición para el escritorio, pero en línea en el móvil. El componente `<Teleport>` soporta la propiedad `disabled` que puede ser activada dinámicamente:
 
@@ -170,7 +170,7 @@ En algunos casos, podemos querer desactivar condicionalmente `<Teleport>`. Por e
 
 Donde el estado `isMobile` puede actualizarse dinámicamente detectando los cambios en la consulta de medios.
 
-## Múltiples Teletransportes sobre el Mismo Objetivo
+## Múltiples Teletransportes sobre el Mismo Objetivo {#multiple-teleports-on-the-same-target}
 
 Un caso de uso común sería un componente `<Modal>` reutilizable, con la posibilidad de que varias instancias estén activas al mismo tiempo. Para este tipo de escenario, múltiples componentes `<Teleport>` pueden montar su contenido en el mismo elemento de destino. El orden será un simple agregado; los montajes posteriores se ubicarán después de los anteriores dentro del elemento destino.
 

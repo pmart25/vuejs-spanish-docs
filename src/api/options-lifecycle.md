@@ -1,10 +1,10 @@
-# Opciones: Ciclo de vida
+# Opciones: Ciclo de vida {#options-lifecycle}
 
 :::info Ver también
 Para el uso compartido de los hooks del ciclo de vida, véase [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html)
 :::
 
-## beforeCreate
+## beforeCreate {#beforecreate}
 
 Se llama cuando se inicializa la instancia.
 
@@ -22,7 +22,7 @@ Se llama cuando se inicializa la instancia.
 
   Tenga en cuenta que el hook `setup()` de la API de composición se llama antes de cualquier hook de la API de opciones, incluso antes de `beforeCreate()`.
 
-## created
+## created {#created}
 
 Se llama después de que la instancia haya terminado de procesar todas las opciones relacionadas con el estado.
 
@@ -38,7 +38,7 @@ Se llama después de que la instancia haya terminado de procesar todas las opcio
 
   Cuando se llama a este hook, se han montado los siguientes elementos: datos reactivos, propiedades computadas, métodos y observadores. Sin embargo, la fase de montaje no se ha iniciado, y la propiedad `$el` no estará disponible todavía.
 
-## beforeMount
+## beforeMount {#beforemount}
 
 Se llama justo antes de montar el componente.
 
@@ -56,7 +56,7 @@ Se llama justo antes de montar el componente.
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
-## mounted
+## mounted {#mounted}
 
 Se llama después de montar el componente.
 
@@ -80,7 +80,7 @@ Se llama después de montar el componente.
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
-## beforeUpdate
+## beforeUpdate {#beforeupdate}
 
 Se llama justo antes de que el componente esté a punto de actualizar su árbol DOM debido a un cambio de estado reactivo.
 
@@ -98,7 +98,7 @@ Se llama justo antes de que el componente esté a punto de actualizar su árbol 
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
-## updated
+## updated {#updated}
 
 Se llama después de que el componente haya actualizado su árbol DOM debido a un cambio de estado reactivo.
 
@@ -122,7 +122,7 @@ Se llama después de que el componente haya actualizado su árbol DOM debido a u
   No mutee el estado del componente en el hook de actualización - ¡esto probablemente conducirá a un bucle de actualización infinito!
   :::
 
-## beforeUnmount
+## beforeUnmount {#beforeunmount}
 
 Se llama justo antes de desmontar una instancia de un componente.
 
@@ -140,7 +140,7 @@ Se llama justo antes de desmontar una instancia de un componente.
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
-## unmounted
+## unmounted {#unmounted}
 
 Se llama después de que el componente haya sido desmontado.
 
@@ -164,7 +164,7 @@ Se llama después de que el componente haya sido desmontado.
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
-## errorCaptured
+## errorCaptured {#errorcaptured}
 
 Se llama cuando se ha capturado un error que se propaga desde un componente descendente.
 
@@ -209,7 +209,7 @@ Se llama cuando se ha capturado un error que se propaga desde un componente desc
 
   - Un hook `errorCaptured` puede devolver `false` para evitar que el error se siga propagando. Esto es esencialmente decir "este error ha sido manejado y debe ser ignorado". Evitará que cualquier hook `errorCaptured` adicional o `app.config.errorHandler` sea invocado para este error.
 
-## renderTracked <sup class="vt-badge dev-only" />
+## renderTracked <sup class="vt-badge dev-only" /> {#rendertracked}
 
 Se llama cuando una dependencia reactiva ha sido rastreada por el efecto de renderización del componente.
 
@@ -230,7 +230,7 @@ Se llama cuando una dependencia reactiva ha sido rastreada por el efecto de rend
 
 - **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
 
-## renderTriggered <sup class="vt-badge dev-only" />
+## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
 Se llama cuando una dependencia reactiva hace que el efecto de renderización del componente se vuelva a ejecutar.
 
@@ -254,7 +254,7 @@ Se llama cuando una dependencia reactiva hace que el efecto de renderización de
 
 - **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
 
-## activated
+## activated {#activated}
 
 Se llama después de que la instancia del componente se inserta en el DOM como parte de un árbol almacenado en caché por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
@@ -270,7 +270,7 @@ Se llama después de que la instancia del componente se inserta en el DOM como p
 
 - **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
 
-## deactivated
+## deactivated {#deactivated}
 
 Se llama después de que la instancia del componente se elimina del DOM como parte de un árbol cacheado por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
 
@@ -286,7 +286,7 @@ Se llama después de que la instancia del componente se elimina del DOM como par
 
 - **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
 
-## serverPrefetch <sup class="vt-badge" data-text="SSR only" />
+## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
 Función asíncrona a resolverse antes de que la instancia del componente se renderice en el servidor.
 

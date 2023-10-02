@@ -1,6 +1,6 @@
-# Función de renderizado
+# Función de renderizado {#render-function-apis}
 
-## h()
+## h() {#h}
 
 Crea nodos DOM virtuales (vnodes).
 
@@ -95,7 +95,7 @@ Crea nodos DOM virtuales (vnodes).
 
 - **Véase también:** [Guía - Funciones de renderizado - Creando VNodes](/guide/extras/render-function.html#creando-vnodos)
 
-## mergeProps()
+## mergeProps() {#mergeprops}
 
 Combina múltiples objetos de props con un manejo especial para ciertos props.
 
@@ -139,7 +139,7 @@ Combina múltiples objetos de props con un manejo especial para ciertos props.
    */
   ```
 
-## cloneVNode()
+## cloneVNode() {#clonevnode}
 
 Clona un vnode.
 
@@ -166,7 +166,7 @@ Clona un vnode.
   const cloned = cloneVNode(original, { id: 'foo' })
   ```
 
-## isVNode()
+## isVNode() {#isvnode}
 
 Comprueba si un valor es un vnode.
 
@@ -176,7 +176,7 @@ Comprueba si un valor es un vnode.
   function isVNode(value: unknown): boolean
   ```
 
-## resolveComponent()
+## resolveComponent() {#resolvecomponent}
 
 Para resolver manualmente un componente registrado por su nombre.
 
@@ -230,7 +230,7 @@ Para resolver manualmente un componente registrado por su nombre.
 
 - **Véase también:** [Guía - Funciones de Renderizado - Componentes](/guide/extras/render-function.html#componentes)
 
-## resolveDirective()
+## resolveDirective() {#resolvedirective}
 
 Para resolver manualmente una directiva registrada por su nombre.
 
@@ -250,7 +250,7 @@ Para resolver manualmente una directiva registrada por su nombre.
 
 - **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function.html#directivas-personalizadas)
 
-## withDirectives()
+## withDirectives() {#withdirectives}
 
 Para añadir directivas personalizadas a los vnodes.
 
@@ -298,7 +298,7 @@ Para añadir directivas personalizadas a los vnodes.
 
 - **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function.html#directivas-personalizadas)
 
-## withModifiers()
+## withModifiers() {#withmodifiers}
 
 Para agregar [modificadores `v-on`](/guide/essentials/event-handling.html#modificadores-de-eventos) incorporados a una función manejadora de eventos.
 

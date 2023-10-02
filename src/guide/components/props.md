@@ -1,4 +1,4 @@
-# Props
+# Props {#props}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
@@ -6,7 +6,7 @@
   <VueSchoolLink href="https://vueschool.io/lessons/vue-3-reusable-components-with-props" title="Lección gratuita de Props de Vue.js"/>
 </div>
 
-## Declaración de Props
+## Declaración de Props {#props-declaration}
 
 Los componentes de Vue requieren una declaración explícita de props para que Vue sepa qué props externos pasados al componente deben ser tratados como atributos fallthrough (que se discutirán en [su sección dedicada](/guide/components/attrs)).
 
@@ -117,9 +117,9 @@ Más detalles: [Escritura de las Props de Componentes](/guide/typescript/composi
 
 </div>
 
-## Detalles del Pase del Prop
+## Detalles del Pase del Prop {#prop-passing-details}
 
-### Nomenclatura de las Props
+### Nomenclatura de las Props {#prop-name-casing}
 
 Declaramos los nombres largos de las props usando camelCase porque esto evita tener que usar comillas cuando se usan como claves de propiedades, y nos permite referenciarlas directamente en las expresiones de las plantillas porque son identificadores válidos de JavaScript:
 
@@ -156,7 +156,7 @@ Técnicamente, también puedes usar camelCase al pasar props a un componente hij
 
 Utilizamos [PascalCase para las etiquetas de los componentes](/guide/components/registration.html#nomenclatura-de-los-componentes) cuando es posible porque mejora la legibilidad de la plantilla al diferenciar los componentes Vue de los elementos nativos. Sin embargo, no hay tanto beneficio práctico en el uso de camelCase al pasar props, por lo que elegimos seguir las convenciones de cada lenguaje.
 
-### Props Estáticas vs. Dinámicas
+### Props Estáticas vs. Dinámicas {#static-vs-dynamic-props}
 
 Hasta ahora, has visto pasar props como valores estáticos, como en
 
@@ -174,11 +174,11 @@ También has visto props asignadas dinámicamente con `v-bind` o su atajo `:`, c
 <BlogPost :title="post.title + ' por ' + post.author.name" />
 ```
 
-### Pasando Diferentes Tipos de Valores
+### Pasando Diferentes Tipos de Valores {#passing-different-value-types}
 
 En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero se puede pasar cualquier tipo de valor a una prop.
 
-#### Número
+#### Número {#number}
 
 ```vue-html
 <!-- Aunque `42` es estático, necesitamos v-bind para decirle a Vue que -->
@@ -189,7 +189,7 @@ En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero
 <BlogPost :likes="post.likes" />
 ```
 
-#### Booleano
+#### Booleano {#boolean}
 
 ```vue-html
 <!-- Incluir la prop sin valor implicará ``true``. -->
@@ -203,7 +203,7 @@ En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero
 <BlogPost :is-published="post.isPublished" />
 ```
 
-#### Array
+#### Array {#array}
 
 ```vue-html
 <!-- Aunque el array es estático, necesitamos v-bind para decirle a Vue que -->
@@ -214,7 +214,7 @@ En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero
 <BlogPost :comment-ids="post.commentIds" />
 ```
 
-#### Objeto
+#### Objeto {#object}
 
 ```vue-html
 <!-- Aunque el objeto es estático, necesitamos v-bind para decirle a Vue que -->
@@ -230,7 +230,7 @@ En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero
 <BlogPost :author="post.author" />
 ```
 
-### Vinculación de Múltiples Propiedades Usando un Objeto
+### Vinculación de Múltiples Propiedades Usando un Objeto {#binding-multiple-properties-using-an-object}
 
 Si quieres pasar todas las propiedades de un objeto como props, puedes usar [`v-bind` sin argumento](/guide/essentials/template-syntax.html#vinculacion-dinamica-de-multiples-atributos) (`v-bind` en lugar de `:prop-name`). Por ejemplo, dado un objeto `post`:
 
@@ -273,7 +273,7 @@ será equivalente a:
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-## Flujo de Datos Unidireccional
+## Flujo de Datos Unidireccional {#one-way-data-flow}
 
 Todos las props forman una **vinculación unidireccional** entre la propiedad del hijo y la del padre: cuando la propiedad del padre se actualiza, fluye hacia el hijo, pero no al revés. Esto evita que los componentes hijos muten accidentalmente el estado del padre, lo que puede hacer que el flujo de datos de tu aplicación sea más difícil de entender.
 
@@ -363,13 +363,13 @@ Suele haber dos casos en los que es tentador mutar una prop:
 
    </div>
 
-### Mutación de Props de Objetos / Arrays
+### Mutación de Props de Objetos / Arrays {#mutating-object-array-props}
 
 Cuando se pasan objetos y arrays como props, mientras que el componente hijo no puede mutar el enlace de la prop, **podrá** mutar las propiedades anidadas del objeto o del array. Esto es porque en JavaScript los objetos y arrays se pasan por referencia, y es excesivamente costoso para Vue evitar tales mutaciones.
 
 La desventaja principal de estas mutaciones es que permiten que el componente hijo afecte al estado del padre de una manera que no es obvia para el componente padre, haciendo potencialmente más difícil razonar sobre el flujo de datos en el futuro. La mejor práctica es evitar estas mutaciones a menos que el padre y el hijo estén estrechamente acoplados por diseño. La mayor parte de las veces, el hijo debería [emitir un evento](/guide/components/events.html) para que el padre realice la mutación.
 
-## Validación de Prop
+## Validación de Prop {#prop-validation}
 
 Los componentes pueden especificar requisitos para sus props, como los tipos que ya has visto. Si un requerimiento no se cumple, Vue te avisará en la consola JavaScript del navegador. Esto es especialmente útil cuando se desarrolla un componente que va a ser utilizado por otros.
 
@@ -505,7 +505,7 @@ Ten en cuenta que las props se validan **antes** de que se cree una instancia de
 
 </div>
 
-### Comprobaciones de Tipo en Tiempo de Ejecución
+### Comprobaciones de Tipo en Tiempo de Ejecución {#runtime-type-checks}
 
 El `tipo` puede ser uno de los siguientes constructores nativos:
 
@@ -554,7 +554,7 @@ export default {
 
 Vue utilizará `instanceof Person` para validar si el valor de la prop `author` es efectivamente una instancia de la clase `Person`.
 
-## Asignación de Booleanos {#asignacion-de-booleanos}
+## Asignación de Booleanos {#boolean-casting}
 
 Las props de tipo `Boolean` tienen reglas especiales de asignación para imitar el comportamiento de los atributos booleanos nativos. Dado un `<MyComponent>` con la siguiente declaración:
 

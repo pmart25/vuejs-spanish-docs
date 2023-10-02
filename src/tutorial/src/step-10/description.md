@@ -1,4 +1,4 @@
-# Watchers
+# Watchers {#watchers}
 
 Hay ocasiones en las que podemos necesitar la ejecución de "efectos secundarios" de forma reactiva; por ejemplo, registrar un número en la consola cada vez que esta cambie. Esto lo podemos conseguir con los watchers:
 

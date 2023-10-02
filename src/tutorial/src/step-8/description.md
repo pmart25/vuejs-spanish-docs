@@ -1,4 +1,4 @@
-# Propiedad Computada
+# Propiedad Computada {#computed-property}
 
 Sigamos desarrollando la lista de tareas del último paso. Para ello, ya hemos añadido una funcionalidad de conmutación a cada una de las tareas. Ello se consigue añadiendo una propiedad `done` a cada objeto todo, y utilizando `v-model` para vincularlo con una casilla de verificación:
 

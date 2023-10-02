@@ -1,4 +1,4 @@
-# ¡Lo lograste!
+# ¡Lo lograste! {#you-did-it}
 
 ¡Has terminado el tutorial!
 

@@ -2,15 +2,15 @@
 outline: deep
 ---
 
-# Funciones de Renderizado y JSX
+# Funciones de Renderizado y JSX {#render-functions-jsx}
 
 Vue recomienda el uso de plantillas para construir aplicaciones en la gran mayoría de los casos. Sin embargo, hay situaciones en las que necesitamos toda la potencia programática de JavaScript. Ahí es donde podemos utilizar la **render function**.
 
 > Si eres nuevo en el concepto de virtual DOM y render functions, asegúrate de leer primero el capítulo [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html).
 
-## Uso Básico
+## Uso Básico {#basic-usage}
 
-### Creando Vnodos
+### Creando Vnodos {#creating-vnodes}
 
 Vue proporciona una función `h()` para crear vnodos:
 
@@ -76,7 +76,7 @@ vnode.key // null
 La interfaz completa de `VNode` contiene muchas otras propiedades internas, pero se recomienda encarecidamente evitar depender de cualquier otra propiedad que no sean las listadas aquí. Esto evita que se produzcan interrupciones involuntarias en caso de que se modifiquen las propiedades internas.
 :::
 
-### Declaración de las Funciones de Renderizado
+### Declaración de las Funciones de Renderizado {#declaring-render-functions}
 
 <div class="composition-api">
 
@@ -180,7 +180,7 @@ function Hello() {
 
 Así es, ¡este es un componente Vue válido! Consulta [Componentes Funcionales](#componentes-funcionales) para más detalles sobre esta sintaxis.
 
-### Los Vnodos Deben Ser Únicos
+### Los Vnodos Deben Ser Únicos {#vnodes-must-be-unique}
 
 Todos los vnodos en el árbol de componentes deben ser únicos. Esto significa que la siguiente función de renderizado no es válida:
 
@@ -208,7 +208,7 @@ function render() {
 }
 ```
 
-## JSX / TSX
+## JSX / TSX {#jsx-tsx}
 
 [JSX](https://facebook.github.io/jsx/) es una extensión de JavaScript de tipo XML que nos permite escribir código como éste:
 
@@ -231,11 +231,11 @@ Aunque fue introducido por primera vez por React, JSX en realidad no tiene una s
 
 La definición de tipos de Vue también proporciona inferencia de tipos para el uso de TSX. Al utilizar TSX, asegúrate de especificar `"jsx": "preserve"` en `tsconfig.json` para que TypeScript deje la sintaxis JSX intacta a la hora de procesar la transformación JSX de Vue.
 
-## Recetas de Funciones de Renderizado
+## Recetas de Funciones de Renderizado {#render-function-recipes}
 
 A continuación vamos a proporcionar algunas recetas comunes para la implementación de funciones de plantilla con sus equivalentes funciones de renderizado / JSX.
 
-### `v-if`
+### `v-if` {#v-if}
 
 Template:
 
@@ -271,7 +271,7 @@ h('div', [this.ok ? h('div', 'sí') : h('span', 'no')])
 
 </div>
 
-### `v-for`
+### `v-for` {#v-for}
 
 Template:
 
@@ -327,7 +327,7 @@ h(
 
 </div>
 
-### `v-on`
+### `v-on` {#v-on}
 
 Las props con nombres que comienzan con `on` seguido de una letra mayúscula se tratan como escuchadores de eventos. Por ejemplo, `onClick` es el equivalente a `@click` en las plantillas.
 
@@ -353,7 +353,7 @@ h(
 </button>
 ```
 
-#### Modificadores de Eventos
+#### Modificadores de Eventos {#event-modifiers}
 
 Los modificadores de eventos `.passive`, `.capture` y `.once` se pueden concatenar después del nombre del evento utilizando camelCase.
 
@@ -395,7 +395,7 @@ h('div', {
 <div onClick={withModifiers(() => {}, ['self'])} />
 ```
 
-### Componentes
+### Componentes {#components}
 
 Para crear un vnode para un componente, el primer argumento pasado a `h()` debe ser la definición del componente. Esto significa que cuando se utilizan las funciones de renderizado, no es necesario registrar los componentes; se pueden utilizar directamente los componentes importados:
 
@@ -440,7 +440,7 @@ function render() {
 
 Si un componente está registrado por su nombre y no puede ser importado directamente (por ejemplo, registrado globalmente por una librería), se puede resolver programáticamente utilizando el helper [`resolveComponent()`](/api/render-function.html#resolvecomponent).
 
-### Renderizado de Slots
+### Renderizado de Slots {#rendering-slots}
 
 <div class="composition-api">
 
@@ -515,7 +515,7 @@ JSX equivalente:
 
 </div>
 
-### Paso de Slots
+### Paso de Slots {#passing-slots}
 
 Pasar hijos a los componentes funciona de forma un poco diferente a pasar hijos a los elementos. En lugar de un array, tenemos que pasar una función de slot, o un objeto de funciones de slot. Las funciones de slot pueden devolver cualquier cosa que una función de renderizado normal pueda devolver; que siempre se normalizará a arrays de vnodos cuando se acceda a ellos en el componente hijo.
 
@@ -549,7 +549,7 @@ JSX equivalente:
 
 Pasar los slots como funciones permite que sean invocados de forma perezosa por el componente hijo. Esto lleva a que las dependencias del slot sean rastreadas por el hijo en lugar del padre, lo que resulta en actualizaciones más precisas y eficientes.
 
-### Componentes Integrados
+### Componentes Integrados {#built-in-components}
 
 [Los componentes integrados](/api/built-in-components.html) como `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` y `<Suspense>` deben ser importados para su uso en las funciones de renderizado:
 
@@ -580,7 +580,7 @@ export default {
 
 </div>
 
-### `v-model`
+### `v-model` {#v-model}
 
 La directiva `v-model` se expande a las props `modelValue` y `onUpdate:modelValue` durante la compilación de la plantilla; tendremos que proporcionar estas props nosotros mismos:
 
@@ -619,7 +619,7 @@ export default {
 
 </div>
 
-### Directivas Personalizadas
+### Directivas Personalizadas {#custom-directives}
 
 Las directivas personalizadas pueden ser aplicadas a un vnode usando [`withDirectives`](/api/render-function.html#withdirectives):
 
@@ -644,7 +644,7 @@ const vnode = withDirectives(h('div'), [
 
 Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function.html#resolvedirective).
 
-## Componentes Funcionales
+## Componentes Funcionales {#functional-components}
 
 Los componentes funcionales son una forma alternativa de componente que no tienen ningún estado propio. Actúan como funciones puras: entrada de props, salida de vnodes. Se renderizan sin crear una instancia del componente (es decir, sin `this`), y sin los hooks habituales del ciclo de vida del componente.
 

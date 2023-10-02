@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# Guía de Optimización del Rendimiento
+# Guía de Optimización del Rendimiento {#performance}
 
-## Generalidades
+## Generalidades {#overview}
 
 Vue está diseñado para funcionar en los casos de uso más comunes sin necesidad de optimizaciones manuales. Sin embargo, siempre hay escenarios desafiantes en los que se necesita un ajuste más fino. En esta sección, analizaremos a qué debe prestar atención en lo que respecta al rendimiento en una aplicación de Vue.
 
@@ -20,7 +20,7 @@ Aunque lo ideal sería maximizar ambas cosas, las diferentes arquitecturas de fr
 
 - Jason Miller analiza los tipos de aplicaciones web y su respectiva implementación/entrega en [Application Holotypes](https://jasonformat.com/application-holotypes/).
 
-## Opciones de Configuración de Perfiles
+## Opciones de Configuración de Perfiles {#profiling-options}
 
 Para mejorar el rendimiento, primero debemos saber cómo medirlo. Hay una serie de excelentes herramientas que pueden ayudar en este sentido:
 
@@ -35,17 +35,17 @@ Para perfilar el rendimiento durante el desarrollo local:
   - [`app.config.performance`](/api/application.html#app-config-performance) habilita indicadores de rendimiento específicos de Vue en la línea de tiempo de rendimiento de Chrome DevTools.
 - [Extension Vue DevTools](/guide/scaling-up/tooling.html#devtools-del-navegador) también proporciona características de perfilado del rendimiento.
 
-## Optimizaciones para la Carga de Página
+## Optimizaciones para la Carga de Página {#page-load-optimizations}
 
 Hay muchos aspectos agnósticos del framework para optimizar el rendimiento de carga de la página: consulta esta [guía web.dev](https://web.dev/fast/) para obtener un resumen completo. Aquí, nos centraremos principalmente en las técnicas que son específicas de Vue.
 
-### Elegir la Arquitectura Adecuada
+### Elegir la Arquitectura Adecuada {#choosing-the-right-architecture}
 
 Si tu caso de uso es sensible al rendimiento de la carga de la página, evita enviarlo como un SPA puro del lado del cliente. Necesitas que tu servidor envíe directamente el HTML que contiene el contenido que los usuarios quieren ver. El renderizado puro del lado del cliente sufre de lentitud al mostrar el contenido. Esto se puede mitigar con la [Renderización del lado del servidor (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) o la [Generación de sitios estáticos (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consulta la [Guía de SSR](/guide/scaling-up/ssr.html) para obtener información sobre cómo realizar SSR con Vue. Si tu aplicación no tiene requisitos de interactividad enriquecidos, también puedes usar un servidor de backend tradicional para renderizar el HTML y mejorarlo con Vue en el cliente.
 
 Si tu aplicación principal tiene que ser una SPA, pero tiene páginas de marketing (aterrizaje, información, blog), ¡envíalas por separado! Tus páginas de marketing deberían implementarse idealmente como HTML estático con un mínimo de JS, utilizando SSG.
 
-### Tamaño del Paquete y Sacudida del Árbol
+### Tamaño del Paquete y Sacudida del Árbol {#bundle-size-and-tree-shaking}
 
 Una de las formas más efectivas de mejorar el rendimiento de carga de la página es enviar paquetes de JavaScript más pequeños. Aquí hay algunas formas de reducir el tamaño del paquete al usar Vue:
 
@@ -63,7 +63,7 @@ Una de las formas más efectivas de mejorar el rendimiento de carga de la págin
 
 - Si estás utilizando Vue principalmente para la mejora progresiva y prefieres evitar un paso de compilación, considera usar [petite-vue](https://github.com/vuejs/petite-vue) (solo **6kb**) en su lugar.
 
-### División del Código
+### División del Código {#code-splitting}
 
 La división de código es donde una herramienta de compilación divide el paquete de la aplicación en varios fragmentos más pequeños, que luego se pueden cargar bajo pedido o en paralelo. Con la división de código adecuada, las características requeridas en la carga de la página pueden ser descargadas inmediatamente, y los fragmentos adicionales se cargan de forma diferida solo cuando es necesario, lo que mejora el rendimiento.
 
@@ -90,9 +90,9 @@ const Foo = defineAsyncComponent(() => import('./Foo.vue'))
 
 Para las aplicaciones que utilizan Vue Router, se recomienda encarecidamente utilizar la carga diferida para los componentes de ruta. Vue Router tiene soporte explícito para la carga diferida, aparte de `defineAsyncComponent`. Consulta [Rutas de carga diferida](https://router.vuejs.org/guide/advanced/lazy-loading.html) para obtener más detalles.
 
-## Optimizaciones para Actualizar
+## Optimizaciones para Actualizar {#update-optimizations}
 
-### Estabilidad de las Props
+### Estabilidad de las Props {#props-stability}
 
 En Vue, un componente hijo solo se actualiza cuando al menos uno de sus props recibidos ha cambiado. Considere el siguiente ejemplo:
 
@@ -116,19 +116,19 @@ Idealmente, solo deberían actualizarse los elementos cuyo estado activo ha camb
 
 Ahora, para la mayoría de los componentes, la prop `active` seguirá siendo la misma cuando cambie `activeId`, por lo que ya no necesitan actualizarse. En general, la idea es mantener los props pasados a los componentes hijos tan estables como sea posible.
 
-### `v-once`
+### `v-once` {#v-once}
 
 `v-once` es una directiva integrada que se puede usar para renderizar contenido que depende de datos en tiempo de ejecución pero que nunca necesita actualizarse. Todo el subárbol en el que se usa se omitirá para todas las actualizaciones futuras. Consulte la [referencia de su API](/api/built-in-directives.html#v-once) para más detalles.
 
-### `v-memo`
+### `v-memo` {#v-memo}
 
 `v-memo` es una directiva integrada que se puede usar para omitir condicionalmente la actualización de grandes subárboles o listas `v-for`. Consulte la [referencia de su API](/api/built-in-directives.html#v-memo) para más detalles.
 
-## Optimizaciones Generales
+## Optimizaciones Generales {#general-optimizations}
 
 > Los siguientes consejos afectan tanto a la carga de la página como al rendimiento de las actualizaciones.
 
-### Virtualizar Grandes Listas
+### Virtualizar Grandes Listas {#virtualize-large-lists}
 
 Uno de los problemas de rendimiento más comunes en todas las aplicaciones frontend es la renderización de listas grandes. Independientemente del rendimiento de un framework, la renderización de una lista con miles de elementos **será** lenta debido a la gran cantidad de nodos del DOM que el navegador debe manejar.
 
@@ -139,7 +139,7 @@ Implementar la virtualización de listas no es fácil, por suerte existen librer
 - [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller)
 - [vue-virtual-scroll-grid](https://github.com/rocwang/vue-virtual-scroll-grid)
 
-### Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño
+### Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño {#reduce-reactivity-overhead-for-large-immutable-structures}
 
 El sistema de reactividad de Vue es profundo por defecto. Si bien esto hace que la administración del estado sea intuitiva, crea un cierto nivel de sobrecarga cuando el tamaño de los datos es grande, porque cada acceso a las propiedades desencadena trampas de proxy que realizan el seguimiento de las dependencias. Esto suele notarse cuando se trata de grandes arrays de objetos profundamente anidados, donde un solo renderizado necesita acceder a más de 100.000 propiedades, por lo que solo debería afectar a casos de uso muy específicos.
 
@@ -167,7 +167,7 @@ shallowArray.value = [
 ]
 ```
 
-### Evite las Abstracciones Innecesarias de los Componentes
+### Evite las Abstracciones Innecesarias de los Componentes {#avoid-unnecessary-component-abstractions}
 
 A veces, podemos crear [componentes sin renderizado](/guide/components/slots.html#componentes-sin-renderizado) o componentes de orden superior (es decir, componentes que renderizan otros componentes con props adicionales) para una mejor abstracción u organización del código. Si bien esto no tiene nada de malo, ten en cuenta que las instancias de componentes son mucho más costosas que los nodos simples del DOM, y crear demasiados de ellos debido a patrones de abstracción generará costos de rendimiento.
 

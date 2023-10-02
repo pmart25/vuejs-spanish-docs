@@ -1,4 +1,4 @@
-# Renderizado de Listas
+# Renderizado de Listas {#list-rendering}
 
 Podemos utilizar la directiva `v-for` para renderizar una lista de elementos basada en un array fuente:
 

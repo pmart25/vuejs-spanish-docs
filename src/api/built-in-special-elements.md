@@ -1,4 +1,4 @@
-# Elementos Especiales Integrados {#elementos-especiales-integrados}
+# Elementos Especiales Integrados {#built-in-special-elements}
 
 :::info No Son Componentes
 `<component>`, `<slot>` y `<template>` tienen características similares a los componentes y forman parte de la sintaxis de la plantilla. No son verdaderos componentes y se compilan aparte durante la compilación de la plantilla. Como tales, se escriben convencionalmente con minúsculas.

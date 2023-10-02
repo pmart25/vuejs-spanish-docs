@@ -1,4 +1,4 @@
-# Escuchadores de Eventos
+# Escuchadores de Eventos {#event-listeners}
 
 Podemos escuchar los eventos del DOM usando la directiva `v-on`:
 

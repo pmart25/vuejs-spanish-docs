@@ -1,14 +1,14 @@
-# Comenzando
+# Comenzando {#getting-started}
 
 ¡Bienvenido al tutorial de Vue!
 
 El objetivo de este tutorial es darte rápidamente una experiencia de lo que se siente al trabajar con Vue, justo en el navegador. No pretende ser exhaustivo, y no es necesario que lo entiendas todo antes de seguir adelante. No obstante, después de completarlo, asegúrate de leer también la <a target="_blank" href="/guide/introduction.html">Guía</a> que cubre cada tema con más detalle.
 
-## Prerrequisitos
+## Prerrequisitos {#prerequisites}
 
 Este tutorial supone una familiaridad básica con HTML, CSS y JavaScript. Si eres totalmente nuevo en el desarrollo front-end, puede que no sea la mejor idea saltar directamente a un framework como primer paso; ¡comprende lo básico y luego vuelve! La experiencia previa con otros frameworks ayuda, pero no es necesaria.
 
-## Cómo Usar este Tutorial
+## Cómo Usar este Tutorial {#how-to-use-this-tutorial}
 
 Puedes editar el código <span class="wide">a la derecha</span><span class="narrow">debajo</span> y ver el resultado actualizado al instante. Con cada paso se introducirá una característica principal de Vue, y se espera que completes el código para que la demo funcione. En caso de que te quedes atascado, tendrás un botón "¡Muéstrame!" que te revelará el código que funciona. Procura no depender demasiado de él: aprenderás más rápido resolviendo las cosas por tu cuenta.
 

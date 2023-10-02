@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# Fundamentos de Reactividad
+# Fundamentos de Reactividad {#reactivity-fundamentals}
 
 :::tip Preferencias de API
 Esta página y muchos otros capítulos posteriores en la guía tienen contenido diferente para la Options API y la Composition API. Tu preferencia actual es <span class="options-api">Options API</span><span class="composition-api">Composition API</span>. Puedes alternar entre los estilos de API usando el interruptor de "Preferencia de API" en la parte superior de la barra lateral izquierda.
 :::
 
-## Declarando el Estado Reactivo
+## Declarando el Estado Reactivo {#declaring-reactive-state}
 
 <div class="options-api">
 
@@ -41,7 +41,7 @@ Es posible agregar una nueva propiedad directamente al `this` sin incluirla en `
 
 Vue usa el prefijo `$` cuando expone sus propias API integradas a través de la instancia del componente. También reserva el prefijo `_` para propiedades internas. Debes evitar el uso de nombres para las propiedades de nivel superior de `data` que comiencen con cualquiera de estos caracteres.
 
-### Proxy Reactivo vs. Original \*
+### Proxy Reactivo vs. Original \* {#reactive-proxy-vs-original}
 
 En Vue 3, los datos se vuelven reactivos al aprovechar los [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy). Los usuarios que vienen de Vue 2 deben tener en cuenta el siguiente caso extremo:
 
@@ -131,7 +131,7 @@ Los métodos expuestos se utilizan normalmente como escuchadores de eventos:
 </button>
 ```
 
-### `<script setup>` \*\*
+### `<script setup>` \*\* {#script-setup}
 
 Exponer manualmente el estado y los métodos a través de `setup()` puede ser exagerado. Por suerte, sólo es necesario cuando no se utiliza un paso de compilación. Cuando se usan Componentes de un Solo Archivo (SFC), podemos simplificar mucho el uso con `<script setup>`:
 
@@ -163,7 +163,7 @@ Las importaciones de nivel superior y las variables declaradas en el `<script se
 
 <div class="options-api">
 
-## Declarando Métodos \*
+## Declarando Métodos \* {#declaring-methods}
 
 <VueSchoolLink href="https://vueschool.io/lessons/methods-in-vue-3" title="Lección gratuita de Métodos de Vue.js"/>
 
@@ -212,7 +212,7 @@ En el ejemplo anterior, se llamará al método `increment` cuando se haga clic e
 
 </div>
 
-### Tiempo de Actualización del DOM
+### Tiempo de Actualización del DOM {#dom-update-timing}
 
 Cuando mutas el estado reactivo, el DOM se actualiza automáticamente. Sin embargo, hay que tener en cuenta que las actualizaciones del DOM no se aplican de forma sincrónica. En su lugar, Vue las almacena en búfer hasta la "siguiente marca" (next tick) del ciclo de actualización para garantizar que cada componente tenga que actualizarse sólo una vez, independientemente de cuántos cambios de estado hayas realizado.
 
@@ -251,7 +251,7 @@ export default {
 
 </div>
 
-### Reactividad Profunda
+### Reactividad Profunda {#deep-reactivity}
 
 En Vue, el estado es profundamente reactivo por defecto. Esto significa que puedes esperar que se detecten cambios incluso cuando mutas objetos o arrays anidados:
 
@@ -302,7 +302,7 @@ También es posible crear explícitamente [objetos reactivos superficiales](/api
 
 <div class="composition-api">
 
-### Proxy Reactivo vs. Original \*\*
+### Proxy Reactivo vs. Original \*\* {#reactive-proxy-vs-original-1}
 
 Es importante tener en cuenta que el valor devuelto por `reactive()` es un [Proxy](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) del objeto original, que no es igual al objeto original:
 
@@ -337,7 +337,7 @@ proxy.nested = raw
 console.log(proxy.nested === raw) // false
 ```
 
-### Limitaciones de `reactive()` \*\*
+### Limitaciones de `reactive()` \*\* {#limitations-of-reactive}
 
 La API `reactive()` tiene dos limitaciones:
 
@@ -373,7 +373,7 @@ La API `reactive()` tiene dos limitaciones:
    callSomeFunction(state.count)
    ```
 
-## Variables Reactivas con `ref()` \*\*
+## Variables Reactivas con `ref()` \*\* {#reactive-variables-with-ref}
 
 Para abordar las limitaciones de `reactive()`, Vue también proporciona una función [`ref()`](/api/reactivity-core.html#ref) que nos permite crear **"refs"** reactivas que pueden mantener cualquier tipo de valor:
 
@@ -427,7 +427,7 @@ const { foo, bar } = obj
 
 En otras palabras, `ref()` nos permite crear una "referencia" a cualquier valor y pasarla sin perder reactividad. Esta capacidad es bastante importante ya que se usa con frecuencia al extraer lógica en [Funciones Composables](/guide/reusability/composables.html).
 
-### Desempaquetando Ref en Plantillas \*\*
+### Desempaquetando Ref en Plantillas \*\* {#ref-unwrapping-in-templates}
 
 Cuando se accede a las refs como propiedades de nivel superior en la plantilla, se "desempaquetan" automáticamente, por lo que no es necesario utilizar `.value`. Aquí está el ejemplo del contador anterior, utilizando `ref()` en su lugar:
 
@@ -485,7 +485,7 @@ Una cosa que hay que tener en cuenta es que una ref también se desempaquetará 
 
 Esto es sólo una característica de conveniencia de la interpolación de texto y es equivalente a <code v-pre>{{ object.foo.value }}</code>.
 
-### Desempaquetando Ref en Objetos Reactivos \*\*
+### Desempaquetando Ref en Objetos Reactivos \*\* {#ref-unwrapping-in-reactive-objects}
 
 Cuando se accede a una `ref` o se muta como propiedad de un objeto reactivo, también se desempaqueta automáticamente para que se comporte como una propiedad normal:
 
@@ -514,7 +514,7 @@ console.log(count.value) // 1
 
 El desempaquetado de la ref sólo ocurre cuando se anida dentro de un objeto reactivo profundo. No se aplica cuando se accede como una propiedad de un [objeto reactivo superficial](/api/reactivity-advanced.html#shallowreactive).
 
-#### Desempaquetando Ref en Arrays y Colecciones
+#### Desempaquetando Ref en Arrays y Colecciones {#ref-unwrapping-in-arrays-and-collections}
 
 A diferencia de los objetos reactivos, no se realiza ningún desempaquetado cuando se accede a la ref como elemento de un array reactivo o de un tipo de colección nativa como `Map`:
 
@@ -532,7 +532,7 @@ console.log(map.get('count').value)
 
 <div class="options-api">
 
-### Métodos con Estado \*
+### Métodos con Estado \* {#stateful-methods}
 
 En algunos casos, es posible que necesitemos crear dinámicamente un método, por ejemplo, creando un manejador de eventos desbordado:
 
@@ -576,7 +576,7 @@ export default {
 
 <div class="composition-api">
 
-## Transformación de la Reactividad <sup class="vt-badge experimental" /> \*\*
+## Transformación de la Reactividad <sup class="vt-badge experimental" /> \*\* {#reactivity-transform}
 
 Tener que utilizar `.value` con las refs es un inconveniente impuesto por las restricciones del lenguaje JavaScript. Sin embargo, con las transformaciones en tiempo de compilación podemos mejorar la ergonomía añadiendo automáticamente `.value` en los lugares adecuados. Vue proporciona una transformación en tiempo de compilación que nos permite escribir el ejemplo anterior del "counter" de esta manera:
 

@@ -1,6 +1,6 @@
-# Características CSS del SFC
+# Características CSS del SFC {#sfc-css-features}
 
-## CSS de Ámbito
+## CSS de Ámbito {#scoped-css}
 
 Cuando una etiqueta `<style>` tiene el atributo `scoped`, su CSS se aplicará solo a los elementos del componente actual. Esto es similar a la encapsulación de estilo que se encuentra en Shadow DOM. Viene con algunas advertencias, pero no requiere ningún polyfills. Se logra mediante el uso de PostCSS para transformar lo siguiente:
 
@@ -30,11 +30,11 @@ En lo siguiente:
 </template>
 ```
 
-### Elementos Raíz del Componente Hijo
+### Elementos Raíz del Componente Hijo {#child-component-root-elements}
 
 Con `scoped`, los estilos del componente padre no se filtrarán a los componentes hijos. Sin embargo, el nodo raíz de un componente hijo se verá afectado tanto por el CSS de ámbito del padre como por el CSS de ámbito del hijo. Esto es por diseño para que el padre pueda estilizar el elemento raíz del hijo para propósitos de diseño.
 
-### Selectores de Profundidad
+### Selectores de Profundidad {#deep-selectors}
 
 Si deseas que un selector en los estilos de `scoped` sea "profundo", es decir, que afecte a los componentes hijos, puedes usar la pseudo-clase `:deep()`:
 
@@ -58,7 +58,7 @@ Lo anterior se compilará en:
 El contenido del DOM creado con `v-html` no se ve afectado por los estilos de ámbito, pero aún así puedes aplicarles estilos utilizando selectores profundos.
 :::
 
-### Selectores de Slot
+### Selectores de Slot {#slotted-selectors}
 
 Por defecto, los estilos de ámbito no afectan los contenidos renderizados por `<slot/>`, ya que se considera que son propiedad del componente padre que los pasa. Para apuntar explícitamente al contenido del slot, utiliza la pseudo-clase `:slotted`:
 
@@ -70,7 +70,7 @@ Por defecto, los estilos de ámbito no afectan los contenidos renderizados por `
 </style>
 ```
 
-### Selectores Globales
+### Selectores Globales {#global-selectors}
 
 Si quieres que solo una regla se aplique globalmente, puedes utilizar la pseudo-clase `:global` en lugar de crear otro `<style>` (ver más abajo):
 
@@ -82,7 +82,7 @@ Si quieres que solo una regla se aplique globalmente, puedes utilizar la pseudo-
 </style>
 ```
 
-### Mezcla de Estilos Locales y Globales
+### Mezcla de Estilos Locales y Globales {#mixing-local-and-global-styles}
 
 También puede incluir estilos con y sin ámbito en el mismo componente:
 
@@ -96,13 +96,13 @@ También puede incluir estilos con y sin ámbito en el mismo componente:
 </style>
 ```
 
-### Tips para el Estilo con Ámbito
+### Tips para el Estilo con Ámbito {#scoped-style-tips}
 
 - **Los estilos de ámbito no eliminan la necesidad de las clases**. Debido a la forma en que los navegadores renderizan varios selectores de CSS, `p { color: red }` será muchas veces más lento cuando se le aplique el ámbito local (es decir, cuando se combina con un selector de atributos). Si utilizas clases o identificadores en su lugar, como en `.example { color: red }`, entonces prácticamente eliminas ese impacto en el rendimiento.
 
 - **¡Ten cuidado con los selectores descendientes en componentes recursivos!** Para una regla CSS con el selector `.a .b`, si el elemento que coincide con `.a` contiene un componente hijo recursivo, entonces todos los `.b` en ese componente hijo serán coincidentes con la regla.
 
-## Módulos CSS
+## Módulos CSS {#css-modules}
 
 Una etiqueta `<style module>` se compila como [módulos CSS](https://github.com/css-modules/css-modules) y expone las clases CSS resultantes al componente como un objeto bajo la clave `$style`:
 
@@ -122,7 +122,7 @@ Las clases resultantes se codifican para evitar la colisión, logrando el mismo 
 
 Consulta la [especificación de Módulos CSS](https://github.com/css-modules/css-modules) para obtener más detalles, como las [excepciones globales](https://github.com/css-modules/css-modules#exceptions) y la [composición](https://github.com/css-modules/css-modules#composition).
 
-### Nombre de Inyección Personalizado
+### Nombre de Inyección Personalizado {#custom-inject-name}
 
 Puedes personalizar la clave de la propiedad del objeto de las clases inyectadas dándole un valor al atributo `module`:
 
@@ -138,7 +138,7 @@ Puedes personalizar la clave de la propiedad del objeto de las clases inyectadas
 </style>
 ```
 
-### Uso con la Composition API
+### Uso con la Composition API {#usage-with-composition-api}
 
 Se puede acceder a las clases inyectadas en `setup()` y `<script setup>` a través de la API `useCssModule`. Para bloques `<style module>` con nombres de inyección personalizados, `useCssModule` acepta el valor del atributo `module` correspondiente como primer argumento:
 
@@ -153,7 +153,7 @@ useCssModule()
 useCssModule('classes')
 ```
 
-## `v-bind()` en CSS
+## `v-bind()` en CSS {#v-bind-in-css}
 
 Las etiquetas SFC `<style>` admiten la vinculación de valores CSS al estado de componentes dinámicos mediante la función CSS `v-bind`:
 

@@ -2,9 +2,9 @@
 footer: false
 ---
 
-# Inicio Rápido {#inicio-rapido}
+# Inicio Rápido {#quick-start}
 
-## Prueba Vue Online {#prueba-vue-online}
+## Prueba Vue Online {#try-vue-online}
 
 - Para probar rápidamente Vue, puedes hacerlo directamente en nuestro [Playground](https://sfc.vuejs.org/#eNo9j01qAzEMha+iapMWOjbdDm6gu96gG2/cjJJM8B+2nBaGuXvlpBMwtj4/JL234EfO6toIRzT1UObMexvpN6fCMNHRNc+w2AgwOXbPL/caoBC3EjcCCPU0wu6TvE/wlYqfnnZ3ae2PXHKMfiwQYArZOyYhAHN+2y9LnwLrarTQ7XeOuTFch5Am8u8WRbcoktGPbnzFOXS3Q3BZXWqKkuRmy/4L1eK4GbUoUTtbPDPnOmpdj4ee/1JVKictlSot8hxIUQ3Dd0k/lYoMtrglwfUPkXdoJg==).
 
@@ -12,7 +12,7 @@ footer: false
 
 - Si ya estás familiarizado con Node.js y el concepto de herramientas de compilación, también puedes probar una configuración de compilación completa directamente desde tu navegador en [StackBlitz](https://vite.new/vue).
 
-## Creación de una Aplicación de Vue {#creacion-de-una-aplicacion-de-vue}
+## Creación de una Aplicación de Vue {#creating-a-vue-application}
 
 :::tip Prerequisitos
 
@@ -64,7 +64,7 @@ Esto creará una compilación de tu aplicación lista para producción en el dir
 
 [Siguientes Pasos >](#siguientes-pasos)
 
-## Usando Vue desde un CDN {#usando-vue-desde-un-cdn}
+## Usando Vue desde un CDN {#using-vue-from-cdn}
 
 Puedes usar Vue directamente desde un CDN a través de una etiqueta script:
 
@@ -76,7 +76,7 @@ Aquí estamos usando [unpkg](https://unpkg.com/), pero también puedes usar cual
 
 Cuando se utiliza Vue desde un CDN, no hay ningún "paso de compilación" involucrado. Esto hace que la configuración sea mucho más simple, y es adecuado para mejorar el HTML estático o la integración con un marco de backend. Sin embargo, no podrás usar la sintaxis de Componentes de un Solo Archivo (SFC).
 
-### Usando la Compilación Global {#usando-la-compilacion-global}
+### Usando la Compilación Global {#using-the-global-build}
 
 El enlace anterior carga la _compilación global_ de Vue, donde todas las APIs de alto nivel están expuestas como propiedades en el objeto `Vue` global. Aquí hay un ejemplo completo usando la compilación global:
 
@@ -100,7 +100,7 @@ El enlace anterior carga la _compilación global_ de Vue, donde todas las APIs d
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
 
-### Usando el Módulo de Construcción ES {#usando-el-modulo-de-construccion-es}
+### Usando el Módulo de Construcción ES {#using-the-es-module-build}
 
 En el resto de la documentación, utilizaremos principalmente la sintaxis de [módulos ES](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Modules). La mayoría de los navegadores modernos soportan ahora módulos ES de forma nativa, por lo que podemos usar Vue desde un CDN a través de módulos ES nativos como este:
 
@@ -124,7 +124,7 @@ Observa que estamos usando `<script type="module">`, y que la URL importada del 
 
 [JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
 
-### Habilitar mapas de importación {#habilitar-mapas-de-importacion}
+### Habilitar mapas de importación {#enabling-import-maps}
 
 En el ejemplo anterior, estamos importando desde la URL del CDN, pero en el resto de la documentación verás código como este:
 
@@ -174,7 +174,7 @@ Si tu navegador preferido aún no soporta la importación de mapas, puedes relle
 Los ejemplos mostrados hasta ahora usan la versión de desarrollo de Vue. Si quieres usar Vue desde un CDN en producción, asegúrate de consultar la guía de [Implementación en Producción (Deployment)](/guide/best-practices/production-deployment.html#sin-herramientas-de-compilacion).
 :::
 
-### Distribución de los Módulos {#distribucion-de-los-modulos}
+### Distribución de los Módulos {#splitting-up-the-modules}
 
 A medida que profundizamos en la guía, puede que necesitemos dividir nuestro código en archivos JavaScript separados para que sean más fáciles de gestionar. Por ejemplo:
 
@@ -204,11 +204,11 @@ Para iniciar un servidor HTTP local, primero instala [Node.js](https://nodejs.or
 
 Puede que hayas notado que la plantilla del componente importado está en línea como una cadena JavaScript. Si estás usando VSCode, puedes instalar la extensión [es6-string-html](https://marketplace.visualstudio.com/items?itemName=Tobermory.es6-string-html) y prefijar las cadenas con un comentario `/*html*/` para obtener resaltado de la sintaxis para ellas.
 
-### Usando la Composition API sin un Paso de Compilación {#usando-la-composition-api-sin-un-paso-de-compilacion}
+### Usando la Composition API sin un Paso de Compilación {#using-composition-api-without-a-build-step}
 
 Muchos de los ejemplos para la Composition API utilizarán la sintaxis `<script setup>`. Si piensas utilizar la Composition API sin un paso de compilación, consulta el uso de la [opción `setup()`](/api/composition-api-setup.html).
 
-## Siguientes pasos {#siguientes-pasos}
+## Siguientes pasos {#next-steps}
 
 Si te has saltado la [Introducción](/guide/introduction), te recomendamos encarecidamente que la leas antes de pasar al resto de la documentación.
 

@@ -13,7 +13,7 @@ onMounted(async () => {
 })
 </script>
 
-# Lanzamientos {#lanzamientos}
+# Lanzamientos {#releases}
 
 <p v-if="version">
 La última versión estable actual de Vue es <strong>{{ version }}</strong>.
@@ -24,7 +24,7 @@ Comprobando la última versión...
 
 Un registro completo de los cambios de las versiones anteriores está disponible en [GitHub](https://github.com/vuejs/core/blob/main/CHANGELOG.md).
 
-## Ciclo de Lanzamiento {#ciclo-de-lanzamiento}
+## Ciclo de Lanzamiento {#release-cycle}
 
 Vue no tiene un ciclo de lanzamiento fijo.
 
@@ -34,11 +34,11 @@ Vue no tiene un ciclo de lanzamiento fijo.
 
 - Los lanzamientos mayores se anunciarán con anticipación y pasarán por una fase de discusión inicial y fases alfa/beta previas al lanzamiento.
 
-## Casos Extremos de Versionado Semántico {#casos-extremos-de-versionado-semantico}
+## Casos Extremos de Versionado Semántico {#semantic-versioning-edge-cases}
 
 Los lanzamientos de Vue siguen [Versionado Semántico](https://semver.org/) con algunos pocos casos extremos.
 
-### Definiciones de TypeScript {#definiciones-de-typescript}
+### Definiciones de TypeScript {#typescript-definitions}
 
 Podemos enviar cambios incompatibles a las definiciones de TypeScript entre versiones **menores**. Esto es porque:
 
@@ -48,19 +48,19 @@ Podemos enviar cambios incompatibles a las definiciones de TypeScript entre vers
 
 Si estás usando TypeScript, puedes usar un rango de versionado semántico (SemVer) que bloquee la versión menor actual y actualizarla manualmente cuando se lance una nueva versión menor de Vue.
 
-### Compatibilidad del Código Compilado con Runtime Anteriores {#compatibilidad-del-codigo-compilado-con-runtime-anteriores}
+### Compatibilidad del Código Compilado con Runtime Anteriores {#compiled-code-compatibility-with-older-runtime}
 
 Una versión **menor** más nueva del compilador de Vue puede generar código que no sea compatible con el runtime de Vue de una versión menor anterior. Por ejemplo, el código generado por el compilador de Vue 3.2 puede no ser totalmente compatible si lo consume el runtime de Vue 3.1.
 
 Esto es solo una inquietud para los autores de librerías porque, en las aplicaciones, la versión del compilador y la versión del runtime son siempre las mismas. Una discrepancia de versión puede ocurrir solo si envías el código del componente Vue precompilado como un paquete y un consumidor lo utiliza en un proyecto que use una versión anterior de Vue. Como resultado, es posible que tu paquete deba declarar explícitamente una versión menor mínima requerida de Vue.
 
-## Lanzamientos Preliminares {#lanzamientos-preliminares}
+## Lanzamientos Preliminares {#pre-releases}
 
 Las versiones menores generalmente pasan por un número no fijo de versiones beta. Los lanzamientos mayores pasarán por una fase alfa y una fase beta.
 
 Los lanzamientos preliminares están destinados a pruebas de integración/estabilidad, y para que los primeros usuarios proporcionen comentarios sobre características inestables. No utilice versiones preliminares en producción. Todos los lanzamientos preliminares se consideran inestables y pueden llevar cambios importantes consigo; por lo tanto, indica siempre las versiones exactas cuando utilices lanzamientos preliminares.
 
-## Obsolescencias {#obsolescencias}
+## Obsolescencias {#deprecations}
 
 Es posible que periódicamente dejemos de usar funciones que tengan reemplazos nuevos y mejores en versiones menores. Las funciones obsoletas seguirán funcionando y se eliminarán en la próxima versión mayor después de que entren en estado de obsolescencia.
 
@@ -70,7 +70,7 @@ Las nuevas características con cambios sustanciales e importantes de la API en 
 
 El proceso de RFC se lleva a cabo en el repositorio [vuejs/rfcs](https://github.com/vuejs/rfcs) en GitHub.
 
-## Características Experimentales {#caracteristicas-experimentales}
+## Características Experimentales {#experimental-features}
 
 Algunas características se envían y documentan en una versión estable de Vue, pero son marcadas como experimentales. Las características experimentales suelen ser características que tienen una discusión de RFC asociada con la mayoría de los problemas de diseño resueltos en papel, pero aún carecen de comentarios del uso en el mundo real.
 

@@ -1,6 +1,6 @@
-# Reactividad: Avanzado
+# Reactividad: Avanzado {#reactivity-api-advanced}
 
-## shallowRef()
+## shallowRef() {#shallowref}
 
 Versión poco profunda de [`ref()`](./reactivity-core.html#ref).
 
@@ -36,7 +36,7 @@ Versión poco profunda de [`ref()`](./reactivity-core.html#ref).
   - [Guía - Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance.html#reduccion-de-la-sobrecarga-de-reactividad-en-estructuras-inmutables-de-gran-tamano)
   - [Guía - Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth.html#integracion-con-los-sistemas-de-estado-externos)
 
-## triggerRef()
+## triggerRef() {#triggerref}
 
 Forzar la activación de los efectos que depende de una [ref poco profunda](#shallowref). Esto se usa típicamente después de hacer mutaciones profundas en el valor interno de una ref poco profunda.
 
@@ -65,7 +65,7 @@ Forzar la activación de los efectos que depende de una [ref poco profunda](#sha
   triggerRef(shallow)
   ```
 
-## customRef()
+## customRef() {#customref}
 
 Crea una ref personalizada con control explícito sobre el seguimiento de sus dependencias y la activación de actualizaciones.
 
@@ -131,7 +131,7 @@ Crea una ref personalizada con control explícito sobre el seguimiento de sus de
 
   [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHVzZURlYm91bmNlZFJlZiB9IGZyb20gJy4vZGVib3VuY2VkUmVmLmpzJ1xuY29uc3QgdGV4dCA9IHVzZURlYm91bmNlZFJlZignaGVsbG8nLCAxMDAwKVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPHA+XG4gICAgVGhpcyB0ZXh0IG9ubHkgdXBkYXRlcyAxIHNlY29uZCBhZnRlciB5b3UndmUgc3RvcHBlZCB0eXBpbmc6XG4gIDwvcD5cbiAgPHA+e3sgdGV4dCB9fTwvcD5cbiAgPGlucHV0IHYtbW9kZWw9XCJ0ZXh0XCIgLz5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCJcbiAgfVxufSIsImRlYm91bmNlZFJlZi5qcyI6ImltcG9ydCB7IGN1c3RvbVJlZiB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZURlYm91bmNlZFJlZih2YWx1ZSwgZGVsYXkgPSAyMDApIHtcbiAgbGV0IHRpbWVvdXRcbiAgcmV0dXJuIGN1c3RvbVJlZigodHJhY2ssIHRyaWdnZXIpID0+IHtcbiAgICByZXR1cm4ge1xuICAgICAgZ2V0KCkge1xuICAgICAgICB0cmFjaygpXG4gICAgICAgIHJldHVybiB2YWx1ZVxuICAgICAgfSxcbiAgICAgIHNldChuZXdWYWx1ZSkge1xuICAgICAgICBjbGVhclRpbWVvdXQodGltZW91dClcbiAgICAgICAgdGltZW91dCA9IHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgICAgIHZhbHVlID0gbmV3VmFsdWVcbiAgICAgICAgICB0cmlnZ2VyKClcbiAgICAgICAgfSwgZGVsYXkpXG4gICAgICB9XG4gICAgfVxuICB9KVxufSJ9)
 
-## shallowReactive()
+## shallowReactive() {#shallowreactive}
 
 Versión poco profunda de [`reactive()`](./reactivity-core.html#reactive).
 
@@ -169,7 +169,7 @@ Versión poco profunda de [`reactive()`](./reactivity-core.html#reactive).
   state.nested.bar++
   ```
 
-## shallowReadonly()
+## shallowReadonly() {#shallowreadonly}
 
 Versión poco profunda de [`readonly()`](./reactivity-core.html#readonly).
 
@@ -207,7 +207,7 @@ Versión poco profunda de [`readonly()`](./reactivity-core.html#readonly).
   state.nested.bar++
   ```
 
-## toRaw()
+## toRaw() {#toraw}
 
 Devuelve el objeto original de un proxy creado por Vue.
 
@@ -232,7 +232,7 @@ Devuelve el objeto original de un proxy creado por Vue.
   console.log(toRaw(reactiveFoo) === foo) // true
   ```
 
-## markRaw()
+## markRaw() {#markraw}
 
 Marca un objeto para que nunca se convierta en un proxy. Devuelve el objeto mismo.
 
@@ -279,7 +279,7 @@ Marca un objeto para que nunca se convierta en un proxy. Devuelve el objeto mism
 
   :::
 
-## effectScope()
+## effectScope() {#effectscope}
 
 Crea un objeto de ámbito de efecto que puede capturar los efectos reactivos (es decir, computed y watchers) creados dentro de él para que estos efectos puedan eliminarse juntos. Para conocer los casos de uso detallados de esta API, consulta su correspondiente [RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0041-reactivity-effect-scope.md).
 
@@ -311,7 +311,7 @@ Crea un objeto de ámbito de efecto que puede capturar los efectos reactivos (es
   scope.stop()
   ```
 
-## getCurrentScope()
+## getCurrentScope() {#getcurrentscope}
 
 Devuelve el [ámbito de efectos](#effectscope) activo actual, si lo hay.
 
@@ -321,7 +321,7 @@ Devuelve el [ámbito de efectos](#effectscope) activo actual, si lo hay.
   function getCurrentScope(): EffectScope | undefined
   ```
 
-## onScopeDispose()
+## onScopeDispose() {#onscopedispose}
 
 Registra una devolución de llamada de eliminación en el [ámbito de efectos](#effectscope) activo actual. La devolución de llamada se invocará cuando se detenga el ámbito de efectos asociado.
 

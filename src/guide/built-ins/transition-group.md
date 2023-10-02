@@ -4,11 +4,11 @@ import ListMove from './transition-demos/ListMove.vue'
 import ListStagger from './transition-demos/ListStagger.vue'
 </script>
 
-# TransitionGroup
+# TransitionGroup {#transitiongroup}
 
 `<TransitionGroup>` es un componente integrado diseñado para animar la inserción, la eliminación y el cambio de orden de los elementos o componentes que son renderizados en una lista.
 
-## Diferencias con respecto a `<Transition>`
+## Diferencias con respecto a `<Transition>` {#differences-from-transition}
 
 `<TransitionGroup>` soporta las mismas props, clases de transición de CSS y hooks escuchadores de JavaScript que `<Transition>`, con las siguientes diferencias:
 
@@ -24,7 +24,7 @@ import ListStagger from './transition-demos/ListStagger.vue'
 Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), se debe hacer referencia a este como `<transition-group>`.
 :::
 
-## Transiciones de Entrada / Salida
+## Transiciones de Entrada / Salida {#enter-leave-transitions}
 
 Este es un ejemplo de aplicación de transiciones de entrada / salida a una lista `v-for` utilizando `<TransitionGroup>`:
 
@@ -50,7 +50,7 @@ Este es un ejemplo de aplicación de transiciones de entrada / salida a una list
 
 <ListBasic />
 
-## Transiciones de Movimiento
+## Transiciones de Movimiento {#move-transitions}
 
 La demostración anterior tiene algunos defectos obvios: cuando se inserta o elimina un elemento, los elementos que lo rodean "saltan" instantáneamente a su lugar en lugar de moverse suavemente. Podemos arreglar esto añadiendo algunas reglas CSS adicionales:
 
@@ -80,7 +80,7 @@ Ahora se ve mucho mejor, incluso se anima suavemente cuando se mezcla toda la li
 
 [Full Example](/examples/#list-transition)
 
-## Escalonamiento de las Transiciones de una Lista
+## Escalonamiento de las Transiciones de una Lista {#staggering-list-transitions}
 
 Al comunicarse con las transiciones de JavaScript mediante atributos de datos, también es posible escalonar las transiciones en una lista. En primer lugar, se representa el índice de un elemento como un atributo de datos en el elemento del DOM:
 

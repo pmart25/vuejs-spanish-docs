@@ -2,11 +2,11 @@
 outline: deep
 ---
 
-# Attributos Fallthrough
+# Attributos Fallthrough {#fallthrough-attributes}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
-## Herencia de los Atributos
+## Herencia de los Atributos {#attribute-inheritance}
 
 Un "atributo fallthrough" es un atributo o escuchador de eventos `v-on` que se pasa a un componente, pero que no se declara explícitamente en los [props](./props) o [emits](./events.html#declarando-eventos-emitidos) del componente receptor. Ejemplos comunes de esto son los atributos `class`, `style` e `id`.
 
@@ -31,7 +31,7 @@ El DOM final renderizado sería:
 
 Aquí, `<MyButton>` no declaró `class` como una prop aceptada. Por lo tanto, `class` se trata como un atributo fallthrough y se añade automáticamente al elemento raíz de `<MyButton>`.
 
-### Fusión de `class` y `style`
+### Fusión de `class` y `style` {#class-and-style-merging}
 
 Si el elemento raíz del componente hijo ya tiene atributos `class` o `style` existentes, se fusionarán con los valores `class` y `style` heredados del padre. Supongamos que cambiamos la plantilla de `<MyButton>` en el ejemplo anterior por
 
@@ -46,7 +46,7 @@ Entonces el DOM final renderizado pasaría a ser:
 <button class="btn large">Hazme clic</button>
 ```
 
-### Herencia del Escuchador `v-on`
+### Herencia del Escuchador `v-on` {#v-on-listener-inheritance}
 
 La misma regla se aplica a los escuchadores de eventos `v-on`:
 
@@ -56,7 +56,7 @@ La misma regla se aplica a los escuchadores de eventos `v-on`:
 
 El escuchador `clic` se agregará al elemento raíz de `<MyButton>`; es decir, el elemento nativo `<button>`. Cuando se haga clic en el `<button>` nativo, se disparará el método `onClick` del componente padre. Si el elemento nativo `<button>` ya tiene un escuchador `clic` vinculado con `v-on`, entonces ambos escuchadores se activarán.
 
-### Herencia de Componentes Anidados
+### Herencia de Componentes Anidados {#nested-component-inheritance}
 
 Si un componente renderiza otro componente como su nodo raíz, por ejemplo, refactorizamos `<MyButton>` para renderizar un `<BaseButton>` como su raíz:
 
@@ -73,7 +73,7 @@ Observa que:
 
 2. Los atributos redireccionados pueden ser aceptados como props por `<BaseButton>`, si son declarados por éste.
 
-## Desactivación de la Herencia de Atributos
+## Desactivación de la Herencia de Atributos {#disabling-attribute-inheritance}
 
 Si **no** quieres que un componente herede automáticamente los atributos, puedes establecer `inheritAttrs: false` en las opciones del componente.
 
@@ -130,7 +130,7 @@ Deseamos que todos los atributos fallthrough como `class` y los escuchadores `v-
 
 Recuerda que [`v-bind` sin un argumento](/guide/essentials/template-syntax.html#vinculacion-dinamica-de-multiples-atributos) vincula todas las propiedades de un objeto como atributos del elemento destino.
 
-## Herencia de los Atributos en los Nodos Raíz Múltiples
+## Herencia de los Atributos en los Nodos Raíz Múltiples {#attribute-inheritance-on-multiple-root-nodes}
 
 A diferencia de los componentes con un único nodo raíz, los componentes con múltiples nodos raíz no tienen un comportamiento automático de herencia de los atributos. Si `$attrs` no está vinculado explícitamente, se emitirá una advertencia en tiempo de ejecución.
 
@@ -154,7 +154,7 @@ La advertencia se suprimirá si `$attrs` está explícitamente vinculado:
 <footer>...</footer>
 ```
 
-## Acceso a los Atributos Fallthrough en JavaScript
+## Acceso a los Atributos Fallthrough en JavaScript {#accessing-fallthrough-attributes-in-javascript}
 
 <div class="composition-api">
 

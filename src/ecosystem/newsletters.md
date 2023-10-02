@@ -1,6 +1,6 @@
-# Community Newsletters {#community-newsletters}
+# Boletines de la Comunidad {#community-newsletters}
 
-There are many great newsletters / Vue-dedicated blogs from the community bringing you latest news and happenings in the Vue ecosystem. Here is a non-exhaustive list of active ones that we have come across:
+Hay muchos buenos boletines / blogs dedicados a Vue de la comunidad que te traen las últimas noticias y acontecimientos en el ecosistema Vue. He aquí una lista no exhaustiva de los más activos que hemos encontrado:
 
 - [Vue.js Feed](https://vuejsfeed.com/)
 - [Michael Thiessen](https://michaelnthiessen.com/newsletter)
@@ -9,4 +9,4 @@ There are many great newsletters / Vue-dedicated blogs from the community bringi
 - [Vue.js Developers Newsletter](https://vuejsdevelopers.com/newsletter/)
 - [VueDose](https://vuedose.tips/articles#newsletter)
 
-If you know a great one that isn't already included, please submit a pull request using the link below!
+Si conoces alguna que no esté incluida, envíanos un pull request a través del siguiente enlace.

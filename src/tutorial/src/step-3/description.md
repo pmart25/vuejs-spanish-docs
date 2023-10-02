@@ -1,4 +1,4 @@
-# Vinculación de Atributos
+# Vinculación de Atributos {#attribute-bindings}
 
 En Vue, los mostachos se utilizan únicamente para la interpolación de texto. Para vincular un atributo a un valor dinámico, utilizamos la directiva `v-bind`:
 

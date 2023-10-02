@@ -1,4 +1,4 @@
-# Composables
+# Composables {#composables}
 
 <script setup>
 import { useMouse } from './mouse'
@@ -9,7 +9,7 @@ const { x, y } = useMouse()
 Esta sección supone un conocimiento básico de la Composition API. Si has estado aprendiendo Vue sólo con la Options API, puedes establecer la Preferencia de la API en la Composition API (utilizando el conmutador en la parte superior de la barra lateral izquierda) y volver a leer los capítulos [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) y [Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html).
 :::
 
-## ¿Qué es un "Composable"?
+## ¿Qué es un "Composable"? {#what-is-a-composable}
 
 En el contexto de las aplicaciones Vue, un " composable " es una función que aprovecha la Composition API de Vue para encapsular y reutilizar la **lógica de estado**.
 
@@ -17,7 +17,7 @@ Al construir aplicaciones de frontend, a menudo necesitamos reutilizar la lógic
 
 Por el contrario, la lógica con estado implica la gestión del estado que cambia con el tiempo. Un ejemplo sencillo sería el seguimiento de la posición actual del ratón en una página. En escenarios del mundo real, también podría ser una lógica más compleja, como los gestos táctiles o el estado de conexión a una base de datos.
 
-## Ejemplo de Rastreador de Ratón
+## Ejemplo de Rastreador de Ratón {#mouse-tracker-example}
 
 Si tuviéramos que implementar la funcionalidad de seguimiento del ratón utilizando la Composition API directamente dentro de un componente, se vería así:
 
@@ -128,7 +128,7 @@ export function useMouse() {
 Cada instancia del componente que llame a `useMouse()` creará sus propias copias del estado `x` e `y` para que no interfieran entre sí. Si quieres gestionar el estado compartido entre componentes, lee el capítulo [Manejo del Estado](/guide/scaling-up/state-management.html).
 :::
 
-## Ejemplo de Estado Asíncrono
+## Ejemplo de Estado Asíncrono {#async-state-example}
 
 El composable `useMouse()` no toma ningún argumento, así que veamos otro ejemplo que hace uso de uno. Cuando se hace una recuperación de datos asíncrona, a menudo necesitamos manejar diferentes estados: carga, éxito y error:
 
@@ -222,13 +222,13 @@ Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas como 
 
 Aquí está [la versión actualizada de `useFetch()`](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgY29tcHV0ZWQgfSBmcm9tICd2dWUnXG5pbXBvcnQgeyB1c2VGZXRjaCB9IGZyb20gJy4vdXNlRmV0Y2guanMnXG5cbmNvbnN0IGJhc2VVcmwgPSAnaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3RvZG9zLydcbmNvbnN0IGlkID0gcmVmKCcxJylcbmNvbnN0IHVybCA9IGNvbXB1dGVkKCgpID0+IGJhc2VVcmwgKyBpZC52YWx1ZSlcblxuY29uc3QgeyBkYXRhLCBlcnJvciwgcmV0cnkgfSA9IHVzZUZldGNoKHVybClcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIExvYWQgcG9zdCBpZDpcbiAgPGJ1dHRvbiB2LWZvcj1cImkgaW4gNVwiIEBjbGljaz1cImlkID0gaVwiPnt7IGkgfX08L2J1dHRvbj5cblxuXHQ8ZGl2IHYtaWY9XCJlcnJvclwiPlxuICAgIDxwPk9vcHMhIEVycm9yIGVuY291bnRlcmVkOiB7eyBlcnJvci5tZXNzYWdlIH19PC9wPlxuICAgIDxidXR0b24gQGNsaWNrPVwicmV0cnlcIj5SZXRyeTwvYnV0dG9uPlxuICA8L2Rpdj5cbiAgPGRpdiB2LWVsc2UtaWY9XCJkYXRhXCI+RGF0YSBsb2FkZWQ6IDxwcmU+e3sgZGF0YSB9fTwvcHJlPjwvZGl2PlxuICA8ZGl2IHYtZWxzZT5Mb2FkaW5nLi4uPC9kaXY+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJ1c2VGZXRjaC5qcyI6ImltcG9ydCB7IHJlZiwgaXNSZWYsIHVucmVmLCB3YXRjaEVmZmVjdCB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZUZldGNoKHVybCkge1xuICBjb25zdCBkYXRhID0gcmVmKG51bGwpXG4gIGNvbnN0IGVycm9yID0gcmVmKG51bGwpXG5cbiAgYXN5bmMgZnVuY3Rpb24gZG9GZXRjaCgpIHtcbiAgICAvLyByZXNldCBzdGF0ZSBiZWZvcmUgZmV0Y2hpbmcuLlxuICAgIGRhdGEudmFsdWUgPSBudWxsXG4gICAgZXJyb3IudmFsdWUgPSBudWxsXG4gICAgXG4gICAgLy8gcmVzb2x2ZSB0aGUgdXJsIHZhbHVlIHN5bmNocm9ub3VzbHkgc28gaXQncyB0cmFja2VkIGFzIGFcbiAgICAvLyBkZXBlbmRlbmN5IGJ5IHdhdGNoRWZmZWN0KClcbiAgICBjb25zdCB1cmxWYWx1ZSA9IHVucmVmKHVybClcbiAgICBcbiAgICB0cnkge1xuICAgICAgLy8gYXJ0aWZpY2lhbCBkZWxheSAvIHJhbmRvbSBlcnJvclxuICBcdCAgYXdhaXQgdGltZW91dCgpXG4gIFx0ICAvLyB1bnJlZigpIHdpbGwgcmV0dXJuIHRoZSByZWYgdmFsdWUgaWYgaXQncyBhIHJlZlxuXHQgICAgLy8gb3RoZXJ3aXNlIHRoZSB2YWx1ZSB3aWxsIGJlIHJldHVybmVkIGFzLWlzXG4gICAgXHRjb25zdCByZXMgPSBhd2FpdCBmZXRjaCh1cmxWYWx1ZSlcblx0ICAgIGRhdGEudmFsdWUgPSBhd2FpdCByZXMuanNvbigpXG4gICAgfSBjYXRjaCAoZSkge1xuICAgICAgZXJyb3IudmFsdWUgPSBlXG4gICAgfVxuICB9XG5cbiAgaWYgKGlzUmVmKHVybCkpIHtcbiAgICAvLyBzZXR1cCByZWFjdGl2ZSByZS1mZXRjaCBpZiBpbnB1dCBVUkwgaXMgYSByZWZcbiAgICB3YXRjaEVmZmVjdChkb0ZldGNoKVxuICB9IGVsc2Uge1xuICAgIC8vIG90aGVyd2lzZSwganVzdCBmZXRjaCBvbmNlXG4gICAgZG9GZXRjaCgpXG4gIH1cblxuICByZXR1cm4geyBkYXRhLCBlcnJvciwgcmV0cnk6IGRvRmV0Y2ggfVxufVxuXG4vLyBhcnRpZmljaWFsIGRlbGF5XG5mdW5jdGlvbiB0aW1lb3V0KCkge1xuICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4ge1xuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgaWYgKE1hdGgucmFuZG9tKCkgPiAwLjMpIHtcbiAgICAgICAgcmVzb2x2ZSgpXG4gICAgICB9IGVsc2Uge1xuICAgICAgICByZWplY3QobmV3IEVycm9yKCdSYW5kb20gRXJyb3InKSlcbiAgICAgIH1cbiAgICB9LCAzMDApXG4gIH0pXG59In0=), con un retardo artificial y un error aleatorio para fines de demostración.
 
-## Convenciones y Mejores Prácticas
+## Convenciones y Mejores Prácticas {#conventions-and-best-practices}
 
-### Nomenclatura
+### Nomenclatura {#naming}
 
 Es una convención nombrar las funciones composables con nombres camelCase que comienzan con "use".
 
-### Argumentos de Entrada
+### Argumentos de Entrada {#input-arguments}
 
 Un composable puede aceptar argumentos de referencia incluso si no depende de ellos para la reactividad. Si estás escribiendo un composable que puede ser utilizado por otros desarrolladores, es una buena idea manejar el caso de que los argumentos de entrada sean refs en lugar de valores crudos. La función de ayuda [`unref()`](/api/reactivity-utilities.html#unref) será muy útil para este propósito:
 
@@ -244,7 +244,7 @@ function useFeature(maybeRef) {
 
 Si tu composable crea efectos reactivos cuando la entrada es una ref, asegúrate de vigilar explícitamente la ref con `watch()`, o llama a `unref()` dentro de un `watchEffect()` para que sea rastreado correctamente.
 
-### Valores de Retorno
+### Valores de Retorno {#return-values}
 
 Probablemente has notado que hemos estado usando exclusivamente `ref()` en lugar de `reactive()` en los composables. La convención recomendada es que los composables devuelvan siempre un objeto simple, no reactivo, que contenga múltiples refs. Esto permite que se desestructure en los componentes mientras se mantiene la reactividad:
 
@@ -267,7 +267,7 @@ console.log(mouse.x)
 El ratón se encuentra en la posición: {{ mouse.x }}, {{ mouse.y }}
 ```
 
-### Efectos Secundarios
+### Efectos Secundarios {#side-effects}
 
 Está bien utilizar efectos secundarios (por ejemplo, añadir escuchadores de eventos del DOM o buscar datos) en composables, pero presta atención a las siguientes reglas:
 
@@ -275,7 +275,7 @@ Está bien utilizar efectos secundarios (por ejemplo, añadir escuchadores de ev
 
 - Recuerda limpiar los efectos secundarios en `onUnmounted()`. Por ejemplo, si un composable establece un escuchador de eventos del DOM, deberías eliminar ese escuchador en `onUnmounted()` como hemos visto en el ejemplo de `useMouse()`. Puede ser una buena idea utilizar un composable que haga esto automáticamente por ti, como el ejemplo de `useEventListener()`.
 
-### Restricciones de Uso
+### Restricciones de Uso {#usage-restrictions}
 
 Los composables sólo deben ser llamados **sincrónicamente** en `<script setup>` o en el hook `setup()`. En algunos casos, también puedes llamarlos en hooks del ciclo de vida como `onMounted()`.
 
@@ -289,7 +289,7 @@ Estos son los contextos en los que Vue es capaz de determinar la instancia actua
 `<script setup>` es el único lugar donde puedes llamar a composables **después** de usar `await`. El compilador restaura automáticamente el contexto de la instancia activa por ti después de la operación asíncrona.
 :::
 
-## Extracción de Composables para la Organización del Código
+## Extracción de Composables para la Organización del Código {#extracting-composables-for-code-organization}
 
 Los composables pueden ser extraídos no sólo para su reutilización, sino también para la organización del código. A medida que la complejidad de sus componentes crece, puede terminar con componentes que son demasiado grandes para navegar y razonar. La Composition API te da toda la flexibilidad para organizar el código de tus componentes en funciones más pequeñas basadas en aspectos lógicos:
 
@@ -307,7 +307,7 @@ const { qux } = useFeatureC(baz)
 
 Hasta cierto punto, se puede pensar en estos composables extraídos como servicios con alcance de componente que pueden hablar entre sí.
 
-## Uso de los Composables en la Options API
+## Uso de los Composables en la Options API {#using-composables-in-options-api}
 
 Si estás usando la Options API, los composables deben ser llamados dentro de `setup()`, y los bindings retornados deben ser devueltos desde `setup()` para que sean expuestos a `this` y a la plantilla:
 
@@ -329,9 +329,9 @@ export default {
 }
 ```
 
-## Comparación con Otras Técnicas
+## Comparación con Otras Técnicas {#comparisons-with-other-techniques}
 
-### vs. Mixins
+### vs. Mixins {#vs-mixins}
 
 Los usuarios que vienen de Vue 2 pueden estar familiarizados con la opción [mixins](/api/options-composition.html#mixins), que también nos permite extraer la lógica del componente en unidades reutilizables. Los mixins tienen tres inconvenientes principales:
 
@@ -343,7 +343,7 @@ Los usuarios que vienen de Vue 2 pueden estar familiarizados con la opción [mix
 
 Por las razones anteriores, ya no recomendamos el uso de mixins en Vue 3. La función se mantiene sólo por razones de migración y familiaridad.
 
-### vs. Componentes sin Renderizado
+### vs. Componentes sin Renderizado {#vs-renderless-components}
 
 En el capítulo sobre slots de los componentes, discutimos el patrón [Componentes sin Renderizado](/guide/components/slots.html#componentes-sin-renderizado) basado en slots de ámbito. Incluso implementamos la misma demostración de seguimiento del ratón utilizando componentes sin renderizado.
 
@@ -351,11 +351,11 @@ La principal ventaja de los composables sobre los componentes sin renderizado es
 
 La recomendación es utilizar composables cuando se reutiliza la lógica pura, y utilizar componentes cuando se reutiliza tanto la lógica como el diseño visual.
 
-### vs. Hooks de React
+### vs. Hooks de React {#vs-react-hooks}
 
 Si tienes experiencia con React, puedes notar que esto se parece mucho a los hooks personalizados de React. La Composition API se inspiró en parte en los hooks de React, y los composables de Vue son de hecho similares a los hooks de React en cuanto a las capacidades de composición de la lógica. Sin embargo, los composables de Vue se basan en el sistema de reactividad de precisión de Vue, que es fundamentalmente diferente del modelo de ejecución de los hooks de React. Esto se discute con más detalle en las [FAQ de la Composition API](/guide/extras/composition-api-faq#comparacion-con-los-hooks-de-react).
 
-## Lecturas Adicionales
+## Lecturas Adicionales {#further-reading}
 
 - [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html): para una comprensión de bajo nivel de cómo funciona el sistema de reactividad de Vue.
 - [Manejo del Estado](/guide/scaling-up/state-management.html): para conocer los patrones de gestión del estado compartido por varios componentes.

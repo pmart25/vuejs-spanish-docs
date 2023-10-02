@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Suspense
+# Suspense {#suspense}
 
 :::warning Característica Experimental
 `<Suspense>` es una función experimental. No se garantiza que alcance un estado estable y la API puede cambiar antes de que lo haga.
@@ -10,7 +10,7 @@ outline: deep
 
 `<Suspense>` es un componente integrado para orquestar dependencias asíncronas en un árbol de componentes. Puede mostrar un estado de carga mientras espera que se resuelvan múltiples dependencias asíncronas anidadas en el árbol de componentes.
 
-## Dependencias Asíncronas
+## Dependencias Asíncronas {#async-dependencies}
 
 Para explicar el problema que intenta resolver `<Suspense>` y cómo interactúa con estas dependencias asíncronas, imaginemos una jerarquía de componentes como la siguiente:
 
@@ -34,7 +34,7 @@ Hay dos tipos de dependencias asíncronas a las que `<Suspense>` puede esperar:
 
 2. [Componentes Asíncronos](/guide/components/async.html).
 
-### `async setup()`
+### `async setup()` {#async-setup}
 
 El hook `setup()` de un componente de la Composition API puede ser asíncrono:
 
@@ -63,13 +63,13 @@ const posts = await res.json()
 </template>
 ```
 
-### Componentes Asíncronos
+### Componentes Asíncronos {#async-components}
 
 Los componentes asíncronos son **"suspendibles "** por defecto. Esto significa que si tiene un `<Suspense>` en la cadena principal, será tratado como una dependencia asíncrona de ese `<Suspense>`. En este caso, el estado de carga será controlado por el `<Suspense>`, y se ignorarán las opciones de carga, error, retraso y tiempo de espera del propio componente.
 
 El componente asíncrono puede optar por no controlar el `<Suspense>` y dejar que el componente controle siempre su propio estado de carga especificando `<Suspensible: false>` en sus opciones.
 
-## Carga del Estado
+## Carga del Estado {#loading-state}
 
 El componente `<Suspense>` tiene dos slots: `#default` y `#fallback`. Ambos slots sólo permiten **un** nodo hijo inmediato. Si es posible, se muestra el nodo del slot por defecto. Si no lo es, se mostrará el nodo del slot fallback en su lugar.
 
@@ -93,17 +93,17 @@ Una vez en estado resuelto, `<Suspense>` sólo volverá a un estado pendiente si
 
 Cuando se produce una reversión, el contenido fallback no se mostrará inmediatamente. En su lugar, `<Suspense>` mostrará el contenido anterior `#default` mientras espera a que se resuelva el nuevo contenido y sus dependencias asíncronas. Este comportamiento puede configurarse con la prop `timeout`: `<Suspense>` que pasará a mostrar el contenido fallback si tarda más de `timeout` en renderizar el nuevo contenido por defecto. Un valor de `timeout` de `0` hará que el contenido fallback se muestre inmediatamente cuando el contenido default sea reemplazado.
 
-## Eventos
+## Eventos {#events}
 
 El componente `<Suspense>` emite 3 eventos: `pending`, `resolve` y `fallback`. El evento `pending` se produce cuando se entra en estado pendiente. El evento `resolve` se emite cuando el nuevo contenido ha terminado de resolverse en el slot `default`. El evento `fallback` se emite cuando se muestra el contenido del slot `fallback`.
 
 Los eventos podrían utilizarse, por ejemplo, para mostrar un indicador de carga delante del DOM antiguo mientras se cargan los nuevos componentes.
 
-## Manejo de Errores
+## Manejo de Errores {#error-handling}
 
 Actualmente, `<Suspense>` no proporciona un manejo de errores a través del propio componente; sin embargo, puedes utilizar la opción [`errorCaptured`](/api/options-lifecycle.html#errorcaptured) o el hook [`onErrorCaptured()`](/api/composition-api-lifecycle.html#onerrorcaptured) para capturar y manejar errores asíncronos en el componente padre de `<Suspense>`.
 
-## Combinación con Otros Componentes
+## Combinación con Otros Componentes {#combining-with-other-components}
 
 Es común querer usar `<Suspense>` en combinación con los componentes [`<Transition>`](./transition) y [`<KeepAlive>`](./keep-alive). El orden de anidamiento de estos componentes es importante para que todos funcionen correctamente.
 

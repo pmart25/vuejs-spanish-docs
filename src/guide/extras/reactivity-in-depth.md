@@ -6,11 +6,11 @@ outline: deep
 import SpreadSheet from './demos/SpreadSheet.vue'
 </script>
 
-# Reactividad en Profundidad
+# Reactividad en Profundidad {#reactivity-in-depth}
 
 Una de las características más distintivas de Vue es el sistema de reactividad no intrusiva. El estado de los componentes consiste en objetos JavaScript reactivos. Cuando los modificas, la vista se actualiza. Esto hace que la gestión del estado sea sencilla e intuitiva, pero también es importante entender cómo funciona para evitar algunos problemas comunes. En esta sección, vamos a profundizar en algunos de los detalles de bajo nivel del sistema de reactividad de Vue.
 
-## ¿Qué es la Reactividad?
+## ¿Qué es la Reactividad? {#what-is-reactivity}
 
 Este término aparece bastante en la programación hoy en día, pero ¿a qué se refiere la gente cuando lo dice? La reactividad es un paradigma de programación que nos permite ajustarnos a los cambios de forma declarativa. El ejemplo canónico que la gente suele mostrar, porque es muy bueno, es una hoja de cálculo de Excel:
 
@@ -63,7 +63,7 @@ Esta función `whenDepsChange()` tiene las siguientes tareas:
 
 3. Detectar cuando una variable es mutada. Por ejemplo, cuando a `A0` se le asigna un nuevo valor, notifica a todos sus efectos suscriptores para que se vuelvan a ejecutar.
 
-## Cómo Funciona la Reactividad en Vue
+## Cómo Funciona la Reactividad en Vue {#how-reactivity-works-in-vue}
 
 Realmente no podemos hacer un seguimiento de la lectura y escritura de variables locales como en el ejemplo. No hay ningún mecanismo para hacerlo en JavaScript. Lo que sí **podemos** hacer es interceptar la lectura y escritura de las **propiedades de los objetos**.
 
@@ -206,7 +206,7 @@ Las APIs `ref()`, `computed()` y `watchEffect()` forman parte de la API de compo
 
 </div>
 
-## Reactividad en Tiempo de Ejecución vs. Tiempo de Compilación
+## Reactividad en Tiempo de Ejecución vs. Tiempo de Compilación {#runtime-vs-compile-time-reactivity}
 
 El sistema de reactividad de Vue se basa principalmente en el tiempo de ejecución: el seguimiento y la activación se realizan mientras el código se ejecuta directamente en el navegador. Las ventajas de la reactividad en tiempo de ejecución es que puede funcionar sin un paso de compilación, y hay menos casos límite. Por otro lado, esto hace que esté restringida por las limitaciones de sintaxis de JavaScript.
 
@@ -227,11 +227,11 @@ A0 = 2
 
 Este snippet compila exactamente lo que habríamos escrito sin la transformación, añadiendo automáticamente `.value` después de las referencias a las variables. Con la Transformación de la Reactividad, el sistema de reactividad de Vue se convierte en uno híbrido.
 
-## Depuración de la Reactividad
+## Depuración de la Reactividad {#reactivity-debugging}
 
 Es estupendo que el sistema de reactividad de Vue rastree automáticamente las dependencias, pero en algunos casos podemos querer averiguar exactamente qué se está rastreando, o qué está causando que un componente se vuelva a renderizar.
 
-### Hooks de Depuración de Componentes
+### Hooks de Depuración de Componentes {#component-debugging-hooks}
 
 Podemos depurar qué dependencias se utilizan durante el renderizado de un componente y cuáles son las que desencadenan una actualización utilizando las funciones <span class="options-api">`renderTracked`</span><span class="composition- api">`onRenderTracked`</span> y <span class="options-api">`renderTriggered`</span><span class="composition-api">`onRenderTriggered`</span> del hooks del ciclo de vida. Ambos hooks recibirán un evento de depuración que contiene información sobre la dependencia en cuestión. Se recomienda colocar una sentencia `debugger` en los callbacks para inspeccionar interactivamente la dependencia:
 
@@ -289,7 +289,7 @@ type DebuggerEvent = {
 }
 ```
 
-### Depuración Computada
+### Depuración Computada {#computed-debugging}
 
 <!-- TODO equivalente de la Options API -->
 
@@ -323,7 +323,7 @@ count.value++
 Las opciones computadas `onTrack` y `onTrigger` sólo funcionan en modo de desarrollo.
 :::
 
-### Depuración del Watcher
+### Depuración del Watcher {#watcher-debugging}
 
 <!-- TODO equivalente de la Options API -->
 
@@ -353,13 +353,13 @@ watchEffect(callback, {
 Las opciones de seguimiento `onTrack` y `onTrigger` sólo funcionan en modo de desarrollo.
 :::
 
-## Integración con los Sistemas de Estado Externos
+## Integración con los Sistemas de Estado Externos {#integration-with-external-state-systems}
 
 El sistema de reactividad de Vue funciona convirtiendo profundamente los objetos JavaScript planos en proxies reactivos. La conversión profunda puede ser innecesaria o a veces no deseada cuando se integra con sistemas de gestión de estado externos (por ejemplo, si una solución externa también utiliza Proxies).
 
 La idea general de integrar el sistema de reactividad de Vue con una solución externa de gestión de estado es mantener el estado externo en un [`shallowRef`](/api/reactivity-advanced.html#shallowref). Una ref superficial sólo es reactiva cuando se accede a su propiedad `.value`; el valor interno se deja intacto. Cuando el estado externo cambia, reemplaza el valor de la ref para activar las actualizaciones.
 
-### Datos Inmutables
+### Datos Inmutables {#immutable-data}
 
 Si estás implementando una función de deshacer / rehacer, es probable que quieras tomar una instantánea del estado de la aplicación en cada edición del usuario. Sin embargo, el sistema de reactividad mutable de Vue no es el más adecuado para esto si el árbol de estado es grande, porque serializar todo el objeto del estado en cada actualización puede ser costoso en términos de costes de CPU y memoria.
 
@@ -383,7 +383,7 @@ export function useImmer(baseState) {
 
 [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHVzZUltbWVyIH0gZnJvbSAnLi9pbW1lci5qcydcbiAgXG5jb25zdCBbaXRlbXMsIHVwZGF0ZUl0ZW1zXSA9IHVzZUltbWVyKFtcbiAge1xuICAgICB0aXRsZTogXCJMZWFybiBWdWVcIixcbiAgICAgZG9uZTogdHJ1ZVxuICB9LFxuICB7XG4gICAgIHRpdGxlOiBcIlVzZSBWdWUgd2l0aCBJbW1lclwiLFxuICAgICBkb25lOiBmYWxzZVxuICB9XG5dKVxuXG5mdW5jdGlvbiB0b2dnbGVJdGVtKGluZGV4KSB7XG4gIHVwZGF0ZUl0ZW1zKGl0ZW1zID0+IHtcbiAgICBpdGVtc1tpbmRleF0uZG9uZSA9ICFpdGVtc1tpbmRleF0uZG9uZVxuICB9KVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPHVsPlxuICAgIDxsaSB2LWZvcj1cIih7IHRpdGxlLCBkb25lIH0sIGluZGV4KSBpbiBpdGVtc1wiXG4gICAgICAgIDpjbGFzcz1cInsgZG9uZSB9XCJcbiAgICAgICAgQGNsaWNrPVwidG9nZ2xlSXRlbShpbmRleClcIj5cbiAgICAgICAge3sgdGl0bGUgfX1cbiAgICA8L2xpPlxuICA8L3VsPlxuPC90ZW1wbGF0ZT5cblxuPHN0eWxlPlxuLmRvbmUge1xuICB0ZXh0LWRlY29yYXRpb246IGxpbmUtdGhyb3VnaDtcbn1cbjwvc3R5bGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCIsXG4gICAgXCJpbW1lclwiOiBcImh0dHBzOi8vdW5wa2cuY29tL2ltbWVyQDkuMC43L2Rpc3QvaW1tZXIuZXNtLmpzP21vZHVsZVwiXG4gIH1cbn0iLCJpbW1lci5qcyI6ImltcG9ydCBwcm9kdWNlIGZyb20gJ2ltbWVyJ1xuaW1wb3J0IHsgc2hhbGxvd1JlZiB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZUltbWVyKGJhc2VTdGF0ZSkge1xuICBjb25zdCBzdGF0ZSA9IHNoYWxsb3dSZWYoYmFzZVN0YXRlKVxuICBjb25zdCB1cGRhdGUgPSAodXBkYXRlcikgPT4ge1xuICAgIHN0YXRlLnZhbHVlID0gcHJvZHVjZShzdGF0ZS52YWx1ZSwgdXBkYXRlcilcbiAgfVxuXG4gIHJldHVybiBbc3RhdGUsIHVwZGF0ZV1cbn0ifQ==)
 
-### Máquinas de Estado
+### Máquinas de Estado {#state-machines}
 
 Las [Máquinas de Estado](https://en.wikipedia.org/wiki/Finite-state_machine) son un modelo para describir todos los estados posibles en los que puede estar una aplicación y todas las formas posibles de transición de un estado a otro. Aunque puede ser exagerado para componentes simples, puede ayudar a que los flujos de estado complejos sean más robustos y manejables.
 
@@ -407,6 +407,6 @@ export function useMachine(options) {
 
 [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHVzZU1hY2hpbmUgfSBmcm9tICcuL21hY2hpbmUuanMnXG4gIFxuY29uc3QgW3N0YXRlLCBzZW5kXSA9IHVzZU1hY2hpbmUoe1xuICBpZDogJ3RvZ2dsZScsXG4gIGluaXRpYWw6ICdpbmFjdGl2ZScsXG4gIHN0YXRlczoge1xuICAgIGluYWN0aXZlOiB7IG9uOiB7IFRPR0dMRTogJ2FjdGl2ZScgfSB9LFxuICAgIGFjdGl2ZTogeyBvbjogeyBUT0dHTEU6ICdpbmFjdGl2ZScgfSB9XG4gIH1cbn0pXG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8YnV0dG9uIEBjbGljaz1cInNlbmQoJ1RPR0dMRScpXCI+XG4gICAge3sgc3RhdGUubWF0Y2hlcyhcImluYWN0aXZlXCIpID8gXCJPZmZcIiA6IFwiT25cIiB9fVxuICA8L2J1dHRvbj5cbjwvdGVtcGxhdGU+IiwiaW1wb3J0LW1hcC5qc29uIjoie1xuICBcImltcG9ydHNcIjoge1xuICAgIFwidnVlXCI6IFwiaHR0cHM6Ly9zZmMudnVlanMub3JnL3Z1ZS5ydW50aW1lLmVzbS1icm93c2VyLmpzXCIsXG4gICAgXCJ4c3RhdGVcIjogXCJodHRwczovL3VucGtnLmNvbS94c3RhdGVANC4yNy4wL2VzL2luZGV4LmpzP21vZHVsZVwiXG4gIH1cbn0iLCJtYWNoaW5lLmpzIjoiaW1wb3J0IHsgY3JlYXRlTWFjaGluZSwgaW50ZXJwcmV0IH0gZnJvbSAneHN0YXRlJ1xuaW1wb3J0IHsgc2hhbGxvd1JlZiB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZU1hY2hpbmUob3B0aW9ucykge1xuICBjb25zdCBtYWNoaW5lID0gY3JlYXRlTWFjaGluZShvcHRpb25zKVxuICBjb25zdCBzdGF0ZSA9IHNoYWxsb3dSZWYobWFjaGluZS5pbml0aWFsU3RhdGUpXG4gIGNvbnN0IHNlcnZpY2UgPSBpbnRlcnByZXQobWFjaGluZSlcbiAgICAub25UcmFuc2l0aW9uKChuZXdTdGF0ZSkgPT4gKHN0YXRlLnZhbHVlID0gbmV3U3RhdGUpKVxuICAgIC5zdGFydCgpXG4gIGNvbnN0IHNlbmQgPSAoZXZlbnQpID0+IHNlcnZpY2Uuc2VuZChldmVudClcblxuICByZXR1cm4gW3N0YXRlLCBzZW5kXVxufSJ9)
 
-### RxJS
+### RxJS {#rxjs}
 
 [RxJS](https://rxjs.dev/) es una biblioteca para trabajar con flujos de eventos asíncronos. La librería [VueUse](https://vueuse.org/) proporciona el complemento [`@vueuse/rxjs`](https://vueuse.org/rxjs/readme.html) para conectar los flujos RxJS con el sistema de reactividad de Vue.

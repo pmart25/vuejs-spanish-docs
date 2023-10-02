@@ -1,4 +1,4 @@
-# Instancia del Componente
+# Instancia del Componente {#component-instance}
 
 :::info
 Esta página documenta las propiedades y métodos integrados expuestos en la instancia pública del componente, es decir, `this`.
@@ -6,7 +6,7 @@ Esta página documenta las propiedades y métodos integrados expuestos en la ins
 Todas las propiedades listadas en esta página son de solo lectura (excepto las porpiedades anidadas en `$data`).
 :::
 
-## $data
+## $data {#data}
 
 El objeto devuelto desde [`data`](./options-state.html#data), es hecho reactivo por el componente. La instancia del componente delega el acceso a las propiedades en su propio objeto data.
 
@@ -18,7 +18,7 @@ El objeto devuelto desde [`data`](./options-state.html#data), es hecho reactivo 
   }
   ```
 
-## $props
+## $props {#props}
 
 Un objeto representando las propiedades actuales y resueltas del componente.
 
@@ -34,7 +34,7 @@ Un objeto representando las propiedades actuales y resueltas del componente.
 
   Solo las propiedades declaradas a través de la opción [`props`](./options-state.html#props) serán incluidas. La instancia del componente delega el acceso a las propiedades en su propio objeto props.
 
-## $el
+## $el {#el}
 
 El nodo raíz DOM que la instancia del componente está gestionando.
 
@@ -58,7 +58,7 @@ El nodo raíz DOM que la instancia del componente está gestionando.
   Por coherencia, se recomienda utilizar [template refs](/guide/essentials/template-refs.html) para acceder directamente a los elementos en lugar de confiar en `$el`.
   :::
 
-## $options
+## $options {#options}
 
 Las opciones resueltas del componente utilizadas para instanciar la instancia actual del componente.
 
@@ -91,7 +91,7 @@ Las opciones resueltas del componente utilizadas para instanciar la instancia ac
 
 - **Ver también:** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
 
-## $parent
+## $parent {#parent}
 
 La instancia apadre, si la instancia actual tiene uno. Para el componente raíz su valor será `null`.
 
@@ -103,7 +103,7 @@ La instancia apadre, si la instancia actual tiene uno. Para el componente raíz 
   }
   ```
 
-## $root
+## $root {#root}
 
 La instancia del componente raíz del árbol de componentes actual. Si la instancia actual no tiene padres este valor será él mismo.
 
@@ -115,7 +115,7 @@ La instancia del componente raíz del árbol de componentes actual. Si la instan
   }
   ```
 
-## $slots
+## $slots {#slots}
 
 Un objeto representando los [slots](/guide/components/slots.html) pasados desde el componente padre.
 
@@ -139,7 +139,7 @@ Un objeto representando los [slots](/guide/components/slots.html) pasados desde 
 
 - **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function.html#renderizado-de-slots)
 
-## $refs
+## $refs {#refs}
 
 Un objeto de elementos del DOM e instancias de componentes, registrados a través de [refs de la plantilla](/guide/essentials/template-refs.html).
 
@@ -156,7 +156,7 @@ Un objeto de elementos del DOM e instancias de componentes, registrados a travé
   - [Refs de la Plantilla](/guide/essentials/template-refs.html)
   - [Atributos Especiales - ref](./built-in-special-attributes.md#ref)
 
-## $attrs
+## $attrs {#attrs}
 
 Un objeto que contiene el resto de los atributos del componente.
 
@@ -178,7 +178,7 @@ Un objeto que contiene el resto de los atributos del componente.
 
   - [Atributos Fallthrough](/guide/components/attrs.html)
 
-## $watch()
+## $watch() {#watch}
 
 API para crear watchers.
 
@@ -261,7 +261,7 @@ API para crear watchers.
   - [Options - `watch`](/api/options-state.html#watch)
   - [Guía - Watchers](/guide/essentials/watchers.html)
 
-## $emit()
+## $emit() {#emit}
 
 Activa un evento personalizado en la instancia actual. Cualquier arguemnto adicional será pasado dentro de la función callback del que escucha el evento.
 
@@ -291,7 +291,7 @@ Activa un evento personalizado en la instancia actual. Cualquier arguemnto adici
   - [Componentes - Eventos](/guide/components/events.html)
   - [`emits` option](./options-state.html#emits)
 
-## $forceUpdate()
+## $forceUpdate() {#forceupdate}
 
 Fuerza a la instancia del componente a re-renderizarse.
 
@@ -307,7 +307,7 @@ Fuerza a la instancia del componente a re-renderizarse.
 
   Esto debería ser raramente necesario dado el sistema de reactividad completamente automático de Vue. Los únicos casos en los que se puede necesitar es cuando se ha creado explícitamente un estado de componente no reactivo utilizando APIs de reactividad avanzadas.
 
-## $nextTick()
+## $nextTick() {#nexttick}
 
 Versión vinculada a la instancia del componente del global [`nextTick()`](./general.html#nexttick).
 

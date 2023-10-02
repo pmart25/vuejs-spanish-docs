@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 }
 </script>
 
-# Eventos de los Componentes {#eventos-de-los-componentes}
+# Eventos de los Componentes {#component-events}
 
 > Esta página supone que ya has leído los [Fundamentos de los Componentes](/guide/essentials/component-basics). Léelo primero si eres nuevo en el tema de componentes.
 
@@ -26,7 +26,7 @@ if (typeof window !== 'undefined') {
   <VueSchoolLink href="https://vueschool.io/lessons/defining-custom-events-emits" title="Lección gratuita sobre la Definición de Eventos Personalizados en Vue.js"/>
 </div>
 
-## Emitiendo y Escuchando Eventos
+## Emitiendo y Escuchando Eventos {#emitting-and-listening-to-events}
 
 Un componente puede emitir eventos personalizados directamente en las expresiones de la plantilla (por ejemplo, en un manejador `v-on`) utilizando el método incorporado `$emit`:
 
@@ -69,7 +69,7 @@ Al igual que los componentes y props, los nombres de eventos proporcionan una tr
 A diferencia de los eventos nativos del DOM, los eventos emitidos por los componentes **no** se reproducen. Sólo puedes escuchar los eventos emitidos por un componente hijo directo. Si es necesario comunicarse entre componentes hermanos o profundamente anidados, utiliza un bus de eventos externo o una [solución de gestión de estado global](/guide/scaling-up/state-management.html).
 :::
 
-## Argumentos del Evento
+## Argumentos del Evento {#event-arguments}
 
 A veces es útil emitir un valor específico con un evento. Por ejemplo, podemos querer que el componente `<BlogPost>` se encargue de cuánto ampliar el texto. En esos casos, podemos pasar argumentos extra a `$emit` para proporcionar este valor:
 
@@ -118,7 +118,7 @@ function increaseCount(n) {
 Todos los argumentos adicionales que se pasen a `$emit()` después del nombre del evento serán reenviados a la función de escucha. Por ejemplo, con `$emit('foo', 1, 2, 3)` la función de escucha recibirá tres argumentos.
 :::
 
-## Declarando Eventos Emitidos {#declarando-eventos-emitidos}
+## Declarando Eventos Emitidos {#declaring-emitted-events}
 
 Un componente puede declarar explícitamente los eventos que emitirá utilizando la macro <span class="composition-api">[`defineEmits()`](/api/sfc-script-setup.html#defineprops-y-defineemits)</span><span class="options-api">opción [`emits`](/api/options-state.html#emits)</span>:
 
@@ -229,7 +229,7 @@ Aunque es opcional, se recomienda definir todos los eventos emitidos para docume
 Si se define un evento nativo (por ejemplo, `clic`) en la opción `emits`, el escuchador solo escuchará ahora los eventos `clic` emitidos por el componente y ya no responderá a los eventos `clic` nativos.
 :::
 
-## Validación de Eventos
+## Validación de Eventos {#events-validation}
 
 De forma similar a la validación del tipo de props, un evento emitido puede ser validado si se define con la sintaxis de objeto en lugar de la sintaxis de array.
 

@@ -1,4 +1,4 @@
-# Accesibilidad
+# Accesibilidad {#accessibility}
 
 La accesibilidad web (también conocida como a11y) se refiere a la práctica de crear sitios web que pueden ser utilizados por cualquier persona, ya sea una persona con una discapacidad, una conexión lenta, un hardware obsoleto o roto, o simplemente alguien en un entorno desfavorable. Por ejemplo, añadir subtítulos a un video ayudaría tanto a los usuarios sordos y con problemas de audición como a los usuarios que se encuentran en un entorno ruidoso y no pueden escuchar su teléfono. Del mismo modo, asegurarse de que el texto no tiene un contraste demasiado bajo ayudará tanto a los usuarios con problemas de visión como a los usuarios que intentan usar su teléfono bajo la luz del sol.
 
@@ -6,7 +6,7 @@ La accesibilidad web (también conocida como a11y) se refiere a la práctica de 
 
 Consulta la [Guía de planificación y gestión de la accesibilidad web](https://www.w3.org/WAI/planning-and-managing/) proporcionada por la [World Wide Web Consortium (W3C)](https://www.w3.org/)
 
-## Ignorar un Enlace
+## Ignorar un Enlace {#skip-link}
 
 Debes agregar un enlace en la parte superior de cada página que vaya directamente al área de contenido principal para que los usuarios puedan saltarse el contenido que se repite en varias páginas web.
 
@@ -80,11 +80,11 @@ watch(
 
 [Lee la documentación en Saltar enlace al contenido principal](https://www.w3.org/WAI/WCAG21/Techniques/general/G1.html)
 
-## Estructura del Contenido
+## Estructura del Contenido {#content-structure}
 
 Una de las piezas más importantes de la accesibilidad es asegurarte de que el diseño pueda soportar una aplicación accesible. El diseño debe considerar no solo el contraste de color, la selección de fuentes, el tamaño del texto y el idioma, sino también cómo se estructura el contenido en la aplicación.
 
-### Títulos
+### Títulos {#headings}
 
 Los usuarios pueden navegar por una aplicación a través de los títulos. Tener títulos descriptivos para cada sección de tu aplicación facilita a los usuarios predecir el contenido de cada sección. Cuando se trata de títulos, hay un par de prácticas de accesibilidad recomendadas:
 
@@ -112,7 +112,7 @@ Los usuarios pueden navegar por una aplicación a través de los títulos. Tener
 </main>
 ```
 
-### Puntos de Referencia
+### Puntos de Referencia {#landmarks}
 
 Los [puntos de referencia](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/landmark_role) proporcionan acceso programático a las secciones de una aplicación. Los usuarios que dependen de la tecnología de asistencia pueden navegar a cada sección de la aplicación y saltarse el contenido. Puedes usar los [roles ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles) para ayudarte a conseguirlo.
 
@@ -133,7 +133,7 @@ Se recomienda utilizar elementos HTML de referencia con atributos de roles de re
 
 [Más información sobre los puntos de referencia](https://www.w3.org/TR/wai-aria-1.2/#landmark_roles)
 
-## Formularios Semánticos
+## Formularios Semánticos {#semantic-forms}
 
 Al crear un formulario, puedes utilizar los siguientes elementos: `<form>`, `<label>`, `<input>`, `<textarea>`, y `<button>`
 
@@ -158,7 +158,7 @@ Las etiquetas generalmente se colocan en la parte superior o a la izquierda de l
 
 Observa cómo puedes incluir `autocomplete='on'` en el elemento del formulario y se aplicará a todas las entradas de texto en tu formulario. También puedes establecer diferentes [valores para el atributo de autocompletar](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) por cada entrada de texto.
 
-### Etiquetas
+### Etiquetas {#labels}
 
 Proporciona etiquetas para describir el propósito de todos los controles del formulario; conecta `for` y `id`:
 
@@ -186,7 +186,7 @@ Aunque es posible que hayas visto etiquetas que envuelven los campos de entrada 
 Establecer explícitamente las etiquetas con un identificador coincidente es más compatible con la tecnología de asistencia.
 :::
 
-#### `aria-label`
+#### `aria-label` {#aria-label}
 
 También puedes dar a la entrada un nombre accesible con [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label).
 
@@ -207,7 +207,7 @@ No dudes en inspeccionar este elemento en Chrome DevTools para ver cómo ha camb
 
 ![Las herramientas de desarrollo de Chrome muestran el nombre accesible de aria-label](./images/AccessibleARIAlabelDevTools.png)
 
-#### `aria-labelledby`
+#### `aria-labelledby` {#aria-labelledby}
 
 Usar [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) es similar a `aria-label`, excepto que se usa si el texto de la etiqueta está visible en la pantalla. Se empareja con otros elementos por su `id` y se pueden enlazar múltiples `id`s:
 
@@ -237,7 +237,7 @@ Usar [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibil
 
 ![Las herramientas de desarrollo de Chrome muestran el nombre accesible de aria-labelledby](./images/AccessibleARIAlabelledbyDevTools.png)
 
-#### `aria-describedby`
+#### `aria-describedby` {#aria-describedby}
 
 [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) se usa de la misma manera que `aria-labelledby`, excepto que proporciona una descripción con información adicional que el usuario podría necesitar. Puede utilizarse para describir los criterios de cualquier entrada:
 
@@ -271,7 +271,7 @@ Puedes ver la descripción inspeccionando en Chrome DevTools:
 
 ![Las herramientas de desarrollo de Chrome muestran el nombre accesible de aria-labelledby y la descripción con aria-describedby](./images/AccessibleARIAdescribedby.png)
 
-### Marcador de Posición (Placeholder)
+### Marcador de Posición (Placeholder) {#placeholder}
 
 Evita utilizar placeholders, ya que pueden confundir a muchos usuarios.
 
@@ -303,18 +303,18 @@ Uno de los problemas con los placeholders es que no cumplen los [criterios de co
 ```css
 /* https://www.w3schools.com/howto/howto_css_placeholder.asp */
 
-#lastName::placeholder {
+#lastName::placeholder { {#instructions}
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
   opacity: 1; /* Firefox */
 }
 
-#lastName:-ms-input-placeholder {
+#lastName:-ms-input-placeholder { {#hiding-content}
   /* Internet Explorer 10-11 */
   color: black;
 }
 
-#lastName::-ms-input-placeholder {
+#lastName::-ms-input-placeholder { {#aria-hidden-true}
   /* Microsoft Edge */
   color: black;
 }
@@ -322,7 +322,7 @@ Uno de los problemas con los placeholders es que no cumplen los [criterios de co
 
 Lo mejor es proporcionar toda la información que el usuario necesita para completar los formularios fuera de cualquier entrada.
 
-### Instrucciones
+### Instrucciones {#buttons}
 
 Al agregar instrucciones para tus campos de entrada, asegúrate de vincularlos correctamente a la entrada. Puedes proporcionar instrucciones adicionales y vincular múltiples ids dentro de un [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby). Esto permite un diseño más flexible.
 
@@ -353,7 +353,7 @@ También puedes adjuntar las instrucciones a la entrada con [`aria-describedby`]
 
 <!-- <common-codepen-snippet title="Form Instructions" slug="WNREEqv" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Ocultar Contenidos
+### Ocultar Contenidos {#functional-images}
 
 Por lo general, no se recomienda ocultar visualmente las etiquetas, incluso si la entrada tiene un nombre accesible. Sin embargo, si la funcionalidad de la entrada se puede entender con el contenido adyacente, entonces podemos ocultar la etiqueta visual.
 
@@ -387,7 +387,7 @@ Podemos usar CSS para ocultar visualmente los elementos, pero mantenerlos dispon
 
 <!-- <common-codepen-snippet title="Form Search" slug="QWdMqWy" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-#### `aria-hidden="true"`
+#### `aria-hidden="true"` {#standards}
 
 Agregar `aria-hidden="true"` ocultará el elemento de la tecnología de asistencia pero lo dejará visualmente disponible para otros usuarios. No lo utilices en elementos enfocables, sólo en contenidos decorativos, duplicados o fuera de pantalla.
 
@@ -396,7 +396,7 @@ Agregar `aria-hidden="true"` ocultará el elemento de la tecnología de asistenc
 <p aria-hidden="true">Esto está oculto para los lectores de pantalla.</p>
 ```
 
-### Botones
+### Botones {#web-content-accessibility-guidelines-wcag}
 
 Cuando se utilizan botones dentro de un formulario, se debe establecer el tipo para evitar el envío del formulario. También puedes utilizar una entrada para crear botones:
 
@@ -414,7 +414,7 @@ Cuando se utilizan botones dentro de un formulario, se debe establecer el tipo p
 
 <!-- <common-codepen-snippet title="Form Buttons" slug="JjEyrYZ" :height="467" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-### Imágenes Funcionales
+### Imágenes Funcionales {#wcag-2-1-four-main-guiding-principles-abbreviated-as-pour}
 
 - Campos de entrada
 
@@ -448,7 +448,7 @@ Cuando se utilizan botones dentro de un formulario, se debe establecer el tipo p
 
 <!-- <common-codepen-snippet title="Functional Images" slug="jOyLGqM" :height="265" tab="js,result" theme="light" :preview="false" :editable="false" /> -->
 
-## Estándares
+## Estándares {#web-accessibility-initiative-–-accessible-rich-internet-applications-wai-aria}
 
 La Iniciativa de Accesibilidad a la Web (WAI) del World Wide Web Consortium (W3C) desarrolla estándares de accesibilidad a la web para los diferentes componentes:
 
@@ -459,11 +459,11 @@ La Iniciativa de Accesibilidad a la Web (WAI) del World Wide Web Consortium (W3C
 - [Pautas de Accesibilidad al Contenido en la Web (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/)
   - contenido web: utilizado por desarrolladores, herramientas de autoría y herramientas de evaluación de la accesibilidad
 
-### Pautas de Accesibilidad al Contenido en la Web (WCAG)
+### Pautas de Accesibilidad al Contenido en la Web (WCAG) {#resources}
 
 [WCAG 2.1](https://www.w3.org/TR/WCAG21/) se extiende sobre [WCAG 2.0](https://www.w3.org/TR/WCAG20/) y permite la implementación de nuevas tecnologías al abordar los cambios en la web. El W3C fomenta el uso de la versión más reciente de las WCAG al desarrollar o actualizar las políticas de accesibilidad web.
 
-#### WCAG 2.1 Cuatro Principios Rectores Principales (abreviados como POUR):
+#### WCAG 2.1 Cuatro Principios Rectores Principales (abreviados como POUR): {#documentation}
 
 - [Perceptible](https://www.w3.org/TR/WCAG21/#perceivable)
   - Los usuarios deben ser capaces de percibir la información que se presenta
@@ -474,23 +474,23 @@ La Iniciativa de Accesibilidad a la Web (WAI) del World Wide Web Consortium (W3C
 - [Robusto](https://www.w3.org/TR/WCAG21/#robust)
   - Los usuarios deben poder acceder al contenido a medida que avanzan las tecnologías.
 
-#### Iniciativa de Accesibilidad a la Web - Aplicaciones de Internet Enriquecidas Accesibles (WAI-ARIA)
+#### Iniciativa de Accesibilidad a la Web - Aplicaciones de Internet Enriquecidas Accesibles (WAI-ARIA) {#assistive-technologies}
 
 WAI-ARIA del W3C brinda orientación sobre cómo crear contenido dinámico y controles avanzados de interfaz de usuario.
 
 - [Aplicaciones ricas de Internet accesibles (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [Prácticas de autoría WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-## Recursos
+## Recursos {#testing}
 
-### Documentación
+### Documentación {#users}
 
 - [WCAG 2.0](https://www.w3.org/TR/WCAG20/)
 - [WCAG 2.1](https://www.w3.org/TR/WCAG21/)
 - [Aplicaciones ricas de Internet accesibles (WAI-ARIA) 1.2](https://www.w3.org/TR/wai-aria-1.2/)
 - [Prácticas de autoría WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-practices-1.2/)
 
-### Tecnologías de Apoyo {#tecnologias-de-apoyo}
+### Tecnologías de Apoyo 
 
 - Lectores de pantalla
   - [NVDA](https://www.nvaccess.org/download/)
@@ -502,7 +502,7 @@ WAI-ARIA del W3C brinda orientación sobre cómo crear contenido dinámico y con
   - [ZoomText](https://www.zoomtext.com/)
   - [Magnifier](https://support.microsoft.com/en-us/help/11542/windows-use-magnifier-to-make-things-easier-to-see)
 
-### Testing {#testing}
+### Testing 
 
 - Herramientas automatizadas
   - [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
@@ -519,7 +519,7 @@ WAI-ARIA del W3C brinda orientación sobre cómo crear contenido dinámico y con
   - [Visual Aria](https://chrome.google.com/webstore/detail/visual-aria/lhbmajchkkmakajkjenkchhnhbadmhmk?hl=en-US)
   - [Silktide Website Accessibility Simulator](https://chrome.google.com/webstore/detail/silktide-website-accessib/okcpiimdfkpkjcbihbmhppldhiebhhaf?hl=en-US)
 
-### Usuarios {#usuarios}
+### Usuarios 
 
 La Organización Mundial de la Salud estima que el 15% de la población mundial tiene algún tipo de discapacidad, entre el 2 y el 4% de ellas graves. Eso es un estimado de 1.000 millones de personas en todo el mundo, lo que convierte a las personas con discapacidad en el grupo minoritario más grande del mundo.
 

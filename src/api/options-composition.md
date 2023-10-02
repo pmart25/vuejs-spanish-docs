@@ -1,6 +1,6 @@
-# Opciones: Composición
+# Opciones: Composición {#options-composition}
 
-## provide
+## provide {#provide}
 
 Proporcionar valores que puedan ser inyectados por los componentes descendientes.
 
@@ -55,7 +55,7 @@ Proporcionar valores que puedan ser inyectados por los componentes descendientes
 
 - **Ver también:** [Provide / Inject](/guide/components/provide-inject.html)
 
-## inject
+## inject {#inject}
 
 Declara propiedades para inyectar en el componente actual localizándolas desde los proveedores ancestrales.
 
@@ -170,7 +170,7 @@ Declara propiedades para inyectar en el componente actual localizándolas desde 
 
 - **Ver también:** [Provide / Inject](/guide/components/provide-inject.html)
 
-## mixins
+## mixins {#mixins}
 
 Una matriz de objetos de opción que se mezclan en el componente actual.
 
@@ -212,7 +212,7 @@ Una matriz de objetos de opción que se mezclan en el componente actual.
   // => 2
   ```
 
-## extends
+## extends {#extends}
 
 Un componente de "clase base" para extender.
 

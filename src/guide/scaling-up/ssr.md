@@ -2,17 +2,17 @@
 outline: deep
 ---
 
-# Renderizado del Lado del Servidor (SSR)
+# Renderizado del Lado del Servidor (SSR) {#server-side-rendering-ssr}
 
-## Generalidades
+## Generalidades {#overview}
 
-### ¿Qué es el SSR?
+### ¿Qué es el SSR? {#what-is-ssr}
 
 Vue.js es un framework para construir aplicaciones del lado del cliente. Por defecto, los componentes de Vue generan y manipulan el DOM en el navegador a modo de salida. Sin embargo, también es posible renderizar los mismos componentes en cadenas HTML en el servidor, enviarlas directamente al navegador y, finalmente, "hidratar" el código estático en una aplicación completamente interactiva sobre el cliente.
 
 Una aplicación Vue.js renderizada por el servidor también se puede considerar "isomórfica" o "universal", en el sentido de que la mayor parte del código de la aplicación se ejecuta tanto en el servidor **como en el** cliente.
 
-### ¿Por qué el SSR?
+### ¿Por qué el SSR? {#why-ssr}
 
 En comparación con una aplicación de una sola página (SPA) del lado del cliente, la ventaja de SSR radica principalmente en:
 
@@ -36,7 +36,7 @@ También hay que tener en cuenta algunas desventajas a la hora de utilizar el SS
 
 Antes de usar SSR para tu aplicación, la primera pregunta que debes hacerte es si realmente lo necesitas. Depende sobre todo de la importancia que tenga el tiempo de acceso al contenido para tu aplicación. Por ejemplo, si estás construyendo un panel de control interno en el que unos cientos de milisegundos adicionales en la carga inicial no importan demasiado, SSR sería una exageración. Sin embargo, en los casos en los que el tiempo de acceso al contenido es absolutamente crítico, SSR puede ayudarte a conseguir el mejor rendimiento posible en la carga inicial.
 
-### SSR vs. SSG
+### SSR vs. SSG {#ssr-vs-ssg}
 
 **La Generación de Sitios Estáticos (SSG)**, también conocida como pre-renderización, es otra técnica popular para crear sitios web rápidos. Si los datos necesarios para renderizar una página en el servidor son los mismos para todos los usuarios, entonces, en lugar de renderizar la página cada vez que llega una solicitud, podemos renderizarla solo una vez, por adelantado, durante el proceso de compilación. Las páginas renderizadas previamente se generan y sirven como archivos HTML estáticos.
 
@@ -44,9 +44,9 @@ SSG conserva las mismas características de rendimiento de las aplicaciones SSR:
 
 Si solo estás investigando SSR para mejorar el SEO de un puñado de páginas de marketing (por ejemplo, `/`, `/about`, `/contact`, etc.), entonces probablemente deseas SSG en lugar de SSR. SSG también es excelente para sitios web basados ​​en contenido, como sitios de documentación o blogs. De hecho, este sitio web que estás leyendo en este momento se genera estáticamente utilizando [VitePress](https://vitepress.vuejs.org/), un generador de sitios estáticos con tecnología de Vue.
 
-## Tutorial Básico
+## Tutorial Básico {#basic-tutorial}
 
-### Renderizado de una App
+### Renderizado de una App {#rendering-an-app}
 
 Veamos el ejemplo más básico de Vue SSR en acción.
 
@@ -128,7 +128,7 @@ Finalmente, ejecuta `node server.js` y visita `http://localhost:3000`. Deberías
 
 [Pruébalo en StackBlitz](https://stackblitz.com/fork/vue-ssr-example-basic?file=index.js)
 
-### Hidratación del Cliente
+### Hidratación del Cliente {#client-hydration}
 
 Si haces clic en el botón, verás que el número no cambia. El HTML es completamente estático en el cliente ya que no estamos cargando Vue en el navegador.
 
@@ -150,7 +150,7 @@ const app = createSSRApp({
 app.mount('#app')
 ```
 
-### Estructura del Código
+### Estructura del Código {#code-structure}
 
 Observa cómo necesitamos reutilizar la misma implementación de la aplicación que en el servidor. Aquí es donde debemos comenzar a pensar en la estructura del código en una aplicación SSR: ¿cómo compartimos el mismo código de aplicación entre el servidor y el cliente?
 
@@ -201,7 +201,7 @@ Además, para cargar los archivos del cliente en el navegador, también necesita
 
 [Pruebe el ejemplo completo en StackBlitz](https://stackblitz.com/fork/vue-ssr-example?file=index.js). ¡El botón ahora es interactivo!
 
-## Soluciones de Alto Nivel
+## Soluciones de Alto Nivel {#higher-level-solutions}
 
 Pasar del ejemplo a una aplicación SSR lista para producción implica mucho más. Necesitaremos:
 
@@ -217,35 +217,35 @@ Pasar del ejemplo a una aplicación SSR lista para producción implica mucho má
 
 Una implementación completa sería bastante compleja y depende de la cadena de herramientas de compilación con la que hayas elegido trabajar. Por lo tanto, recomendamos encarecidamente optar por una solución de alto nivel que abstraiga la complejidad por ti. A continuación, presentaremos algunas soluciones SSR recomendadas en el ecosistema de Vue.
 
-### Nuxt
+### Nuxt {#nuxt}
 
 [Nuxt](https://v3.nuxtjs.org/) es un framework de alto nivel creado sobre el ecosistema de Vue que proporciona una experiencia de desarrollo simplificada para escribir aplicaciones universales de Vue. Mejor aún, ¡también puedes usarlo como un generador de sitios estáticos! Recomendamos encarecidamente que lo pruebes.
 
-### Quasar
+### Quasar {#quasar}
 
 [Quasar](https://quasar.dev) es una solución completa basada en Vue que le permite apuntar a SPA, SSR, PWA, aplicación móvil, aplicación de escritorio y extensión del navegador, todo ello usando una base de código. No solo maneja la configuración de la compilación, sino que también proporciona una colección completa de componentes de interfaz de usuario compatibles con Material Design.
 
-### Vite SSR
+### Vite SSR {#vite-ssr}
 
 Vite proporciona soporte incorporado para el [renderizado del lado del servidor de Vue](https://vitejs.dev/guide/ssr.html), pero es intencionalmente de bajo nivel. Si deseas ir directamente con Vite, consulta [vite-plugin-ssr](https://vite-plugin-ssr.com/), un complemento de la comunidad que abstrae muchos detalles difíciles por ti.
 
 También puedes encontrar un proyecto de ejemplo de Vue + Vite SSR utilizando la configuración manual [aquí](https://github.com/vitejs/vite/tree/main/playground/ssr-vue), que puede servir como base para compilar. Ten en cuenta que esto solo se recomienda si tienes experiencia con SSR/herramientas de compilación y realmente quieres tener un control completo sobre la arquitectura de alto nivel.
 
-## Escritura de Código Amigable con el SSR
+## Escritura de Código Amigable con el SSR {#writing-ssr-friendly-code}
 
 Independientemente de la configuración de compilación o la elección del framework de alto nivel, existen algunos principios que se aplican en todas las aplicaciones de Vue SSR.
 
-### Reactividad en el Servidor
+### Reactividad en el Servidor {#reactivity-on-the-server}
 
 Durante el SSR, cada URL de solicitud se asigna a un estado deseado de nuestra aplicación. No hay interacción del usuario ni actualizaciones del DOM, por lo que la reactividad no es necesaria en el servidor. Por defecto, la reactividad está desactivada durante la SSR para mejorar el rendimiento.
 
-### Hooks del Ciclo de Vida de los Componentes
+### Hooks del Ciclo de Vida de los Componentes {#component-lifecycle-hooks}
 
 Dado que no hay actualizaciones dinámicas, los hooks del ciclo de vida como <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span> o <span class="options-api">`updated`</span><span class="composition-api">`onUpdated`</span> **NO** se llamarán durante SSR y solo se ejecutarán en el cliente.<span class="options-api"> Los únicos hooks que se llaman durante el SSR son `beforeCreate` y `created`.</span>
 
 Debes evitar el código que produce efectos secundarios que necesitan ser limpiados en <span class="options-api">`beforeCreate` y `created`</span><span class="composition-api">`setup()` o el ámbito raíz de `<script setup>`</span>. Un ejemplo de tales efectos secundarios es configurar temporizadores con `setInterval`. En el código del lado del cliente, podemos configurar un temporizador y luego desactivarlo en <span class="options-api">`beforeUnmount`</span><span class="composition-api">`onBeforeUnmount`</span> o <span class="options-api">`unmounted`</span><span class="composition-api">`onUnmounted`</span>. Sin embargo, debido a que los hooks de unmount nunca se llamarán durante el SSR, los temporizadores permanecerán para siempre. Para evitar esto, mueve tu código de efectos secundarios a <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>.
 
-### Acceso a las API Específicas de la Plataforma
+### Acceso a las API Específicas de la Plataforma {#access-to-platform-specific-apis}
 
 El código universal no puede asumir el acceso a las API específicas de la plataforma, por lo que si tu código utiliza directamente globales exclusivos del navegador como `window` o `document`, generarán errores cuando se ejecuten en Node.js y viceversa.
 
@@ -255,7 +255,7 @@ En el caso de las APIs sólo para navegadores, el enfoque común es acceder a el
 
 Ten en cuenta que si una librería de terceros no está escrita teniendo en cuenta el uso universal, podría ser complicado integrarla en una aplicación renderizada por el servidor. _Podrías_ conseguir que funcione imitando algunos de los globales, pero sería complicado y podría interferir con el código de detección del entorno de otras librerías.
 
-### Contaminación del Estado por Solicitudes Cruzadas
+### Contaminación del Estado por Solicitudes Cruzadas {#cross-request-state-pollution}
 
 En el capítulo Gestión del estado, presentamos [un patrón de gestión sencilla del estado utilizando las API de reactividad](state-management.html#gestion-sencilla-del-estado-con-la-api-de-reactividad). En un contexto SSR, este patrón requiere algunos ajustes adicionales.
 
@@ -286,7 +286,7 @@ export function createApp() {
 
 Las librerías de gestión de estados como Pinia están diseñadas con esto en mente. Consulta la [guía de SSR de Pinia](https://pinia.vuejs.org/ssr/) para más detalles.
 
-### Error en la Hidratación
+### Error en la Hidratación {#hydration-mismatch}
 
 Si la estructura DOM del HTML renderizado previamente no coincide con el resultado esperado de la aplicación del lado del cliente, habrá un error de diferencia de hidratación. La diferencia de hidratación se presenta más comúnmente por las siguientes causas:
 
@@ -314,7 +314,7 @@ Si la estructura DOM del HTML renderizado previamente no coincide con el resulta
 
 Cuando Vue encuentra una diferencia de hidratación, intentará recuperarse automáticamente y ajustar el DOM pre-renderizado para que coincida con el estado del lado del cliente. Esto conducirá a una cierta pérdida de rendimiento de renderizado debido a que se descartan los nodos incorrectos y se montan nuevos nodos, pero en la mayoría de los casos, la aplicación debería continuar funcionando como se espera. Dicho esto, sigue siendo mejor eliminar las diferencias de hidratación durante el desarrollo.
 
-### Directivas Personalizadas
+### Directivas Personalizadas {#custom-directives}
 
 Dado que la mayoría de las directivas personalizadas implican la manipulación directa del DOM, se ignoran durante el SSR. Sin embargo, si deseas especificar cómo se debe renderizar una directiva personalizada (es decir, qué atributos debe agregar al elemento renderizado), puedes usar el hook de la directiva `getSSRProps`:
 
@@ -336,7 +336,7 @@ const myDirective = {
 }
 ```
 
-### Teleports
+### Teleports {#teleports}
 
 Los teleports requieren un manejo especial durante el SSR. Si la aplicación renderizada contiene Teleports, el contenido teletransportado no formará parte de la cadena renderizada. Una solución más fácil es renderizar condicionalmente el Teleport en el montaje.
 
