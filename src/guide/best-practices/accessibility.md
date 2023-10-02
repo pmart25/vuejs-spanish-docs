@@ -97,13 +97,13 @@ Los usuarios pueden navegar por una aplicación a través de los títulos. Tener
 ```vue-html
 <main role="main" aria-labelledby="main-title">
   <h1 id="main-title">Título principal</h1>
-  <section aria-labelledby="section-title">
-    <h2 id="section-title"> Título de sección </h2>
+  <section aria-labelledby="section-title-1">
+    <h2 id="section-title-1"> Título de sección </h2>
     <h3>Subtítulo de sección</h3>
     <!-- Contenido -->
   </section>
-  <section aria-labelledby="section-title">
-    <h2 id="section-title"> Título de sección </h2>
+  <section aria-labelledby="section-title-2">
+    <h2 id="section-title-2"> Título de sección </h2>
     <h3>Subtítulo de sección</h3>
     <!-- Contenido -->
     <h3>Subtítulo de sección</h3>

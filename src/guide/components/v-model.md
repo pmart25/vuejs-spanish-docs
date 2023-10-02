@@ -202,9 +202,9 @@ export default {
 
 ### Múltiples Vinculaciones `v-model` {#multiple-v-model-bindings}
 
-Aprovechando la capacidad de apuntar a una prop y a un evento en particular como aprendimos antes en [argumentos de `v-model`](#argumentos-de-v-model), ahora podemos crear múltiples vinculaciones v-model en una sola instancia del componente.
+Aprovechando la capacidad de apuntar a una prop y a un evento en particular como aprendimos antes en [argumentos de `v-model`](#argumentos-de-v-model), ahora podemos crear múltiples vinculaciones `v-model` en una sola instancia del componente.
 
-Cada v-model se sincronizará con una prop diferente, sin necesidad de opciones adicionales en el componente:
+Cada `v-model` se sincronizará con una prop diferente, sin necesidad de opciones adicionales en el componente:
 
 ```vue-html
 <UserName

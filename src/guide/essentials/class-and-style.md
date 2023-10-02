@@ -247,7 +247,7 @@ Puedes aprender más sobre la herencia de atributos de los componentes en la sec
 
 ## Vinculación de Estilos en Línea {#binding-inline-styles}
 
-### Vinculación a Objetos {#auto-prefixing}
+### Vinculación a Objetos {#binding-to-objects-1}
 
 `:style` admite la vinculación a valores de objetos de JavaScript. Esto corresponde a una [propiedad `style` del elemento HTML](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style):
 
@@ -317,7 +317,7 @@ data() {
 
 De nuevo, la vinculación al estilo de los objetos se utiliza a menudo junto con las propiedades computadas que devuelven objetos.
 
-### Vinculación a Arrays {#multiple-values}
+### Vinculación a Arrays {#binding-to-arrays-1}
 
 Podemos vincular `:style` a un array de múltiples objetos de estilo. Estos objetos se fusionarán y se aplicarán al mismo elemento:
 
@@ -325,11 +325,11 @@ Podemos vincular `:style` a un array de múltiples objetos de estilo. Estos obje
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefijado 
+### Auto-prefijado {#auto-prefixing} 
 
 Cuando uses una propiedad CSS que requiera un [prefijo de proveedor](https://developer.mozilla.org/es/docs/Glossary/Vendor_Prefix) en `:style`, Vue añadirá automáticamente el prefijo apropiado. Esto lo hace Vue comprobando en tiempo de ejecución qué propiedades de estilo están soportadas en el navegador actual. Si el navegador no soporta una propiedad en particular, entonces se probarán distintas variantes de prefijo para tratar de encontrar una que sí sea soportada.
 
-### Valores Múltiples 
+### Valores Múltiples {#multiple-values}
 
 Puedes proporcionar un array de múltiples valores (prefijados) a una propiedad de estilo, por ejemplo:
 
