@@ -465,7 +465,7 @@ La siguiente expresión **NO** funcionará como se espera:
 {{ object.foo + 1 }}
 ```
 
-El resultado de la renderización será `[object Object]` porque `object.foo` es un objeto ref. Podemos arreglar esto haciendo que `foo` sea una propiedad de nivel superior:
+El resultado de la renderización será `[object Object]1` porque `object.foo` es un objeto ref. Podemos arreglar esto haciendo que `foo` sea una propiedad de nivel superior:
 
 ```js
 const { foo } = object
