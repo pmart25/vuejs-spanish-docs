@@ -11,9 +11,9 @@ aside: false
 - [日本語 / Japonés](https://ja.vuejs.org/) [[fuente](https://github.com/vuejs-translations/docs-ja)]
 
 ## Idiomas en Curso {#work-in-progress-languages}
-
+ 
 - [Українська / Ucraniano](https://ua.vuejs.org) [[fuente](https://github.com/vuejs-translations/docs-ua)]
-- [Français / Francés](https://vuejs-docs-fr.netlify.app) [[fuente](https://github.com/vuejs-translations/docs-fr)]
+- [Français / Francés](https://fr.vuejs.org) [[fuente](https://github.com/vuejs-translations/docs-fr)]
 - [Español / Español](https://vue3-spanish.netlify.app/) [[fuente](https://github.com/drfcozapata/docs/tree/spanish-translation)]
 
 ## Iniciar una nueva Traducción {#starting-a-new-translation}

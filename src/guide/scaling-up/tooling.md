@@ -53,7 +53,7 @@ Si estás buscando una alternativa más liviana para el uso sin pasos de compila
 
 ## Soporte para IDE {#ide-support}
 
-- La configuración recomendada del IDE es [VSCode](https://code.visualstudio.com/) + la extensión [Volar](https://github.com/johnsoncodehk/volar). Volar proporciona resaltado de sintaxis, soporte para TypeScript, intellisense para expresiones de plantillas y props de componentes.
+- La configuración recomendada del IDE es [VSCode](https://code.visualstudio.com/) + la extensión [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar). La extensión proporciona resaltado de sintaxis, soporte para TypeScript, intellisense para expresiones de plantillas y props de componentes.
 
   :::tip
   Volar sustituye a [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur), nuestra anterior extensión oficial de VSCode para Vue 2. Si tiene Vetur instalado actualmente, asegúrate de desactivarlo en los proyectos de Vue 3.
