@@ -165,7 +165,7 @@ También puede añadir entradas para otras dependencias al mapa de importación,
 :::tip Soporte para Navegadores de Mapas de Importación
 Los mapas de importación son compatibles por defecto con los navegadores basados en Chromium, por lo que recomendamos utilizar Chrome o Edge durante el proceso de aprendizaje.
 
-Si utilizas Firefox, sólo está soportado en la versión 102+ y actualmente necesita ser habilitado a través de la opción `dom.importMaps.enabled` en `about:config`.
+Si utilizas Firefox, sólo está soportado por defecto en la versión 108+ o estableciendo la opción `dom.importMaps.enabled` a true en `about:config` para las versiones 102+.
 
 Si tu navegador preferido aún no soporta la importación de mapas, puedes rellenarlo con [es-module-shims](https://github.com/guybedford/es-module-shims).
 :::
