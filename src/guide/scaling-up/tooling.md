@@ -88,7 +88,7 @@ Artículo principal: [Usando Vue con TypeScript](/guide/typescript/overview).
 
 - [Volar](https://github.com/johnsoncodehk/volar) proporciona comprobación de tipos para SFC usando bloques `<script lang="ts">`, incluyendo expresiones de plantilla y validación de props entre componentes.
 
-- Utiliza [`vue-tsc`](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc) para realizar la misma comprobación de tipos desde la línea de comandos, o para generar archivos `d.ts` para SFC.
+- Utiliza [`vue-tsc`](https://github.com/vuejs/language-tools/tree/master/packages/vue-tsc) para realizar la misma comprobación de tipos desde la línea de comandos, o para generar archivos `d.ts` para SFC.
 
 ## Testing {#testing}
 
