@@ -180,6 +180,8 @@ A medida que profundizamos en la gu√≠a, puede que necesitemos dividir nuestro c√
 
 ```html
 <!-- index.html -->
+<div id="app"></div>
+
 <script type="module">
   import { createApp } from 'vue'
   import MyComponent from './my-component.js'
