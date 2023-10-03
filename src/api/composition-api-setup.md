@@ -1,15 +1,15 @@
 # Composition API: setup() {#composition-api-setup}
 
-:::info Nota
-Esta página documenta el uso de la opción `setup` del componente. Si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), se recomienda usar [`<script setup>`](/api/sfc-script-setup.html) para una sintaxis más sucinta y ergonómica.
-:::
+## Uso básico {#basic-usage}
 
 El hook `setup()` sirve como el punto de entrada para el uso de Composition API, en los componentes en los siguientes casos:
 
 1. Uso de Composition API sin un paso de compilación;
 2. Cuando se integra código basado en Composition API en un componente que usa Options API.
 
-## Uso básico {#basic-usage}
+:::info Nota
+Si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), se recomienda usar [`<script setup>`](/api/sfc-script-setup.html) para una sintaxis más sucinta y ergonómica.
+:::
 
 Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core.html) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
 
