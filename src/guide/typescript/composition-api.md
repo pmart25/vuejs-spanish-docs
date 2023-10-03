@@ -400,14 +400,14 @@ defineExpose({
 </script>
 ```
 
-Para obtener el tipo de instancia de `MyModal`, primero tenemos que obtener su tipo a través de `typeof`, y luego usar la utilidad de Vue `ComponentPublicInstance` para extraer su tipo de instancia:
+Para obtener el tipo de instancia de `MyModal`, primero tenemos que obtener su tipo a través de `typeof`, y luego usar la utilidad integrada de TypeScript `InstanceType` para extraer su tipo de instancia:
 
 ```vue{5}
 <!-- App.vue -->
 <script setup lang="ts">
 import MyModal from './MyModal.vue'
 
-const modal = ref<ComponentPublicInstance<typeof MyModal> | null>(null)
+const modal = ref<InstanceType<typeof MyModal> | null>(null)
 
 const openModal = () => {
   modal.value?.open()
