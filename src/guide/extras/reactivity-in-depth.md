@@ -413,18 +413,22 @@ export function useMachine(options) {
 
 ## Conexión con Signals
 
-Muchos otros frameworks han introducido tipos primitivos de reactividad similares a Vue refs, bajo el término "signals":
+Muchos otros frameworks han introducido tipos primitivos de reactividad similares a los refs de la Composition API de Vue, bajo el término "signals":
 
 - [Solid Signals](https://www.solidjs.com/docs/latest/api#createsignal)
 - [Angular Signals](https://github.com/angular/angular/discussions/49090)
 - [Preact Signals](https://preactjs.com/guide/v10/signals/)
 - [Qwik Signals](https://qwik.builder.io/docs/components/state/#usesignal)
 
-Fundamentalmente, las signals son el mismo tipo de primitivo de reactividad que las refs de Vue. Es un contenedor de valores que proporciona seguimiento de dependencias en el acceso y activación de efectos en la mutación. En algunos contextos, las signals también están relacionadas con el modelo de renderizado donde las actualizaciones se realizan a través de suscripciones de grano fino, aunque no es un rasgo necesario para que algo se llame signal.
+Fundamentalmente, las signals son el mismo tipo de primitivo de reactividad que las refs de Vue. Es un contenedor de valores que proporciona seguimiento de dependencias en el acceso y activación de efectos secundarios en la mutación. Este paradigma basado en primitivos de reactividad no es un concepto particularmente nuevo en el mundo del frontend: se remonta a implementaciones como [Knockout observables](https://knockoutjs.com/documentation/observables.html) y [Meteor Tracker](https://docs.meteor.com/api/tracker.html) de hace más de una década. La Options API de Vue y la librería de gestión de estados de React [MobX](https://mobx.js.org/) también se basan en los mismos principios, pero ocultan las primitivas tras las propiedades de los objetos.
 
-Entre estas implementaciones, el diseño de las signals de Preact y Qwik son muy similares al [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue: las tres proporcionan una interfaz mutable a través de la propiedad `.value`.
+Aunque no es un rasgo necesario para que algo pueda calificarse como signal, hoy en día el concepto se discute a menudo junto con el modelo de renderizado en el que las actualizaciones se realizan a través de suscripciones de grano fino. Debido al uso de Virtual DOM, Vue actualmente [depende de compiladores para lograr optimizaciones similares](https://vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom). Sin embargo, también estamos explorando una nueva estrategia de compilación inspirada en Solid (Vapor Mode) que no depende de Virtual DOM y aprovecha más el sistema de reactividad integrado de Vue.
 
-### Signals de Solid
+### Aspectos del diseño de API
+
+El diseño de las signals de Preact y Qwik son muy similares al [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue: las tres proporcionan una interfaz mutable a través de la propiedad `.value`. Centraremos la discusión en las signals de Solid y Angular.
+
+#### Signals de Solid
 
 El diseño de la API `useSignal()` de Solid enfatiza la segregación de lectura/escritura. Las signals se exponen como un getter de sólo lectura y un setter separado:
 
@@ -453,7 +457,7 @@ export function createSignal(value, options) {
 
 [Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
 
-### Signals de Angular
+#### Signals de Angular
 
 Angular está experimentando algunos cambios fundamentales al renunciar a la comprobación sucia e introducir su propia implementación de un primitivo de reactividad. La API de las signals de Angular tiene este aspecto:
 
