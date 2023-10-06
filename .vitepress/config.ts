@@ -332,10 +332,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
           text: 'Técnicas de Animación',
           link: '/guide/extras/animation'
         },
-        {
-          text: 'Transformación de la Reactividad',
-          link: '/guide/extras/reactivity-transform'
-        }
         // {
         //   text: 'Construyendo una Librería para Vue',
         //   link: '/guide/extras/building-a-library'

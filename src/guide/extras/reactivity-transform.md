@@ -1,7 +1,9 @@
 # Transformación de la Reactividad {#reactivity-transform}
 
-:::warning Característica Experimental
-La Transformación de la Reactividad es actualmente una función experimental. Está desactivada por defecto y requiere [opt-in explícito](#opt-in-explicito). También podría cambiar antes de ser finalizada. Para estar al día, sigue su [propuesta y discusión en GitHub](https://github.com/vuejs/rfcs/discussions/369).
+:::danger Característica Experimental Obsoleta
+La Transformación de la Reactividad era una función experimental y ha quedado obsoleta. Por favor, lea sobre [el razonamiento aquí](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+
+Eventualmente será elimidad del núcleo de Vue en una futura versión menor. Si todavía quieres usarlo, ahora está disponible a través del plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
 :::
 
 :::tip Específica de la Composition API
@@ -281,7 +283,9 @@ Si se importan explícitamente las macros desde `vue/macros`, el tipo funcionar�
 
 ## Opt-in Explícito {#explicit-opt-in}
 
-Actualmente, la Transformación de la Reactividad está desactivada por defecto y requiere un opt-in explícito. Además, todas las siguientes configuraciones requieren `vue@^3.2.25`.
+:::warning
+Lo siguiente sólo se aplica hasta la versión Vue 3.3 e inferiores. El soporte se eliminará del núcleo en la versión 3.4 y superiores. Si tiene la intención de seguir utilizando la transformación, por favor migre a [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html) en su lugar.
+:::
 
 ### Vite {#vite}
 
