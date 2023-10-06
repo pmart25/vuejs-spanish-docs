@@ -410,3 +410,93 @@ export function useMachine(options) {
 ### RxJS {#rxjs}
 
 [RxJS](https://rxjs.dev/) es una biblioteca para trabajar con flujos de eventos asíncronos. La librería [VueUse](https://vueuse.org/) proporciona el complemento [`@vueuse/rxjs`](https://vueuse.org/rxjs/readme.html) para conectar los flujos RxJS con el sistema de reactividad de Vue.
+
+## Conexión con Signals
+
+Muchos otros frameworks han introducido tipos primitivos de reactividad similares a Vue refs, bajo el término "signals":
+
+- [Solid Signals](https://www.solidjs.com/docs/latest/api#createsignal)
+- [Angular Signals](https://github.com/angular/angular/discussions/49090)
+- [Preact Signals](https://preactjs.com/guide/v10/signals/)
+- [Qwik Signals](https://qwik.builder.io/docs/components/state/#usesignal)
+
+Fundamentalmente, las signals son el mismo tipo de primitivo de reactividad que las refs de Vue. Es un contenedor de valores que proporciona seguimiento de dependencias en el acceso y activación de efectos en la mutación. En algunos contextos, las signals también están relacionadas con el modelo de renderizado donde las actualizaciones se realizan a través de suscripciones de grano fino, aunque no es un rasgo necesario para que algo se llame signal.
+
+Entre estas implementaciones, el diseño de las signals de Preact y Qwik son muy similares al [shallowRef](/api/reactivity-advanced.html#shallowref) de Vue: las tres proporcionan una interfaz mutable a través de la propiedad `.value`.
+
+### Signals de Solid
+
+El diseño de la API `useSignal()` de Solid enfatiza la segregación de lectura/escritura. Las signals se exponen como un getter de sólo lectura y un setter separado:
+
+```js
+const [count, setCount] = createSignal(0)
+
+count() // Acceder al valor
+setCount(1) // Actualizar el valor
+```
+
+Observa cómo la signal `count` pueden ser pasadas sin el setter. Esto asegura que el estado nunca puede ser mutado a menos que el setter también sea explícitamente expuesto. Si esta garantía de seguridad justifica la sintaxis más verbosa podría estar sujeto a los requisitos del proyecto y el gusto personal - pero en caso de que prefiera este estilo de API, se puede replicar fácilmente en Vue:
+
+```js
+import { shallowRef, triggerRef } from 'vue'
+
+export function createSignal(value, options) {
+  const r = shallowRef(value)
+  const get = () => r.value
+  const set = (v) => {
+    r.value = typeof v === 'function' ? v(r.value) : v
+    if (options?.equals === false) triggerRef(r)
+  }
+  return [get, set]
+}
+```
+
+[Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eNp9UsFu2zAM/RVCl9iYY63XwE437A+2Y9WD69KOOlvSKNndEPjfR8lOsnZAbxTfIx/Jp7P46lw5TygOovItaRfAY5jcURk9OksBztASNgF/6N40AyzQkR1hV0pvB/289yldvvidMsq01vgAD62dTChip28xeoT6TZPsc65MJVc9VuJHwNENTOAXQHW6O55ZN9ZmOSxLJTmTkKcpBGvgSzvo9metxEUim6E+wgyf4C5XInEBtGHVEU1IpXKtZaySVzlRiHXP/dg43sIavsQ58tUGeCUOkDIxx6eKbyVOITh/kNJ3bbzfiy8t9ZKjkngcPWKJftw/kX31SNxYieKfHpKTM9Ke0DwjIX3U8x31v76x7aLMwqu8s4RXuZroT80w2Nfv2BUQSPc9EsdXO1kuGYi/E7+bTBs0H/qNbXMzTFiAdRHy+XqV1XJii28SK5NNvsA9Biawl2wSlQm9gexhBOeEbpfeSJwPfxzajq2t6xp2l8F2cA9ztrFyOMC8Wd5Bts13X+KvqRl8Kuw4YN5t84zSeHw4FuMfTwYeeMr0aR/jNZe/yX4QHw==)
+
+### Signals de Angular
+
+Angular está experimentando algunos cambios fundamentales al renunciar a la comprobación sucia e introducir su propia implementación de un primitivo de reactividad. La API de las signals de Angular tiene este aspecto:
+
+```js
+const count = signal(0)
+
+count() // access the value
+count.set(1) // set new value
+count.update((v) => v + 1) // update based on previous value
+
+// mutate deep objects with same identity
+const state = signal({ count: 0 })
+state.mutate((o) => {
+  o.count++
+})
+```
+
+De nuevo, podemos replicar fácilmente la API en Vue:
+
+```js
+import { shallowRef, triggerRef } from 'vue'
+
+export function signal(initialValue) {
+  const r = shallowRef(initialValue)
+  const s = () => r.value
+  s.set = (value) => {
+    r.value = value
+  }
+  s.update = (updater) => {
+    r.value = updater(r.value)
+  }
+  s.mutate = (mutator) => {
+    mutator(r.value)
+    triggerRef(r)
+  }
+  return s
+}
+```
+
+[Pruébalo en la Zona de Práctica](https://sfc.vuejs.org/#eNp9U8uO2zAM/BVCl3XaxO72mCZBi/YLeuhJQOE4jKOtLRmU5C1g+N9LWbI3j2JvEjkckqPRIL51Xd57FFuxsxWpzoFF57uD1KrtDDkYwKpal80aKtN23uEJRjiTaeEpL0pd+6akTYTkL/ZJaqkro61juNcO9qk8+7SaEyfjjw1yZibMshXsD7GAjx/gM2N3RZyHJ+GLw7ZrSod8A9hdng/fJ3ZltzAMS+U47grOzZgfsVECxbZ3qKN3zmj4WjWq+rOXYmLKfXfiXlkfpurhIzyvpJjwAEpXhC1qN5UXsf49LpYz7D7XE3LgrnZXLOuJtYi6b9qyYz2N5pcZAl6mhJWC14lkUvDThbsUF+c6uy0Ke67Ce77Y3FBd8CknnkK1mKNtN0cyrxaJiaVYX3EUHOyRNoT6hIT0Hucd9IE30I5Sj7zKgz14mTdbXcqmMa8/8bwGR6qukabzYrPSwu8Hz/Eck8fw70Rz9rpyilVPLlNaOVU2v8rG4yrKFE1HwYlLx1vcG8oyKpqR8j7kQsqGN+TEFAi5Yc4uQd434KJvOBoP3PMWnMJZirAVY13rXaybDibVpcuC/nIlU0apmPi3Eq/Pgv9PluWL1ei4840kFTdcBJ4BV5zpV85CjGL8B7sPb9o=)
+
+En comparación con las refs de Vue, el estilo de API basado en getters de Solid y Angular proporciona algunas compensaciones interesantes cuando se utiliza en componentes Vue:
+
+- `()` es ligeramente menos verboso que `.value`, pero actualizar el valor es más verboso.
+- No hay desenvolvimiento de refs: el acceso a los valores siempre requiere `()`. Esto hace que el acceso a valores sea consistente en todas partes. Esto también significa que puedes pasar las signals como componentes.
+Si estos estilos de API te convienen o no es hasta cierto punto subjetivo. Nuestro objetivo aquí es demostrar la similitud fundamental y las ventajas y desventajas entre estos diferentes diseños de API. También queremos mostrar que Vue es flexible: no estás realmente encerrado en las APIs existentes. Si es necesario, puedes crear tu propia API primitiva de reactividad para satisfacer necesidades más específicas.
