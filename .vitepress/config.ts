@@ -336,7 +336,6 @@ export const sidebar: ThemeConfig['sidebar'] = {
         //   text: 'Construyendo una Librería para Vue',
         //   link: '/guide/extras/building-a-library'
         // },
-        // { text: 'Renderizadores Personalizados', link: '/guide/extras/custom-renderer' },
         // {
         //   text: 'Vue para Desarrolladores de React',
         //   link: '/guide/extras/vue-for-react-devs'
