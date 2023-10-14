@@ -430,7 +430,7 @@ El diseño de las signals de Preact y Qwik son muy similares al [shallowRef](/ap
 
 #### Signals de Solid
 
-El diseño de la API `useSignal()` de Solid enfatiza la segregación de lectura/escritura. Las signals se exponen como un getter de sólo lectura y un setter separado:
+El diseño de la API `createSignal()` de Solid enfatiza la segregación de lectura/escritura. Las signals se exponen como un getter de sólo lectura y un setter separado:
 
 ```js
 const [count, setCount] = createSignal(0)
