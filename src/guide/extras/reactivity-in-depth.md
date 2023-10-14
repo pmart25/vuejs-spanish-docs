@@ -208,24 +208,11 @@ Las APIs `ref()`, `computed()` y `watchEffect()` forman parte de la API de compo
 
 ## Reactividad en Tiempo de Ejecución vs. Tiempo de Compilación {#runtime-vs-compile-time-reactivity}
 
-El sistema de reactividad de Vue se basa principalmente en el tiempo de ejecución: el seguimiento y la activación se realizan mientras el código se ejecuta directamente en el navegador. Las ventajas de la reactividad en tiempo de ejecución es que puede funcionar sin un paso de compilación, y hay menos casos límite. Por otro lado, esto hace que esté restringida por las limitaciones de sintaxis de JavaScript.
+El sistema de reactividad de Vue se basa principalmente en el tiempo de ejecución: el seguimiento y la activación se realizan mientras el código se ejecuta directamente en el navegador. Las ventajas de la reactividad en tiempo de ejecución es que puede funcionar sin un paso de compilación, y hay menos casos límite. Por otro lado, esto hace que esté restringida por las limitaciones de sintaxis de JavaScript, lo que lleva a la necesidad el uso de contenedores de valores como Vue refs.
 
-Ya hemos encontrado una limitación en el ejemplo anterior: JavaScript no nos proporciona una forma de interceptar la lectura y escritura de variables locales, por lo que tenemos que acceder siempre al estado reactivo como propiedades de objetos, utilizando objetos reactive o refs.
+Algunos frameworks, como [Svelte](https://svelte.dev/), optan por superar estas limitaciones implementando la reactividad durante la compilación. Este analiza y transforma el código para simular la reactividad. El paso de compilación permite a los frameworks alterar la semántica del propio JavaScript, por ejemplo, inyectando implícitamente código que realiza análisis de dependencias y activación de efectos en torno al acceso a variables definidas localmente. El inconveniente es que tales transformaciones requieren un paso de compilación, y al alterar la semántica de JavaScript es esencialmente crear un lenguaje que parece JavaScript pero que se compila en otra cosa.
 
-Hemos estado experimentando con la función [Transformación de la Reactividad](/guide/extras/reactivity-transform.html) para reducir la verbosidad del código:
-
-```js
-let A0 = $ref(0)
-let A1 = $ref(1)
-
-// seguimiento de la lectura de la variable
-const A2 = $computed(() => A0 + A1)
-
-// activación de la escritura de la variable
-A0 = 2
-```
-
-Este snippet compila exactamente lo que habríamos escrito sin la transformación, añadiendo automáticamente `.value` después de las referencias a las variables. Con la Transformación de la Reactividad, el sistema de reactividad de Vue se convierte en uno híbrido.
+El equipo de Vue exploró esta dirección a través de una característica experimental llamada [Reactivity Transform](/guide/extras/reactivity-transform.html), pero al final hemos decidido que no sería un buen ajuste para el proyecto debido al [razonamiento explicado aquí](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
 ## Depuración de la Reactividad {#reactivity-debugging}
 
