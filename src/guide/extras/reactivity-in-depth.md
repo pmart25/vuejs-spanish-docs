@@ -426,7 +426,7 @@ count() // Acceder al valor
 setCount(1) // Actualizar el valor
 ```
 
-Observa cómo la signal `count` pueden ser pasadas sin el setter. Esto asegura que el estado nunca puede ser mutado a menos que el setter también sea explícitamente expuesto. Si esta garantía de seguridad justifica la sintaxis más verbosa podría estar sujeto a los requisitos del proyecto y el gusto personal - pero en caso de que prefiera este estilo de API, se puede replicar fácilmente en Vue:
+Observa cómo la signal `count` puede ser pasada sin el setter. Esto asegura que el estado nunca puede ser mutado a menos que el setter también sea explícitamente expuesto. Si esta garantía de seguridad justifica la sintaxis más verbosa podría estar sujeto a los requisitos del proyecto y el gusto personal - pero en caso de que prefiera este estilo de API, se puede replicar fácilmente en Vue:
 
 ```js
 import { shallowRef, triggerRef } from 'vue'
