@@ -231,7 +231,7 @@ declare module 'vue' {
 
 Mira también:
 
-- [Pruebas unitarias de TypeScript para extensiones de tipos de componentes](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
+- [Pruebas unitarias de TypeScript para extensiones de tipos de componentes](https://github.com/vuejs/core/blob/main/packages/dts-test/componentTypeExtensions.test-d.tsx)
 
 ### Ubicación del Aumento de Tipo {#type-augmentation-placement}
 
@@ -291,4 +291,4 @@ La colocación de este aumento está sujeta a las [mismas restricciones](#ubicac
 
 Mira también:
 
-- [Pruebas unitarias de TypeScript para extensiones de tipos de componentes](https://github.com/vuejs/core/blob/main/test-dts/componentTypeExtensions.test-d.tsx)
+- [Pruebas unitarias de TypeScript para extensiones de tipos de componentes](https://github.com/vuejs/core/blob/main/packages/dts-test/componentTypeExtensions.test-d.tsx)

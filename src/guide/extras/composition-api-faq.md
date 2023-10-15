@@ -10,6 +10,8 @@ Este FAQ supone una experiencia previa con Vue; en particular, experiencia con V
 
 ## ¿Qué es la Composition API? {#what-is-composition-api}
 
+<VueSchoolLink href="https://vueschool.io/lessons/introduction-to-the-vue-js-3-composition-api" title="Lección gratuita de la Composition API"/>
+
 La Composition API es un conjunto de APIs que nos permiten crear componentes Vue utilizando funciones importadas en lugar de declarar opciones. Es un término genérico que cubre las siguientes APIs:
 
 - [API de Reactividad](/api/reactivity-core.html), por ejemplo `ref()` y `reactive()`, que nos permiten crear directamente estado reactivo, estado computado y watchers.
