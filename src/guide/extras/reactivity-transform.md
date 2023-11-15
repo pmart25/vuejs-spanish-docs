@@ -3,7 +3,7 @@
 :::danger Característica Experimental Obsoleta
 La Transformación de la Reactividad era una función experimental y ha quedado obsoleta. Por favor, lea sobre [el razonamiento aquí](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
-Eventualmente será elimidad del núcleo de Vue en una futura versión menor. Si todavía quieres usarlo, ahora está disponible a través del plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
+Eventualmente será elimidada del núcleo de Vue en una futura versión menor. Si todavía quieres usarlo, ahora está disponible a través del plugin [Vue Macros](https://vue-macros.sxzz.moe/features/reactivity-transform.html).
 :::
 
 :::tip Específica de la Composition API
