@@ -3,8 +3,8 @@
 :::info Véase también
 Para comprender mejor las API de Reactividad, se recomienda leer los siguientes capítulos de la guía:
 
-- [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) (con la preferencia de API establecida en Composition API)
-- [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals) (con la preferencia de API establecida en Composition API)
+- [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
   :::
 
 ## ref() {#ref}
@@ -109,7 +109,7 @@ Toma una función getter y devuelve un objeto [ref](#ref) reactivo de solo lectu
   ```
 
 - **Véase también:**
-  - [Guía - Propiedades Computadas](/guide/essentials/computed.html)
+  - [Guía - Propiedades Computadas](/guide/essentials/computed)
   - [Guía - Depuración Computada](/guide/extras/reactivity-in-depth.html#depuracion-computada)
   - [Guía - Escritura de `computed()`](/guide/typescript/composition-api.html#escritura-de-computed)
 
@@ -187,7 +187,7 @@ Devuelve un proxy reactivo del objeto.
   ```
 
 - **Véase también:**
-  - [Guía - Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html)
+  - [Guía - Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals)
   - [Guía - Escritura de `reactive()`](/guide/typescript/composition-api.html#escritura-de-reactive)
 
 ## readonly() {#readonly}
@@ -482,5 +482,5 @@ Observa una o más fuentes de datos reactivas e invoca una función de devoluci�
 
 - **Véase también**:
 
-  - [Guía - Watchers](/guide/essentials/watchers.html)
+  - [Guía - Watchers](/guide/essentials/watchers)
   - [Guía - Depuración del Watcher](/guide/extras/reactivity-in-depth.html#depuracion-del-watcher)

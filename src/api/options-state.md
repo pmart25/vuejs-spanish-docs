@@ -45,7 +45,7 @@ Una función que devuelve el estado reactivo inicial para la instancia del compo
   data: (vm) => ({ a: vm.myProp })
   ```
 
-- **Ver también:** [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en profundidad](/guide/extras/reactivity-in-depth)
 
 ## props {#props}
 
@@ -125,7 +125,7 @@ Declarar las propiedades de un componente.
   }
   ```
 
-- **Ver también:** [Propiedades](/guide/components/props.html)
+- **Ver también:** [Propiedades](/guide/components/props)
 
 ## computed {#computed}
 
@@ -205,7 +205,7 @@ Declara las propiedades computadas que se expondrán en la instancia del compone
   }
   ```
 
-- **Ver también:** [Computed Properties](/guide/essentials/computed.html)
+- **Ver también:** [Computed Properties](/guide/essentials/computed)
 
 ## methods {#methods}
 
@@ -246,7 +246,7 @@ Declara los métodos que se mezclan en la instancia del componente.
   }
   ```
 
-- **Ver también:** [Manejo de Eventos](/guide/essentials/event-handling.html)
+- **Ver también:** [Manejo de Eventos](/guide/essentials/event-handling)
 
 ## watch {#watch}
 
@@ -362,7 +362,7 @@ Declara funciones de vigilancia que se invocan cuando cambian los datos.
   }
   ```
 
-- **Ver también:** [Watchers](/guide/essentials/watchers.html)
+- **Ver también:** [Watchers](/guide/essentials/watchers)
 
 ## emits {#emits}
 
@@ -391,7 +391,7 @@ Declara los eventos personalizados emitidos por el componente.
 
   La función de validación recibirá los argumentos adicionales pasados a la llamada `$emit` del componente. Por ejemplo, si se llama a `this.$emit('foo', 1)`, el validador correspondiente para `foo` recibirá el argumento `1`. La función validadora debería devolver un booleano para indicar si los argumentos del evento son válidos.
 
-  Tenga en cuenta que la opción `emits` afecta a los oyentes de eventos que se consideran oyentes de eventos del componente, en lugar de oyentes de eventos nativos del DOM. Los oyentes de los eventos declarados se eliminarán del objeto `$attrs` del componente, por lo que no se pasarán al elemento raíz del componente. Consulte [Atributos Fallthrough](/guide/components/attrs.html) para más detalles.
+  Tenga en cuenta que la opción `emits` afecta a los oyentes de eventos que se consideran oyentes de eventos del componente, en lugar de oyentes de eventos nativos del DOM. Los oyentes de los eventos declarados se eliminarán del objeto `$attrs` del componente, por lo que no se pasarán al elemento raíz del componente. Consulte [Atributos Fallthrough](/guide/components/attrs) para más detalles.
 
 - **Ejemplo**
 
@@ -427,7 +427,7 @@ Declara los eventos personalizados emitidos por el componente.
   }
   ```
 
-* **Ver también:** [Attributos Fallthrough](/guide/components/attrs.html)
+* **Ver también:** [Attributos Fallthrough](/guide/components/attrs)
 
 ## expose {#expose}
 

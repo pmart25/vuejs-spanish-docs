@@ -39,7 +39,7 @@ El atributo especial `key` es usado primeramente por el algoritmo de DOM virtual
 
 ## ref {#ref}
 
-Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
+Evoca a una [ref de la plantilla](/guide/essentials/template-refs).
 
 - **Espera:** `string | Function`
 
@@ -80,7 +80,7 @@ Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
 
   `this.$refs` es un objeto no reactivo, por lo que no debes intentar usarlo en la plantilla para hacer data-binding.
 
-- **Ver también:** [Refs de la Plantilla](/guide/essentials/template-refs.html)
+- **Ver también:** [Refs de la Plantilla](/guide/essentials/template-refs)
 
 ## is {#is}
 

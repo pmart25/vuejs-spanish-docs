@@ -8,10 +8,10 @@ El hook `setup()` sirve como el punto de entrada para el uso de Composition API,
 2. Cuando se integra código basado en Composition API en un componente que usa Options API.
 
 :::info Nota
-El uso de [`<script setup>`](/api/sfc-script-setup.html) está fuertemente recomendado si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
+El uso de [`<script setup>`](/api/sfc-script-setup) está fuertemente recomendado si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
 :::
 
-Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core.html) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
+Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
 
 ```vue
 <script>
@@ -134,7 +134,7 @@ export default {
 
 ## Uso con Funciones de Renderizado {#usage-with-render-functions}
 
-`setup` también puede devolver una [función de renderizado](/guide/extras/render-function.html) que puede hacer uso directamente del estado reactivo declarado en el mismo ámbito:
+`setup` también puede devolver una [función de renderizado](/guide/extras/render-function) que puede hacer uso directamente del estado reactivo declarado en el mismo ámbito:
 
 ```js{6}
 import { h, ref } from 'vue'

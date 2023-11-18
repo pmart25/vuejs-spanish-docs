@@ -14,9 +14,9 @@ Vue ofrece dos componentes incorporados que pueden ayudar a trabajar con transic
 
 - `<Transition>` para aplicar animaciones cuando un elemento o componente entra y sale del DOM. Esto se cubre en esta página.
 
-- `<TransitionGroup>` para aplicar animaciones cuando un elemento o componente es insertado, eliminado o movido dentro de una lista`v-for`. Esto se cubre en [el siguiente capítulo](/guide/built-ins/transition-group.html).
+- `<TransitionGroup>` para aplicar animaciones cuando un elemento o componente es insertado, eliminado o movido dentro de una lista`v-for`. Esto se cubre en [el siguiente capítulo](/guide/built-ins/transition-group).
 
-Ademas de estos dos componentes, también podemos aplicar animaciones en Vue usando otras técnicas como alternar clases CSS o animaciones impulsadas por el estado a través de enlaces de estilo. Estas técnicas adicionales se tratan en el capítulo [Técnicas de animación](/guide/extras/animation.html).
+Ademas de estos dos componentes, también podemos aplicar animaciones en Vue usando otras técnicas como alternar clases CSS o animaciones impulsadas por el estado a través de enlaces de estilo. Estas técnicas adicionales se tratan en el capítulo [Técnicas de animación](/guide/extras/animation).
 
 ## El Componente `<Transition>` {#the-transition-component}
 

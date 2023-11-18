@@ -58,8 +58,8 @@ Una función que devuelve mediante programación el árbol DOM virtual del compo
   Las plantillas precompiladas, por ejemplo las de los componentes de un solo archivo, se compilan en la opción `render` en el momento de la compilación. Si tanto `render` como `template` están presentes en un componente, `render` tendrá mayor prioridad.
 
 - **Ver también:**
-  - [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html)
-  - [Funciones de Renderizado y JSX](/guide/extras/render-function.html)
+  - [Mecanismo de Renderizado](/guide/extras/rendering-mechanism)
+  - [Funciones de Renderizado y JSX](/guide/extras/render-function)
 
 ## compilerOptions {#compileroptions}
 

@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-Esta sección supone un conocimiento básico de la Composition API. Si has estado aprendiendo Vue sólo con la Options API, puedes establecer la Preferencia de la API en la Composition API (utilizando el conmutador en la parte superior de la barra lateral izquierda) y volver a leer los capítulos [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) y [Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html).
+Esta sección supone un conocimiento básico de la Composition API. Si has estado aprendiendo Vue sólo con la Options API, puedes establecer la Preferencia de la API en la Composition API (utilizando el conmutador en la parte superior de la barra lateral izquierda) y volver a leer los capítulos [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) y [Hooks del Ciclo de Vida](/guide/essentials/lifecycle).
 :::
 
 ## ¿Qué es un "Composable"? {#what-is-a-composable}
@@ -125,7 +125,7 @@ export function useMouse() {
 ```
 
 :::tip
-Cada instancia del componente que llame a `useMouse()` creará sus propias copias del estado `x` e `y` para que no interfieran entre sí. Si quieres gestionar el estado compartido entre componentes, lee el capítulo [Manejo del Estado](/guide/scaling-up/state-management.html).
+Cada instancia del componente que llame a `useMouse()` creará sus propias copias del estado `x` e `y` para que no interfieran entre sí. Si quieres gestionar el estado compartido entre componentes, lee el capítulo [Manejo del Estado](/guide/scaling-up/state-management).
 :::
 
 ## Ejemplo de Estado Asíncrono {#async-state-example}
@@ -271,7 +271,7 @@ El ratón se encuentra en la posición: {{ mouse.x }}, {{ mouse.y }}
 
 Está bien utilizar efectos secundarios (por ejemplo, añadir escuchadores de eventos del DOM o buscar datos) en composables, pero presta atención a las siguientes reglas:
 
-- Si estás trabajando en una aplicación que utiliza [Renderizado del Lado del Servidor](/guide/scaling-up/ssr.html) (SSR), asegúrate de ejecutar los efectos secundarios específicos del DOM en los hooks del ciclo de vida posterior al montaje, por ejemplo `onMounted()`. Estos hooks sólo se llaman en el navegador, por lo que puedes estar seguro de que el código dentro de ellos tiene acceso al DOM.
+- Si estás trabajando en una aplicación que utiliza [Renderizado del Lado del Servidor](/guide/scaling-up/ssr) (SSR), asegúrate de ejecutar los efectos secundarios específicos del DOM en los hooks del ciclo de vida posterior al montaje, por ejemplo `onMounted()`. Estos hooks sólo se llaman en el navegador, por lo que puedes estar seguro de que el código dentro de ellos tiene acceso al DOM.
 
 - Recuerda limpiar los efectos secundarios en `onUnmounted()`. Por ejemplo, si un composable establece un escuchador de eventos del DOM, deberías eliminar ese escuchador en `onUnmounted()` como hemos visto en el ejemplo de `useMouse()`. Puede ser una buena idea utilizar un composable que haga esto automáticamente por ti, como el ejemplo de `useEventListener()`.
 
@@ -357,7 +357,7 @@ Si tienes experiencia con React, puedes notar que esto se parece mucho a los hoo
 
 ## Lecturas Adicionales {#further-reading}
 
-- [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html): para una comprensión de bajo nivel de cómo funciona el sistema de reactividad de Vue.
-- [Manejo del Estado](/guide/scaling-up/state-management.html): para conocer los patrones de gestión del estado compartido por varios componentes.
+- [Reactividad en profundidad](/guide/extras/reactivity-in-depth): para una comprensión de bajo nivel de cómo funciona el sistema de reactividad de Vue.
+- [Manejo del Estado](/guide/scaling-up/state-management): para conocer los patrones de gestión del estado compartido por varios componentes.
 - [Pruebas de Composables](/guide/scaling-up/testing.html#pruebas-de-composables): tips para realizar pruebas unitarias en composables.
 - [VueUse](https://vueuse.org/): una colección cada vez mayor de composables de Vue. El código fuente es también un gran recurso de aprendizaje.

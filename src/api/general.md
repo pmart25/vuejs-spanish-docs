@@ -166,7 +166,7 @@ Define un componente asíncrono que se carga dinámicamente sólo cuando se rend
   }
   ```
 
-- **Ver también:** [Guía - Componentes Asíncronos](/guide/components/async.html)
+- **Ver también:** [Guía - Componentes Asíncronos](/guide/components/async)
 
 ## defineCustomElement() {#definecustomelement}
 

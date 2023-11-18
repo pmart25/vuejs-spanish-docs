@@ -16,7 +16,7 @@ Primero, analicemos los dos aspectos principales del rendimiento web:
 
 Aunque lo ideal sería maximizar ambas cosas, las diferentes arquitecturas de frontend tienden a afectar la facilidad con la que se logra el rendimiento deseado en estos aspectos. Además, el tipo de aplicación que estás creando influye en gran medida en lo que debes priorizar en términos de rendimiento. Por lo tanto, el primer paso para garantizar un rendimiento óptimo es elegir la arquitectura adecuada para el tipo de aplicación que estás creando:
 
-- Consulta [Formas de usar Vue](/guide/extras/ways-of-using-vue.html) para ver cómo puedes aprovechar Vue de diferentes maneras.
+- Consulta [Formas de usar Vue](/guide/extras/ways-of-using-vue) para ver cómo puedes aprovechar Vue de diferentes maneras.
 
 - Jason Miller analiza los tipos de aplicaciones web y su respectiva implementación/entrega en [Application Holotypes](https://jasonformat.com/application-holotypes/).
 
@@ -41,7 +41,7 @@ Hay muchos aspectos agnósticos del framework para optimizar el rendimiento de c
 
 ### Elegir la Arquitectura Adecuada {#choosing-the-right-architecture}
 
-Si tu caso de uso es sensible al rendimiento de la carga de la página, evita enviarlo como un SPA puro del lado del cliente. Necesitas que tu servidor envíe directamente el HTML que contiene el contenido que los usuarios quieren ver. El renderizado puro del lado del cliente sufre de lentitud al mostrar el contenido. Esto se puede mitigar con la [Renderización del lado del servidor (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) o la [Generación de sitios estáticos (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consulta la [Guía de SSR](/guide/scaling-up/ssr.html) para obtener información sobre cómo realizar SSR con Vue. Si tu aplicación no tiene requisitos de interactividad enriquecidos, también puedes usar un servidor de backend tradicional para renderizar el HTML y mejorarlo con Vue en el cliente.
+Si tu caso de uso es sensible al rendimiento de la carga de la página, evita enviarlo como un SPA puro del lado del cliente. Necesitas que tu servidor envíe directamente el HTML que contiene el contenido que los usuarios quieren ver. El renderizado puro del lado del cliente sufre de lentitud al mostrar el contenido. Esto se puede mitigar con la [Renderización del lado del servidor (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) o la [Generación de sitios estáticos (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consulta la [Guía de SSR](/guide/scaling-up/ssr) para obtener información sobre cómo realizar SSR con Vue. Si tu aplicación no tiene requisitos de interactividad enriquecidos, también puedes usar un servidor de backend tradicional para renderizar el HTML y mejorarlo con Vue en el cliente.
 
 Si tu aplicación principal tiene que ser una SPA, pero tiene páginas de marketing (aterrizaje, información, blog), ¡envíalas por separado! Tus páginas de marketing deberían implementarse idealmente como HTML estático con un mínimo de JS, utilizando SSG.
 
@@ -77,7 +77,7 @@ function loadLazy() {
 }
 ```
 
-La carga diferida se usa mejor en características que no se necesitan inmediatamente después de la carga inicial de la página. En las aplicaciones de Vue, esto se puede usar en combinación con [Componentes Asíncronos](/guide/components/async.html) de Vue para crear fragmentos divididos para árboles de componentes:
+La carga diferida se usa mejor en características que no se necesitan inmediatamente después de la carga inicial de la página. En las aplicaciones de Vue, esto se puede usar en combinación con [Componentes Asíncronos](/guide/components/async) de Vue para crear fragmentos divididos para árboles de componentes:
 
 ```js
 import { defineAsyncComponent } from 'vue'

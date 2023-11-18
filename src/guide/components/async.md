@@ -111,4 +111,4 @@ Si se proporciona un componente de error, se mostrará cuando la promesa devuelt
 
 ## Uso con Suspense {#using-with-suspense}
 
-Los componentes asíncronos pueden utilizarse con el componente incorporado `<Suspense>`. La interacción entre `<Suspense>` y los componentes asíncronos está documentada en el [capítulo dedicado a `<Suspense>`] (/guide/built-ins/suspense.html).
+Los componentes asíncronos pueden utilizarse con el componente incorporado `<Suspense>`. La interacción entre `<Suspense>` y los componentes asíncronos está documentada en el [capítulo dedicado a `<Suspense>`] (/guide/built-ins/suspense).

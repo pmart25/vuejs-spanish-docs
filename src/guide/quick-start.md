@@ -51,7 +51,7 @@ Si no estás seguro de alguna opción, simplemente elige `No` pulsando enter por
 Ahora deberías tener tu primer proyecto Vue funcionando. Ten en cuenta que los componentes de ejemplo del proyecto generado están escritos utilizando la [Composition API](/guide/introduction.html#composition-api) y `<script setup>`, en lugar de la [Options API](/guide/introduction.html#options-api). He aquí algunos consejos adicionales:
 
 - La configuración de IDE recomendada es [Visual Studio Code](https://code.visualstudio.com/) + la [extensión Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Si utilizas otros editores, consulta la sección [Soporte para IDE](/guide/scaling-up/tooling.html#soporte-para-ide).
-- En la [Guía de Herramientas](/guide/scaling-up/tooling.html) se discuten más detalles sobre las herramientas, incluyendo la integración con frameworks backend.
+- En la [Guía de Herramientas](/guide/scaling-up/tooling) se discuten más detalles sobre las herramientas, incluyendo la integración con frameworks backend.
 - Para obtener más información sobre la herramienta de compilación subyacente Vite, consulta la [documentación de Vite](https://vitejs.dev).
 - Si decides utilizar TypeScript, consulta la guía [Usando Vue con TypeScript](typescript/overview.html).
 
@@ -60,7 +60,7 @@ Cuando estés listo para enviar tu aplicación a producción, ejecuta lo siguien
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
 
-Esto creará una compilación de tu aplicación lista para producción en el directorio `./dist` del proyecto. Consulta la guía de [Implementación de Producción (Deployment)](/guide/best-practices/production-deployment.html) para aprender más sobre cómo enviar tu aplicación a producción.
+Esto creará una compilación de tu aplicación lista para producción en el directorio `./dist` del proyecto. Consulta la guía de [Implementación de Producción (Deployment)](/guide/best-practices/production-deployment) para aprender más sobre cómo enviar tu aplicación a producción.
 
 [Siguientes Pasos >](#siguientes-pasos)
 
@@ -208,7 +208,7 @@ Puede que hayas notado que la plantilla del componente importado está en línea
 
 ### Usando la Composition API sin un Paso de Compilación {#using-composition-api-without-a-build-step}
 
-Muchos de los ejemplos para la Composition API utilizarán la sintaxis `<script setup>`. Si piensas utilizar la Composition API sin un paso de compilación, consulta el uso de la [opción `setup()`](/api/composition-api-setup.html).
+Muchos de los ejemplos para la Composition API utilizarán la sintaxis `<script setup>`. Si piensas utilizar la Composition API sin un paso de compilación, consulta el uso de la [opción `setup()`](/api/composition-api-setup).
 
 ## Siguientes pasos {#next-steps}
 

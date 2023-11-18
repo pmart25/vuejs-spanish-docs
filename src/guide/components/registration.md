@@ -8,7 +8,7 @@ Un componente de Vue necesita ser "registrado" para que Vue sepa dónde localiza
 
 ## Registro Global {#global-registration}
 
-Podemos hacer que los componentes estén disponibles globalmente en la [aplicación Vue](/guide/essentials/application.html) actual usando el método `app.component()`:
+Podemos hacer que los componentes estén disponibles globalmente en la [aplicación Vue](/guide/essentials/application) actual usando el método `app.component()`:
 
 ```js
 import { createApp } from 'vue'

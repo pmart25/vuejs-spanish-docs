@@ -1,7 +1,7 @@
 # Opciones: Ciclo de vida {#options-lifecycle}
 
 :::info Ver también
-Para el uso compartido de los hooks del ciclo de vida, véase [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html)
+Para el uso compartido de los hooks del ciclo de vida, véase [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle)
 :::
 
 ## beforeCreate {#beforecreate}
@@ -76,7 +76,7 @@ Se llama después de montar el componente.
 
   - Su propio árbol DOM ha sido creado e insertado en el contenedor padre. Tenga en cuenta que sólo garantiza que el árbol DOM del componente esta en-el-documento si el contenedor raíz de la aplicación también está en-el-documento.
 
-  Este hook se utiliza normalmente para realizar efectos secundarios que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM al cliente en una [aplicación renderizada por el servidor](/guide/scaling-up/ssr.html).
+  Este hook se utiliza normalmente para realizar efectos secundarios que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM al cliente en una [aplicación renderizada por el servidor](/guide/scaling-up/ssr).
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
@@ -228,7 +228,7 @@ Se llama cuando una dependencia reactiva ha sido rastreada por el efecto de rend
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
@@ -252,7 +252,7 @@ Se llama cuando una dependencia reactiva hace que el efecto de renderización de
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## activated {#activated}
 
@@ -329,4 +329,4 @@ Función asíncrona a resolverse antes de que la instancia del componente se ren
   }
   ```
 
-- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
+- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr)

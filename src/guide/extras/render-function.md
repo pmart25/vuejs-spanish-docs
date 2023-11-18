@@ -6,7 +6,7 @@ outline: deep
 
 Vue recomienda el uso de plantillas para construir aplicaciones en la gran mayoría de los casos. Sin embargo, hay situaciones en las que necesitamos toda la potencia programática de JavaScript. Ahí es donde podemos utilizar la **render function**.
 
-> Si eres nuevo en el concepto de virtual DOM y render functions, asegúrate de leer primero el capítulo [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html).
+> Si eres nuevo en el concepto de virtual DOM y render functions, asegúrate de leer primero el capítulo [Mecanismo de Renderizado](/guide/extras/rendering-mechanism).
 
 ## Uso Básico {#basic-usage}
 
@@ -551,7 +551,7 @@ Pasar los slots como funciones permite que sean invocados de forma perezosa por 
 
 ### Componentes Integrados {#built-in-components}
 
-[Los componentes integrados](/api/built-in-components.html) como `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` y `<Suspense>` deben ser importados para su uso en las funciones de renderizado:
+[Los componentes integrados](/api/built-in-components) como `<KeepAlive>`, `<Transition>`, `<TransitionGroup>`, `<Teleport>` y `<Suspense>` deben ser importados para su uso en las funciones de renderizado:
 
 <div class="composition-api">
 

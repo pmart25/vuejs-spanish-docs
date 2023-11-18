@@ -67,7 +67,7 @@ Un "meta componente" para renderizar componentes dinámicos o elementos HTML.
   <component :is="href ? 'a' : 'span'"></component>
   ```
 
-  Los [componentes integrados](./built-in-components.html) pueden usarse con `is`, pero los tienes que registrar si quieres referenciarlos por el nombre. Por ejemplo:
+  Los [componentes integrados](./built-in-components) pueden usarse con `is`, pero los tienes que registrar si quieres referenciarlos por el nombre. Por ejemplo:
 
   ```vue
   <script>
@@ -138,7 +138,7 @@ Denotes slot content outlets in templates.
 
   Los elementos `<slot>` son compilados a Javascript en las plantillas de Vue, por eso no deben ser confundidos con [el elemento `<slot>` nativo](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot).
 
-- **Ver también:** [Componentes - Slots](/guide/components/slots.html)
+- **Ver también:** [Componentes - Slots](/guide/components/slots)
 
 ## `<template>` {#template}
 

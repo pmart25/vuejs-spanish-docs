@@ -367,7 +367,7 @@ Suele haber dos casos en los que es tentador mutar una prop:
 
 Cuando se pasan objetos y arrays como props, mientras que el componente hijo no puede mutar el enlace de la prop, **podrá** mutar las propiedades anidadas del objeto o del array. Esto es porque en JavaScript los objetos y arrays se pasan por referencia, y es excesivamente costoso para Vue evitar tales mutaciones.
 
-La desventaja principal de estas mutaciones es que permiten que el componente hijo afecte al estado del padre de una manera que no es obvia para el componente padre, haciendo potencialmente más difícil razonar sobre el flujo de datos en el futuro. La mejor práctica es evitar estas mutaciones a menos que el padre y el hijo estén estrechamente acoplados por diseño. La mayor parte de las veces, el hijo debería [emitir un evento](/guide/components/events.html) para que el padre realice la mutación.
+La desventaja principal de estas mutaciones es que permiten que el componente hijo afecte al estado del padre de una manera que no es obvia para el componente padre, haciendo potencialmente más difícil razonar sobre el flujo de datos en el futuro. La mejor práctica es evitar estas mutaciones a menos que el padre y el hijo estén estrechamente acoplados por diseño. La mayor parte de las veces, el hijo debería [emitir un evento](/guide/components/events) para que el padre realice la mutación.
 
 ## Validación de Prop {#prop-validation}
 

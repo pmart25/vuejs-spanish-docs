@@ -32,7 +32,7 @@ Hay dos tipos de dependencias asíncronas a las que `<Suspense>` puede esperar:
 
 1. Componentes con un hook asíncrono `setup()`. Esto incluye componentes que utilizan `<script setup>` con expresiones `await` de nivel superior.
 
-2. [Componentes Asíncronos](/guide/components/async.html).
+2. [Componentes Asíncronos](/guide/components/async).
 
 ### `async setup()` {#async-setup}
 

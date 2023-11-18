@@ -12,7 +12,7 @@ const vFocus = {
 
 Además del conjunto de directivas por defecto incluidas en el core (como `v-model` o `v-show`), Vue también te permite registrar tus propias directivas personalizadas.
 
-Hemos introducido dos formas de reutilización de código en Vue: componentes (/guide/essentials/component-basics.html) y composables (/composables). Los componentes son los principales bloques de construcción, mientras que los composables se centran en la reutilización de la lógica con estado. Las directivas personalizadas, por su parte, están pensadas principalmente para reutilizar la lógica que implica el acceso de bajo nivel al DOM en elementos planos.
+Hemos introducido dos formas de reutilización de código en Vue: componentes (/guide/essentials/component-basics) y composables (/composables). Los componentes son los principales bloques de construcción, mientras que los composables se centran en la reutilización de la lógica con estado. Las directivas personalizadas, por su parte, están pensadas principalmente para reutilizar la lógica que implica el acceso de bajo nivel al DOM en elementos planos.
 
 Una directiva personalizada se define como un objeto que contiene hooks del ciclo de vida similares a los de un componente. Los hooks reciben el elemento al que está vinculada la directiva. Aquí hay un ejemplo de una directiva que focaliza una entrada cuando el elemento es insertado en el DOM por Vue:
 
@@ -210,7 +210,7 @@ app.directive('demo', (el, binding) => {
 
 ## Uso en Componentes {#usage-on-components}
 
-Cuando se utilizan en componentes, las directivas personalizadas siempre se aplicarán al nodo raíz de un componente, de forma similar a los [Atributos Fallthrough](/guide/components/attrs.html).
+Cuando se utilizan en componentes, las directivas personalizadas siempre se aplicarán al nodo raíz de un componente, de forma similar a los [Atributos Fallthrough](/guide/components/attrs).
 
 ```vue-html
 <MyComponent v-demo="test" />

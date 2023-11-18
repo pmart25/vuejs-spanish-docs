@@ -212,7 +212,7 @@ El sistema de reactividad de Vue se basa principalmente en el tiempo de ejecuci�
 
 Ya hemos encontrado una limitaci처n en el ejemplo anterior: JavaScript no nos proporciona una forma de interceptar la lectura y escritura de variables locales, por lo que tenemos que acceder siempre al estado reactivo como propiedades de objetos, utilizando objetos reactive o refs.
 
-Hemos estado experimentando con la funci처n [Transformaci처n de la Reactividad](/guide/extras/reactivity-transform.html) para reducir la verbosidad del c처digo:
+Hemos estado experimentando con la funci처n [Transformaci처n de la Reactividad](/guide/extras/reactivity-transform) para reducir la verbosidad del c처digo:
 
 ```js
 let A0 = $ref(0)

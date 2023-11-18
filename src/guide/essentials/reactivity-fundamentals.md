@@ -75,7 +75,7 @@ import { reactive } from 'vue'
 const state = reactive({ count: 0 })
 ```
 
-Los objetos reactivos son [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue puede rastrear el acceso a la propiedad y las mutaciones de un objeto reactivo. Si tienes curiosidad acerca de los detalles, explicamos cómo funciona el sistema de reactividad de Vue en [Reactividad en profundidad](/guide/extras/reactivity-in-depth.html), pero recomendamos leerlo después de que hayas terminado la guía principal.
+Los objetos reactivos son [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue puede rastrear el acceso a la propiedad y las mutaciones de un objeto reactivo. Si tienes curiosidad acerca de los detalles, explicamos cómo funciona el sistema de reactividad de Vue en [Reactividad en profundidad](/guide/extras/reactivity-in-depth), pero recomendamos leerlo después de que hayas terminado la guía principal.
 
 Consulta también: [Escritura de reactive()](/guide/typescript/composition-api.html#escritura-de-reactive) <sup class="vt-badge ts" />
 
@@ -425,7 +425,7 @@ callSomeFunction(obj.foo)
 const { foo, bar } = obj
 ```
 
-En otras palabras, `ref()` nos permite crear una "referencia" a cualquier valor y pasarla sin perder reactividad. Esta capacidad es bastante importante ya que se usa con frecuencia al extraer lógica en [Funciones Composables](/guide/reusability/composables.html).
+En otras palabras, `ref()` nos permite crear una "referencia" a cualquier valor y pasarla sin perder reactividad. Esta capacidad es bastante importante ya que se usa con frecuencia al extraer lógica en [Funciones Composables](/guide/reusability/composables).
 
 ### Desempaquetando Ref en Plantillas \*\* {#ref-unwrapping-in-templates}
 

@@ -66,7 +66,7 @@ El modificador `.once` también es compatible con los escuchadores de eventos de
 Al igual que los componentes y props, los nombres de eventos proporcionan una transformación automática de mayúsculas y minúsculas. Observa que emitimos un evento camelCase, pero podemos escucharlo usando un listener kebab-cased en el padre. Como en el caso de la [Nomenclatura de las Props](/guide/components/props.html#nomenclatura-de-las-props), recomendamos utilizar escuchas de eventos con mayúsculas en las plantillas.
 
 ::: tip
-A diferencia de los eventos nativos del DOM, los eventos emitidos por los componentes **no** se reproducen. Sólo puedes escuchar los eventos emitidos por un componente hijo directo. Si es necesario comunicarse entre componentes hermanos o profundamente anidados, utiliza un bus de eventos externo o una [solución de gestión de estado global](/guide/scaling-up/state-management.html).
+A diferencia de los eventos nativos del DOM, los eventos emitidos por los componentes **no** se reproducen. Sólo puedes escuchar los eventos emitidos por un componente hijo directo. Si es necesario comunicarse entre componentes hermanos o profundamente anidados, utiliza un bus de eventos externo o una [solución de gestión de estado global](/guide/scaling-up/state-management).
 :::
 
 ## Argumentos del Evento {#event-arguments}

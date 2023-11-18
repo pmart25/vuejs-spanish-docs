@@ -186,7 +186,7 @@ computed: {
 
 ## Orden de los elementos de nivel superior de los SFC {#single-file-component-top-level-element-order}
 
-**Los [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html) deben ordenar siempre las etiquetas `<script>`, `<template>` y `<style>` de forma consistente, con `<style>` en último lugar, porque al menos una de las otras dos es siempre necesaria.**
+**Los [Componentes de un Solo Archivo](/guide/scaling-up/sfc) deben ordenar siempre las etiquetas `<script>`, `<template>` y `<style>` de forma consistente, con `<style>` en último lugar, porque al menos una de las otras dos es siempre necesaria.**
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>

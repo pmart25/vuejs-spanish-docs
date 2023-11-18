@@ -42,7 +42,7 @@ export default {
 
 ### `<script>` {#script}
 
-- Cada archivo `*.vue` puede contener como máximo un bloque `<script>` a la vez (excluyendo [`<script setup>`](/api/sfc-script-setup.html)).
+- Cada archivo `*.vue` puede contener como máximo un bloque `<script>` a la vez (excluyendo [`<script setup>`](/api/sfc-script-setup)).
 
 - El script se ejecuta como un Módulo ES.
 

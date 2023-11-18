@@ -165,7 +165,7 @@ Renderiza el elemento o bloque de plantilla varias veces en función de los dato
   `v-for` puede trabajar también con valores que implementan el [Protocolo Iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#The_iterable_protocol), incluyendo los objetos nativos `Map` y `Set`.
 
 - **Ver también:**
-  - [Renderizado de listas](/guide/essentials/list.html)
+  - [Renderizado de listas](/guide/essentials/list)
 
 ## v-on {#v-on}
 
@@ -250,7 +250,7 @@ Adjunta un escuchador de eventos al elemento.
   ```
 
 - **Ver también:**
-  - [Manejando Eventos](/guide/essentials/event-handling.html)
+  - [Manejando Eventos](/guide/essentials/event-handling)
   - [Componentes - Escuchando los Eventos](/guide/essentials/component-basics.html#escuchando-los-eventos)
 
 ## v-bind {#v-bind}
@@ -337,7 +337,7 @@ Vincula dinámicamente uno o más atributos, o una prop de un componente a una e
   No se necesita `.camel` si estás usando plantillas escritas en un string, o si precompilas la plantilla en la compilación.
 
 - **Ver también:**
-  - [Vinculación de Clases y Estilos](/guide/essentials/class-and-style.html)
+  - [Vinculación de Clases y Estilos](/guide/essentials/class-and-style)
   - [Componentes - Detalles del Pase del Prop](/guide/components/props.html#detalles-del-pase-del-prop)
 
 ## v-model {#v-model}
@@ -361,8 +361,8 @@ Crear un enlace bidireccional en un elemento de entrada del formulario o un comp
 
 - **Ver también:**
 
-  - [Vinculación de Entradas de Formularios](/guide/essentials/forms.html)
-  - [Eventos de los Componentes - Uso con `v-model`](/guide/components/v-model.html)
+  - [Vinculación de Entradas de Formularios](/guide/essentials/forms)
+  - [Eventos de los Componentes - Uso con `v-model`](/guide/components/v-model)
 
 ## v-slot {#v-slot}
 
@@ -413,7 +413,7 @@ Denota slots con nombre o slots asignados que esperan recibir props.
   ```
 
 - **Ver también:**
-  - [Componentes - Slots](/guide/components/slots.html)
+  - [Componentes - Slots](/guide/components/slots)
 
 ## v-pre {#v-pre}
 

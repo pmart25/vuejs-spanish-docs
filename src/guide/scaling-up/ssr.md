@@ -84,7 +84,7 @@ Debería imprimir lo siguiente en la línea de comandos:
 <button>1</button>
 ```
 
-[`renderToString()`](/api/ssr.html#rendertostring) toma una instancia de la aplicación de Vue y devuelve una Promesa que resuelve el HTML renderizado de la aplicación. También es posible transmitir la renderización mediante la [API de secuencias de Node.js](https://nodejs.org/api/stream.html) o la [API de secuencias web](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). Consulta la [referencia de la API de SSR](/api/ssr.html) para obtener todos los detalles.
+[`renderToString()`](/api/ssr.html#rendertostring) toma una instancia de la aplicación de Vue y devuelve una Promesa que resuelve el HTML renderizado de la aplicación. También es posible transmitir la renderización mediante la [API de secuencias de Node.js](https://nodejs.org/api/stream.html) o la [API de secuencias web](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API). Consulta la [referencia de la API de SSR](/api/ssr) para obtener todos los detalles.
 
 Luego, podemos mover el código Vue SSR a un manejador de peticiones del servidor, que envuelve el contenido de la aplicación con el HTML de la página completa. Usaremos [`express`](https://expressjs.com/) para los siguientes pasos:
 

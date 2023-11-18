@@ -1,7 +1,7 @@
 # Composition API: Hooks del Ciclo de Vida {#composition-api-lifecycle-hooks}
 
 :::info Nota de Uso
-Todas las APIs listadas en esta página deben ser llamadas en forma sincrónica durante la ejecución de la función `setup()`. Ver [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html) para más detalles.
+Todas las APIs listadas en esta página deben ser llamadas en forma sincrónica durante la ejecución de la función `setup()`. Ver [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle) para más detalles.
 :::
 
 ## onMounted() {#onmounted}
@@ -22,7 +22,7 @@ Registra un callback que será llamado una vez que el componente se haya montado
 
   - Su propio estructura de DOM es creado e insertado entro del contenedor padre. Ten en cuenta que esto solo garantiza que la estructura de DOM del componente esté en el documento siempre y cuando el contenedor raíz de la aplicación también lo esté.
 
-  Este hook para realizar tareas que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM en el cliente en una [aplicación renderizada del lado del servidor](/guide/scaling-up/ssr.html).
+  Este hook para realizar tareas que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM en el cliente en una [aplicación renderizada del lado del servidor](/guide/scaling-up/ssr).
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
@@ -241,7 +241,7 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,7 +267,7 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
@@ -338,4 +338,4 @@ Registra una función asíncrona que será resuelta antes de que la instancia de
   </script>
   ```
 
-- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
+- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr)

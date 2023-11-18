@@ -55,7 +55,7 @@ El nodo raíz DOM que la instancia del componente está gestionando.
   - Para componentes con múltiples nodo raíz, `$el` será el nodo marcacdor de lugar en el DOM que Vue utiliza para mantener la posición del componente en el DOM (un nodo de texto, o un nodo de comentario en el modo de hidratación SSR).
 
   :::tip
-  Por coherencia, se recomienda utilizar [template refs](/guide/essentials/template-refs.html) para acceder directamente a los elementos en lugar de confiar en `$el`.
+  Por coherencia, se recomienda utilizar [template refs](/guide/essentials/template-refs) para acceder directamente a los elementos en lugar de confiar en `$el`.
   :::
 
 ## $options {#options}
@@ -117,7 +117,7 @@ La instancia del componente raíz del árbol de componentes actual. Si la instan
 
 ## $slots {#slots}
 
-Un objeto representando los [slots](/guide/components/slots.html) pasados desde el componente padre.
+Un objeto representando los [slots](/guide/components/slots) pasados desde el componente padre.
 
 - **Tipo**
 
@@ -131,7 +131,7 @@ Un objeto representando los [slots](/guide/components/slots.html) pasados desde 
 
 - **Detalles**
 
-  Normalmente se utiliza cuando se crean manualmente [funciones de renderizado](/guide/extras/render-function.html), pero también puede ser usado para detectar cuando un slot está presente.
+  Normalmente se utiliza cuando se crean manualmente [funciones de renderizado](/guide/extras/render-function), pero también puede ser usado para detectar cuando un slot está presente.
 
   Cada slot se expone en `this.$slots` como una función que devuelve un array de vnodos bajo la clave correspondiente al nombre de ese slot. El slot por defecto se expone como `this.$slots.default`.
 
@@ -141,7 +141,7 @@ Un objeto representando los [slots](/guide/components/slots.html) pasados desde 
 
 ## $refs {#refs}
 
-Un objeto de elementos del DOM e instancias de componentes, registrados a través de [refs de la plantilla](/guide/essentials/template-refs.html).
+Un objeto de elementos del DOM e instancias de componentes, registrados a través de [refs de la plantilla](/guide/essentials/template-refs).
 
 - **Tipo**
 
@@ -153,7 +153,7 @@ Un objeto de elementos del DOM e instancias de componentes, registrados a travé
 
 - **Ver también:**
 
-  - [Refs de la Plantilla](/guide/essentials/template-refs.html)
+  - [Refs de la Plantilla](/guide/essentials/template-refs)
   - [Atributos Especiales - ref](./built-in-special-attributes.md#ref)
 
 ## $attrs {#attrs}
@@ -170,13 +170,13 @@ Un objeto que contiene el resto de los atributos del componente.
 
 - **Detalles**
 
-  [Atributos Fallthrough](/guide/components/attrs.html) son atributos y manejadores de eventos pasados por el componente padre, pero no declarados como una prop o un evento emitido por el hijo.
+  [Atributos Fallthrough](/guide/components/attrs) son atributos y manejadores de eventos pasados por el componente padre, pero no declarados como una prop o un evento emitido por el hijo.
 
   Por defecto, todo lo que hay en `$attrs` se heredará automáticamente en el elemento raíz del componente si sólo hay un único elemento raíz. Este comportamiento se desactiva si el componente tiene varios nodos raíz, y puede desactivarse explícitamente con la opción [`inheritAttrs`](./options-misc.html#inheritattrs).
 
 - **Ver también:**
 
-  - [Atributos Fallthrough](/guide/components/attrs.html)
+  - [Atributos Fallthrough](/guide/components/attrs)
 
 ## $watch() {#watch}
 
@@ -259,7 +259,7 @@ API para crear watchers.
 
 - **Ver también:**
   - [Options - `watch`](/api/options-state.html#watch)
-  - [Guía - Watchers](/guide/essentials/watchers.html)
+  - [Guía - Watchers](/guide/essentials/watchers)
 
 ## $emit() {#emit}
 
@@ -288,7 +288,7 @@ Activa un evento personalizado en la instancia actual. Cualquier arguemnto adici
 
 - **Ver también:**
 
-  - [Componentes - Eventos](/guide/components/events.html)
+  - [Componentes - Eventos](/guide/components/events)
   - [`emits` option](./options-state.html#emits)
 
 ## $forceUpdate() {#forceupdate}

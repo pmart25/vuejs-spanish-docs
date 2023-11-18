@@ -6,11 +6,11 @@ Los componentes nos permiten dividir la interfaz de usuario en piezas independie
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-Esto es muy similar a cómo anidamos los elementos HTML nativos, pero Vue implementa su propio modelo de componentes que nos permite encapsular contenido y lógica personalizados en cada componente. Vue también juega muy bien con los Componentes Web nativos. Si tienes curiosidad por saber la relación entre los Componentes de Vue y los Componentes Web nativos, [lee más aquí](/guide/extras/web-components.html).
+Esto es muy similar a cómo anidamos los elementos HTML nativos, pero Vue implementa su propio modelo de componentes que nos permite encapsular contenido y lógica personalizados en cada componente. Vue también juega muy bien con los Componentes Web nativos. Si tienes curiosidad por saber la relación entre los Componentes de Vue y los Componentes Web nativos, [lee más aquí](/guide/extras/web-components).
 
 ## Definiendo un Componente {#defining-a-component}
 
-Cuando usamos un paso de compilación, normalmente definimos cada componente de Vue en un archivo dedicado usando la extensión `.vue` conocido como [Componente de un Solo Archivo](/guide/scaling-up/sfc.html) (abreviado SFC):
+Cuando usamos un paso de compilación, normalmente definimos cada componente de Vue en un archivo dedicado usando la extensión `.vue` conocido como [Componente de un Solo Archivo](/guide/scaling-up/sfc) (abreviado SFC):
 
 <div class="options-api">
 
@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-Para exponer el componente importado a nuestra plantilla, necesitamos [registrarlo](/guide/components/registration.html) con la opción `components`. El componente estará entonces disponible como una etiqueta usando la clave con la que está registrado.
+Para exponer el componente importado a nuestra plantilla, necesitamos [registrarlo](/guide/components/registration) con la opción `components`. El componente estará entonces disponible como una etiqueta usando la clave con la que está registrado.
 
 </div>
 
@@ -138,7 +138,7 @@ Gracias a `<script setup>`, los componentes importados se ponen automáticamente
 
 </div>
 
-También es posible registrar globalmente un componente, haciéndolo disponible para todos los componentes de una determinada aplicación sin tener que importarlo. Las ventajas y desventajas del registro global frente al local se discuten en la sección dedicada al [Registro de Componentes](/guide/components/registration.html).
+También es posible registrar globalmente un componente, haciéndolo disponible para todos los componentes de una determinada aplicación sin tener que importarlo. Las ventajas y desventajas del registro global frente al local se discuten en la sección dedicada al [Registro de Componentes](/guide/components/registration).
 
 Los componentes pueden ser reutilizados tantas veces como se quieras:
 
@@ -299,7 +299,7 @@ Después queremos renderizar un componente para cada uno, usando `v-for`:
 
 Observa cómo podemos usar `v-bind` para pasar props dinámicos. Esto resulta especialmente útil cuando no conoces el contenido exacto que vas a renderizar con antelación.
 
-Eso es todo lo que necesitas saber sobre los props por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Props](/guide/components/props.html).
+Eso es todo lo que necesitas saber sobre los props por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Props](/guide/components/props).
 
 ## Escuchando los Eventos {#listening-to-events}
 
@@ -536,7 +536,7 @@ En el ejemplo anterior, el valor pasado a `:is` puede contener
 
 También puedes utilizar el atributo "is" para crear elementos HTML normales.
 
-Cuando se cambia entre varios componentes con `<component :is="...">`, un componente será desmontado cuando se cambie de lugar. Podemos forzar que los componentes inactivos permanezcan "vivos" con el componente integrado [`<KeepAlive>`](/guide/built-ins/keep-alive.html).
+Cuando se cambia entre varios componentes con `<component :is="...">`, un componente será desmontado cuando se cambie de lugar. Podemos forzar que los componentes inactivos permanezcan "vivos" con el componente integrado [`<KeepAlive>`](/guide/built-ins/keep-alive).
 
 ## Advertencias sobre el Procesamiento de las Plantillas del DOM {#dom-template-parsing-caveats}
 

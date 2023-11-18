@@ -35,7 +35,7 @@ Crea una instancia de la aplicación.
   const app = createApp(App)
   ```
 
-- **Ver también:** [Guía - Creando una Aplicación Vue](/guide/essentials/application.html)
+- **Ver también:** [Guía - Creando una Aplicación Vue](/guide/essentials/application)
 
 ## createSSRApp() {#createssrapp}
 
@@ -145,7 +145,7 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
   </div>
 
 - **Ver también:**
-  - [Provide / Inject](/guide/components/provide-inject.html)
+  - [Provide / Inject](/guide/components/provide-inject)
   - [Nivel de Aplicación de Provide](/guide/components/provide-inject.html#nivel-de-aplicacion-de-provide)
 
 ## app.component() {#app-component}
@@ -177,7 +177,7 @@ Registra un componente global si se le pasa tanto un nombre como la definición 
   const MyComponent = app.component('my-component')
   ```
 
-- **Ver también:** [Registro de Componentes](/guide/components/registration.html)
+- **Ver también:** [Registro de Componentes](/guide/components/registration)
 
 ## app.directive() {#app-directive}
 
@@ -215,11 +215,11 @@ Registra una directiva personalizada global si se le pasa tanto un nombre y la d
   const myDirective = app.directive('my-directive')
   ```
 
-- **Ver también:** [Directivas Personalizadas](/guide/reusability/custom-directives.html)
+- **Ver también:** [Directivas Personalizadas](/guide/reusability/custom-directives)
 
 ## app.use() {#app-use}
 
-Instala un [plugin](/guide/reusability/plugins.html).
+Instala un [plugin](/guide/reusability/plugins).
 
 - **Tipo**
 
@@ -250,7 +250,7 @@ Instala un [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **Ver también:** [Plugins](/guide/reusability/plugins.html)
+- **Ver también:** [Plugins](/guide/reusability/plugins)
 
 ## app.mixin() {#app-mixin}
 
@@ -259,7 +259,7 @@ Aplica un mixin global (con alcance a la aplicación). Un mixin global aplica su
 :::warning No Recomendado
 Los mixins están soportados en Vue 3 solo para mantener la compatibilidad hacia atrás, debido a su uso extendido en las librerías del ecosistema. El uso de mixins, en especial los mixins globales, debería evitarse en el código de la aplicación.
 
-Para la reutilización de lógica, usar preferentemente [Composables](/guide/reusability/composables.html) en su lugar.
+Para la reutilización de lógica, usar preferentemente [Composables](/guide/reusability/composables) en su lugar.
 :::
 
 - **Tipo**
@@ -272,7 +272,7 @@ Para la reutilización de lógica, usar preferentemente [Composables](/guide/reu
 
 ## app.version {#app-version}
 
-Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil dentro de [plugins](/guide/reusability/plugins.html), donde podrías necesitar lógica condicional basada en diferentes versiones de Vue.
+Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil dentro de [plugins](/guide/reusability/plugins), donde podrías necesitar lógica condicional basada en diferentes versiones de Vue.
 
 - **Tipo**
 
@@ -391,7 +391,7 @@ Asigna este valor a `true` para activar el seguimiento del inicio del componente
 
 - **Tipo**: `boolean`
 
-- **Ver también:** [Guía - Guía de Optimización del Rendimiento](/guide/best-practices/performance.html)
+- **Ver también:** [Guía - Guía de Optimización del Rendimiento](/guide/best-practices/performance)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
@@ -426,7 +426,7 @@ Especifica un método de comprobación para reconocer elementos nativos personal
   }
   ```
 
-- **Ver también:** [Vue y Componentes Web](/guide/extras/web-components.html)
+- **Ver también:** [Vue y Componentes Web](/guide/extras/web-components)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
