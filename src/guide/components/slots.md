@@ -313,7 +313,7 @@ function BaseLayout(slots) {
 </base-layout>
 ```
 
-Ten en cuenta que la expresión está sujeta a las [restricciones sintácticas](/guide/essentials/template-syntax.html#directivas) de los argumentos de la directiva dinámica.
+Ten en cuenta que la expresión está sujeta a las [restricciones sintácticas](/guide/essentials/template-syntax#directivas) de los argumentos de la directiva dinámica.
 
 ## Slots con Ámbito {#scoped-slots}
 

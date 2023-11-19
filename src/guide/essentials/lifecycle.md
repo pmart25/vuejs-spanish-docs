@@ -31,7 +31,7 @@ export default {
 
 </div>
 
-También hay otros hooks que serán llamados en diferentes etapas del ciclo de vida de la instancia, siendo el más utilizado <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle.html#onmounted), [`onUpdated`](/api/composition-api-lifecycle.html#onupdated) y [`onUnmounted`](/api/composition-api-lifecycle.html#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle.html#mounted), [`updated`](/api/options-lifecycle.html#updated) y [`unmounted`](/api/options-lifecycle.html#unmounted).</span>
+También hay otros hooks que serán llamados en diferentes etapas del ciclo de vida de la instancia, siendo el más utilizado <span class="composition-api">[`onMounted`](/api/composition-api-lifecycle#onmounted), [`onUpdated`](/api/composition-api-lifecycle#onupdated) y [`onUnmounted`](/api/composition-api-lifecycle#onunmounted).</span><span class="options-api">[`mounted`](/api/options-lifecycle#mounted), [`updated`](/api/options-lifecycle#updated) y [`unmounted`](/api/options-lifecycle#unmounted).</span>
 
 <div class="options-api">
 
@@ -63,4 +63,4 @@ A continuación se muestra un diagrama del ciclo de vida de la instancia. En est
 
 <!-- https://www.figma.com/file/Xw3UeNMOralY6NV7gSjWdS/Vue-Lifecycle -->
 
-Consulta la <span class="composition-api">[Referencia de la API de los Hooks del Ciclo de Vida](/api/composition-api-lifecycle.html)</span><span class="options-api">[Referencia de la API de los Hooks del Ciclo de Vida](/api/options-lifecycle)</span> para obtener detalles sobre todos los hooks del ciclo de vida y sus respectivos casos de uso.
+Consulta la <span class="composition-api">[Referencia de la API de los Hooks del Ciclo de Vida](/api/composition-api-lifecycle)</span><span class="options-api">[Referencia de la API de los Hooks del Ciclo de Vida](/api/options-lifecycle)</span> para obtener detalles sobre todos los hooks del ciclo de vida y sus respectivos casos de uso.

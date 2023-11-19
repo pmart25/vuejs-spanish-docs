@@ -572,4 +572,4 @@ Un objeto para definir las estrategias de mergeo para componentes personalizados
   // logs 'Hola, Vue'
   ```
 
-- **Ver también:** [Instancia del componente - `$options`](/api/component-instance.html#options)
+- **Ver también:** [Instancia del componente - `$options`](/api/component-instance#options)

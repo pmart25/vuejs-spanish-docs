@@ -6,7 +6,7 @@ const { x, y } = useMouse()
 </script>
 
 :::tip
-Esta sección supone un conocimiento básico de la Composition API. Si has estado aprendiendo Vue sólo con la Options API, puedes establecer la Preferencia de la API en la Composition API (utilizando el conmutador en la parte superior de la barra lateral izquierda) y volver a leer los capítulos [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) y [Hooks del Ciclo de Vida](/guide/essentials/lifecycle).
+Esta sección supone un conocimiento básico de la Composition API. Si has estado aprendiendo Vue sólo con la Options API, puedes establecer la Preferencia de la API en la Composition API (utilizando el conmutador en la parte superior de la barra lateral izquierda) y volver a leer los capítulos [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals) y [Hooks del Ciclo de Vida](/guide/essentials/lifecycle).
 :::
 
 ## ¿Qué es un "Composable"? {#what-is-a-composable}
@@ -218,7 +218,7 @@ export function useFetch(url) {
 }
 ```
 
-Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas como refs de cadenas de URL. Cuando detecta que la URL es una referencia dinámica utilizando [`isRef()`](/api/reactivity-utilities.html#isref), establece un efecto reactivo utilizando [`watchEffect()`](/api/reactivity-core.html#watcheffect). El efecto se ejecutará inmediatamente y también hará un seguimiento de la referencia de la URL como una dependencia. Cada vez que la referencia de la URL cambie, se restablecerán los datos y se obtendrán de nuevo.
+Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas como refs de cadenas de URL. Cuando detecta que la URL es una referencia dinámica utilizando [`isRef()`](/api/reactivity-utilities#isref), establece un efecto reactivo utilizando [`watchEffect()`](/api/reactivity-core#watcheffect). El efecto se ejecutará inmediatamente y también hará un seguimiento de la referencia de la URL como una dependencia. Cada vez que la referencia de la URL cambie, se restablecerán los datos y se obtendrán de nuevo.
 
 Aquí está [la versión actualizada de `useFetch()`](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdCBzZXR1cD5cbmltcG9ydCB7IHJlZiwgY29tcHV0ZWQgfSBmcm9tICd2dWUnXG5pbXBvcnQgeyB1c2VGZXRjaCB9IGZyb20gJy4vdXNlRmV0Y2guanMnXG5cbmNvbnN0IGJhc2VVcmwgPSAnaHR0cHM6Ly9qc29ucGxhY2Vob2xkZXIudHlwaWNvZGUuY29tL3RvZG9zLydcbmNvbnN0IGlkID0gcmVmKCcxJylcbmNvbnN0IHVybCA9IGNvbXB1dGVkKCgpID0+IGJhc2VVcmwgKyBpZC52YWx1ZSlcblxuY29uc3QgeyBkYXRhLCBlcnJvciwgcmV0cnkgfSA9IHVzZUZldGNoKHVybClcbjwvc2NyaXB0PlxuXG48dGVtcGxhdGU+XG4gIExvYWQgcG9zdCBpZDpcbiAgPGJ1dHRvbiB2LWZvcj1cImkgaW4gNVwiIEBjbGljaz1cImlkID0gaVwiPnt7IGkgfX08L2J1dHRvbj5cblxuXHQ8ZGl2IHYtaWY9XCJlcnJvclwiPlxuICAgIDxwPk9vcHMhIEVycm9yIGVuY291bnRlcmVkOiB7eyBlcnJvci5tZXNzYWdlIH19PC9wPlxuICAgIDxidXR0b24gQGNsaWNrPVwicmV0cnlcIj5SZXRyeTwvYnV0dG9uPlxuICA8L2Rpdj5cbiAgPGRpdiB2LWVsc2UtaWY9XCJkYXRhXCI+RGF0YSBsb2FkZWQ6IDxwcmU+e3sgZGF0YSB9fTwvcHJlPjwvZGl2PlxuICA8ZGl2IHYtZWxzZT5Mb2FkaW5nLi4uPC9kaXY+XG48L3RlbXBsYXRlPiIsImltcG9ydC1tYXAuanNvbiI6IntcbiAgXCJpbXBvcnRzXCI6IHtcbiAgICBcInZ1ZVwiOiBcImh0dHBzOi8vc2ZjLnZ1ZWpzLm9yZy92dWUucnVudGltZS5lc20tYnJvd3Nlci5qc1wiXG4gIH1cbn0iLCJ1c2VGZXRjaC5qcyI6ImltcG9ydCB7IHJlZiwgaXNSZWYsIHVucmVmLCB3YXRjaEVmZmVjdCB9IGZyb20gJ3Z1ZSdcblxuZXhwb3J0IGZ1bmN0aW9uIHVzZUZldGNoKHVybCkge1xuICBjb25zdCBkYXRhID0gcmVmKG51bGwpXG4gIGNvbnN0IGVycm9yID0gcmVmKG51bGwpXG5cbiAgYXN5bmMgZnVuY3Rpb24gZG9GZXRjaCgpIHtcbiAgICAvLyByZXNldCBzdGF0ZSBiZWZvcmUgZmV0Y2hpbmcuLlxuICAgIGRhdGEudmFsdWUgPSBudWxsXG4gICAgZXJyb3IudmFsdWUgPSBudWxsXG4gICAgXG4gICAgLy8gcmVzb2x2ZSB0aGUgdXJsIHZhbHVlIHN5bmNocm9ub3VzbHkgc28gaXQncyB0cmFja2VkIGFzIGFcbiAgICAvLyBkZXBlbmRlbmN5IGJ5IHdhdGNoRWZmZWN0KClcbiAgICBjb25zdCB1cmxWYWx1ZSA9IHVucmVmKHVybClcbiAgICBcbiAgICB0cnkge1xuICAgICAgLy8gYXJ0aWZpY2lhbCBkZWxheSAvIHJhbmRvbSBlcnJvclxuICBcdCAgYXdhaXQgdGltZW91dCgpXG4gIFx0ICAvLyB1bnJlZigpIHdpbGwgcmV0dXJuIHRoZSByZWYgdmFsdWUgaWYgaXQncyBhIHJlZlxuXHQgICAgLy8gb3RoZXJ3aXNlIHRoZSB2YWx1ZSB3aWxsIGJlIHJldHVybmVkIGFzLWlzXG4gICAgXHRjb25zdCByZXMgPSBhd2FpdCBmZXRjaCh1cmxWYWx1ZSlcblx0ICAgIGRhdGEudmFsdWUgPSBhd2FpdCByZXMuanNvbigpXG4gICAgfSBjYXRjaCAoZSkge1xuICAgICAgZXJyb3IudmFsdWUgPSBlXG4gICAgfVxuICB9XG5cbiAgaWYgKGlzUmVmKHVybCkpIHtcbiAgICAvLyBzZXR1cCByZWFjdGl2ZSByZS1mZXRjaCBpZiBpbnB1dCBVUkwgaXMgYSByZWZcbiAgICB3YXRjaEVmZmVjdChkb0ZldGNoKVxuICB9IGVsc2Uge1xuICAgIC8vIG90aGVyd2lzZSwganVzdCBmZXRjaCBvbmNlXG4gICAgZG9GZXRjaCgpXG4gIH1cblxuICByZXR1cm4geyBkYXRhLCBlcnJvciwgcmV0cnk6IGRvRmV0Y2ggfVxufVxuXG4vLyBhcnRpZmljaWFsIGRlbGF5XG5mdW5jdGlvbiB0aW1lb3V0KCkge1xuICByZXR1cm4gbmV3IFByb21pc2UoKHJlc29sdmUsIHJlamVjdCkgPT4ge1xuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgaWYgKE1hdGgucmFuZG9tKCkgPiAwLjMpIHtcbiAgICAgICAgcmVzb2x2ZSgpXG4gICAgICB9IGVsc2Uge1xuICAgICAgICByZWplY3QobmV3IEVycm9yKCdSYW5kb20gRXJyb3InKSlcbiAgICAgIH1cbiAgICB9LCAzMDApXG4gIH0pXG59In0=), con un retardo artificial y un error aleatorio para fines de demostración.
 
@@ -230,7 +230,7 @@ Es una convención nombrar las funciones composables con nombres camelCase que c
 
 ### Argumentos de Entrada {#input-arguments}
 
-Un composable puede aceptar argumentos de referencia incluso si no depende de ellos para la reactividad. Si estás escribiendo un composable que puede ser utilizado por otros desarrolladores, es una buena idea manejar el caso de que los argumentos de entrada sean refs en lugar de valores crudos. La función de ayuda [`unref()`](/api/reactivity-utilities.html#unref) será muy útil para este propósito:
+Un composable puede aceptar argumentos de referencia incluso si no depende de ellos para la reactividad. Si estás escribiendo un composable que puede ser utilizado por otros desarrolladores, es una buena idea manejar el caso de que los argumentos de entrada sean refs en lugar de valores crudos. La función de ayuda [`unref()`](/api/reactivity-utilities#unref) será muy útil para este propósito:
 
 ```js
 import { unref } from 'vue'
@@ -333,7 +333,7 @@ export default {
 
 ### vs. Mixins {#vs-mixins}
 
-Los usuarios que vienen de Vue 2 pueden estar familiarizados con la opción [mixins](/api/options-composition.html#mixins), que también nos permite extraer la lógica del componente en unidades reutilizables. Los mixins tienen tres inconvenientes principales:
+Los usuarios que vienen de Vue 2 pueden estar familiarizados con la opción [mixins](/api/options-composition#mixins), que también nos permite extraer la lógica del componente en unidades reutilizables. Los mixins tienen tres inconvenientes principales:
 
 1. **Origen de las propiedades poco claro**: cuando se utilizan muchos mixins, no queda claro qué propiedad de instancia es inyectada por cada mixin, lo que dificulta el seguimiento de la implementación y la comprensión del comportamiento del componente. Esta es también la razón por la que recomendamos utilizar el patrón refs + desestructuración para los composables: hace que la fuente de la propiedad sea clara en los componentes consumidores.
 
@@ -345,7 +345,7 @@ Por las razones anteriores, ya no recomendamos el uso de mixins en Vue 3. La fun
 
 ### vs. Componentes sin Renderizado {#vs-renderless-components}
 
-En el capítulo sobre slots de los componentes, discutimos el patrón [Componentes sin Renderizado](/guide/components/slots.html#componentes-sin-renderizado) basado en slots de ámbito. Incluso implementamos la misma demostración de seguimiento del ratón utilizando componentes sin renderizado.
+En el capítulo sobre slots de los componentes, discutimos el patrón [Componentes sin Renderizado](/guide/components/slots#componentes-sin-renderizado) basado en slots de ámbito. Incluso implementamos la misma demostración de seguimiento del ratón utilizando componentes sin renderizado.
 
 La principal ventaja de los composables sobre los componentes sin renderizado es que los composables no implican la sobrecarga adicional de las instancias de los componentes. Cuando se utilizan en toda una aplicación, la cantidad de instancias de componentes adicionales creadas por el patrón de componentes sin renderizado puede convertirse en una sobrecarga notable para el rendimiento.
 
@@ -359,5 +359,5 @@ Si tienes experiencia con React, puedes notar que esto se parece mucho a los hoo
 
 - [Reactividad en profundidad](/guide/extras/reactivity-in-depth): para una comprensión de bajo nivel de cómo funciona el sistema de reactividad de Vue.
 - [Manejo del Estado](/guide/scaling-up/state-management): para conocer los patrones de gestión del estado compartido por varios componentes.
-- [Pruebas de Composables](/guide/scaling-up/testing.html#pruebas-de-composables): tips para realizar pruebas unitarias en composables.
+- [Pruebas de Composables](/guide/scaling-up/testing#pruebas-de-composables): tips para realizar pruebas unitarias en composables.
 - [VueUse](https://vueuse.org/): una colección cada vez mayor de composables de Vue. El código fuente es también un gran recurso de aprendizaje.

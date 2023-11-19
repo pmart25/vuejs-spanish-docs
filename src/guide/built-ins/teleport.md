@@ -199,5 +199,5 @@ El resultado renderizado sería:
 
 **Relacionado**
 
-- [Referencia de la API sobre `<Teleport>`](/api/built-in-components.html#teleport)
-- [Manejo de Teleports en SSR](/guide/scaling-up/ssr.html#teleports)
+- [Referencia de la API sobre `<Teleport>`](/api/built-in-components#teleport)
+- [Manejo de Teleports en SSR](/guide/scaling-up/ssr#teleports)

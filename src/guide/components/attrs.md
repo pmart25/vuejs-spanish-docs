@@ -8,7 +8,7 @@ outline: deep
 
 ## Herencia de los Atributos {#attribute-inheritance}
 
-Un "atributo fallthrough" es un atributo o escuchador de eventos `v-on` que se pasa a un componente, pero que no se declara explícitamente en los [props](./props) o [emits](./events.html#declarando-eventos-emitidos) del componente receptor. Ejemplos comunes de esto son los atributos `class`, `style` e `id`.
+Un "atributo fallthrough" es un atributo o escuchador de eventos `v-on` que se pasa a un componente, pero que no se declara explícitamente en los [props](./props) o [emits](./events#declarando-eventos-emitidos) del componente receptor. Ejemplos comunes de esto son los atributos `class`, `style` e `id`.
 
 Cuando un componente renderiza un único elemento raíz, los atributos fallthrough se añadirán automáticamente a los atributos del elemento raíz. Por ejemplo, dado un componente `<MyButton>` con la siguiente plantilla:
 
@@ -128,7 +128,7 @@ Deseamos que todos los atributos fallthrough como `class` y los escuchadores `v-
 </div>
 ```
 
-Recuerda que [`v-bind` sin un argumento](/guide/essentials/template-syntax.html#vinculacion-dinamica-de-multiples-atributos) vincula todas las propiedades de un objeto como atributos del elemento destino.
+Recuerda que [`v-bind` sin un argumento](/guide/essentials/template-syntax#vinculacion-dinamica-de-multiples-atributos) vincula todas las propiedades de un objeto como atributos del elemento destino.
 
 ## Herencia de los Atributos en los Nodos Raíz Múltiples {#attribute-inheritance-on-multiple-root-nodes}
 

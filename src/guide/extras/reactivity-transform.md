@@ -48,11 +48,11 @@ function increment() {
 
 Cada API de reactividad que devuelva refs tendrá una macro equivalente con el prefijo `$`. Estas APIs incluyen:
 
-- [`ref`](/api/reactivity-core.html#ref) -> `$ref`
-- [`computed`](/api/reactivity-core.html#computed) -> `$computed`
-- [`shallowRef`](/api/reactivity-advanced.html#shallowref) -> `$shallowRef`
-- [`customRef`](/api/reactivity-advanced.html#customref) -> `$customRef`
-- [`toRef`](/api/reactivity-utilities.html#toref) -> `$toRef`
+- [`ref`](/api/reactivity-core#ref) -> `$ref`
+- [`computed`](/api/reactivity-core#computed) -> `$computed`
+- [`shallowRef`](/api/reactivity-advanced#shallowref) -> `$shallowRef`
+- [`customRef`](/api/reactivity-advanced#customref) -> `$customRef`
+- [`toRef`](/api/reactivity-utilities#toref) -> `$toRef`
 
 Estas macros están disponibles globalmente y no necesitan ser importadas cuando está habilitada la Transformación de la Reactividad, pero puedes importarlas opcionalmente desde `vue/macros` si quieres ser más explícito:
 
@@ -109,7 +109,7 @@ Hay dos puntos problemáticos con el uso actual de `defineProps()` en `<script s
 
 1. Al igual que con `.value`, necesitas acceder siempre a los props como `props.x` para mantener la reactividad. Esto significa que no puedes desestructurar `defineProps` porque las variables desestructuradas resultantes no son reactivas y no se actualizarán.
 
-2. Cuando se utiliza la [declaración de props de sólo tipo] (/api/sfc-script-setup.html#typescript-only-features), no hay una manera fácil de declarar valores por defecto para las props. Hemos introducido la API `withDefaults()` para este propósito, pero sigue siendo difícil de usar.
+2. Cuando se utiliza la [declaración de props de sólo tipo](/api/sfc-script-setup#typescript-only-features), no hay una manera fácil de declarar valores por defecto para las props. Hemos introducido la API `withDefaults()` para este propósito, pero sigue siendo difícil de usar.
 
 Podemos solucionar estos problemas aplicando una transformación en tiempo de compilación cuando se utiliza `defineProps` con desestructuración, similar a lo que vimos antes con `$()`:
 

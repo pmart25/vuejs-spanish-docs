@@ -381,7 +381,7 @@ h('input', {
 />
 ```
 
-Para otros modificadores de eventos y keys, se puede utilizar el helper [`withModifiers`](/api/render-function.html#withmodifiers):
+Para otros modificadores de eventos y keys, se puede utilizar el helper [`withModifiers`](/api/render-function#withmodifiers):
 
 ```js
 import { withModifiers } from 'vue'
@@ -438,7 +438,7 @@ function render() {
 }
 ```
 
-Si un componente está registrado por su nombre y no puede ser importado directamente (por ejemplo, registrado globalmente por una librería), se puede resolver programáticamente utilizando el helper [`resolveComponent()`](/api/render-function.html#resolvecomponent).
+Si un componente está registrado por su nombre y no puede ser importado directamente (por ejemplo, registrado globalmente por una librería), se puede resolver programáticamente utilizando el helper [`resolveComponent()`](/api/render-function#resolvecomponent).
 
 ### Renderizado de Slots {#rendering-slots}
 
@@ -481,7 +481,7 @@ JSX equivalente:
 </div>
 <div class="options-api">
 
-En las funciones de renderizado, se puede acceder a los slots desde [`this.$slots`](/api/component-instance.html#slots):
+En las funciones de renderizado, se puede acceder a los slots desde [`this.$slots`](/api/component-instance#slots):
 
 ```js
 export default {
@@ -621,7 +621,7 @@ export default {
 
 ### Directivas Personalizadas {#custom-directives}
 
-Las directivas personalizadas pueden ser aplicadas a un vnode usando [`withDirectives`](/api/render-function.html#withdirectives):
+Las directivas personalizadas pueden ser aplicadas a un vnode usando [`withDirectives`](/api/render-function#withdirectives):
 
 ```js
 import { h, withDirectives } from 'vue'
@@ -642,7 +642,7 @@ const vnode = withDirectives(h('div'), [
 ])
 ```
 
-Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function.html#resolvedirective).
+Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function#resolvedirective).
 
 ## Componentes Funcionales {#functional-components}
 
@@ -671,11 +671,11 @@ function MyComponent(props, context) {
 }
 ```
 
-El segundo argumento, `context`, contiene tres propiedades: `attrs`, `emit`, y `slots`. Estos son equivalentes a las propiedades de la instancia [`$attrs`](/api/component-instance.html#attrs), [`$emit`](/api/component-instance.html#emit), y [`$slots`](/api/component-instance.html#slots) respectivamente.
+El segundo argumento, `context`, contiene tres propiedades: `attrs`, `emit`, y `slots`. Estos son equivalentes a las propiedades de la instancia [`$attrs`](/api/component-instance#attrs), [`$emit`](/api/component-instance#emit), y [`$slots`](/api/component-instance#slots) respectivamente.
 
 </div>
 
-La mayor parte de las opciones de configuración habituales para los componentes no están disponibles para los componentes funcionales. No obstante, es posible definir [`props`](/api/options-state.html#props) y [`emits`](/api/options-state.html#emits) añadiéndolas como propiedades:
+La mayor parte de las opciones de configuración habituales para los componentes no están disponibles para los componentes funcionales. No obstante, es posible definir [`props`](/api/options-state#props) y [`emits`](/api/options-state#emits) añadiéndolas como propiedades:
 
 ```js
 MyComponent.props = ['value']

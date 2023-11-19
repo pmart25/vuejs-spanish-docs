@@ -179,7 +179,7 @@ Consulta [análisis de advertencias de la plantilla del DOM](#advertencias-sobre
 
 Si estamos construyendo un blog, probablemente necesitaremos un componente que represente una entrada del blog. Queremos que todas las entradas del blog compartan el mismo diseño visual, pero con diferente contenido. Dicho componente no será útil a menos que puedas pasarle datos, como el título y el contenido de la entrada específica que queremos mostrar. Es ahí donde entran los props.
 
-Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state.html#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-y-defineemits)</span>:
+Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-y-defineemits)</span>:
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api.html#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
+Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
 
 Si no está usando `<script setup>`, las props deben ser declaradas usando la opción `props`, y el objeto props será pasado a `setup()` como primer argumento:
 
@@ -366,7 +366,7 @@ El botón de momento no hace nada; queremos que al hacer clic en el botón comun
  />
 ```
 
-Entonces el componente hijo puede emitir un evento sobre sí mismo llamando al [método **`emit`**](/api/component-instance.html#emit) integrado, pasando el nombre del evento:
+Entonces el componente hijo puede emitir un evento sobre sí mismo llamando al [método **`emit`**](/api/component-instance#emit) integrado, pasando el nombre del evento:
 
 ```vue{5}
 <!-- BlogPost.vue, omitiendo <script> -->
@@ -391,7 +391,7 @@ Gracias al escuchador `@enlarge-text="postFontSize += 0.1"`, el padre recibirá 
 
 </div>
 
-Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-y-defineemits)</span>:
+Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-y-defineemits)</span>:
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events.html#validacion-de-eventos). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
+Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events#validacion-de-eventos). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
 
 <div class="composition-api">
 
@@ -430,7 +430,7 @@ const emit = defineEmits(['enlarge-text'])
 emit('enlarge-text')
 ```
 
-Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api.html#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
+Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
 
 Si no estás usando `<script setup>`, puedes declarar eventos emitidos usando la opción `emits`. Puedes acceder a la función `emit` como una propiedad del contexto de configuración (pasada a `setup()` como segundo argumento):
 
@@ -613,7 +613,7 @@ Esto dará lugar a problemas cuando se utilicen componentes con elementos que te
 </table>
 ```
 
-El componente personalizado `<blog-post-row>` será captado como contenido inválido, causando errores en la eventual salida renderizada. Podemos utilizar el [atributo especial `is`](/api/built-in-special-attributes.html#is) como solución:
+El componente personalizado `<blog-post-row>` será captado como contenido inválido, causando errores en la eventual salida renderizada. Podemos utilizar el [atributo especial `is`](/api/built-in-special-attributes#is) como solución:
 
 ```vue-html
 <table>
@@ -622,7 +622,7 @@ El componente personalizado `<blog-post-row>` será captado como contenido invá
 ```
 
 :::tip
-Cuando se utiliza en elementos HTML nativos, el valor de `is` debe llevar el prefijo `vue:` para ser interpretado como un componente Vue. Esto es necesario para evitar la confusión con los [elementos integrados personalizados](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) nativos.
+Cuando se utiliza en elementos HTML nativos, el valor de `is` debe llevar el prefijo `vue:` para ser interpretado como un componente Vue. Esto es necesario para evitar la confusión con los [elementos integrados personalizados](https://html.spec.whatwg.org/multipage/custom-elements#custom-elements-customized-builtin-example) nativos.
 :::
 
 ¡Enhorabuena! Por ahora, eso es todo lo que necesitas saber sobre el análisis de advertencias de la plantilla del DOM y, en definitiva, el final de los _Esenciales_ de Vue. Todavía hay más que aprender, pero primero, recomendamos tomar un descanso para que juegues con Vue tú mismo, construyas algo divertido o revises algunos de los [Ejemplos](/examples/) si aún no lo has hecho.

@@ -67,7 +67,7 @@ Cuando accedes a `this.someObject` después de asignarlo, el valor es un proxy r
 
 <div class="composition-api">
 
-Podemos crear un objeto reactivo o un array con la función [`reactive()`](/api/reactivity-core.html#reactive):
+Podemos crear un objeto reactivo o un array con la función [`reactive()`](/api/reactivity-core#reactive):
 
 ```js
 import { reactive } from 'vue'
@@ -77,7 +77,7 @@ const state = reactive({ count: 0 })
 
 Los objetos reactivos son [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue puede rastrear el acceso a la propiedad y las mutaciones de un objeto reactivo. Si tienes curiosidad acerca de los detalles, explicamos cómo funciona el sistema de reactividad de Vue en [Reactividad en profundidad](/guide/extras/reactivity-in-depth), pero recomendamos leerlo después de que hayas terminado la guía principal.
 
-Consulta también: [Escritura de reactive()](/guide/typescript/composition-api.html#escritura-de-reactive) <sup class="vt-badge ts" />
+Consulta también: [Escritura de reactive()](/guide/typescript/composition-api#escritura-de-reactive) <sup class="vt-badge ts" />
 
 Para usar el estado reactivo en la plantilla de un componente, decláralos y devuélvelos desde la función `setup()` del componente:
 
@@ -216,7 +216,7 @@ En el ejemplo anterior, se llamará al método `increment` cuando se haga clic e
 
 Cuando mutas el estado reactivo, el DOM se actualiza automáticamente. Sin embargo, hay que tener en cuenta que las actualizaciones del DOM no se aplican de forma sincrónica. En su lugar, Vue las almacena en búfer hasta la "siguiente marca" (next tick) del ciclo de actualización para garantizar que cada componente tenga que actualizarse sólo una vez, independientemente de cuántos cambios de estado hayas realizado.
 
-Para esperar a que se complete la actualización del DOM después de un cambio de estado, puedes usar la API global [nextTick()](/api/general.html#nexttick):
+Para esperar a que se complete la actualización del DOM después de un cambio de estado, puedes usar la API global [nextTick()](/api/general#nexttick):
 
 <div class="composition-api">
 
@@ -298,7 +298,7 @@ function mutateDeeply() {
 
 </div>
 
-También es posible crear explícitamente [objetos reactivos superficiales](/api/reactivity-advanced.html#shallowreactive) donde la reactividad solo se rastrea en el nivel raíz; sin embargo, normalmente estos solo se necesitan en casos de uso avanzado.
+También es posible crear explícitamente [objetos reactivos superficiales](/api/reactivity-advanced#shallowreactive) donde la reactividad solo se rastrea en el nivel raíz; sin embargo, normalmente estos solo se necesitan en casos de uso avanzado.
 
 <div class="composition-api">
 
@@ -375,7 +375,7 @@ La API `reactive()` tiene dos limitaciones:
 
 ## Variables Reactivas con `ref()` \*\* {#reactive-variables-with-ref}
 
-Para abordar las limitaciones de `reactive()`, Vue también proporciona una función [`ref()`](/api/reactivity-core.html#ref) que nos permite crear **"refs"** reactivas que pueden mantener cualquier tipo de valor:
+Para abordar las limitaciones de `reactive()`, Vue también proporciona una función [`ref()`](/api/reactivity-core#ref) que nos permite crear **"refs"** reactivas que pueden mantener cualquier tipo de valor:
 
 ```js
 import { ref } from 'vue'
@@ -395,7 +395,7 @@ count.value++
 console.log(count.value) // 1
 ```
 
-Consulta también: [Escritura de ref()](/guide/typescript/composition-api.html#escritura-de-ref) <sup class="vt-badge ts" />
+Consulta también: [Escritura de ref()](/guide/typescript/composition-api#escritura-de-ref) <sup class="vt-badge ts" />
 
 De forma similar a las propiedades de un objeto reactivo, la propiedad `.value` de un ref es reactiva. Además, cuando contiene tipos de objetos, ref convierte automáticamente su `.value` con `reactive()`.
 
@@ -512,7 +512,7 @@ console.log(state.count) // 2
 console.log(count.value) // 1
 ```
 
-El desempaquetado de la ref sólo ocurre cuando se anida dentro de un objeto reactivo profundo. No se aplica cuando se accede como una propiedad de un [objeto reactivo superficial](/api/reactivity-advanced.html#shallowreactive).
+El desempaquetado de la ref sólo ocurre cuando se anida dentro de un objeto reactivo profundo. No se aplica cuando se accede como una propiedad de un [objeto reactivo superficial](/api/reactivity-advanced#shallowreactive).
 
 #### Desempaquetando Ref en Arrays y Colecciones {#ref-unwrapping-in-arrays-and-collections}
 

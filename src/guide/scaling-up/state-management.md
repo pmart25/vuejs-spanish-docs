@@ -67,7 +67,7 @@ Sin embargo, la simplicidad comienza a fallar cuando tenemos **múltiples compon
 1. Múltiples vistas pueden depender del mismo estado.
 2. Es posible que las acciones de diferentes vistas necesiten mutar el mismo estado.
 
-En el primer caso, una posible solución es "elevar" el estado compartido a un componente ancestro común, y luego pasarlo hacia abajo como props. Sin embargo, esto se vuelve rápidamente tedioso en árboles de componentes con jerarquías profundas, lo que lleva a otro problema conocido como [Profundización de Prop](/guide/components/provide-inject.html#profundizacion-de-prop).
+En el primer caso, una posible solución es "elevar" el estado compartido a un componente ancestro común, y luego pasarlo hacia abajo como props. Sin embargo, esto se vuelve rápidamente tedioso en árboles de componentes con jerarquías profundas, lo que lleva a otro problema conocido como [Profundización de Prop](/guide/components/provide-inject#profundizacion-de-prop).
 
 Para el segundo caso, a menudo nos encontramos recurriendo a soluciones como alcanzar instancias directas de padre / hijo a través de refs de plantilla, o intentar mutar y sincronizar varias copias del estado a través de eventos emitidos. Ambos patrones son frágiles y conducen rápidamente a un código que no se puede mantener.
 
@@ -77,11 +77,11 @@ Una solución más sencilla y directa es extraer el estado compartido de los com
 
 <div class="options-api">
 
-En la Options API, los datos reactivos se declaran mediante la opción `data()`. Internamente, el objeto devuelto por `data()` se vuelve reactivo a través de la función [`reactive()`](/api/reactivity-core.html#reactive), que también está disponible como una API pública.
+En la Options API, los datos reactivos se declaran mediante la opción `data()`. Internamente, el objeto devuelto por `data()` se vuelve reactivo a través de la función [`reactive()`](/api/reactivity-core#reactive), que también está disponible como una API pública.
 
 </div>
 
-Si tienes un estado que debe ser compartido por varias instancias, puedes usar [`reactive()`](/api/reactivity-core.html#reactive) para crear un objeto reactivo y luego importarlo en varios componentes:
+Si tienes un estado que debe ser compartido por varias instancias, puedes usar [`reactive()`](/api/reactivity-core#reactive) para crear un objeto reactivo y luego importarlo en varios componentes:
 
 ```js
 // store.js
@@ -200,7 +200,7 @@ export const store = reactive({
 Ten en cuenta que el manejador de clics usa `store.increment()` con paréntesis; esto es necesario para llamar al método en el contexto apropiado de `this`, ya que no es un método del componente.
 :::
 
-Aunque aquí estamos usando un único objeto reactivo como una store, también puedes compartir el estado reactivo creado con otras [APIs de reactividad](/api/reactivity-core.html), como `ref()` o `computed()`, o incluso devolver el estado global desde un [Composable](/guide/reusability/composables):
+Aunque aquí estamos usando un único objeto reactivo como una store, también puedes compartir el estado reactivo creado con otras [APIs de reactividad](/api/reactivity-core), como `ref()` o `computed()`, o incluso devolver el estado global desde un [Composable](/guide/reusability/composables):
 
 ```js
 import { ref } from 'vue'

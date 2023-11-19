@@ -32,8 +32,8 @@ Para perfilar el rendimiento de la carga de los despliegues de producción:
 Para perfilar el rendimiento durante el desarrollo local:
 
 - [Panel de rendimiento de Chrome DevTools](https://developer.chrome.com/docs/devtools/evaluate-performance/)
-  - [`app.config.performance`](/api/application.html#app-config-performance) habilita indicadores de rendimiento específicos de Vue en la línea de tiempo de rendimiento de Chrome DevTools.
-- [Extension Vue DevTools](/guide/scaling-up/tooling.html#devtools-del-navegador) también proporciona características de perfilado del rendimiento.
+  - [`app.config.performance`](/api/application#app-config-performance) habilita indicadores de rendimiento específicos de Vue en la línea de tiempo de rendimiento de Chrome DevTools.
+- [Extension Vue DevTools](/guide/scaling-up/tooling#devtools-del-navegador) también proporciona características de perfilado del rendimiento.
 
 ## Optimizaciones para la Carga de Página {#page-load-optimizations}
 
@@ -41,7 +41,7 @@ Hay muchos aspectos agnósticos del framework para optimizar el rendimiento de c
 
 ### Elegir la Arquitectura Adecuada {#choosing-the-right-architecture}
 
-Si tu caso de uso es sensible al rendimiento de la carga de la página, evita enviarlo como un SPA puro del lado del cliente. Necesitas que tu servidor envíe directamente el HTML que contiene el contenido que los usuarios quieren ver. El renderizado puro del lado del cliente sufre de lentitud al mostrar el contenido. Esto se puede mitigar con la [Renderización del lado del servidor (SSR)](/guide/extras/ways-of-using-vue.html#fullstack-ssr) o la [Generación de sitios estáticos (SSG)](/guide/extras/ways-of-using-vue.html#jamstack-ssg). Consulta la [Guía de SSR](/guide/scaling-up/ssr) para obtener información sobre cómo realizar SSR con Vue. Si tu aplicación no tiene requisitos de interactividad enriquecidos, también puedes usar un servidor de backend tradicional para renderizar el HTML y mejorarlo con Vue en el cliente.
+Si tu caso de uso es sensible al rendimiento de la carga de la página, evita enviarlo como un SPA puro del lado del cliente. Necesitas que tu servidor envíe directamente el HTML que contiene el contenido que los usuarios quieren ver. El renderizado puro del lado del cliente sufre de lentitud al mostrar el contenido. Esto se puede mitigar con la [Renderización del lado del servidor (SSR)](/guide/extras/ways-of-using-vue#fullstack-ssr) o la [Generación de sitios estáticos (SSG)](/guide/extras/ways-of-using-vue#jamstack-ssg). Consulta la [Guía de SSR](/guide/scaling-up/ssr) para obtener información sobre cómo realizar SSR con Vue. Si tu aplicación no tiene requisitos de interactividad enriquecidos, también puedes usar un servidor de backend tradicional para renderizar el HTML y mejorarlo con Vue en el cliente.
 
 Si tu aplicación principal tiene que ser una SPA, pero tiene páginas de marketing (aterrizaje, información, blog), ¡envíalas por separado! Tus páginas de marketing deberían implementarse idealmente como HTML estático con un mínimo de JS, utilizando SSG.
 
@@ -118,11 +118,11 @@ Ahora, para la mayoría de los componentes, la prop `active` seguirá siendo la 
 
 ### `v-once` {#v-once}
 
-`v-once` es una directiva integrada que se puede usar para renderizar contenido que depende de datos en tiempo de ejecución pero que nunca necesita actualizarse. Todo el subárbol en el que se usa se omitirá para todas las actualizaciones futuras. Consulte la [referencia de su API](/api/built-in-directives.html#v-once) para más detalles.
+`v-once` es una directiva integrada que se puede usar para renderizar contenido que depende de datos en tiempo de ejecución pero que nunca necesita actualizarse. Todo el subárbol en el que se usa se omitirá para todas las actualizaciones futuras. Consulte la [referencia de su API](/api/built-in-directives#v-once) para más detalles.
 
 ### `v-memo` {#v-memo}
 
-`v-memo` es una directiva integrada que se puede usar para omitir condicionalmente la actualización de grandes subárboles o listas `v-for`. Consulte la [referencia de su API](/api/built-in-directives.html#v-memo) para más detalles.
+`v-memo` es una directiva integrada que se puede usar para omitir condicionalmente la actualización de grandes subárboles o listas `v-for`. Consulte la [referencia de su API](/api/built-in-directives#v-memo) para más detalles.
 
 ## Optimizaciones Generales {#general-optimizations}
 
@@ -143,7 +143,7 @@ Implementar la virtualización de listas no es fácil, por suerte existen librer
 
 El sistema de reactividad de Vue es profundo por defecto. Si bien esto hace que la administración del estado sea intuitiva, crea un cierto nivel de sobrecarga cuando el tamaño de los datos es grande, porque cada acceso a las propiedades desencadena trampas de proxy que realizan el seguimiento de las dependencias. Esto suele notarse cuando se trata de grandes arrays de objetos profundamente anidados, donde un solo renderizado necesita acceder a más de 100.000 propiedades, por lo que solo debería afectar a casos de uso muy específicos.
 
-Vue proporciona una vía de escape para optar por la reactividad profunda utilizando [`shallowRef()`](/api/reactivity-advanced.html#shallowref) y [`shallowReactive()`](/api/reactivity-advanced.html#shallowreactive). Las API superficiales crean un estado que es reactivo solo en el nivel raíz, y expone todos los objetos anidados sin tocarlos. Esto mantiene el acceso rápido a las propiedades anidadas, con la condición de que ahora debemos tratar todos los objetos anidados como inmutables, y las actualizaciones solo pueden activarse reemplazando el estado raíz:
+Vue proporciona una vía de escape para optar por la reactividad profunda utilizando [`shallowRef()`](/api/reactivity-advanced#shallowref) y [`shallowReactive()`](/api/reactivity-advanced#shallowreactive). Las API superficiales crean un estado que es reactivo solo en el nivel raíz, y expone todos los objetos anidados sin tocarlos. Esto mantiene el acceso rápido a las propiedades anidadas, con la condición de que ahora debemos tratar todos los objetos anidados como inmutables, y las actualizaciones solo pueden activarse reemplazando el estado raíz:
 
 ```js
 const shallowArray = shallowRef([
@@ -169,6 +169,6 @@ shallowArray.value = [
 
 ### Evite las Abstracciones Innecesarias de los Componentes {#avoid-unnecessary-component-abstractions}
 
-A veces, podemos crear [componentes sin renderizado](/guide/components/slots.html#componentes-sin-renderizado) o componentes de orden superior (es decir, componentes que renderizan otros componentes con props adicionales) para una mejor abstracción u organización del código. Si bien esto no tiene nada de malo, ten en cuenta que las instancias de componentes son mucho más costosas que los nodos simples del DOM, y crear demasiados de ellos debido a patrones de abstracción generará costos de rendimiento.
+A veces, podemos crear [componentes sin renderizado](/guide/components/slots#componentes-sin-renderizado) o componentes de orden superior (es decir, componentes que renderizan otros componentes con props adicionales) para una mejor abstracción u organización del código. Si bien esto no tiene nada de malo, ten en cuenta que las instancias de componentes son mucho más costosas que los nodos simples del DOM, y crear demasiados de ellos debido a patrones de abstracción generará costos de rendimiento.
 
 Ten en cuenta que reducir solo unas pocas instancias no tendrá un efecto notable, así que no te preocupes si el componente se renderiza sólo unas pocas veces en la aplicación. El mejor escenario para considerar esta optimización es, de nuevo, en las listas grandes. Imagina una lista de 100 artículos donde cada componente del artículo contiene muchos componentes hijos. La eliminación de una abstracción de componente innecesaria aquí podría resultar en una reducción de cientos de instancias de componentes.

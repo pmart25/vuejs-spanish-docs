@@ -337,7 +337,7 @@ components/
 
 ## Componentes de cierre automático {#self-closing-components}
 
-**Los componentes sin contenido deben cerrarse automáticamente en [Componentes de un Solo Archivo](/guide/scaling-up/sfc), plantillas de cadena y [JSX](/guide/extras/render-function.html#jsx-tsx), pero nunca en plantillas del DOM.**
+**Los componentes sin contenido deben cerrarse automáticamente en [Componentes de un Solo Archivo](/guide/scaling-up/sfc), plantillas de cadena y [JSX](/guide/extras/render-function#jsx-tsx), pero nunca en plantillas del DOM.**
 
 Los componentes de cierre automático comunican que no solo no tienen contenido, sino que están **destinados** a no tener contenido. Es la diferencia entre una página en blanco en un libro y una etiquetada como "Esta página se dejó en blanco intencionalmente". Tu código también es más limpio sin la etiqueta de cierre innecesaria.
 
@@ -431,7 +431,7 @@ O
 
 ## Formato de nombre de componentes en JS/JSX {#component-name-casing-in-js-jsx}
 
-**Los nombres de los componentes en JS/[JSX](/guide/extras/render-function.html#jsx-tsx) deben ir siempre en PascalCase, aunque pueden ir en kebab-cased dentro de las cadenas para aplicaciones más sencillas que sólo utilizan el registro global de componentes a través de `app.component`.**
+**Los nombres de los componentes en JS/[JSX](/guide/extras/render-function#jsx-tsx) deben ir siempre en PascalCase, aunque pueden ir en kebab-cased dentro de las cadenas para aplicaciones más sencillas que sólo utilizan el registro global de componentes a través de `app.component`.**
 
 ::: details Explicación detallada
 En JavaScript, PascalCase es la convención para clases y constructores de prototipos; esencialmente, cualquier cosa que pueda tener instancias distintas. Los componentes de Vue también tienen instancias, por lo que tiene sentido utilizar también PascalCase. Como beneficio adicional, el uso de PascalCase dentro de JSX (y plantillas) permite a los lectores del código distinguir más fácilmente entre los componentes y los elementos HTML.
@@ -529,7 +529,7 @@ components/
 
 ## Formato de nombre de props {#prop-name-casing}
 
-**Los nombres de props siempre deben usar camelCase durante la declaración. Cuando se utilizan dentro de plantillas dentro del DOM, las props deben ir en kebab-case. Las plantillas de los Componentes de un Solo Archivo y [JSX](/guide/extras/render-function.html#jsx-tsx) pueden utilizar props en kebab-case o camelCase. El uso de mayúsculas y minúsculas debe ser coherente: si eliges utilizar props con camelCase, asegúrate de no utilizar props con kebab-case en tu aplicación**.
+**Los nombres de props siempre deben usar camelCase durante la declaración. Cuando se utilizan dentro de plantillas dentro del DOM, las props deben ir en kebab-case. Las plantillas de los Componentes de un Solo Archivo y [JSX](/guide/extras/render-function#jsx-tsx) pueden utilizar props en kebab-case o camelCase. El uso de mayúsculas y minúsculas debe ser coherente: si eliges utilizar props con camelCase, asegúrate de no utilizar props con kebab-case en tu aplicación**.
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>
@@ -603,7 +603,7 @@ const props = defineProps({
 
 **Los elementos con múltiples atributos deben abarcar varias líneas, con un atributo por línea.**
 
-En JavaScript, dividir los objetos con múltiples propiedades en varias líneas se considera una buena convención, porque es mucho más fácil de leer. Nuestras plantillas y [JSX](/guide/extras/render-function.html#jsx-tsx) merecen la misma consideración.
+En JavaScript, dividir los objetos con múltiples propiedades en varias líneas se considera una buena convención, porque es mucho más fácil de leer. Nuestras plantillas y [JSX](/guide/extras/render-function#jsx-tsx) merecen la misma consideración.
 
 <div class="style-example style-example-bad">
 <h3>Incorrecto</h3>

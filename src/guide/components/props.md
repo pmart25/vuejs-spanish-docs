@@ -22,7 +22,7 @@ console.log(props.foo)
 </script>
 ```
 
-En los componentes que no son `<script setup>`, las props se declaran utilizando la opción [`props`](/api/options-state.html#props):
+En los componentes que no son `<script setup>`, las props se declaran utilizando la opción [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -40,7 +40,7 @@ Observa que el argumento pasado a `defineProps()` es el mismo que el valor propo
 
 <div class="options-api">
 
-Las props se declaran utilizando la opción [`props`](/api/options-state.html#props):
+Las props se declaran utilizando la opción [`props`](/api/options-state#props):
 
 ```js
 export default {
@@ -96,7 +96,7 @@ Esto no sólo documenta tu componente, sino que también advertirá a otros desa
 
 <div class="options-api">
 
-Mira también: [Escritura de las Props de Componentes](/guide/typescript/options-api.html#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
+Mira también: [Escritura de las Props de Componentes](/guide/typescript/options-api#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
 
 </div>
 
@@ -113,7 +113,7 @@ defineProps<{
 </script>
 ```
 
-Más detalles: [Escritura de las Props de Componentes](/guide/typescript/composition-api.html#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
+Más detalles: [Escritura de las Props de Componentes](/guide/typescript/composition-api#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
 
 </div>
 
@@ -148,13 +148,13 @@ export default {
 <span>{{ greetingMessage }}</span>
 ```
 
-Técnicamente, también puedes usar camelCase al pasar props a un componente hijo (excepto en [plantillas del DOM](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom)). Sin embargo, la convención es usar kebab-case en todos los casos para alinearse con los atributos HTML:
+Técnicamente, también puedes usar camelCase al pasar props a un componente hijo (excepto en [plantillas del DOM](/guide/essentials/component-basics#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom)). Sin embargo, la convención es usar kebab-case en todos los casos para alinearse con los atributos HTML:
 
 ```vue-html
 <MyComponent greeting-message="hola" />
 ```
 
-Utilizamos [PascalCase para las etiquetas de los componentes](/guide/components/registration.html#nomenclatura-de-los-componentes) cuando es posible porque mejora la legibilidad de la plantilla al diferenciar los componentes Vue de los elementos nativos. Sin embargo, no hay tanto beneficio práctico en el uso de camelCase al pasar props, por lo que elegimos seguir las convenciones de cada lenguaje.
+Utilizamos [PascalCase para las etiquetas de los componentes](/guide/components/registration#nomenclatura-de-los-componentes) cuando es posible porque mejora la legibilidad de la plantilla al diferenciar los componentes Vue de los elementos nativos. Sin embargo, no hay tanto beneficio práctico en el uso de camelCase al pasar props, por lo que elegimos seguir las convenciones de cada lenguaje.
 
 ### Props Estáticas vs. Dinámicas {#static-vs-dynamic-props}
 
@@ -232,7 +232,7 @@ En los dos ejemplos anteriores, resulta que pasamos valores de tipo string, pero
 
 ### Vinculación de Múltiples Propiedades Usando un Objeto {#binding-multiple-properties-using-an-object}
 
-Si quieres pasar todas las propiedades de un objeto como props, puedes usar [`v-bind` sin argumento](/guide/essentials/template-syntax.html#vinculacion-dinamica-de-multiples-atributos) (`v-bind` en lugar de `:prop-name`). Por ejemplo, dado un objeto `post`:
+Si quieres pasar todas las propiedades de un objeto como props, puedes usar [`v-bind` sin argumento](/guide/essentials/template-syntax#vinculacion-dinamica-de-multiples-atributos) (`v-bind` en lugar de `:prop-name`). Por ejemplo, dado un objeto `post`:
 
 <div class="options-api">
 
@@ -494,7 +494,7 @@ Cuando falla la validación de la prop, Vue generará una advertencia en la cons
 
 <div class="composition-api">
 
-Cuando se utilizan [declaraciones de props basadas en tipos](/api/sfc-script-setup.html#funcionalidades-exclusivas-de-typeScript) <sup class="vt-badge ts" />, Vue hará todo lo posible para compilar las anotaciones de tipos en declaraciones de props equivalentes en tiempo de ejecución. Por ejemplo, `defineProps<{ msg: string }>` se compilará en `{ msg: { type: String, required: true }}`.
+Cuando se utilizan [declaraciones de props basadas en tipos](/api/sfc-script-setup#funcionalidades-exclusivas-de-typeScript) <sup class="vt-badge ts" />, Vue hará todo lo posible para compilar las anotaciones de tipos en declaraciones de props equivalentes en tiempo de ejecución. Por ejemplo, `defineProps<{ msg: string }>` se compilará en `{ msg: { type: String, required: true }}`.
 
 </div>
 <div class="options-api">
