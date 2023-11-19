@@ -255,7 +255,7 @@
       "texto": "epicmax.co",
       "url": "https://epicmax.co/"
     },
-    "platinum": true,
-    "contact": "hello@epicmax.co"
+    "contact": "hello@epicmax.co",
+    "platinum": false
   }
 ]
