@@ -30,7 +30,7 @@ Se usa para anotar una prop con tipos más avanzados cuando se usan declaracione
   }
   ```
 
-- **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api.html#escritura-de-las-props-de-componentes)
+- **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api#escritura-de-las-props-de-componentes)
 
 ## ComponentCustomProperties {#componentcustomproperties}
 
@@ -50,10 +50,10 @@ Se utiliza para aumentar el tipo de instancia del componente para admitir propie
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api.html#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
   :::
 
-- **Véase también:** [Guía - Aumento de las Propiedades Globales](/guide/typescript/options-api.html#aumento-de-las-propiedades-globales)
+- **Véase también:** [Guía - Aumento de las Propiedades Globales](/guide/typescript/options-api#aumento-de-las-propiedades-globales)
 
 ## ComponentCustomOptions {#componentcustomoptions}
 
@@ -72,10 +72,10 @@ Se utiliza para aumentar el tipo de opciones del componente para admitir opcione
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api.html#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
   :::
 
-- **Véase también:** [Guía - Aumento de las Opciones Personalizadas](/guide/typescript/options-api.html#aumento-de-las-opciones-personalizadas)
+- **Véase también:** [Guía - Aumento de las Opciones Personalizadas](/guide/typescript/options-api#aumento-de-las-opciones-personalizadas)
 
 ## ComponentCustomProps {#componentcustomprops}
 
@@ -99,7 +99,7 @@ Se utiliza para aumentar las props TSX permitidas para usar props no declaradas 
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api.html#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
   :::
 
 ## CSSProperties {#cssproperties}
@@ -127,11 +127,11 @@ Se utiliza para aumentar los valores permitidos en los enlaces de propiedades de
   ```
 
 :::tip
-Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api.html#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
 :::
 
 :::info Véase también
 Las etiquetas `<style>` de SFC admiten la vinculación de valores CSS al estado de los componentes dinámicos mediante la función `v-bind CSS`. Esto permite propiedades personalizadas sin aumento de tipo.
 
-- [v-bind() en CSS](/api/sfc-css-features.html#v-bind-en-css)
+- [v-bind() en CSS](/api/sfc-css-features#v-bind-en-css)
   :::

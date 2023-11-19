@@ -8,7 +8,7 @@ Todas las propiedades listadas en esta página son de solo lectura (excepto las 
 
 ## $data {#data}
 
-El objeto devuelto desde [`data`](./options-state.html#data), es hecho reactivo por el componente. La instancia del componente delega el acceso a las propiedades en su propio objeto data.
+El objeto devuelto desde [`data`](./options-state#data), es hecho reactivo por el componente. La instancia del componente delega el acceso a las propiedades en su propio objeto data.
 
 - **Tipo**
 
@@ -32,7 +32,7 @@ Un objeto representando las propiedades actuales y resueltas del componente.
 
 - **Detalles**
 
-  Solo las propiedades declaradas a través de la opción [`props`](./options-state.html#props) serán incluidas. La instancia del componente delega el acceso a las propiedades en su propio objeto props.
+  Solo las propiedades declaradas a través de la opción [`props`](./options-state#props) serán incluidas. La instancia del componente delega el acceso a las propiedades en su propio objeto props.
 
 ## $el {#el}
 
@@ -89,7 +89,7 @@ Las opciones resueltas del componente utilizadas para instanciar la instancia ac
   })
   ```
 
-- **Ver también:** [`app.config.optionMergeStrategies`](/api/application.html#app-config-optionmergestrategies)
+- **Ver también:** [`app.config.optionMergeStrategies`](/api/application#app-config-optionmergestrategies)
 
 ## $parent {#parent}
 
@@ -135,9 +135,9 @@ Un objeto representando los [slots](/guide/components/slots) pasados desde el co
 
   Cada slot se expone en `this.$slots` como una función que devuelve un array de vnodos bajo la clave correspondiente al nombre de ese slot. El slot por defecto se expone como `this.$slots.default`.
 
-  Si el slot es un [slot con ámbito](/guide/components/slots.html#slots-con-ambito), los argumentos pasados a la función del slot están disponibles para el slot como sus props.
+  Si el slot es un [slot con ámbito](/guide/components/slots#slots-con-ambito), los argumentos pasados a la función del slot están disponibles para el slot como sus props.
 
-- **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function.html#renderizado-de-slots)
+- **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function#renderizado-de-slots)
 
 ## $refs {#refs}
 
@@ -172,7 +172,7 @@ Un objeto que contiene el resto de los atributos del componente.
 
   [Atributos Fallthrough](/guide/components/attrs) son atributos y manejadores de eventos pasados por el componente padre, pero no declarados como una prop o un evento emitido por el hijo.
 
-  Por defecto, todo lo que hay en `$attrs` se heredará automáticamente en el elemento raíz del componente si sólo hay un único elemento raíz. Este comportamiento se desactiva si el componente tiene varios nodos raíz, y puede desactivarse explícitamente con la opción [`inheritAttrs`](./options-misc.html#inheritattrs).
+  Por defecto, todo lo que hay en `$attrs` se heredará automáticamente en el elemento raíz del componente si sólo hay un único elemento raíz. Este comportamiento se desactiva si el componente tiene varios nodos raíz, y puede desactivarse explícitamente con la opción [`inheritAttrs`](./options-misc#inheritattrs).
 
 - **Ver también:**
 
@@ -217,9 +217,9 @@ API para crear watchers.
   El segundo argumento es la función de callback. El callback recibe el nuevo calor y el valor anterior de la propiedad observada.
 
   - **`immediate`**: ejecuta el callback inmediatamente a la creación del watcher. El valor anterior será `undefined` en la primera llamada.
-  - **`deep`**: fuerza el recorrido de la propiedad observada si ésta es un objeto, así el callback se dispara en mutaciones anidadas. Ver [Watchers Profundos](/guide/essentials/watchers.html#watchers-profundos).
-  - **`flush`**: ajusta el temporizador del flujo del callback. Ver [Callback Flush Timing](/guide/essentials/watchers.html#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth.html#depuracion-del-watcher).
+  - **`deep`**: fuerza el recorrido de la propiedad observada si ésta es un objeto, así el callback se dispara en mutaciones anidadas. Ver [Watchers Profundos](/guide/essentials/watchers#watchers-profundos).
+  - **`flush`**: ajusta el temporizador del flujo del callback. Ver [Callback Flush Timing](/guide/essentials/watchers#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher).
 
 - **Ejemplo**
 
@@ -258,7 +258,7 @@ API para crear watchers.
   ```
 
 - **Ver también:**
-  - [Options - `watch`](/api/options-state.html#watch)
+  - [Options - `watch`](/api/options-state#watch)
   - [Guía - Watchers](/guide/essentials/watchers)
 
 ## $emit() {#emit}
@@ -289,7 +289,7 @@ Activa un evento personalizado en la instancia actual. Cualquier arguemnto adici
 - **Ver también:**
 
   - [Componentes - Eventos](/guide/components/events)
-  - [`emits` option](./options-state.html#emits)
+  - [`emits` option](./options-state#emits)
 
 ## $forceUpdate() {#forceupdate}
 
@@ -309,7 +309,7 @@ Fuerza a la instancia del componente a re-renderizarse.
 
 ## $nextTick() {#nexttick}
 
-Versión vinculada a la instancia del componente del global [`nextTick()`](./general.html#nexttick).
+Versión vinculada a la instancia del componente del global [`nextTick()`](./general#nexttick).
 
 - **Tipo**
 
@@ -323,4 +323,4 @@ Versión vinculada a la instancia del componente del global [`nextTick()`](./gen
 
   La única diferencia con la versión global de `nextTick()` es que el callback pasado a `this.$nextTick()` tendrá su contexto de `this` vinculado con la instancia actual del componente.
 
-- **Ver también:** [`nextTick()`](./general.html#nexttick)
+- **Ver también:** [`nextTick()`](./general#nexttick)

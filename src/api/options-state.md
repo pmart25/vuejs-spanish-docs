@@ -85,9 +85,9 @@ Declarar las propiedades de un componente.
 
   Con la sintaxis basada en objetos, cada propiedad puede definir las siguientes opciones:
 
-  - **`type`**: Puede ser uno de los siguientes constructores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, cualquier función constructora personalizada o un array de ellas. En el modo de desarrollo, Vue comprobará si el valor de una propiedad coincide con el tipo declarado, y lanzará una advertencia si no es así. Ver [Validación de Propiedades](/guide/components/props.html#prop-validation) para más detalles.
+  - **`type`**: Puede ser uno de los siguientes constructores nativos: `String`, `Number`, `Boolean`, `Array`, `Object`, `Date`, `Function`, `Symbol`, cualquier función constructora personalizada o un array de ellas. En el modo de desarrollo, Vue comprobará si el valor de una propiedad coincide con el tipo declarado, y lanzará una advertencia si no es así. Ver [Validación de Propiedades](/guide/components/props#prop-validation) para más detalles.
 
-    También tenga en cuenta que una propiedad con tipo `Boolean` afecta a su comportamiento debido a la transformación del valor tanto en desarrollo como en producción. Vea la [Asignación de Booleanos](/guide/components/props.html#boolean-casting) para más detalles.
+    También tenga en cuenta que una propiedad con tipo `Boolean` afecta a su comportamiento debido a la transformación del valor tanto en desarrollo como en producción. Vea la [Asignación de Booleanos](/guide/components/props#boolean-casting) para más detalles.
 
   - **`default`**: Especifica un valor por defecto para la propiedad cuando no es pasada por el padre o tiene un valor `indefinido`. Los valores por defecto de los objetos o arrays deben ser devueltos usando una función de fábrica. La función de fábrica también recibe el objeto props en bruto como argumento.
 
@@ -285,14 +285,14 @@ Declara funciones de vigilancia que se invocan cuando cambian los datos.
 
   La opción `watch` espera un objeto donde las claves son las propiedades de la instancia del componente reactivo a vigilar (por ejemplo, las propiedades declaradas a través de `data` o `computed`) - y los valores son las correspondientes devoluciones de llamada. La devolución de llamada recibe el nuevo valor y el valor antiguo de la fuente vigilada.
 
-  Además de una propiedad a nivel de raíz, la clave también puede ser una simple ruta delimitada por puntos, por ejemplo `a.b.c`. Tenga en cuenta que este uso **no** admite expresiones complejas, sólo admite rutas delimitadas por puntos. Si necesita vigilar fuentes de datos complejas, utilice en su lugar la API imperativa de [`$watch()`](/api/component-instance.html#watch).
+  Además de una propiedad a nivel de raíz, la clave también puede ser una simple ruta delimitada por puntos, por ejemplo `a.b.c`. Tenga en cuenta que este uso **no** admite expresiones complejas, sólo admite rutas delimitadas por puntos. Si necesita vigilar fuentes de datos complejas, utilice en su lugar la API imperativa de [`$watch()`](/api/component-instance#watch).
 
   El valor también puede ser una cadena con el nombre de un método (declarado mediante `methods`), o un objeto que contenga opciones adicionales. Si se utiliza la sintaxis de objeto, la llamada de retorno debe declararse en el campo `handler`. Las opciones adicionales incluyen:
 
   - **`immediate`**: activa la llamada de retorno inmediatamente después de la creación del observador. El valor antiguo será `undefined` en la primera llamada.
-  - **`deep`**: forza el recorrido profundo de la fuente si es un objeto o un array, para que la llamada de retorno se dispare en las mutaciones profundas. Ver [Watchers Profundos](/guide/essentials/watchers.html#watchers-profundos).
-  - **`flush`**: ajusta el tiempo de sincronización de la llamada de retorno. Ver [Temporización del Flujo del Callback](/guide/essentials/watchers.html#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core.html#watcheffect).
-  - **`onTrack / onTrigger`**: depura las dependencias del observador. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth.html#depuracion-del-watcher).
+  - **`deep`**: forza el recorrido profundo de la fuente si es un objeto o un array, para que la llamada de retorno se dispare en las mutaciones profundas. Ver [Watchers Profundos](/guide/essentials/watchers#watchers-profundos).
+  - **`flush`**: ajusta el tiempo de sincronización de la llamada de retorno. Ver [Temporización del Flujo del Callback](/guide/essentials/watchers#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura las dependencias del observador. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher).
 
 - **Ejemplo**
 

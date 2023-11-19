@@ -150,7 +150,7 @@ Proporciona efectos de transición para **múltiples** elementos o componentes e
 
   Por defecto, `<TransitionGroup>` no renderiza un elemento del DOM contenedor, pero se puede definir uno mendiante la prop `tag`.
 
-  Ten en cuenta que cada hijo en un `<transition-group>` debe estar con una [**única key**](/guide/essentials/list.html#maintaining-state-with-key) para que la animación funciones correctamente.
+  Ten en cuenta que cada hijo en un `<transition-group>` debe estar con una [**única key**](/guide/essentials/list#maintaining-state-with-key) para que la animación funciones correctamente.
 
   `<TransitionGroup>` soporta transiciones de movimiento mediante la propiedad CSS transform. Cuando la posición de un hijo en la pantalla es cambiada luego de una actualización de estado, se le aplicará una clase CSS de movimiento (auto generada a partir del atributo `name` o configurara con la prop `move-class`). Si la propiedad CSS `transform` admite animaciones cuando la clase de movimiento sea aplicada, el elemento se animará suavemente hasta su destino usando la [técnica FLIP](https://aerotwist.com/blog/flip-your-animations/).
 
@@ -323,6 +323,6 @@ Se utiliza para orquestar dependencias asíncronas anidadas en un árbol de comp
 
   `<Suspense>` acepta dos slots: el slot `#default` y el slot `#fallback`. Mostrará el contenido del slot fallback mientras renderiza el slot por defecto en la memoria.
 
-  Si encuentra dependencias asíncronas ([Componentes Asincrónicos](/guide/components/async) y componentes con [`async setup()`](/guide/built-ins/suspense.html#async-setup)) mientras se muestra el slot por defecto, esperará hasta que todas ellas se resuelvan antes de mostrar el slot por defecto.
+  Si encuentra dependencias asíncronas ([Componentes Asincrónicos](/guide/components/async) y componentes con [`async setup()`](/guide/built-ins/suspense#async-setup)) mientras se muestra el slot por defecto, esperará hasta que todas ellas se resuelvan antes de mostrar el slot por defecto.
 
 - **Ver también:** [Guía - Suspense](/guide/built-ins/suspense)

@@ -48,7 +48,7 @@ En escenarios de pruebas de estrés, Vue supera a React y Angular por un margen 
 
 Ten en cuenta que los índices sintéticos de referencia como los anteriores se centran en el rendimiento del renderizado en bruto con optimizaciones dedicadas y pueden no ser totalmente representativos de los resultados de rendimiento en el mundo real. Si te interesa más el rendimiento de carga de la página, puedes auditar este mismo sitio web utilizando [WebPageTest](https://www.webpagetest.org/lighthouse) o [PageSpeed Insights](https://pagespeed.web.dev/). Este sitio web está impulsado por el propio Vue, con pre-renderización SSG, hidratación completa de la página y navegación de SPA del lado del cliente. Obtiene una puntuación de 100 en rendimiento en un Moto G4 emulado con una ralentización de la CPU de 4x en redes 4G lentas.
 
-Puede obtener más información sobre cómo Vue optimiza automáticamente el rendimiento del tiempo de ejecución en la sección [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html), y cómo optimizar una aplicación Vue en casos especialmente exigentes en la [Guía de Optimización del Rendimiento](/guide/best-practices/performance).
+Puede obtener más información sobre cómo Vue optimiza automáticamente el rendimiento del tiempo de ejecución en la sección [Mecanismo de Renderizado](/guide/extras/rendering-mechanism), y cómo optimizar una aplicación Vue en casos especialmente exigentes en la [Guía de Optimización del Rendimiento](/guide/best-practices/performance).
 
 ## ¿Vue es ligero? {#is-vue-lightweight}
 
@@ -78,7 +78,7 @@ Si. A pesar de la idea errónea común de que Vue solo es adecuado para casos de
 
 ## ¿Debo usar Options API o Composition API? {#should-i-use-options-api-or-composition-api}
 
-Si eres nuevo en Vue, ofrecemos una comparación de alto nivel entre los dos estilos [aquí](/guide/introduction.html#cual-elegir).
+Si eres nuevo en Vue, ofrecemos una comparación de alto nivel entre los dos estilos [aquí](/guide/introduction#cual-elegir).
 
 Si previamente utilizaste Options API y estás evaluando en la actualidad la Composition API, consulta [estas FAQ](/guide/extras/composition-api-faq).
 

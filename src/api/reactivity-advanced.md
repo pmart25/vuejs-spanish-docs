@@ -2,7 +2,7 @@
 
 ## shallowRef() {#shallowref}
 
-Versión poco profunda de [`ref()`](./reactivity-core.html#ref).
+Versión poco profunda de [`ref()`](./reactivity-core#ref).
 
 - **Tipo**
 
@@ -33,8 +33,8 @@ Versión poco profunda de [`ref()`](./reactivity-core.html#ref).
   ```
 
 - **Véase también**
-  - [Guía - Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance.html#reduccion-de-la-sobrecarga-de-reactividad-en-estructuras-inmutables-de-gran-tamano)
-  - [Guía - Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth.html#integracion-con-los-sistemas-de-estado-externos)
+  - [Guía - Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance#reduccion-de-la-sobrecarga-de-reactividad-en-estructuras-inmutables-de-gran-tamano)
+  - [Guía - Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth#integracion-con-los-sistemas-de-estado-externos)
 
 ## triggerRef() {#triggerref}
 
@@ -133,7 +133,7 @@ Crea una ref personalizada con control explícito sobre el seguimiento de sus de
 
 ## shallowReactive() {#shallowreactive}
 
-Versión poco profunda de [`reactive()`](./reactivity-core.html#reactive).
+Versión poco profunda de [`reactive()`](./reactivity-core#reactive).
 
 - **Tipo**
 
@@ -171,7 +171,7 @@ Versión poco profunda de [`reactive()`](./reactivity-core.html#reactive).
 
 ## shallowReadonly() {#shallowreadonly}
 
-Versión poco profunda de [`readonly()`](./reactivity-core.html#readonly).
+Versión poco profunda de [`readonly()`](./reactivity-core#readonly).
 
 - **Tipo**
 
@@ -219,7 +219,7 @@ Devuelve el objeto original de un proxy creado por Vue.
 
 - **Detalles**
 
-  `toRaw()` puede devolver el objeto original de los proxies creados por [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](#shallowreactive) o [`shallowReadonly()`](#shallowreadonly).
+  `toRaw()` puede devolver el objeto original de los proxies creados por [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](#shallowreactive) o [`shallowReadonly()`](#shallowreadonly).
 
   Esta es una vía de escape que puede utilizarse para leer temporalmente sin incurrir en la sobrecarga de acceso/seguimiento del proxy, o escribir sin desencadenar cambios. **No** se recomienda mantener una referencia persistente al objeto original. Utilízalo con precaución.
 

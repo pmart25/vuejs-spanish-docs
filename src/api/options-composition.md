@@ -51,7 +51,7 @@ Proporcionar valores que puedan ser inyectados por los componentes descendientes
   }
   ```
 
-  Tenga en cuenta que en el ejemplo anterior, el `msg` proporcionado NO será reactivo. Consulte [Trabajando con Reactividad](/guide/components/provide-inject.html#working-with-reactivity) para más detalles.
+  Tenga en cuenta que en el ejemplo anterior, el `msg` proporcionado NO será reactivo. Consulte [Trabajando con Reactividad](/guide/components/provide-inject#working-with-reactivity) para más detalles.
 
 - **Ver también:** [Provide / Inject](/guide/components/provide-inject)
 
@@ -89,7 +89,7 @@ Declara propiedades para inyectar en el componente actual localizándolas desde 
 
   Una propiedad inyectada será `undefined` si no se ha proporcionado ni una propiedad coincidente ni un valor por defecto.
 
-  Tenga en cuenta que los enlaces inyectados NO son reactivos. Esto es intencionado. Sin embargo, si el valor inyectado es un objeto reactivo, las propiedades de ese objeto siguen siendo reactivas. Para más detalles, consulte [Trabajando con Reactividad](/guide/components/provide-inject.html#working-with-reactivity).
+  Tenga en cuenta que los enlaces inyectados NO son reactivos. Esto es intencionado. Sin embargo, si el valor inyectado es un objeto reactivo, las propiedades de ese objeto siguen siendo reactivas. Para más detalles, consulte [Trabajando con Reactividad](/guide/components/provide-inject#working-with-reactivity).
 
 - **Ejemplo**
 

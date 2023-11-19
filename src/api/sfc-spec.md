@@ -46,7 +46,7 @@ export default {
 
 - El script se ejecuta como un Módulo ES.
 
-- La **exportación por defecto** debe ser un objeto de opciones de componentes de Vue, ya sea como un objeto simple o como el valor de retorno de [defineComponent](/api/general.html#definecomponent).
+- La **exportación por defecto** debe ser un objeto de opciones de componentes de Vue, ya sea como un objeto simple o como el valor de retorno de [defineComponent](/api/general#definecomponent).
 
 ### `<script setup>` {#script-setup}
 
@@ -68,7 +68,7 @@ Se pueden incluir bloques personalizados adicionales en un archivo `*.vue` para 
 - [vite-plugin-vue-gql: `<gql>`](https://github.com/wheatjs/vite-plugin-vue-gql)
 - [vue-i18n: `<i18n>`](https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n#i18n-custom-block)
 
-El manejo de los bloques personalizados dependerá de las herramientas: si deseas crear tus propias integraciones de bloques personalizados, consulta [la sección de herramientas correspondiente](/guide/scaling-up/tooling.html#integraciones-de-bloques-personalizados-del-sfc) para obtener más detalles.
+El manejo de los bloques personalizados dependerá de las herramientas: si deseas crear tus propias integraciones de bloques personalizados, consulta [la sección de herramientas correspondiente](/guide/scaling-up/tooling#integraciones-de-bloques-personalizados-del-sfc) para obtener más detalles.
 
 ## Inferencia Automática de Nombres {#automatic-name-inference}
 

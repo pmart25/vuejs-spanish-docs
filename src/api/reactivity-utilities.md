@@ -96,7 +96,7 @@ Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de
   </script>
   ```
 
-  Cuando `toRef` se usa con props de componentes, se siguen aplicando las restricciones habituales sobre la mutación de las props. Intentar asignar un nuevo valor a la ref es equivalente a intentar modificar la prop directamente y no está permitido. En ese escenario, puedes considerar el uso de [`computed`](./reactivity-core.html#computed) con `get` y `set` en su lugar. Consulta la guía para [usar `v-model` con componentes](/guide/components/v-model) para más información.
+  Cuando `toRef` se usa con props de componentes, se siguen aplicando las restricciones habituales sobre la mutación de las props. Intentar asignar un nuevo valor a la ref es equivalente a intentar modificar la prop directamente y no está permitido. En ese escenario, puedes considerar el uso de [`computed`](./reactivity-core#computed) con `get` y `set` en su lugar. Consulta la guía para [usar `v-model` con componentes](/guide/components/v-model) para más información.
 
   `toRef()` devolverá una ref utilizable incluso si la propiedad de origen no existe actualmente. Esto hace posible trabajar con propiedades opcionales, que no serían recogidas por [`toRefs`](#torefs).
 
@@ -163,7 +163,7 @@ Convierte un objeto reactivo en un objeto simple donde cada propiedad del objeto
 
 ## isProxy() {#isproxy}
 
-Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.html#reactive), [`readonly()`](./reactivity-core.html#readonly), [`shallowReactive()`](./reactivity-advanced.html#shallowreactive) o [`shallowReadonly()`](./reactivity-advanced.html#shallowreadonly).
+Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core#reactive), [`readonly()`](./reactivity-core#readonly), [`shallowReactive()`](./reactivity-advanced#shallowreactive) o [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
 
 - **Tipo**
 
@@ -173,7 +173,7 @@ Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.h
 
 ## isReactive() {#isreactive}
 
-Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.html#reactive) o [`shallowReactive()`](./reactivity-advanced.html#shallowreactive).
+Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core#reactive) o [`shallowReactive()`](./reactivity-advanced#shallowreactive).
 
 - **Tipo**
 
@@ -183,7 +183,7 @@ Comprueba si un objeto es un proxy creado por [`reactive()`](./reactivity-core.h
 
 ## isReadonly() {#isreadonly}
 
-Comprueba si un objeto es un proxy creado por [`readonly()`](./reactivity-core.html#readonly) o [`shallowReadonly()`](./reactivity-advanced.html#shallowreadonly).
+Comprueba si un objeto es un proxy creado por [`readonly()`](./reactivity-core#readonly) o [`shallowReadonly()`](./reactivity-advanced#shallowreadonly).
 
 - **Tipo**
 

@@ -8,7 +8,7 @@ Actualiza el texto de un elemento.
 
 - **Detalles**
 
-  `v-text` trabaja seteando la propiedad [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) del elemento, por lo que sobreescribirá cualquier contenido existente dentro del elemento. Si necesitas actualizar parte del `textContent`, deberías usar la [interpolación de mostacho](/guide/essentials/template-syntax.html#text-interpolation) instead.
+  `v-text` trabaja seteando la propiedad [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) del elemento, por lo que sobreescribirá cualquier contenido existente dentro del elemento. Si necesitas actualizar parte del `textContent`, deberías usar la [interpolación de mostacho](/guide/essentials/template-syntax#text-interpolation) instead.
 
 - **Ejemplo**
 
@@ -18,7 +18,7 @@ Actualiza el texto de un elemento.
   <span>{{msg}}</span>
   ```
 
-- **Ver también:** [Sintaxis de la Plantilla - interpolación de Texto](/guide/essentials/template-syntax.html#interpolacion-de-texto)
+- **Ver también:** [Sintaxis de la Plantilla - interpolación de Texto](/guide/essentials/template-syntax#interpolacion-de-texto)
 
 ## v-html {#v-html}
 
@@ -34,7 +34,7 @@ Actualiza la propiedad [innerHTML](https://developer.mozilla.org/en-US/docs/Web/
   Renderizar dinámicamente HTML arbitrario en tu sitio web puede ser muy peligroso porque puede conducir fácilmente a [ataques XSS](https://en.wikipedia.org/wiki/Cross-site_scripting). Sólo usa `v-html` en contenido de confianza y **nunca** en contenido proporcionado por el usuario.
   :::
 
-  En los [Componentes de un Solo Archivo (SFC)](/guide/scaling-up/sfc), los estilos `scoped` no se aplicarán en el contenido dentro de `v-html`, porque ese HTML no es procesado por el compilador de plantillas de Vue. Si deseas orientar el contenido `v-html` con scoped CSS, puedes utilizar [módulos CSS] (./sfc-css-features.html#css-modules) o un elemento global adicional `<style>` con una estrategia de alcance manual como BEM.
+  En los [Componentes de un Solo Archivo (SFC)](/guide/scaling-up/sfc), los estilos `scoped` no se aplicarán en el contenido dentro de `v-html`, porque ese HTML no es procesado por el compilador de plantillas de Vue. Si deseas orientar el contenido `v-html` con scoped CSS, puedes utilizar [módulos CSS] (./sfc-css-features#css-modules) o un elemento global adicional `<style>` con una estrategia de alcance manual como BEM.
 
 - **Ejemplo:**
 
@@ -42,7 +42,7 @@ Actualiza la propiedad [innerHTML](https://developer.mozilla.org/en-US/docs/Web/
   <div v-html="html"></div>
   ```
 
-- **Ver también:** [Sintáxis de la Plantilla - HTML Puro](/guide/essentials/template-syntax.html#html-puro)
+- **Ver también:** [Sintáxis de la Plantilla - HTML Puro](/guide/essentials/template-syntax#html-puro)
 
 ## v-show {#v-show}
 
@@ -54,7 +54,7 @@ Cambia la visibilidad de un elemento basado en la veracidad del valor de la expr
 
   `v-show` trabaja seteando la propiedad CSS `display` a través de estilos en línea, y tratará de respetar el valor inicial de `display` cuando el elemento está visible. También activa las transiciones cuando cambia su estado.
 
-- **Ver también:** [Renderizado Condicional - v-show](/guide/essentials/conditional.html#v-show)
+- **Ver también:** [Renderizado Condicional - v-show](/guide/essentials/conditional#v-show)
 
 ## v-if {#v-if}
 
@@ -70,9 +70,9 @@ Renderiza condicionalmente un elemento o un fragmento de plantilla basado en la 
 
   Esta directiva desencadena transiciones cuando su condición cambia.
 
-  Cuando se utiliza conjuntamente, `v-if` tiene mayor prioridad que `v-for`. No recomendamos utilizar estas dos directivas juntas en un mismo elemento; ver la guía de [renderizado de listas] (/guide/essentials/list.html#v-for-con-v-if) para más detalles.
+  Cuando se utiliza conjuntamente, `v-if` tiene mayor prioridad que `v-for`. No recomendamos utilizar estas dos directivas juntas en un mismo elemento; ver la guía de [renderizado de listas] (/guide/essentials/list#v-for-con-v-if) para más detalles.
 
-- **Ver también:** [Renderizado Condicional - v-if](/guide/essentials/conditional.html#v-if)
+- **Ver también:** [Renderizado Condicional - v-if](/guide/essentials/conditional#v-if)
 
 ## v-else {#v-else}
 
@@ -97,7 +97,7 @@ Denota el "bloque else" para `v-if` o para un encadenamiento `v-if` / `v-else-if
   </div>
   ```
 
-- **Ver también:** [Renderizado Condicional - v-else](/guide/essentials/conditional.html#v-else)
+- **Ver también:** [Renderizado Condicional - v-else](/guide/essentials/conditional#v-else)
 
 ## v-else-if {#v-else-if}
 
@@ -128,7 +128,7 @@ Denota el "bloque else if" para `v-if`. Se puede encadenar.
   </div>
   ```
 
-- **Ver también:** [Renderizado Condicional - v-else-if](/guide/essentials/conditional.html#v-else-if)
+- **Ver también:** [Renderizado Condicional - v-else-if](/guide/essentials/conditional#v-else-if)
 
 ## v-for {#v-for}
 
@@ -251,7 +251,7 @@ Adjunta un escuchador de eventos al elemento.
 
 - **Ver también:**
   - [Manejando Eventos](/guide/essentials/event-handling)
-  - [Componentes - Escuchando los Eventos](/guide/essentials/component-basics.html#escuchando-los-eventos)
+  - [Componentes - Escuchando los Eventos](/guide/essentials/component-basics#escuchando-los-eventos)
 
 ## v-bind {#v-bind}
 
@@ -273,7 +273,7 @@ Vincula dinámicamente uno o más atributos, o una prop de un componente a una e
 
   Cuando se utiliza para enlazar el atributo `class` o `style`, `v-bind` soporta tipos de valores adicionales como Array u Objects. Ver la sección de la guía vinculada más abajo para más detalles.
 
-  Cuando se establece un enlace en un elemento, Vue comprueba por defecto si el elemento tiene la clave definida como una propiedad utilizando un operador de comprobación `in`. Si la propiedad está definida, Vue establecerá el valor como una propiedad DOM en lugar de un atributo. Esto debería funcionar en la mayoría de los casos, pero puedes anular este comportamiento utilizando explícitamente los modificadores `.prop` o `.attr`. Esto es a veces necesario, especialmente cuando [se trabaja con elementos personalizados](/guide/extras/web-components.html#uso-de-elementos-personalizados-en-vue).
+  Cuando se establece un enlace en un elemento, Vue comprueba por defecto si el elemento tiene la clave definida como una propiedad utilizando un operador de comprobación `in`. Si la propiedad está definida, Vue establecerá el valor como una propiedad DOM en lugar de un atributo. Esto debería funcionar en la mayoría de los casos, pero puedes anular este comportamiento utilizando explícitamente los modificadores `.prop` o `.attr`. Esto es a veces necesario, especialmente cuando [se trabaja con elementos personalizados](/guide/extras/web-components#uso-de-elementos-personalizados-en-vue).
 
   Cuando se utiliza para la vinculación de la prop del componente, la prop debe ser declarada correctamente en el componente hijo.
 
@@ -338,7 +338,7 @@ Vincula dinámicamente uno o más atributos, o una prop de un componente a una e
 
 - **Ver también:**
   - [Vinculación de Clases y Estilos](/guide/essentials/class-and-style)
-  - [Componentes - Detalles del Pase del Prop](/guide/components/props.html#detalles-del-pase-del-prop)
+  - [Componentes - Detalles del Pase del Prop](/guide/components/props#detalles-del-pase-del-prop)
 
 ## v-model {#v-model}
 
@@ -355,9 +355,9 @@ Crear un enlace bidireccional en un elemento de entrada del formulario o un comp
 
 - **Modificadores:**
 
-  - [`.lazy`](/guide/essentials/forms.html#lazy) - escucha los eventos `change` en lugar de los eventos `input`
-  - [`.number`](/guide/essentials/forms.html#number) - convertir una cadena de entrada válida en números
-  - [`.trim`](/guide/essentials/forms.html#trim) - quita los espacios en blanco al comienzo y al final del valor ingresado
+  - [`.lazy`](/guide/essentials/forms#lazy) - escucha los eventos `change` en lugar de los eventos `input`
+  - [`.number`](/guide/essentials/forms#number) - convertir una cadena de entrada válida en números
+  - [`.trim`](/guide/essentials/forms#trim) - quita los espacios en blanco al comienzo y al final del valor ingresado
 
 - **Ver también:**
 
@@ -377,7 +377,7 @@ Denota slots con nombre o slots asignados que esperan recibir props.
 - **Limitado a:**
 
   - `<template>`
-  - [componentes](/guide/components/slots.html#slots-asignados) (para un solo slot por defecto con props)
+  - [componentes](/guide/components/slots#slots-asignados) (para un solo slot por defecto con props)
 
 - **Ejemplo:**
 
@@ -460,7 +460,7 @@ Renderiza el elemento y el componente una sola vez, y omite futuras actualizacio
   Desde la versión 3.2, también puedes memorizar parte de la plantilla con condiciones de invalidación utilizando [`v-memo`](#v-memo).
 
 - **Ver también:**
-  - [Sintaxis de la Plantilla - interpolaciones](/guide/essentials/template-syntax.html#interpolacion-de-texto)
+  - [Sintaxis de la Plantilla - interpolaciones](/guide/essentials/template-syntax#interpolacion-de-texto)
   - [v-memo](#v-memo)
 
 ## v-memo <sup class="vt-badge" data-text="3.2+" /> {#v-memo}

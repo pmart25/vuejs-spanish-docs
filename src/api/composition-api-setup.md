@@ -38,7 +38,7 @@ export default {
 </template>
 ```
 
-Ten en cuenta que las [referencias (refs)](/api/reactivity-core.html#ref) devueltas por `setup` son [automáticamente shallow unwrapped](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) cuando son accedidas en la plantilla, por lo que no necesitas utilizar `.value` cuando se acceden a ellas. También se desenvuelven de la misma manera cuando se accede a `this`.
+Ten en cuenta que las [referencias (refs)](/api/reactivity-core#ref) devueltas por `setup` son [automáticamente shallow unwrapped](/guide/essentials/reactivity-fundamentals#deep-reactivity) cuando son accedidas en la plantilla, por lo que no necesitas utilizar `.value` cuando se acceden a ellas. También se desenvuelven de la misma manera cuando se accede a `this`.
 
 :::consejo
 El propio `setup()` no tiene acceso a la instancia del componente - `this` tendrá un valor de `undefined` dentro de `setup()`. Puedes acceder a los valores expuestos por la Composition-API desde la Options API, pero no al revés.
@@ -61,7 +61,7 @@ export default {
 
 Tenga en cuenta que si desestructura el objeto `props`, las variables desestructuradas perderán reactividad. Por lo tanto, se recomienda acceder siempre a a los props en forma de `props.xxx`.
 
-Si realmente necesita desestructurar los props, o necesita pasar una propiedad a una función externa mientras conserva la reactividad, puede hacerlo con las APIs de utilidad [toRefs()](./reactivity-utilities.html#torefs) y [toRef()](/api/reactivity-utilities.html#toref):
+Si realmente necesita desestructurar los props, o necesita pasar una propiedad a una función externa mientras conserva la reactividad, puede hacerlo con las APIs de utilidad [toRefs()](./reactivity-utilities#torefs) y [toRef()](/api/reactivity-utilities#toref):
 
 
 ```js
@@ -115,7 +115,7 @@ Las propiedades `attrs` y `slots` son objetos con estado que siempre son actuali
 
 ### Exponiendo Propiedades Públicas {#exposing-public-properties}
 
-`expose` es una función que puede utilizarse para limitar explícitamente las propiedades expuestas cuando la instancia del componente es accedida por un componente padre a través de [refs de la Plantilla ](/guide/essentials/template-refs.html#ref-on-component):
+`expose` es una función que puede utilizarse para limitar explícitamente las propiedades expuestas cuando la instancia del componente es accedida por un componente padre a través de [refs de la Plantilla ](/guide/essentials/template-refs#ref-on-component):
 
 ```js{5,10}
 export default {

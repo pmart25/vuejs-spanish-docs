@@ -39,7 +39,7 @@ Crea una instancia de la aplicación.
 
 ## createSSRApp() {#createssrapp}
 
-Crea una instancia de la aplicación en modo [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html#client-hydration). Su uso es exactamente igual a `createApp()`.
+Crea una instancia de la aplicación en modo [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr#client-hydration). Su uso es exactamente igual a `createApp()`.
 
 ## app.mount() {#app-mount}
 
@@ -59,7 +59,7 @@ Monta la instancia de la aplicación en un elemento contenedor.
 
   Si el componente tiene una plantilla o una función de renderizado definida, reemplazará cualquier nodo DOM existente dentro del contendor. De lo contrario, si el compilador en tiempo de ejecución está disponible, el `innerHTML` del contenedor será usado como plantilla.
 
-  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr.html#error-en-la-hidratacion), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
+  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr#error-en-la-hidratacion), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
 
   Por cada instancia de la aplicación, `mount()` solo puede ser usado una vez.
 
@@ -146,7 +146,7 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
 
 - **Ver también:**
   - [Provide / Inject](/guide/components/provide-inject)
-  - [Nivel de Aplicación de Provide](/guide/components/provide-inject.html#nivel-de-aplicacion-de-provide)
+  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#nivel-de-aplicacion-de-provide)
 
 ## app.component() {#app-component}
 
@@ -297,7 +297,7 @@ Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil
   }
   ```
 
-- **Ver también:** [API Global - Versión](/api/general.html#version)
+- **Ver también:** [API Global - Versión](/api/general#version)
 
 ## app.config {#app-config}
 
@@ -395,7 +395,7 @@ Asigna este valor a `true` para activar el seguimiento del inicio del componente
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configurar las opciones del compilador en tiempo de ejecución. Las opciones establecidas en este objeto se pasarán al compilador de plantillas del navegador y afectarán a todos los componentes de la aplicación configurada. Ten en cuenta que también puedes anular estas opciones por componente utilizando la opción [`compilerOptions`] (/api/options-rendering.html#compileroptions).
+Configurar las opciones del compilador en tiempo de ejecución. Las opciones establecidas en este objeto se pasarán al compilador de plantillas del navegador y afectarán a todos los componentes de la aplicación configurada. Ten en cuenta que también puedes anular estas opciones por componente utilizando la opción [`compilerOptions`] (/api/options-rendering#compileroptions).
 
 ::: warning Importante
 Esta opción de configuración solo es respetada cuando se usa la compilación completa (es decir, la compilación de `vue.js` que puede compilar plantillas en el navegador). Si estás usando la construcción en tiempo de ejecución con una configuración de construcción, las opciones del compilador deben ser pasadas a `@vue/compiler-dom` a través de las configuraciones de la herramienta de construcción.
