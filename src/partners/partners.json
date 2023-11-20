@@ -53,6 +53,7 @@
   {
     "name": "Monterail",
     "logo": "monterail.png",
+    "flipLogo": true,
     "intro": "Monterail es una empresa de desarrollo de software de servicio completo de Polonia. Desde 2010, hemos estado construyendo software innovador para start-ups, PYMES y empresas de diversas industrias a nivel mundial. Nuestros expertos en Vue, utilizando tecnologías y frameworks de probada eficacia, han realizado más de 30 proyectos basados en Vue.",
     "description": [
       "En una consultoría de servicios completos como Monterail, tienes todas las competencias bajo un mismo techo. Desde el concepto hasta el diseño y el lanzamiento del producto. Dependiendo de la fase del ciclo de vida del producto, guiamos a los clientes en la creación de aplicaciones desde cero o en su rápida ampliación.",
@@ -103,6 +104,7 @@
   {
     "name": "DevSquad",
     "logo": "devsquad.png",
+    "flipLogo": true,
     "intro": "Puede pensar en DevSquad como los Navy SEALs del desarrollo de software. Los miembros de nuestro equipo tienen habilidades únicas y diversas, y esta funcionalidad cruzada nos permite completar con éxito cualquier misión.",
     "description": [
       "Todos nuestros clientes tienen su propio equipo dedicado. Incluso si necesita 30 desarrolladores, todos los que trabajan en su proyecto se dividen en pequeños equipos agiles de 2 a 6 personas. Al igual que los Navy SEALs, un pequeño equipo probado en batalla puede moverse más rápido y con más precisión que los equipos más grandes.",
