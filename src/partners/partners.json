@@ -232,9 +232,9 @@
     "hiring": "jump24.co.uk/careers"
   },
   {
-    " name": "Epicmax",
+    "name": "Epicmax",
     "logo": "epicmax.svg",
-    " hero": "epicmax.png",
+    "hero": "epicmax.png",
     "intro": "Epicmax es un equipo de expertos en Vue.js con 6 años de experiencia en la construcción de interfaces Vue.js. Aportamos el conocimiento de Vue.js en el desarrollo front-end a través de industrias y geografías, sirviendo a empresas de diferentes tamaños. Tenemos más de 55 proyectos finalizados, 45 clientes en todo el mundo y 3 productos Open Source en nuestro portfolio.",
     "description": [
       "Epicmax es una empresa de desarrollo de software Vue.js con más de 55 proyectos completados con éxito en todo el mundo y 3 productos Open Source ampliamente aclamados.",
@@ -255,7 +255,7 @@
       "texto": "epicmax.co",
       "url": "https://epicmax.co/"
     },
-    "platinum": true,
-    "contact": "hello@epicmax.co"
+    "contact": "hello@epicmax.co",
+    "platinum": false
   }
 ]
