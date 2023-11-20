@@ -13,9 +13,7 @@ const list = [
 const query = ref('')
 
 const computedList = computed(() => {
-  return list.filter((item) =>
-    item.msg.toLowerCase().includes(query.value)
-  )
+  return list.filter((item) => item.msg.toLowerCase().includes(query.value))
 })
 
 function onBeforeEnter(el) {
@@ -52,11 +50,7 @@ function onLeave(el, done) {
       @enter="onEnter"
       @leave="onLeave"
     >
-      <li
-        v-for="(item, index) in computedList"
-        :key="item.msg"
-        :data-index="index"
-      >
+      <li v-for="(item, index) in computedList" :key="item.msg" :data-index="index">
         {{ item.msg }}
       </li>
     </TransitionGroup>
