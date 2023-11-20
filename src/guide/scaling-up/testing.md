@@ -90,7 +90,7 @@ Un componente puede ser probado de dos maneras:
 
 1. Caja blanca (Whitebox): Pruebas unitarias
 
-   Las pruebas que son "pruebas de caja blanca" están al tanto de los detalles de implementación y las dependencias de un componente. Se centran en **aislar** el componente bajo prueba. Estas pruebas generalmente implican simular algunos, si no todos, los elementos hijos del componente, así como también configurar el estado y las dependencias de los plugins (por ejemplo, Vuex).
+   Las pruebas que son "pruebas de caja blanca" están al tanto de los detalles de implementación y las dependencias de un componente. Se centran en **aislar** el componente bajo prueba. Estas pruebas generalmente implican simular algunos, si no todos, los elementos hijos del componente, así como también configurar el estado y las dependencias de los plugins (por ejemplo, Pinia).
 
 2. Caja negra (Blackbox): Pruebas de componentes
 
