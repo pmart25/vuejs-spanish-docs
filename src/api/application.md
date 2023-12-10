@@ -59,7 +59,7 @@ Monta la instancia de la aplicación en un elemento contenedor.
 
   Si el componente tiene una plantilla o una función de renderizado definida, reemplazará cualquier nodo DOM existente dentro del contendor. De lo contrario, si el compilador en tiempo de ejecución está disponible, el `innerHTML` del contenedor será usado como plantilla.
 
-  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr#error-en-la-hidratacion), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
+  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr#hydration-mismatch), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
 
   Por cada instancia de la aplicación, `mount()` solo puede ser usado una vez.
 
@@ -146,7 +146,7 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
 
 - **Ver también:**
   - [Provide / Inject](/guide/components/provide-inject)
-  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#nivel-de-aplicacion-de-provide)
+  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#app-level-provide)
 
 ## app.component() {#app-component}
 

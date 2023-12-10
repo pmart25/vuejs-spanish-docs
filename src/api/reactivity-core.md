@@ -110,8 +110,8 @@ Toma una función getter y devuelve un objeto [ref](#ref) reactivo de solo lectu
 
 - **Véase también:**
   - [Guía - Propiedades Computadas](/guide/essentials/computed)
-  - [Guía - Depuración Computada](/guide/extras/reactivity-in-depth#depuracion-computada)
-  - [Guía - Escritura de `computed()`](/guide/typescript/composition-api#escritura-de-computed)
+  - [Guía - Depuración Computada](/guide/extras/reactivity-in-depth#computed-debugging)
+  - [Guía - Escritura de `computed()`](/guide/typescript/composition-api#typing-computed)
 
 ## reactive() {#reactive}
 
@@ -188,7 +188,7 @@ Devuelve un proxy reactivo del objeto.
 
 - **Véase también:**
   - [Guía - Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals)
-  - [Guía - Escritura de `reactive()`](/guide/typescript/composition-api#escritura-de-reactive)
+  - [Guía - Escritura de `reactive()`](/guide/typescript/composition-api#typing-reactive)
 
 ## readonly() {#readonly}
 
@@ -483,4 +483,4 @@ Observa una o más fuentes de datos reactivas e invoca una función de devoluci�
 - **Véase también**:
 
   - [Guía - Watchers](/guide/essentials/watchers)
-  - [Guía - Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher)
+  - [Guía - Depuración del Watcher](/guide/extras/reactivity-in-depth#watcher-debugging)

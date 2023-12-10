@@ -135,7 +135,7 @@ Un objeto representando los [slots](/guide/components/slots) pasados desde el co
 
   Cada slot se expone en `this.$slots` como una función que devuelve un array de vnodos bajo la clave correspondiente al nombre de ese slot. El slot por defecto se expone como `this.$slots.default`.
 
-  Si el slot es un [slot con ámbito](/guide/components/slots#slots-con-ambito), los argumentos pasados a la función del slot están disponibles para el slot como sus props.
+  Si el slot es un [slot con ámbito](/guide/components/slots#scoped-slots), los argumentos pasados a la función del slot están disponibles para el slot como sus props.
 
 - **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function#renderizado-de-slots)
 

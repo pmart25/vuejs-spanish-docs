@@ -78,7 +78,7 @@ Si. A pesar de la idea errónea común de que Vue solo es adecuado para casos de
 
 ## ¿Debo usar Options API o Composition API? {#should-i-use-options-api-or-composition-api}
 
-Si eres nuevo en Vue, ofrecemos una comparación de alto nivel entre los dos estilos [aquí](/guide/introduction#cual-elegir).
+Si eres nuevo en Vue, ofrecemos una comparación de alto nivel entre los dos estilos [aquí](/guide/introduction#which-to-choose).
 
 Si previamente utilizaste Options API y estás evaluando en la actualidad la Composition API, consulta [estas FAQ](/guide/extras/composition-api-faq).
 

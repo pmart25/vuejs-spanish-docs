@@ -72,10 +72,10 @@ Se utiliza para aumentar el tipo de opciones del componente para admitir opcione
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) para obtener más detalles.
   :::
 
-- **Véase también:** [Guía - Aumento de las Opciones Personalizadas](/guide/typescript/options-api#aumento-de-las-opciones-personalizadas)
+- **Véase también:** [Guía - Aumento de las Opciones Personalizadas](/guide/typescript/options-api#augmenting-custom-options)
 
 ## ComponentCustomProps {#componentcustomprops}
 
@@ -99,7 +99,7 @@ Se utiliza para aumentar las props TSX permitidas para usar props no declaradas 
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) para obtener más detalles.
   :::
 
 ## CSSProperties {#cssproperties}
@@ -127,11 +127,11 @@ Se utiliza para aumentar los valores permitidos en los enlaces de propiedades de
   ```
 
 :::tip
-Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) para obtener más detalles.
 :::
 
 :::info Véase también
 Las etiquetas `<style>` de SFC admiten la vinculación de valores CSS al estado de los componentes dinámicos mediante la función `v-bind CSS`. Esto permite propiedades personalizadas sin aumento de tipo.
 
-- [v-bind() en CSS](/api/sfc-css-features#v-bind-en-css)
+- [v-bind() en CSS](/api/sfc-css-features#v-bind-in-css)
   :::

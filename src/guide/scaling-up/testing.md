@@ -82,7 +82,7 @@ Hay dos instancias en los que SÍ hay que hacer pruebas unitarias de caracterís
 
 ### Composables {#composables}
 
-Una categoría de funciones específicas de las aplicaciones de Vue son los [Composables](/guide/reusability/composables), que pueden requerir un manejo especial durante las pruebas. Consulta la sección [Pruebas de Composables](#pruebas-de-composables) más adelante para más detalles.
+Una categoría de funciones específicas de las aplicaciones de Vue son los [Composables](/guide/reusability/composables), que pueden requerir un manejo especial durante las pruebas. Consulta la sección [Pruebas de Composables](#testing-composables) más adelante para más detalles.
 
 ### Pruebas Unitarias en Componentes {#unit-testing-components}
 

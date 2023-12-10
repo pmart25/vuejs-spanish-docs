@@ -35,7 +35,7 @@ El atributo especial `key` es usado primeramente por el algoritmo de DOM virtual
 
   Cuando `text` cambia, el elemento `<span>` será reemplazado en lugar de ser parchado, de modo que se activará la transición.
 
-- **Ver también:** [Guía - Renderizado de Listas - Manteniendo el estado con `key`](/guide/essentials/list#manteniendo-el-estado-con-key)
+- **Ver también:** [Guía - Renderizado de Listas - Manteniendo el estado con `key`](/guide/essentials/list#maintaining-state-with-key)
 
 ## ref {#ref}
 
@@ -92,7 +92,7 @@ Usado para vincular [componentes dinámicos](/guide/essentials/component-basics#
 
   Cuando el atributo `is` es usado en un elemento nativo de HTML, será interpretado como un [Elemento integrado personalizado](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), que es una funcionalidad nativa de la web.
 
-  Existe, sin embargo, un escenario donde tal vez necesites que Vue reemplace al elemento nativo por un componente de Vue, como se explica en [Advertencias sobre el Procesamiento de las Plantillas del DOM ](/guide/essentials/component-basics#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom). Puedes agregarle el prefijo `vue:` al valor del atributo `is` así Vue renderizará el elemento como un componente Vue en su lugar:
+  Existe, sin embargo, un escenario donde tal vez necesites que Vue reemplace al elemento nativo por un componente de Vue, como se explica en [Advertencias sobre el Procesamiento de las Plantillas del DOM ](/guide/essentials/component-basics#dom-template-parsing-caveats). Puedes agregarle el prefijo `vue:` al valor del atributo `is` así Vue renderizará el elemento como un componente Vue en su lugar:
 
   ```vue-html
   <table>
