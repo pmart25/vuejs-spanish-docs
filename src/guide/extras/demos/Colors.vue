@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+  
 const x = ref(0)
+  
 function onMousemove(e) {
   x.value = e.clientX
 }
