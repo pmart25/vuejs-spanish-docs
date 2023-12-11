@@ -50,7 +50,11 @@ function onLeave(el, done) {
       @enter="onEnter"
       @leave="onLeave"
     >
-      <li v-for="(item, index) in computedList" :key="item.msg" :data-index="index">
+      <li 
+        v-for="(item, index) in computedList" 
+        :key="item.msg" 
+        :data-index="index"
+      >
         {{ item.msg }}
       </li>
     </TransitionGroup>

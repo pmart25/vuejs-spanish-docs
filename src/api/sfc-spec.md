@@ -42,7 +42,7 @@ export default {
 
 ### `<script>` {#script}
 
-- Cada archivo `*.vue` puede contener como máximo un bloque `<script>` (excluyendo [`<script setup>`](/api/sfc-script-setup.html)).
+- Cada archivo `*.vue` puede contener como máximo un bloque `<script>` (excluyendo [`<script setup>`](/api/sfc-script-setup)).
 
 - El script se ejecuta como un Módulo ES.
 
@@ -68,7 +68,7 @@ Se pueden incluir bloques personalizados adicionales en un archivo `*.vue` para 
 - [vite-plugin-vue-gql: `<gql>`](https://github.com/wheatjs/vite-plugin-vue-gql)
 - [vue-i18n: `<i18n>`](https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n#i18n-custom-block)
 
-El manejo de los bloques personalizados dependerá de las herramientas: si deseas crear tus propias integraciones de bloques personalizados, consulta [la sección de herramientas de integraciones de bloques personalizados](/guide/scaling-up/tooling.html#integraciones-de-bloques-personalizados-del-sfc) para obtener más detalles.
+El manejo de los bloques personalizados dependerá de las herramientas: si deseas crear tus propias integraciones de bloques personalizados, consulta [la sección de herramientas de integraciones de bloques personalizados](/guide/scaling-up/tooling#sfc-custom-block-integration) para obtener más detalles.
 
 ## Inferencia Automática de Nombres {#automatic-name-inference}
 
