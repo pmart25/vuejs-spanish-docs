@@ -77,7 +77,7 @@ const state = reactive({ count: 0 })
 
 Los objetos reactivos son [Proxies de JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue puede rastrear el acceso a la propiedad y las mutaciones de un objeto reactivo. Si tienes curiosidad acerca de los detalles, explicamos cómo funciona el sistema de reactividad de Vue en [Reactividad en profundidad](/guide/extras/reactivity-in-depth), pero recomendamos leerlo después de que hayas terminado la guía principal.
 
-Consulta también: [Escritura de reactive()](/guide/typescript/composition-api#escritura-de-reactive) <sup class="vt-badge ts" />
+Consulta también: [Escritura de reactive()](/guide/typescript/composition-api#typing-reactive) <sup class="vt-badge ts" />
 
 Para usar el estado reactivo en la plantilla de un componente, decláralos y devuélvelos desde la función `setup()` del componente:
 
@@ -395,7 +395,7 @@ count.value++
 console.log(count.value) // 1
 ```
 
-Consulta también: [Escritura de ref()](/guide/typescript/composition-api#escritura-de-ref) <sup class="vt-badge ts" />
+Consulta también: [Escritura de ref()](/guide/typescript/composition-api#typing-ref) <sup class="vt-badge ts" />
 
 De forma similar a las propiedades de un objeto reactivo, la propiedad `.value` de un ref es reactiva. Además, cuando contiene tipos de objetos, ref convierte automáticamente su `.value` con `reactive()`.
 

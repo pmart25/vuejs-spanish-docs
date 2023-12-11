@@ -159,7 +159,7 @@ Los eventos emitidos a través de `this.$emit` o setup `emit` se envían como [C
 
 Dentro del componente, los slots pueden ser renderizados usando el elemento `<slot/>` como es habitual. No obstante, al consumir el elemento resultante, este solo acepta la [sintaxis nativa de los slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots):
 
-- No se admiten los [slots con ámbito](/guide/components/slots#slots-con-ambito).
+- No se admiten los [slots con ámbito](/guide/components/slots#scoped-slots).
 
 - Al pasar slots asignados, utiliza el atributo `slot` en lugar de la directiva `v-slot`:
 
@@ -246,7 +246,7 @@ También hay frameworks construidos utilizando Elementos Personalizados como bas
 
 También hay algunas áreas en las que encontramos que los elementos personalizados son limitantes:
 
-- La evaluación de los slots anticipados dificulta la composición de los componentes. Los [slots con ámbito](/guide/components/slots#slots-con-ambito) de Vue son un poderoso mecanismo para la composición de componentes, que no puede ser soportado por los elementos personalizados debido a la naturaleza de los slots nativos. Los slots anticipados también significan que el componente receptor no puede controlar cuándo o si debe renderizar una parte del contenido del slot.
+- La evaluación de los slots anticipados dificulta la composición de los componentes. Los [slots con ámbito](/guide/components/slots#scoped-slots) de Vue son un poderoso mecanismo para la composición de componentes, que no puede ser soportado por los elementos personalizados debido a la naturaleza de los slots nativos. Los slots anticipados también significan que el componente receptor no puede controlar cuándo o si debe renderizar una parte del contenido del slot.
 
 - El envío de elementos personalizados con CSS de ámbito del shadow DOM requiere hoy en día incrustar el CSS dentro de JavaScript para que pueda ser inyectado en el shadow root en tiempo de ejecución. También da lugar a estilos duplicados en el marcado en los escenarios de SSR. Hay [características de la plataforma](https://github.com/whatwg/html/pull/4898/) en las que se está trabajando en esta área; pero por ahora no están soportadas universalmente, y todavía hay problemas de rendimiento de producción / SSR que deben ser abordados. Mientras tanto, los SFC de Vue proporcionan [mecanismos de alcance de CSS](/api/sfc-css-features) que soportan la extracción de los estilos en archivos CSS planos.
 

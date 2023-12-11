@@ -295,7 +295,7 @@ Registra un callback que será llamado luego de que la instancia del componente 
   function onDeactivated(callback: () => void): void
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 

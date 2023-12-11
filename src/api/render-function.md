@@ -93,7 +93,7 @@ Crea nodos DOM virtuales (vnodes).
   })
   ```
 
-- **Véase también:** [Guía - Funciones de renderizado - Creando VNodes](/guide/extras/render-function#creando-vnodos)
+- **Véase también:** [Guía - Funciones de renderizado - Creando VNodes](/guide/extras/render-function#creating-vnodes)
 
 ## mergeProps() {#mergeprops}
 
@@ -248,7 +248,7 @@ Para resolver manualmente una directiva registrada por su nombre.
 
   Si no se encuentra la directiva, se emitirá una advertencia en tiempo de ejecución y la función devolverá `undefined`.
 
-- **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function#directivas-personalizadas)
+- **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function#custom-directives)
 
 ## withDirectives() {#withdirectives}
 
@@ -296,11 +296,11 @@ Para añadir directivas personalizadas a los vnodes.
   ])
   ```
 
-- **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function#directivas-personalizadas)
+- **Véase también:** [Guía - Funciones de Renderizado - Directivas Personalizadas](/guide/extras/render-function#custom-directives)
 
 ## withModifiers() {#withmodifiers}
 
-Para agregar [modificadores `v-on`](/guide/essentials/event-handling#modificadores-de-eventos) incorporados a una función manejadora de eventos.
+Para agregar [modificadores `v-on`](/guide/essentials/event-handling#event-modifiers) incorporados a una función manejadora de eventos.
 
 - **Tipo**
 
@@ -321,4 +321,4 @@ Para agregar [modificadores `v-on`](/guide/essentials/event-handling#modificador
   })
   ```
 
-- **Véase también:** [Guía - Funciones de Renderizado - Modificadores de Eventos](/guide/extras/render-function#modificadores-de-eventos)
+- **Véase también:** [Guía - Funciones de Renderizado - Modificadores de Eventos](/guide/extras/render-function#event-modifiers)

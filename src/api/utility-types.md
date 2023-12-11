@@ -30,7 +30,7 @@ Se usa para anotar una prop con tipos más avanzados cuando se usan declaracione
   }
   ```
 
-- **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api#escritura-de-las-props-de-componentes)
+- **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api#typing-component-props)
 
 ## ComponentCustomProperties {#componentcustomproperties}
 
@@ -50,10 +50,10 @@ Se utiliza para aumentar el tipo de instancia del componente para admitir propie
   ```
 
   :::tip
-  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#ubicacion-del-aumento-de-tipo) para obtener más detalles.
+  Los aumentos deben colocarse en un archivo de módulo `.ts` o `.d.ts`. Consulta [Ubicación del Aumento de Tipo](/guide/typescript/options-api#augmenting-global-properties) para obtener más detalles.
   :::
 
-- **Véase también:** [Guía - Aumento de las Propiedades Globales](/guide/typescript/options-api#aumento-de-las-propiedades-globales)
+- **Véase también:** [Guía - Aumento de las Propiedades Globales](/guide/typescript/options-api#augmenting-global-properties)
 
 ## ComponentCustomOptions {#componentcustomoptions}
 

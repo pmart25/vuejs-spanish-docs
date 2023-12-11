@@ -290,9 +290,9 @@ Declara funciones de vigilancia que se invocan cuando cambian los datos.
   El valor también puede ser una cadena con el nombre de un método (declarado mediante `methods`), o un objeto que contenga opciones adicionales. Si se utiliza la sintaxis de objeto, la llamada de retorno debe declararse en el campo `handler`. Las opciones adicionales incluyen:
 
   - **`immediate`**: activa la llamada de retorno inmediatamente después de la creación del observador. El valor antiguo será `undefined` en la primera llamada.
-  - **`deep`**: forza el recorrido profundo de la fuente si es un objeto o un array, para que la llamada de retorno se dispare en las mutaciones profundas. Ver [Watchers Profundos](/guide/essentials/watchers#watchers-profundos).
-  - **`flush`**: ajusta el tiempo de sincronización de la llamada de retorno. Ver [Temporización del Flujo del Callback](/guide/essentials/watchers#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core#watcheffect).
-  - **`onTrack / onTrigger`**: depura las dependencias del observador. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher).
+  - **`deep`**: forza el recorrido profundo de la fuente si es un objeto o un array, para que la llamada de retorno se dispare en las mutaciones profundas. Ver [Watchers Profundos](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajusta el tiempo de sincronización de la llamada de retorno. Ver [Temporización del Flujo del Callback](/guide/essentials/watchers#callback-flush-timing) y [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura las dependencias del observador. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Ejemplo**
 

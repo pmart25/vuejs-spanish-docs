@@ -265,7 +265,7 @@ Sin embargo, en un contexto de SSR, los módulos de la aplicación generalmente 
 
 Técnicamente, podemos reiniciar todos los módulos de JavaScript en cada solicitud, tal como lo hacemos en los navegadores. Sin embargo, la inicialización de los módulos de JavaScript puede resultar costosa, por lo que afectaría significativamente el rendimiento del servidor.
 
-La solución recomendada es crear una nueva instancia completa de toda la aplicación, incluyendo el router y los stores globales, en cada solicitud. Luego, en lugar de importarlo directamente en nuestros componentes, proporcionamos el estado compartido usando [nivel de aplicación de Provide](/guide/components/provide-inject#nivel-de-aplicacion-de-provide) y lo inyectamos en los componentes que lo necesitan:
+La solución recomendada es crear una nueva instancia completa de toda la aplicación, incluyendo el router y los stores globales, en cada solicitud. Luego, en lugar de importarlo directamente en nuestros componentes, proporcionamos el estado compartido usando [nivel de aplicación de Provide](/guide/components/provide-inject#app-level-provide) y lo inyectamos en los componentes que lo necesitan:
 
 ```js
 // app.js (compartido entre el servidor y el cliente)

@@ -345,7 +345,7 @@ Por las razones anteriores, ya no recomendamos el uso de mixins en Vue 3. La fun
 
 ### vs. Componentes sin Renderizado {#vs-renderless-components}
 
-En el capítulo sobre slots de los componentes, discutimos el patrón [Componentes sin Renderizado](/guide/components/slots#componentes-sin-renderizado) basado en slots de ámbito. Incluso implementamos la misma demostración de seguimiento del ratón utilizando componentes sin renderizado.
+En el capítulo sobre slots de los componentes, discutimos el patrón [Componentes sin Renderizado](/guide/components/slots#renderless-components) basado en slots de ámbito. Incluso implementamos la misma demostración de seguimiento del ratón utilizando componentes sin renderizado.
 
 La principal ventaja de los composables sobre los componentes sin renderizado es que los composables no implican la sobrecarga adicional de las instancias de los componentes. Cuando se utilizan en toda una aplicación, la cantidad de instancias de componentes adicionales creadas por el patrón de componentes sin renderizado puede convertirse en una sobrecarga notable para el rendimiento.
 
@@ -359,5 +359,5 @@ Si tienes experiencia con React, puedes notar que esto se parece mucho a los hoo
 
 - [Reactividad en profundidad](/guide/extras/reactivity-in-depth): para una comprensión de bajo nivel de cómo funciona el sistema de reactividad de Vue.
 - [Manejo del Estado](/guide/scaling-up/state-management): para conocer los patrones de gestión del estado compartido por varios componentes.
-- [Pruebas de Composables](/guide/scaling-up/testing#pruebas-de-composables): tips para realizar pruebas unitarias en composables.
+- [Pruebas de Composables](/guide/scaling-up/testing#testing-composables): tips para realizar pruebas unitarias en composables.
 - [VueUse](https://vueuse.org/): una colección cada vez mayor de composables de Vue. El código fuente es también un gran recurso de aprendizaje.

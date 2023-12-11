@@ -65,7 +65,7 @@ Aunque los SFC requieren un paso de construcción, hay numerosos beneficios a ca
 - [CSS en el ámbito de los componentes](/api/sfc-css-features)
 - [Sintaxis más ergonómica al trabajar con la Composition API](/api/sfc-script-setup)
 - Más optimizaciones en tiempo de compilación mediante el análisis cruzado de plantillas y scripts
-- [Soporte de IDE](/guide/scaling-up/tooling#soporte-para-ide) con autocompletado y verificación de tipado para las expresiones de la plantilla
+- [Soporte de IDE](/guide/scaling-up/tooling#ide-support) con autocompletado y verificación de tipado para las expresiones de la plantilla
 - Soporte para el reemplazo de módulos en caliente (HMR)
 
 El SFC es una característica que define a Vue como framework, y es el enfoque recomendado para utilizar Vue en los siguientes escenarios:
@@ -104,4 +104,4 @@ Para responder a esta pregunta, es importante que estemos de acuerdo en que **la
 
 En el desarrollo moderno de la IU, hemos descubierto que en lugar de dividir el código base en tres enormes capas que se entrecruzan entre sí, tiene mucho más sentido dividirlas en componentes vagamente acoplados y compaginarlos. Dentro de un componente, su plantilla, su lógica y sus estilos están inherentemente acoplados, y su ubicación hace que el componente sea más cohesivo y fácil de mantener.
 
-Ten en cuenta que incluso si no te gusta la idea de los componentes de un solo archivo, puedes aprovechar sus características de recarga en caliente y precompilación al separar tu JavaScript y CSS en archivos independientes utilizando las [Importaciones Src](/api/sfc-spec#importaciones-src).
+Ten en cuenta que incluso si no te gusta la idea de los componentes de un solo archivo, puedes aprovechar sus características de recarga en caliente y precompilación al separar tu JavaScript y CSS en archivos independientes utilizando las [Importaciones Src](/api/sfc-spec#src-imports).

@@ -185,7 +185,7 @@ Un bloque hijo es rastreado dentro de la matriz de descendientes dinámicos del 
 
 ### Impacto sobre la Hidratación del SSR {#impact-on-ssr-hydration}
 
-Tanto las banderas de parche como el aplanamiento del árbol mejoran en gran medida el rendimiento la [Hidratación del SSR](/guide/scaling-up/ssr#hidratacion-del-cliente) de Vue:
+Tanto las banderas de parche como el aplanamiento del árbol mejoran en gran medida el rendimiento la [Hidratación del SSR](/guide/scaling-up/ssr#client-hydration) de Vue:
 
 - La hidratación de un solo elemento puede tomar rutas rápidas basadas en la bandera de parche del vnode correspondiente.
 

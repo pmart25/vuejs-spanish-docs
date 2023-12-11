@@ -33,7 +33,7 @@ Para perfilar el rendimiento durante el desarrollo local:
 
 - [Panel de rendimiento de Chrome DevTools](https://developer.chrome.com/docs/devtools/evaluate-performance/)
   - [`app.config.performance`](/api/application#app-config-performance) habilita indicadores de rendimiento específicos de Vue en la línea de tiempo de rendimiento de Chrome DevTools.
-- [Extension Vue DevTools](/guide/scaling-up/tooling#devtools-del-navegador) también proporciona características de perfilado del rendimiento.
+- [Extension Vue DevTools](/guide/scaling-up/tooling#browser-devtools) también proporciona características de perfilado del rendimiento.
 
 ## Optimizaciones para la Carga de Página {#page-load-optimizations}
 
@@ -169,6 +169,6 @@ shallowArray.value = [
 
 ### Evite las Abstracciones Innecesarias de los Componentes {#avoid-unnecessary-component-abstractions}
 
-A veces, podemos crear [componentes sin renderizado](/guide/components/slots#componentes-sin-renderizado) o componentes de orden superior (es decir, componentes que renderizan otros componentes con props adicionales) para una mejor abstracción u organización del código. Si bien esto no tiene nada de malo, ten en cuenta que las instancias de componentes son mucho más costosas que los nodos simples del DOM, y crear demasiados de ellos debido a patrones de abstracción generará costos de rendimiento.
+A veces, podemos crear [componentes sin renderizado](/guide/components/slots#renderless-components) o componentes de orden superior (es decir, componentes que renderizan otros componentes con props adicionales) para una mejor abstracción u organización del código. Si bien esto no tiene nada de malo, ten en cuenta que las instancias de componentes son mucho más costosas que los nodos simples del DOM, y crear demasiados de ellos debido a patrones de abstracción generará costos de rendimiento.
 
 Ten en cuenta que reducir solo unas pocas instancias no tendrá un efecto notable, así que no te preocupes si el componente se renderiza sólo unas pocas veces en la aplicación. El mejor escenario para considerar esta optimización es, de nuevo, en las listas grandes. Imagina una lista de 100 artículos donde cada componente del artículo contiene muchos componentes hijos. La eliminación de una abstracción de componente innecesaria aquí podría resultar en una reducción de cientos de instancias de componentes.

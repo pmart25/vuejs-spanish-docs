@@ -8,7 +8,7 @@ import SwitchComponent from './keep-alive-demos/SwitchComponent.vue'
 
 ## Uso Básico {#basic-usage}
 
-En el capítulo de Componentes Básicos, introdujimos la sintaxis de los [Componentes Dinámicos](/guide/essentials/component-basics#componentes-dinamicos), utilizando el elemento especial `<component>`:
+En el capítulo de Componentes Básicos, introdujimos la sintaxis de los [Componentes Dinámicos](/guide/essentials/component-basics#dynamic-components), utilizando el elemento especial `<component>`:
 
 ```vue-html
 <componente :is="activeComponent" />
@@ -47,7 +47,7 @@ Ahora, el estado será persistente a través de los cambios de componentes:
 </div>
 
 :::tip
-Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), debería ser referenciado como `<keep-alive>`.
+Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), debería ser referenciado como `<keep-alive>`.
 :::
 
 ## Include / Exclude {#include-exclude}

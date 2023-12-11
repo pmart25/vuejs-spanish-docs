@@ -224,7 +224,7 @@ De forma similar a la etiqueta `v-if`, también puedes utilizar una etiqueta `<t
 ## `v-for` con `v-if` {#v-for-with-v-if}
 
 :::warning Nota
-**No** es recomendado usar `v-if` y `v-for` en el mismo elemento debido a la precedencia implícita. Consulta la [guía de estilo](/style-guide/rules-essential#evitar-usar-v-if-con-v-for) para más detalles.
+**No** es recomendado usar `v-if` y `v-for` en el mismo elemento debido a la precedencia implícita. Consulta la [guía de estilo](/style-guide/rules-essential#avoid-v-if-with-v-for) para más detalles.
 :::
 
 Cuando existen en el mismo nodo, `v-if` tiene mayor prioridad que `v-for`. Esto significa que la condición `v-if` no tendrá acceso a las variables del ámbito de `v-for`:
@@ -275,7 +275,7 @@ Cuando se usa `<template v-for>`, la `key` debe colocarse en el contenedor `<tem
 `key` aquí es un atributo especial que se vincula con `v-bind`. No debe confundirse con la variable clave de la propiedad cuando [se utiliza `v-for` con un objeto](#v-for-con-un-objeto).
 :::
 
-[Se recomienda](/style-guide/rules-essential#usar-v-for-con-clave) proporcionar un atributo `key` con `v-for` siempre que sea posible, a menos que el contenido del DOM iterado sea simple (es decir, que no contenga componentes o elementos del DOM con estado), o que se confíe intencionadamente en el comportamiento por defecto para mejorar el rendimiento.
+[Se recomienda](/style-guide/rules-essential#use-keyed-v-for) proporcionar un atributo `key` con `v-for` siempre que sea posible, a menos que el contenido del DOM iterado sea simple (es decir, que no contenga componentes o elementos del DOM con estado), o que se confíe intencionadamente en el comportamiento por defecto para mejorar el rendimiento.
 
 El enlace `key` espera valores primitivos, es decir, cadenas y números. No utilice objetos como claves `v-for`. Para un uso detallado del atributo `key`, por favor consulta la [documentación de la API `key`](/api/built-in-special-attributes#key).
 

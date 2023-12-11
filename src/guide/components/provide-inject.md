@@ -351,7 +351,7 @@ import { myInjectionKey } from './keys.js'
 const injected = inject(myInjectionKey)
 ```
 
-Mira también: [Escritura de Provide / Inject](/guide/typescript/composition-api#escritura-de-provide-inject) <sup class="vt-badge ts" />
+Mira también: [Escritura de Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
 </div>
 

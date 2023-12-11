@@ -268,7 +268,7 @@ Se llama después de que la instancia del componente se inserta en el DOM como p
   }
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
@@ -284,7 +284,7 @@ Se llama después de que la instancia del componente se elimina del DOM como par
   }
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 

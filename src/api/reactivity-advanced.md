@@ -33,8 +33,8 @@ Versión poco profunda de [`ref()`](./reactivity-core#ref).
   ```
 
 - **Véase también**
-  - [Guía - Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance#reduccion-de-la-sobrecarga-de-reactividad-en-estructuras-inmutables-de-gran-tamano)
-  - [Guía - Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth#integracion-con-los-sistemas-de-estado-externos)
+  - [Guía - Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+  - [Guía - Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
 
 ## triggerRef() {#triggerref}
 

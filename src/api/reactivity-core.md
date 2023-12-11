@@ -40,8 +40,8 @@ Toma un valor interno y devuelve un objeto ref reactivo y mutable, que tiene una
   ```
 
 - **Véase también:**
-  - [Guía - Variables Reactivas con `ref()`](/guide/essentials/reactivity-fundamentals#variables-reactivas-con-ref)
-  - [Guía - Escritura de `ref()`](/guide/typescript/composition-api#escritura-de-ref)
+  - [Guía - Variables Reactivas con `ref()`](/guide/essentials/reactivity-fundamentals#reactive-variables-with-ref)
+  - [Guía - Escritura de `ref()`](/guide/typescript/composition-api#typing-ref)
 
 ## computed() {#computed}
 
@@ -310,7 +310,7 @@ Ejecuta una función inmediatamente mientras realiza un seguimiento reactivo de 
 
 - **Véase también**:
   - [Guía - Watchers](/guide/essentials/watchers#watcheffect)
-  - [Guía - Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher)
+  - [Guía - Depuración del Watcher](/guide/extras/reactivity-in-depth#watcher-debugging)
 
 ## watchPostEffect() {#watchposteffect}
 
@@ -383,9 +383,9 @@ Observa una o más fuentes de datos reactivas e invoca una función de devoluci�
   El tercer argumento opcional es un objeto de opciones que admite las siguientes opciones:
 
   - **`immediate`**: activa la devolución de llamada inmediatamente después de la creación del watcher. El valor antiguo será `undefined` en la primera llamada.
-  - **`deep`**: fuerza el recorrido profundo de la fuente si es un objeto, de modo que la devolución de llamada se dispare en mutaciones profundas. Vea [Watchers Profundos](/guide/essentials/watchers#watchers-profundos).
-  - **`flush`**: ajusta el tiempo de descarga de la devolución de llamada. Vea [Temporización del Flujo del Callback](/guide/essentials/watchers#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core#watcheffect).
-  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Vea [Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher).
+  - **`deep`**: fuerza el recorrido profundo de la fuente si es un objeto, de modo que la devolución de llamada se dispare en mutaciones profundas. Vea [Watchers Profundos](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajusta el tiempo de descarga de la devolución de llamada. Vea [Temporización del Flujo del Callback](/guide/essentials/watchers#callback-flush-timing) y [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Vea [Depuración del Watcher](/guide/extras/reactivity-in-depth#watcher-debugging).
 
   Comparado con [`watchEffect()`](#watcheffect), `watch()` nos permite:
 

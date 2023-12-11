@@ -137,7 +137,7 @@ Un objeto representando los [slots](/guide/components/slots) pasados desde el co
 
   Si el slot es un [slot con ámbito](/guide/components/slots#scoped-slots), los argumentos pasados a la función del slot están disponibles para el slot como sus props.
 
-- **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function#renderizado-de-slots)
+- **Ver también:** [Funciones de Renderizado - Renderizado de Slots](/guide/extras/render-function#rendering-slots)
 
 ## $refs {#refs}
 
@@ -217,9 +217,9 @@ API para crear watchers.
   El segundo argumento es la función de callback. El callback recibe el nuevo calor y el valor anterior de la propiedad observada.
 
   - **`immediate`**: ejecuta el callback inmediatamente a la creación del watcher. El valor anterior será `undefined` en la primera llamada.
-  - **`deep`**: fuerza el recorrido de la propiedad observada si ésta es un objeto, así el callback se dispara en mutaciones anidadas. Ver [Watchers Profundos](/guide/essentials/watchers#watchers-profundos).
-  - **`flush`**: ajusta el temporizador del flujo del callback. Ver [Callback Flush Timing](/guide/essentials/watchers#temporizacion-del-flujo-del-callback) y [`watchEffect()`](/api/reactivity-core#watcheffect).
-  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#depuracion-del-watcher).
+  - **`deep`**: fuerza el recorrido de la propiedad observada si ésta es un objeto, así el callback se dispara en mutaciones anidadas. Ver [Watchers Profundos](/guide/essentials/watchers#deep-watchers).
+  - **`flush`**: ajusta el temporizador del flujo del callback. Ver [Callback Flush Timing](/guide/essentials/watchers#callback-flush-timing) y [`watchEffect()`](/api/reactivity-core#watcheffect).
+  - **`onTrack / onTrigger`**: depura las dependencias del watcher. Ver [Depuración del Watcher](/guide/extras/reactivity-in-depth#watcher-debugging).
 
 - **Ejemplo**
 

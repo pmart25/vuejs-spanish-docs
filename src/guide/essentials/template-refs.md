@@ -84,7 +84,7 @@ watchEffect(() => {
 })
 ```
 
-Mira también: [Escritura de Refs de la Plantilla](/guide/typescript/composition-api#escritura-de-refs-de-la-plantilla) <sup class="vt-badge ts" />
+Mira también: [Escritura de Refs de la Plantilla](/guide/typescript/composition-api#typing-template-refs) <sup class="vt-badge ts" />
 
 </div>
 
@@ -237,7 +237,7 @@ defineExpose({
 
 Cuando un padre obtiene una instancia de este componente a través de las referencias de la plantilla, la instancia recuperada tendrá la forma `{ a: número, b: número }` (las referencias se desempaquetan automáticamente como en las instancias normales).
 
-Mira también: [Escritura de Refs de la Plantilla del Componentes](/guide/typescript/composition-api#escritura-de-refs-de-la-plantilla-del-componente) <sup class="vt-badge ts" />
+Mira también: [Escritura de Refs de la Plantilla del Componentes](/guide/typescript/composition-api#typing-component-template-refs) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">

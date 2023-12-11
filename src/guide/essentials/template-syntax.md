@@ -263,7 +263,7 @@ Los modificadores son sufijos especiales indicados por un punto, que indican que
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling#modificadores-de-eventos) y [para `v-model`](./forms#modificadores), cuando exploremos esas características.
+Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling#modifiers) y [para `v-model`](./forms#modificadores), cuando exploremos esas características.
 
 Y finalmente, aquí está la sintaxis completa de la directiva:
 

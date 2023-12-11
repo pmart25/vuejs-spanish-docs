@@ -155,7 +155,7 @@ export default defineComponente({
 })
 ```
 
-La opción `props` se utiliza más comúnmente con la Options API, por lo que encontrarás ejemplos más detallados en la guía de [TypeScript con Options API](/guide/typescript/options-api#escritura-de-las-props-de-componentes). Las técnicas mostradas en esos ejemplos también se aplican a las declaraciones en tiempo de ejecución usando `defineProps()`.
+La opción `props` se utiliza más comúnmente con la Options API, por lo que encontrarás ejemplos más detallados en la guía de [TypeScript con Options API](/guide/typescript/options-api#typing-component-props). Las técnicas mostradas en esos ejemplos también se aplican a las declaraciones en tiempo de ejecución usando `defineProps()`.
 
 ## Escritura de Emits del Componente {#typing-component-emits}
 
@@ -397,4 +397,4 @@ const openModal = () => {
 </script>
 ```
 
-Ten en cuenta que si quieres usar esta técnica en archivos TypeScript en lugar de SFCs de Vue, necesitas habilitar el [Modo Takeover de Volar](./overview#modo-takeover-de-volar).
+Ten en cuenta que si quieres usar esta técnica en archivos TypeScript en lugar de SFCs de Vue, necesitas habilitar el [Modo Takeover de Volar](./overview#volar-takeover-mode).

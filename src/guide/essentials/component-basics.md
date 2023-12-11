@@ -179,7 +179,7 @@ Consulta [análisis de advertencias de la plantilla del DOM](#advertencias-sobre
 
 Si estamos construyendo un blog, probablemente necesitaremos un componente que represente una entrada del blog. Queremos que todas las entradas del blog compartan el mismo diseño visual, pero con diferente contenido. Dicho componente no será útil a menos que puedas pasarle datos, como el título y el contenido de la entrada específica que queremos mostrar. Es ahí donde entran los props.
 
-Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-y-defineemits)</span>:
+Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
+Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 Si no está usando `<script setup>`, las props deben ser declaradas usando la opción `props`, y el objeto props será pasado a `setup()` como primer argumento:
 
@@ -391,7 +391,7 @@ Gracias al escuchador `@enlarge-text="postFontSize += 0.1"`, el padre recibirá 
 
 </div>
 
-Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-y-defineemits)</span>:
+Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events#validacion-de-eventos). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
+Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events#events-validation). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
 
 <div class="composition-api">
 
@@ -430,7 +430,7 @@ const emit = defineEmits(['enlarge-text'])
 emit('enlarge-text')
 ```
 
-Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
+Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 Si no estás usando `<script setup>`, puedes declarar eventos emitidos usando la opción `emits`. Puedes acceder a la función `emit` como una propiedad del contexto de configuración (pasada a `setup()` como segundo argumento):
 

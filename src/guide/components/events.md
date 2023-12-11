@@ -63,7 +63,7 @@ El modificador `.once` también es compatible con los escuchadores de eventos de
 <MyComponent @some-event.once="callback" />
 ```
 
-Al igual que los componentes y props, los nombres de eventos proporcionan una transformación automática de mayúsculas y minúsculas. Observa que emitimos un evento camelCase, pero podemos escucharlo usando un listener kebab-cased en el padre. Como en el caso de la [Nomenclatura de las Props](/guide/components/props#nomenclatura-de-las-props), recomendamos utilizar escuchas de eventos con mayúsculas en las plantillas.
+Al igual que los componentes y props, los nombres de eventos proporcionan una transformación automática de mayúsculas y minúsculas. Observa que emitimos un evento camelCase, pero podemos escucharlo usando un listener kebab-cased en el padre. Como en el caso de la [Nomenclatura de las Props](/guide/components/props#prop-name-casing), recomendamos utilizar escuchas de eventos con mayúsculas en las plantillas.
 
 ::: tip
 A diferencia de los eventos nativos del DOM, los eventos emitidos por los componentes **no** se reproducen. Sólo puedes escuchar los eventos emitidos por un componente hijo directo. Si es necesario comunicarse entre componentes hermanos o profundamente anidados, utiliza un bus de eventos externo o una [solución de gestión de estado global](/guide/scaling-up/state-management).
@@ -120,7 +120,7 @@ Todos los argumentos adicionales que se pasen a `$emit()` después del nombre de
 
 ## Declarando Eventos Emitidos {#declaring-emitted-events}
 
-Un componente puede declarar explícitamente los eventos que emitirá utilizando la macro <span class="composition-api">[`defineEmits()`](/api/sfc-script-setup#defineprops-y-defineemits)</span><span class="options-api">opción [`emits`](/api/options-state#emits)</span>:
+Un componente puede declarar explícitamente los eventos que emitirá utilizando la macro <span class="composition-api">[`defineEmits()`](/api/sfc-script-setup#defineprops-defineemits)</span><span class="options-api">opción [`emits`](/api/options-state#emits)</span>:
 
 <div class="composition-api">
 
@@ -203,7 +203,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-Más detalles: [Escritura de Emits del Componente](/guide/typescript/composition-api#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
+Más detalles: [Escritura de Emits del Componente](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 <div class="options-api">
@@ -219,7 +219,7 @@ export default {
 }
 ```
 
-Mira también: [Escritura de Emits del Componente](/guide/typescript/options-api#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
+Mira también: [Escritura de Emits del Componente](/guide/typescript/options-api#typing-component-emits) <sup class="vt-badge ts" />
 
 </div>
 

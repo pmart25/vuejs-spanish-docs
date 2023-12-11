@@ -136,6 +136,6 @@ A lo largo de la guía, utilizamos nombres PascalCase al registrar componentes. 
 
 2. `<PascalCase />` hace más obvio que se trata de un componente Vue en lugar de un elemento HTML nativo en las plantillas. También diferencia los componentes Vue de los elementos personalizados (componentes web).
 
-Este es el estilo recomendado cuando se trabaja con plantillas SFC o de cadena. Sin embargo, como se discute en [Análisis de Advertencias de la Plantilla del DOM](/guide/essentials/component-basics#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), las etiquetas PascalCase no son utilizables en las plantillas del DOM.
+Este es el estilo recomendado cuando se trabaja con plantillas SFC o de cadena. Sin embargo, como se discute en [Análisis de Advertencias de la Plantilla del DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), las etiquetas PascalCase no son utilizables en las plantillas del DOM.
 
 Por suerte, Vue soporta la resolución de etiquetas kebab-case a componentes registrados usando PascalCase. Esto significa que un componente registrado como `MyComponent` puede ser referenciado en la plantilla a través de `<MyComponent>` y `<my-component>`. Esto nos permite utilizar el mismo código de registro de componentes JavaScript independientemente de la fuente de la plantilla.
