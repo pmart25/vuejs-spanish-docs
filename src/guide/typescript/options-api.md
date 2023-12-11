@@ -216,7 +216,7 @@ export default defineComponent({
 
 ## Aumento de las Propiedades Globales {#augmenting-global-properties}
 
-Algunos plugins instalan propiedades disponibles globalmente a todas las instancias del componente a través de [`app.config.globalProperties`](/api/application.html#app-config-globalproperties). Por ejemplo, podemos instalar `this.$http` para la obtención de datos o `this.$translate` para la internacionalización. Para que esto funcione bien con TypeScript, Vue expone una interfaz `ComponentCustomProperties` diseñada para ser aumentada mediante [TypeScript module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation):
+Algunos plugins instalan propiedades disponibles globalmente a todas las instancias del componente a través de [`app.config.globalProperties`](/api/application#app-config-globalproperties). Por ejemplo, podemos instalar `this.$http` para la obtención de datos o `this.$translate` para la internacionalización. Para que esto funcione bien con TypeScript, Vue expone una interfaz `ComponentCustomProperties` diseñada para ser aumentada mediante [TypeScript module augmentation](https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation):
 
 ```ts
 import axios from 'axios'

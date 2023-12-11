@@ -17,7 +17,7 @@ Este proyecto requiere que Node.js sea `v14.0.0` o superior, porque usamos nueva
 
 ## Trabajando en el contenido
 
-- Consulta la documentación de VitePress sobre [Extensiones Markdown](https://vitepress.vuejs.org/guide/markdown.html) y la posibilidad de [usar sintaxis Vue dentro de markdown](https://vitepress.vuejs.org/guide/using-vue.html).
+- Consulta la documentación de VitePress sobre [Extensiones Markdown](https://vitepress.vuejs.org/guide/markdown) y la posibilidad de [usar sintaxis Vue dentro de markdown](https://vitepress.vuejs.org/guide/using-vue).
 
 - Consulta la [Guía de redacción](https://github.com/vuejs/docs/blob/main/.github/contributing/writing-guide.md) para conocer nuestras normas y recomendaciones sobre la redacción y el mantenimiento del contenido de la documentación.
 

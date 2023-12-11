@@ -8,10 +8,10 @@ El hook `setup()` sirve como el punto de entrada para el uso de Composition API,
 2. Cuando se integra código basado en Composition API en un componente que usa Options API.
 
 :::info Nota
-El uso de [`<script setup>`](/api/sfc-script-setup.html) está fuertemente recomendado si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
+El uso de [`<script setup>`](/api/sfc-script-setup) está fuertemente recomendado si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
 :::
 
-Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core.html) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
+Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
 
 ```vue
 <script>
@@ -38,7 +38,7 @@ export default {
 </template>
 ```
 
-Ten en cuenta que las [referencias (refs)](/api/reactivity-core.html#ref) devueltas por `setup` son [automáticamente shallow unwrapped](/guide/essentials/reactivity-fundamentals.html#deep-reactivity) cuando son accedidas en la plantilla, por lo que no necesitas utilizar `.value` cuando se acceden a ellas. También se desenvuelven de la misma manera cuando se accede a `this`.
+Ten en cuenta que las [referencias (refs)](/api/reactivity-core#ref) devueltas por `setup` son [automáticamente shallow unwrapped](/guide/essentials/reactivity-fundamentals#deep-reactivity) cuando son accedidas en la plantilla, por lo que no necesitas utilizar `.value` cuando se acceden a ellas. También se desenvuelven de la misma manera cuando se accede a `this`.
 
 :::consejo
 El propio `setup()` no tiene acceso a la instancia del componente - `this` tendrá un valor de `undefined` dentro de `setup()`. Puedes acceder a los valores expuestos por la Composition-API desde la Options API, pero no al revés.
@@ -61,7 +61,7 @@ export default {
 
 Tenga en cuenta que si desestructura el objeto `props`, las variables desestructuradas perderán reactividad. Por lo tanto, se recomienda acceder siempre a a los props en forma de `props.xxx`.
 
-Si realmente necesita desestructurar los props, o necesita pasar una propiedad a una función externa mientras conserva la reactividad, puede hacerlo con las APIs de utilidad [toRefs()](./reactivity-utilities.html#torefs) y [toRef()](/api/reactivity-utilities.html#toref):
+Si realmente necesita desestructurar los props, o necesita pasar una propiedad a una función externa mientras conserva la reactividad, puede hacerlo con las APIs de utilidad [toRefs()](./reactivity-utilities#torefs) y [toRef()](/api/reactivity-utilities#toref):
 
 
 ```js
@@ -115,7 +115,7 @@ Las propiedades `attrs` y `slots` son objetos con estado que siempre son actuali
 
 ### Exponiendo Propiedades Públicas {#exposing-public-properties}
 
-`expose` es una función que puede utilizarse para limitar explícitamente las propiedades expuestas cuando la instancia del componente es accedida por un componente padre a través de [refs de la Plantilla ](/guide/essentials/template-refs.html#ref-on-component):
+`expose` es una función que puede utilizarse para limitar explícitamente las propiedades expuestas cuando la instancia del componente es accedida por un componente padre a través de [refs de la Plantilla ](/guide/essentials/template-refs#ref-on-component):
 
 ```js{5,10}
 export default {
@@ -134,7 +134,7 @@ export default {
 
 ## Uso con Funciones de Renderizado {#usage-with-render-functions}
 
-`setup` también puede devolver una [función de renderizado](/guide/extras/render-function.html) que puede hacer uso directamente del estado reactivo declarado en el mismo ámbito:
+`setup` también puede devolver una [función de renderizado](/guide/extras/render-function) que puede hacer uso directamente del estado reactivo declarado en el mismo ámbito:
 
 ```js{6}
 import { h, ref } from 'vue'

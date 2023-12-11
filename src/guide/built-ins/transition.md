@@ -14,9 +14,9 @@ Vue ofrece dos componentes incorporados que pueden ayudar a trabajar con transic
 
 - `<Transition>` para aplicar animaciones cuando un elemento o componente entra y sale del DOM. Esto se cubre en esta página.
 
-- `<TransitionGroup>` para aplicar animaciones cuando un elemento o componente es insertado, eliminado o movido dentro de una lista`v-for`. Esto se cubre en [el siguiente capítulo](/guide/built-ins/transition-group.html).
+- `<TransitionGroup>` para aplicar animaciones cuando un elemento o componente es insertado, eliminado o movido dentro de una lista`v-for`. Esto se cubre en [el siguiente capítulo](/guide/built-ins/transition-group).
 
-Ademas de estos dos componentes, también podemos aplicar animaciones en Vue usando otras técnicas como alternar clases CSS o animaciones impulsadas por el estado a través de enlaces de estilo. Estas técnicas adicionales se tratan en el capítulo [Técnicas de animación](/guide/extras/animation.html).
+Ademas de estos dos componentes, también podemos aplicar animaciones en Vue usando otras técnicas como alternar clases CSS o animaciones impulsadas por el estado a través de enlaces de estilo. Estas técnicas adicionales se tratan en el capítulo [Técnicas de animación](/guide/extras/animation).
 
 ## El Componente `<Transition>` {#the-transition-component}
 
@@ -544,7 +544,7 @@ Aquí está la demostración anterior con `mode="out-in"`:
 
 ## Transición Entre Componentes {#transition-between-components}
 
-`<Transition>` también puede utilizarse alrededor de [componentes dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos):
+`<Transition>` también puede utilizarse alrededor de [componentes dinámicos](/guide/essentials/component-basics#dynamic-components):
 
 ```vue-html
 <Transition name="fade" mode="out-in">
@@ -583,4 +583,4 @@ También puedes aplicar diferentes comportamientos en los hooks transition de Ja
 
 **Relacionado**
 
-- [Referencia de la API `<Transition>`](/api/built-in-components.html#transition)
+- [Referencia de la API `<Transition>`](/api/built-in-components#transition)

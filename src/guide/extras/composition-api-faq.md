@@ -14,13 +14,13 @@ Este FAQ supone una experiencia previa con Vue; en particular, experiencia con V
 
 La Composition API es un conjunto de APIs que nos permiten crear componentes Vue utilizando funciones importadas en lugar de declarar opciones. Es un término genérico que cubre las siguientes APIs:
 
-- [API de Reactividad](/api/reactivity-core.html), por ejemplo `ref()` y `reactive()`, que nos permiten crear directamente estado reactivo, estado computado y watchers.
+- [API de Reactividad](/api/reactivity-core), por ejemplo `ref()` y `reactive()`, que nos permiten crear directamente estado reactivo, estado computado y watchers.
 
-- [Hooks del Ciclo de Vida](/api/composition-api-lifecycle.html), por ejemplo `onMounted()` y `onUnmounted()`, que nos permiten engancharnos programáticamente al ciclo de vida del componente.
+- [Hooks del Ciclo de Vida](/api/composition-api-lifecycle), por ejemplo `onMounted()` y `onUnmounted()`, que nos permiten engancharnos programáticamente al ciclo de vida del componente.
 
-- [Inyección de Dependencias](/api/composition-api-dependency-injection.html), es decir, `provide()` e `inject()`, que nos permiten aprovechar el sistema de inyección de dependencias de Vue mientras usamos las APIs de Reactividad.
+- [Inyección de Dependencias](/api/composition-api-dependency-injection), es decir, `provide()` e `inject()`, que nos permiten aprovechar el sistema de inyección de dependencias de Vue mientras usamos las APIs de Reactividad.
 
-La Composition API es una característica integrada en Vue 3 y [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html). Para las versiones anteriores de Vue 2, utiliza el plugin mantenido oficialmente [`@vue/composition-api`](https://github.com/vuejs/composition-api). En Vue 3, también se utiliza principalmente junto con la sintaxis [`<script setup>`](/api/sfc-script-setup.html) en los Componentes de un Solo Archivo. Este es un ejemplo básico de un componente que utiliza la Composition API:
+La Composition API es una característica integrada en Vue 3 y [Vue 2.7](https://blog.vuejs.org/posts/vue-2-7-naruto.html). Para las versiones anteriores de Vue 2, utiliza el plugin mantenido oficialmente [`@vue/composition-api`](https://github.com/vuejs/composition-api). En Vue 3, también se utiliza principalmente junto con la sintaxis [`<script setup>`](/api/sfc-script-setup) en los Componentes de un Solo Archivo. Este es un ejemplo básico de un componente que utiliza la Composition API:
 
 ```vue
 <script setup>
@@ -53,9 +53,9 @@ Si estás interesado en aprender a utilizar Vue con la Composition API, puedes e
 
 ### Mejor Reutilización de la Lógica {#better-logic-reuse}
 
-La principal ventaja de la Composition API es que permite una reutilización limpia y eficiente de la lógica en forma de [funciones Composable](/guide/reusability/composables.html). Resuelve [todos los inconvenientes de los mixins](/guide/reusability/composables.html#vs-mixins), el principal mecanismo de reutilización lógica de la Options API.
+La principal ventaja de la Composition API es que permite una reutilización limpia y eficiente de la lógica en forma de [funciones Composable](/guide/reusability/composables). Resuelve [todos los inconvenientes de los mixins](/guide/reusability/composables#vs-mixins), el principal mecanismo de reutilización lógica de la Options API.
 
-La capacidad de reutilización lógica de la Composition API ha dado lugar a impresionantes proyectos de la comunidad, como [VueUse](https://vueuse.org/), una colección cada vez mayor de utilidades composables. También sirve como un mecanismo sencillo para integrar servicios o librerías con estado de terceros en el sistema de reactividad de Vue, por ejemplo los [datos inmutables](/guide/extras/reactivity-in-depth.html#datos-inmutables), las [máquinas de estado](/guide/extras/reactivity-in-depth.html#maquinas-de-estado), y [RxJS](https://vueuse.org/rxjs/readme.html#vueuse-rxjs).
+La capacidad de reutilización lógica de la Composition API ha dado lugar a impresionantes proyectos de la comunidad, como [VueUse](https://vueuse.org/), una colección cada vez mayor de utilidades composables. También sirve como un mecanismo sencillo para integrar servicios o librerías con estado de terceros en el sistema de reactividad de Vue, por ejemplo los [datos inmutables](/guide/extras/reactivity-in-depth#immutable-data), las [máquinas de estado](/guide/extras/reactivity-in-depth#state-machines), y [RxJS](https://vueuse.org/rxjs/readme.html#vueuse-rxjs).
 
 ### Organización Más Flexible del Código {#more-flexible-code-organization}
 
@@ -112,7 +112,7 @@ Si tienes la intención de utilizar exclusivamente la Composition API (junto con
 
 ### ¿Puedo utilizar ambas APIs juntas? {#can-i-use-both-apis-together}
 
-Sí, puedes utilizar la Composition API a través de la opción [`setup()`](/api/composition-api-setup.html) en un componente de la Options API.
+Sí, puedes utilizar la Composition API a través de la opción [`setup()`](/api/composition-api-setup) en un componente de la Options API.
 
 Sin embargo, sólo recomendamos hacerlo si tienes una base de código de la Options API existente que necesita integrarse con nuevas características / librerías externas escritas con la Composition API.
 

@@ -38,7 +38,7 @@ Referencias adicionales:
 
 ## Seguimiento de Errores en Tiempo de Ejecución {#tracking-runtime-errors}
 
-El [controlador de errores a nivel de aplicación](/api/application.html#app-config-errorhandler) se puede usar para informar errores a los servicios de seguimiento:
+El [controlador de errores a nivel de aplicación](/api/application#app-config-errorhandler) se puede usar para informar errores a los servicios de seguimiento:
 
 ```js
 import { createApp } from 'vue'

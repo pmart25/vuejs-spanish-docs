@@ -4,7 +4,7 @@ Vue utiliza una sintaxis de plantilla basada en HTML que te permite vincular dec
 
 Entre bastidores, Vue compila las plantillas en código JavaScript altamente optimizado. Combinado con el sistema de reactividad, Vue es capaz de descifrar de manera inteligente la cantidad mínima de componentes a re-renderizar y aplicar la cantidad mínima de manipulaciones al DOM cuando cambia el estado de la aplicación.
 
-Si estás familiarizado con los conceptos de Virtual DOM y prefieres la potencia bruta de JavaScript, también puedes [escribir directamente funciones de renderizado](/guide/extras/render-function.html) en lugar de plantillas, con soporte opcional para JSX. Sin embargo, ten en cuenta que no disfrutarás el mismo nivel de optimizaciones en tiempo de compilación como con las plantillas.
+Si estás familiarizado con los conceptos de Virtual DOM y prefieres la potencia bruta de JavaScript, también puedes [escribir directamente funciones de renderizado](/guide/extras/render-function) en lugar de plantillas, con soporte opcional para JSX. Sin embargo, ten en cuenta que no disfrutarás el mismo nivel de optimizaciones en tiempo de compilación como con las plantillas.
 
 ## Interpolación de Texto {#text-interpolation}
 
@@ -18,7 +18,7 @@ La etiqueta del mostacho se reemplazará con el valor de la propiedad `msg` de l
 
 ## HTML Puro {#raw-html}
 
-Los dobles mostachos interpretan los datos como texto sin formato, no como HTML. Para generar HTML real, necesitarás usar la [directiva `v-html`](/api/built-in-directives.html#v-html):
+Los dobles mostachos interpretan los datos como texto sin formato, no como HTML. Para generar HTML real, necesitarás usar la [directiva `v-html`](/api/built-in-directives#v-html):
 
 ```vue-html
 <p>Usando interpolación: {{ rawHtml }}</p>
@@ -44,7 +44,7 @@ El HTML arbitrario renderizado dinámicamente en tu sitio web puede ser muy peli
 
 ## Vinculación de Atributos {#attribute-bindings}
 
-Los mostachos no se pueden usar dentro de los atributos HTML. En su lugar, utiliza una directiva [`v-bind`](/api/built-in-directives.html#v-bind):
+Los mostachos no se pueden usar dentro de los atributos HTML. En su lugar, utiliza una directiva [`v-bind`](/api/built-in-directives#v-bind):
 
 ```vue-html
 <div v-bind:id="dynamicId"></div>
@@ -164,13 +164,13 @@ Las funciones llamadas dentro de las expresiones vinculantes se llamarán cada v
 
 Las expresiones de plantillas están en un espacio aislado y solo tienen acceso a una [lista restringida de elementos globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La lista expone métodos globales integrados de uso común, como `Math` y `Date`.
 
-Los elementos globales no incluidos explícitamente en la lista, por ejemplo, las propiedades adjuntas por el usuario en `window`, no serán accesibles en las expresiones de la plantilla. Sin embargo, explícitamente, puedes definir métodos globales adicionales para todas las expresiones de Vue agregándolos a [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+Los elementos globales no incluidos explícitamente en la lista, por ejemplo, las propiedades adjuntas por el usuario en `window`, no serán accesibles en las expresiones de la plantilla. Sin embargo, explícitamente, puedes definir métodos globales adicionales para todas las expresiones de Vue agregándolos a [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 ## Directivas {#directives}
 
-Las directivas son atributos especiales con el prefijo `v-`. Vue proporciona una serie de [directivas integradas](/api/built-in-directives.html), incluidas `v-html` y `v-bind`, que hemos presentado anteriormente.
+Las directivas son atributos especiales con el prefijo `v-`. Vue proporciona una serie de [directivas integradas](/api/built-in-directives), incluidas `v-html` y `v-bind`, que hemos presentado anteriormente.
 
-Se espera que los valores de los atributos de una directiva sean expresiones JavaScript únicas (con la excepción de `v-for`, `v-on` y `v-slot`, que se discutirán en sus respectivas secciones más adelante). El trabajo de una directiva es aplicar actualizaciones de forma reactiva al DOM cuando cambie el valor de su expresión. Toma [`v-if`](/api/built-in-directives.html#v-if) como ejemplo:
+Se espera que los valores de los atributos de una directiva sean expresiones JavaScript únicas (con la excepción de `v-for`, `v-on` y `v-slot`, que se discutirán en sus respectivas secciones más adelante). El trabajo de una directiva es aplicar actualizaciones de forma reactiva al DOM cuando cambie el valor de su expresión. Toma [`v-if`](/api/built-in-directives#v-if) como ejemplo:
 
 ```vue-html
 <p v-if="seen">Ahora me ves</p>
@@ -245,7 +245,7 @@ Las expresiones de argumentos dinámicos tienen algunas restricciones de sintaxi
 <a :['foo' + bar]="value"> ... </a>
 ```
 
-Si necesitas pasar un argumento dinámico complejo, probablemente sea mejor usar una [propiedad computada](./computed.html), que trataremos en breve.
+Si necesitas pasar un argumento dinámico complejo, probablemente sea mejor usar una [propiedad computada](./computed), que trataremos en breve.
 
 Cuando utilices plantillas del DOM (plantillas escritas directamente en un archivo HTML), debes evitar también nombrar claves con caracteres en mayúsculas, ya que los navegadores forzarán los nombres de los atributos a minúsculas:
 
@@ -263,7 +263,7 @@ Los modificadores son sufijos especiales indicados por un punto, que indican que
 <form @submit.prevent="onSubmit">...</form>
 ```
 
-Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling.html#modificadores-de-eventos) y [para `v-model`](./forms.html#modificadores), cuando exploremos esas características.
+Verás otros ejemplos de modificadores más adelante, [para `v-on`](./event-handling#modifiers) y [para `v-model`](./forms#modificadores), cuando exploremos esas características.
 
 Y finalmente, aquí está la sintaxis completa de la directiva:
 

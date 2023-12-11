@@ -1,7 +1,7 @@
 # Opciones: Ciclo de vida {#options-lifecycle}
 
 :::info Ver también
-Para el uso compartido de los hooks del ciclo de vida, véase [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html)
+Para el uso compartido de los hooks del ciclo de vida, véase [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle)
 :::
 
 ## beforeCreate {#beforecreate}
@@ -76,7 +76,7 @@ Se llama después de montar el componente.
 
   - Su propio árbol DOM ha sido creado e insertado en el contenedor padre. Tenga en cuenta que sólo garantiza que el árbol DOM del componente esta en-el-documento si el contenedor raíz de la aplicación también está en-el-documento.
 
-  Este hook se utiliza normalmente para realizar efectos secundarios que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM al cliente en una [aplicación renderizada por el servidor](/guide/scaling-up/ssr.html).
+  Este hook se utiliza normalmente para realizar efectos secundarios que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM al cliente en una [aplicación renderizada por el servidor](/guide/scaling-up/ssr).
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
@@ -114,7 +114,7 @@ Se llama después de que el componente haya actualizado su árbol DOM debido a u
 
   El hook de actualización de un componente padre es llamado después del de sus componentes hijos.
 
-  Este hook es llamado después de cualquier actualización del DOM del componente, que puede ser causada por diferentes cambios de estado. Si necesita acceder al DOM actualizado después de un cambio de estado específico, utilice [nextTick()](/api/general.html#nexttick) en su lugar.
+  Este hook es llamado después de cualquier actualización del DOM del componente, que puede ser causada por diferentes cambios de estado. Si necesita acceder al DOM actualizado después de un cambio de estado específico, utilice [nextTick()](/api/general#nexttick) en su lugar.
 
   **Este hook no se llama durante el renderizado del lado del servidor.**
 
@@ -201,7 +201,7 @@ Se llama cuando se ha capturado un error que se propaga desde un componente desc
 
   **Reglas de propagación de errores**
 
-  - Por defecto, todos los errores se siguen enviando al nivel de la aplicación [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) si está definido, para que estos errores puedan seguir siendo reportados a un servicio de análisis en un único lugar.
+  - Por defecto, todos los errores se siguen enviando al nivel de la aplicación [`app.config.errorHandler`](/api/application#app-config-errorhandler) si está definido, para que estos errores puedan seguir siendo reportados a un servicio de análisis en un único lugar.
 
   - Si existen varios hooks `errorCaptured` en la cadena de herencia de un componente o en la cadena padre, todos ellos serán invocados en el mismo error, en el orden de abajo hacia arriba. Esto es similar al mecanismo de burbujeo de los eventos nativos del DOM.
 
@@ -228,7 +228,7 @@ Se llama cuando una dependencia reactiva ha sido rastreada por el efecto de rend
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## renderTriggered <sup class="vt-badge dev-only" /> {#rendertriggered}
 
@@ -252,11 +252,11 @@ Se llama cuando una dependencia reactiva hace que el efecto de renderización de
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## activated {#activated}
 
-Se llama después de que la instancia del componente se inserta en el DOM como parte de un árbol almacenado en caché por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Se llama después de que la instancia del componente se inserta en el DOM como parte de un árbol almacenado en caché por [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Este hook no se llama durante el renderizado del lado del servidor.**
 
@@ -268,11 +268,11 @@ Se llama después de que la instancia del componente se inserta en el DOM como p
   }
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## deactivated {#deactivated}
 
-Se llama después de que la instancia del componente se elimina del DOM como parte de un árbol cacheado por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Se llama después de que la instancia del componente se elimina del DOM como parte de un árbol cacheado por [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Este hook no se llama durante el renderizado del lado del servidor.**
 
@@ -284,7 +284,7 @@ Se llama después de que la instancia del componente se elimina del DOM como par
   }
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## serverPrefetch <sup class="vt-badge" data-text="SSR only" /> {#serverprefetch}
 
@@ -329,4 +329,4 @@ Función asíncrona a resolverse antes de que la instancia del componente se ren
   }
   ```
 
-- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
+- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr)

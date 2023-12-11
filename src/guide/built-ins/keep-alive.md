@@ -8,7 +8,7 @@ import SwitchComponent from './keep-alive-demos/SwitchComponent.vue'
 
 ## Uso Básico {#basic-usage}
 
-En el capítulo de Componentes Básicos, introdujimos la sintaxis de los [Componentes Dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos), utilizando el elemento especial `<component>`:
+En el capítulo de Componentes Básicos, introdujimos la sintaxis de los [Componentes Dinámicos](/guide/essentials/component-basics#dynamic-components), utilizando el elemento especial `<component>`:
 
 ```vue-html
 <componente :is="activeComponent" />
@@ -47,7 +47,7 @@ Ahora, el estado será persistente a través de los cambios de componentes:
 </div>
 
 :::tip
-Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), debería ser referenciado como `<keep-alive>`.
+Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), debería ser referenciado como `<keep-alive>`.
 :::
 
 ## Include / Exclude {#include-exclude}
@@ -71,7 +71,7 @@ Por defecto, `<KeepAlive>` almacenará en caché cualquier instancia que se encu
 </KeepAlive>
 ```
 
-La verificación de la coincidencia se realiza con la opción [`name`](/api/options-misc.html#name) del componente, por lo que los componentes que necesiten ser cacheados condicionalmente por `KeepAlive` deben declarar explícitamente una opción `name`.
+La verificación de la coincidencia se realiza con la opción [`name`](/api/options-misc#name) del componente, por lo que los componentes que necesiten ser cacheados condicionalmente por `KeepAlive` deben declarar explícitamente una opción `name`.
 
 :::tip
 Desde la versión 3.2.34, un componente de un solo archivo que utilice `<script setup>` inferirá automáticamente su opción `name` basándose en el nombre del archivo, eliminando la necesidad de declarar manualmente el nombre.
@@ -93,7 +93,7 @@ Cuando se elimina una instancia de un componente del DOM pero esta forma parte d
 
 <div class="composition-api">
 
-Un componente kept-alive puede registrar hooks del ciclo de vida para estos dos estados utilizando [`onActivated()`](/api/composition-api-lifecycle.html#onactivated) y [`onDeactivated()`](/api/composition-api-lifecycle.html#ondeactivated):
+Un componente kept-alive puede registrar hooks del ciclo de vida para estos dos estados utilizando [`onActivated()`](/api/composition-api-lifecycle#onactivated) y [`onDeactivated()`](/api/composition-api-lifecycle#ondeactivated):
 
 ```vue
 <script setup>
@@ -114,7 +114,7 @@ onDeactivated(() => {
 </div>
 <div class="options-api">
 
-El componente kept-alive puede registrar hooks del ciclo de vida para estos dos estados utilizando los hooks [`activated`](/api/options-lifecycle.html#activated) y [`deactivated`](/api/options-lifecycle.html#deactivated):
+El componente kept-alive puede registrar hooks del ciclo de vida para estos dos estados utilizando los hooks [`activated`](/api/options-lifecycle#activated) y [`deactivated`](/api/options-lifecycle#deactivated):
 
 ```js
 export default {
@@ -141,4 +141,4 @@ Observa que:
 
 **Relacionado**
 
-- [Referencia de la Api sobre `<KeepAlive>`](/api/built-in-components.html#keepalive)
+- [Referencia de la Api sobre `<KeepAlive>`](/api/built-in-components#keepalive)

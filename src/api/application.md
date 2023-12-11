@@ -35,11 +35,11 @@ Crea una instancia de la aplicación.
   const app = createApp(App)
   ```
 
-- **Ver también:** [Guía - Creando una Aplicación Vue](/guide/essentials/application.html)
+- **Ver también:** [Guía - Creando una Aplicación Vue](/guide/essentials/application)
 
 ## createSSRApp() {#createssrapp}
 
-Crea una instancia de la aplicación en modo [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html#client-hydration). Su uso es exactamente igual a `createApp()`.
+Crea una instancia de la aplicación en modo [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr#client-hydration). Su uso es exactamente igual a `createApp()`.
 
 ## app.mount() {#app-mount}
 
@@ -59,7 +59,7 @@ Monta la instancia de la aplicación en un elemento contenedor.
 
   Si el componente tiene una plantilla o una función de renderizado definida, reemplazará cualquier nodo DOM existente dentro del contendor. De lo contrario, si el compilador en tiempo de ejecución está disponible, el `innerHTML` del contenedor será usado como plantilla.
 
-  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr.html#error-en-la-hidratacion), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
+  En el modo de renderizado del lado del servidor (SSR), hidratará los nodos DOM existentes dentro del contenedor. Si hay [desajustes](/guide/scaling-up/ssr#hydration-mismatch), los nodos DOM existentes se transformarán para que coincidan con la salida esperada.
 
   Por cada instancia de la aplicación, `mount()` solo puede ser usado una vez.
 
@@ -145,8 +145,8 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
   </div>
 
 - **Ver también:**
-  - [Provide / Inject](/guide/components/provide-inject.html)
-  - [Nivel de Aplicación de Provide](/guide/components/provide-inject.html#nivel-de-aplicacion-de-provide)
+  - [Provide / Inject](/guide/components/provide-inject)
+  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#app-level-provide)
 
 ## app.component() {#app-component}
 
@@ -177,7 +177,7 @@ Registra un componente global si se le pasa tanto un nombre como la definición 
   const MyComponent = app.component('my-component')
   ```
 
-- **Ver también:** [Registro de Componentes](/guide/components/registration.html)
+- **Ver también:** [Registro de Componentes](/guide/components/registration)
 
 ## app.directive() {#app-directive}
 
@@ -215,11 +215,11 @@ Registra una directiva personalizada global si se le pasa tanto un nombre y la d
   const myDirective = app.directive('my-directive')
   ```
 
-- **Ver también:** [Directivas Personalizadas](/guide/reusability/custom-directives.html)
+- **Ver también:** [Directivas Personalizadas](/guide/reusability/custom-directives)
 
 ## app.use() {#app-use}
 
-Instala un [plugin](/guide/reusability/plugins.html).
+Instala un [plugin](/guide/reusability/plugins).
 
 - **Tipo**
 
@@ -250,7 +250,7 @@ Instala un [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **Ver también:** [Plugins](/guide/reusability/plugins.html)
+- **Ver también:** [Plugins](/guide/reusability/plugins)
 
 ## app.mixin() {#app-mixin}
 
@@ -259,7 +259,7 @@ Aplica un mixin global (con alcance a la aplicación). Un mixin global aplica su
 :::warning No Recomendado
 Los mixins están soportados en Vue 3 solo para mantener la compatibilidad hacia atrás, debido a su uso extendido en las librerías del ecosistema. El uso de mixins, en especial los mixins globales, debería evitarse en el código de la aplicación.
 
-Para la reutilización de lógica, usar preferentemente [Composables](/guide/reusability/composables.html) en su lugar.
+Para la reutilización de lógica, usar preferentemente [Composables](/guide/reusability/composables) en su lugar.
 :::
 
 - **Tipo**
@@ -272,7 +272,7 @@ Para la reutilización de lógica, usar preferentemente [Composables](/guide/reu
 
 ## app.version {#app-version}
 
-Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil dentro de [plugins](/guide/reusability/plugins.html), donde podrías necesitar lógica condicional basada en diferentes versiones de Vue.
+Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil dentro de [plugins](/guide/reusability/plugins), donde podrías necesitar lógica condicional basada en diferentes versiones de Vue.
 
 - **Tipo**
 
@@ -297,7 +297,7 @@ Proporciona la versión de Vue con la que se creó la aplicación. Esto es útil
   }
   ```
 
-- **Ver también:** [API Global - Versión](/api/general.html#version)
+- **Ver también:** [API Global - Versión](/api/general#version)
 
 ## app.config {#app-config}
 
@@ -391,11 +391,11 @@ Asigna este valor a `true` para activar el seguimiento del inicio del componente
 
 - **Tipo**: `boolean`
 
-- **Ver también:** [Guía - Guía de Optimización del Rendimiento](/guide/best-practices/performance.html)
+- **Ver también:** [Guía - Guía de Optimización del Rendimiento](/guide/best-practices/performance)
 
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configurar las opciones del compilador en tiempo de ejecución. Las opciones establecidas en este objeto se pasarán al compilador de plantillas del navegador y afectarán a todos los componentes de la aplicación configurada. Ten en cuenta que también puedes anular estas opciones por componente utilizando la opción [`compilerOptions`] (/api/options-rendering.html#compileroptions).
+Configurar las opciones del compilador en tiempo de ejecución. Las opciones establecidas en este objeto se pasarán al compilador de plantillas del navegador y afectarán a todos los componentes de la aplicación configurada. Ten en cuenta que también puedes anular estas opciones por componente utilizando la opción [`compilerOptions`] (/api/options-rendering#compileroptions).
 
 ::: warning Importante
 Esta opción de configuración solo es respetada cuando se usa la compilación completa (es decir, la compilación de `vue.js` que puede compilar plantillas en el navegador). Si estás usando la construcción en tiempo de ejecución con una configuración de construcción, las opciones del compilador deben ser pasadas a `@vue/compiler-dom` a través de las configuraciones de la herramienta de construcción.
@@ -426,7 +426,7 @@ Especifica un método de comprobación para reconocer elementos nativos personal
   }
   ```
 
-- **Ver también:** [Vue y Componentes Web](/guide/extras/web-components.html)
+- **Ver también:** [Vue y Componentes Web](/guide/extras/web-components)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
@@ -572,4 +572,4 @@ Un objeto para definir las estrategias de mergeo para componentes personalizados
   // logs 'Hola, Vue'
   ```
 
-- **Ver también:** [Instancia del componente - `$options`](/api/component-instance.html#options)
+- **Ver también:** [Instancia del componente - `$options`](/api/component-instance#options)

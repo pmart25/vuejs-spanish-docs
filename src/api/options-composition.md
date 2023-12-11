@@ -51,9 +51,9 @@ Proporcionar valores que puedan ser inyectados por los componentes descendientes
   }
   ```
 
-  Tenga en cuenta que en el ejemplo anterior, el `msg` proporcionado NO será reactivo. Consulte [Trabajando con Reactividad](/guide/components/provide-inject.html#working-with-reactivity) para más detalles.
+  Tenga en cuenta que en el ejemplo anterior, el `msg` proporcionado NO será reactivo. Consulte [Trabajando con Reactividad](/guide/components/provide-inject#working-with-reactivity) para más detalles.
 
-- **Ver también:** [Provide / Inject](/guide/components/provide-inject.html)
+- **Ver también:** [Provide / Inject](/guide/components/provide-inject)
 
 ## inject {#inject}
 
@@ -89,7 +89,7 @@ Declara propiedades para inyectar en el componente actual localizándolas desde 
 
   Una propiedad inyectada será `undefined` si no se ha proporcionado ni una propiedad coincidente ni un valor por defecto.
 
-  Tenga en cuenta que los enlaces inyectados NO son reactivos. Esto es intencionado. Sin embargo, si el valor inyectado es un objeto reactivo, las propiedades de ese objeto siguen siendo reactivas. Para más detalles, consulte [Trabajando con Reactividad](/guide/components/provide-inject.html#working-with-reactivity).
+  Tenga en cuenta que los enlaces inyectados NO son reactivos. Esto es intencionado. Sin embargo, si el valor inyectado es un objeto reactivo, las propiedades de ese objeto siguen siendo reactivas. Para más detalles, consulte [Trabajando con Reactividad](/guide/components/provide-inject#working-with-reactivity).
 
 - **Ejemplo**
 
@@ -168,7 +168,7 @@ Declara propiedades para inyectar en el componente actual localizándolas desde 
   }
   ```
 
-- **Ver también:** [Provide / Inject](/guide/components/provide-inject.html)
+- **Ver también:** [Provide / Inject](/guide/components/provide-inject)
 
 ## mixins {#mixins}
 
@@ -189,7 +189,7 @@ Una matriz de objetos de opción que se mezclan en el componente actual.
   Los hooks del mixin se llaman en el orden en que se proporcionan, y se llaman antes que los hooks propios del componente.
 
   :::warning Ya no se recomienda
-  En Vue 2, los mixins eran el mecanismo principal para crear trozos reutilizables de la lógica del componente. Aunque los mixins siguen siendo compatibles con Vue 3, la [API de composición] (/guide/reusability/composables.html) es ahora el método preferido para la reutilización de código entre componentes.
+  En Vue 2, los mixins eran el mecanismo principal para crear trozos reutilizables de la lógica del componente. Aunque los mixins siguen siendo compatibles con Vue 3, la [API de composición] (/guide/reusability/composables) es ahora el método preferido para la reutilización de código entre componentes.
   :::
 
 - **Ejemplo:**

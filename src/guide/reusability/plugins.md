@@ -14,7 +14,7 @@ app.use(myPlugin, {
 })
 ```
 
-Un plugin se define como un objeto que expone un método `install()`, o simplemente una función que actúa como la propia función de instalación. La función de instalación recibe la [instancia de la aplicación](/api/application.html) junto con las opciones adicionales pasadas a `app.use()`, si las hay:
+Un plugin se define como un objeto que expone un método `install()`, o simplemente una función que actúa como la propia función de instalación. La función de instalación recibe la [instancia de la aplicación](/api/application) junto con las opciones adicionales pasadas a `app.use()`, si las hay:
 
 ```js
 const myPlugin = {
@@ -26,11 +26,11 @@ const myPlugin = {
 
 No hay un ámbito de aplicación estrictamente definido para un plugin, pero los escenarios comunes en los que los plugins son útiles incluyen:
 
-1. Registrar uno o más componentes globales o directivas personalizadas con [`app.component()`](/api/application.html#app-component) y [`app.directive()`](/api/application.html#app-directive).
+1. Registrar uno o más componentes globales o directivas personalizadas con [`app.component()`](/api/application#app-component) y [`app.directive()`](/api/application#app-directive).
 
-2. Hacer un recurso [inyectable](/guide/components/provide-inject.html) en toda la aplicación llamando a [`app.provide()`](/api/application.html#app-provide).
+2. Hacer un recurso [inyectable](/guide/components/provide-inject) en toda la aplicación llamando a [`app.provide()`](/api/application#app-provide).
 
-3. Añadir algunas propiedades o métodos de instancia global adjuntándolos a [`app.config.globalProperties`](/api/application.html#app-config-globalproperties).
+3. Añadir algunas propiedades o métodos de instancia global adjuntándolos a [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
 4. Una librería que necesite realizar alguna combinación de las anteriores (por ejemplo, [vue-router](https://github.com/vuejs/vue-router-next)).
 
@@ -89,7 +89,7 @@ app.use(i18nPlugin, {
 
 Ahora, nuestra expresión inicial `$translate('greetings.hello')` será reemplazada por `Bonjour!` en tiempo de ejecución.
 
-Consulta también: [Aumento de las Propiedades Globales](/guide/typescript/options-api.html#aumento-de-las-propiedades-globales) <sup class="vt-badge ts" />
+Consulta también: [Aumento de las Propiedades Globales](/guide/typescript/options-api#augmenting-global-properties) <sup class="vt-badge ts" />
 
 :::tip
 Utiliza las propiedades globales escasamente, ya que puede volverse rápidamente confuso si se utilizan demasiadas propiedades globales inyectadas por diferentes plugins a lo largo de una app.

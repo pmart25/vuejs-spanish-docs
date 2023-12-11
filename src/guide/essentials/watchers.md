@@ -6,7 +6,7 @@ Las propiedades computadas nos permiten calcular declarativamente valores deriva
 
 <div class="options-api">
 
-Con la Options API, podemos utilizar la [opción `watch`](/api/options-state.html#watch) para disparar una función cada vez que cambie una propiedad reactiva:
+Con la Options API, podemos utilizar la [opción `watch`](/api/options-state#watch) para disparar una función cada vez que cambie una propiedad reactiva:
 
 ```js
 export default {
@@ -66,7 +66,7 @@ export default {
 
 <div class="composition-api">
 
-Con la Composition API, podemos usar la [función `watch`](/api/reactivity-core.html#watch) para accionar un callback cada vez que cambie un trozo de estado reactivo:
+Con la Composition API, podemos usar la [función `watch`](/api/reactivity-core#watch) para accionar un callback cada vez que cambie un trozo de estado reactivo:
 
 ```vue
 <script setup>
@@ -287,7 +287,7 @@ watch(todoId, async, () => {
 
 En particular, observa cómo el watcher utiliza `todoId` dos veces, una como fuente y otra dentro del callback.
 
-Esto puede simplificarse con [`watchEffect()`](/api/reactivity-core.html#watcheffect). `watchEffect()` nos permite rastrear automáticamente las dependencias reactivas del callback. El watcher anterior puede reescribirse como:
+Esto puede simplificarse con [`watchEffect()`](/api/reactivity-core#watcheffect). `watchEffect()` nos permite rastrear automáticamente las dependencias reactivas del callback. El watcher anterior puede reescribirse como:
 
 ```js
 watchEffect(async () => {
@@ -370,7 +370,7 @@ watchPostEffect(() => {
 
 ## `this.$watch()` \* {#this-watch}
 
-También es posible crear imperativamente watchers utilizando el [método de instancia `$watch()`](/api/component-instance.html#watch):
+También es posible crear imperativamente watchers utilizando el [método de instancia `$watch()`](/api/component-instance#watch):
 
 ```js
 export default {
