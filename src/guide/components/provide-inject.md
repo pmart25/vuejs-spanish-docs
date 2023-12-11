@@ -22,7 +22,7 @@ Podemos resolver la profundización de props con `provide` e `inject`. Un compon
 
 <div class="composition-api">
 
-Para proporcionar datos a los descendientes de un componente, utiliza la función [`provide()`](/api/composition-api-dependency-injection.html#provide):
+Para proporcionar datos a los descendientes de un componente, utiliza la función [`provide()`](/api/composition-api-dependency-injection#provide):
 
 ```vue
 <script setup>
@@ -61,7 +61,7 @@ Proporcionar valores reactivos permite a los componentes descendientes que utili
 
 <div class="options-api">
 
-Para proporcionar datos a los descendientes de un componente, utiliza la opción [`provide`](/api/options-composition.html#provide):
+Para proporcionar datos a los descendientes de un componente, utiliza la opción [`provide`](/api/options-composition#provide):
 
 ```js
 export default {
@@ -107,13 +107,13 @@ const app = createApp({})
 app.provide(/* key */ 'message', /* value */ 'hola!')
 ```
 
-Los valores del nivel de la aplicación están disponibles para todos los componentes renderizados en la aplicación. Esto es especialmente útil cuando se escriben [plugins](/guide/reusability/plugins.html), ya que los plugins normalmente no podrían proporcionar valores usando componentes.
+Los valores del nivel de la aplicación están disponibles para todos los componentes renderizados en la aplicación. Esto es especialmente útil cuando se escriben [plugins](/guide/reusability/plugins), ya que los plugins normalmente no podrían proporcionar valores usando componentes.
 
 ## Inject {#inject}
 
 <div class="composition-api">
 
-Para inyectar datos proporcionados por un componente ancestro, utiliza la función [`inject()`](/api/composition-api-dependency-injection.html#inject):
+Para inyectar datos proporcionados por un componente ancestro, utiliza la función [`inject()`](/api/composition-api-dependency-injection#inject):
 
 ```vue
 <script setup>
@@ -144,7 +144,7 @@ export default {
 
 <div class="options-api">
 
-Para inyectar los datos proporcionados por un componente ancestro, utiliza la opción [`inject`](/api/options-composition.html#inject):
+Para inyectar los datos proporcionados por un componente ancestro, utiliza la opción [`inject`](/api/options-composition#inject):
 
 ```js
 export default {
@@ -275,7 +275,7 @@ const { location, updateLocation } = inject('location')
 </template>
 ```
 
-Finalmente, puedes envolver el valor proporcionado con [`readonly()`](/api/reactivity-core.html#readonly) si quieres asegurarte de que los datos pasados a través de `provide` no pueden ser mutados por el componente inyector.
+Finalmente, puedes envolver el valor proporcionado con [`readonly()`](/api/reactivity-core#readonly) si quieres asegurarte de que los datos pasados a través de `provide` no pueden ser mutados por el componente inyector.
 
 ```vue
 <script setup>
@@ -290,7 +290,7 @@ provide('read-only-count', readonly(count))
 
 <div class="options-api">
 
-Para que las inyecciones estén vinculadas de forma reactiva al proveedor, debemos proporcionar una propiedad computada utilizando la función [computed()](/api/reactivity-core.html#computed):
+Para que las inyecciones estén vinculadas de forma reactiva al proveedor, debemos proporcionar una propiedad computada utilizando la función [computed()](/api/reactivity-core#computed):
 
 ```js{10}
 import { computed } from 'vue'
@@ -312,7 +312,7 @@ export default {
 
 [Ejemplo de provide + inject Total con Reactividad](https://sfc.vuejs.org/#eyJBcHAudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBDaGlsZCBmcm9tICcuL0NoaWxkLnZ1ZSdcbmltcG9ydCB7IGNvbXB1dGVkIH0gZnJvbSAndnVlJ1xuXG5leHBvcnQgZGVmYXVsdCB7XG4gIGNvbXBvbmVudHM6IHsgQ2hpbGQgfSxcbiAgZGF0YSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbWVzc2FnZTogJ2hlbGxvJ1xuICAgIH1cbiAgfSxcbiAgcHJvdmlkZSgpIHtcbiAgICByZXR1cm4ge1xuICAgICAgbWVzc2FnZTogY29tcHV0ZWQoKCkgPT4gdGhpcy5tZXNzYWdlKVxuICAgIH1cbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPGlucHV0IHYtbW9kZWw9XCJtZXNzYWdlXCI+XG4gIDxDaGlsZCAvPlxuPC90ZW1wbGF0ZT4iLCJpbXBvcnQtbWFwLmpzb24iOiJ7XG4gIFwiaW1wb3J0c1wiOiB7XG4gICAgXCJ2dWVcIjogXCJodHRwczovL3NmYy52dWVqcy5vcmcvdnVlLnJ1bnRpbWUuZXNtLWJyb3dzZXIuanNcIlxuICB9XG59IiwiQ2hpbGQudnVlIjoiPHNjcmlwdD5cbmltcG9ydCBHcmFuZENoaWxkIGZyb20gJy4vR3JhbmRDaGlsZC52dWUnXG5cbmV4cG9ydCBkZWZhdWx0IHtcbiAgY29tcG9uZW50czoge1xuICAgIEdyYW5kQ2hpbGRcbiAgfVxufVxuPC9zY3JpcHQ+XG5cbjx0ZW1wbGF0ZT5cbiAgPEdyYW5kQ2hpbGQgLz5cbjwvdGVtcGxhdGU+IiwiR3JhbmRDaGlsZC52dWUiOiI8c2NyaXB0PlxuZXhwb3J0IGRlZmF1bHQge1xuICBpbmplY3Q6IFsnbWVzc2FnZSddXG59XG48L3NjcmlwdD5cblxuPHRlbXBsYXRlPlxuICA8cD5cbiAgICBNZXNzYWdlIHRvIGdyYW5kIGNoaWxkOiB7eyBtZXNzYWdlIH19XG4gIDwvcD5cbjwvdGVtcGxhdGU+In0=)
 
-La función `computed()` se utiliza normalmente en los componentes de la Composition API, pero también puede utilizarse para complementar ciertos casos de uso en la Options API. Puedes aprender más sobre su uso leyendo los [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals.html) y [Propiedades Computadas](/guide/essentials/computed.html) con la Preferencia de API establecida en Composition API.
+La función `computed()` se utiliza normalmente en los componentes de la Composition API, pero también puede utilizarse para complementar ciertos casos de uso en la Options API. Puedes aprender más sobre su uso leyendo los [Fundamentos de Reactividad](/guide/essentials/reactivity-fundamentals) y [Propiedades Computadas](/guide/essentials/computed) con la Preferencia de API establecida en Composition API.
 
 :::warning Se Requiere Configuración Temporal
 El uso anterior requiere establecer `app.config.unwrapInjectedRef = true` para que las inyecciones desempaqueten automáticamente las refs computadas. Esto se convertirá en el comportamiento por defecto en Vue 3.3 y esta configuración se introduce temporalmente para evitar roturas. Ya no será necesario después de la versión 3.3.
@@ -351,7 +351,7 @@ import { myInjectionKey } from './keys.js'
 const injected = inject(myInjectionKey)
 ```
 
-Mira también: [Escritura de Provide / Inject](/guide/typescript/composition-api.html#escritura-de-provide-inject) <sup class="vt-badge ts" />
+Mira también: [Escritura de Provide / Inject](/guide/typescript/composition-api#typing-provide-inject) <sup class="vt-badge ts" />
 
 </div>
 

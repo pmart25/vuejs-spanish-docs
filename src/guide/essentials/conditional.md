@@ -111,7 +111,7 @@ En general, `v-if` tiene mayores costes de conmutación mientras que `v-show` ti
 ## `v-if` con `v-for` {#v-if-with-v-for}
 
 ::: warning Nota
-No se recomienda usar `v-if` y `v-for` en el mismo elemento debido a la precedencia implícita. Consulta la [guía de estilo](/style-guide/rules-essential.html#evitar-usar-v-if-con-v-for) para más detalles.
+No se recomienda usar `v-if` y `v-for` en el mismo elemento debido a la precedencia implícita. Consulta la [guía de estilo](/style-guide/rules-essential#evoid-v-if-with-v-for) para más detalles.
 :::
 
 Cuando se utilizan `v-if` y `v-for` en el mismo elemento, se evalúa primero `v-if`. Para más detalles, consulta la [guía de renderizado de listas](list#v-for-con-v-if).

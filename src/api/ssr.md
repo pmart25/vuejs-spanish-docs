@@ -32,7 +32,7 @@
 
   ### Contexto SSR {#ssr-context}
 
-  Puedes pasar un objeto de contexto opcional, que se puede usar para registrar datos adicionales durante el renderizado, por ejemplo, [acceder al contenido de Teleports](/guide/scaling-up/ssr.html#teleports):
+  Puedes pasar un objeto de contexto opcional, que se puede usar para registrar datos adicionales durante el renderizado, por ejemplo, [acceder al contenido de Teleports](/guide/scaling-up/ssr#teleports):
 
   ```js
   const ctx = {}
@@ -43,7 +43,7 @@
 
   La mayoría de las otras API de SSR en esta página también aceptan opcionalmente un objeto de contexto. Se puede acceder al objeto de contexto en el código del componente a través del ayudante [useSSRContext](#usessrcontext).
 
-- **Véase también:** [Guía - Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
+- **Véase también:** [Guía - Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr)
 
 ## renderToNodeStream() {#rendertonodestream}
 

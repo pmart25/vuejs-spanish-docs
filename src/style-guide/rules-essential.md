@@ -37,7 +37,7 @@ Los nombres de los componentes de usuario siempre deben tener varias palabras, e
 En el código comprometido, las definiciones de props siempre deberían ser lo más detalladas posible, especificando al menos los tipos.
 
 ::: details Explicación detallada
-Las [definiciones detalladas de props](/guide/components/props.html#prop-validation) tienen dos ventajas:
+Las [definiciones detalladas de props](/guide/components/props#prop-validation) tienen dos ventajas:
 
 - Documentan la API del componente, de modo que es fácil ver cómo se debe usar el componente.
 - En desarrollo, Vue te advertirá si proporcionas props con formato incorrecto a un componente, lo que te ayudará a detectar posibles fuentes de error.
@@ -252,7 +252,7 @@ Alternativamente, podemos usar una etiqueta `<template>` con `v-for` para envolv
 
 Para las aplicaciones, los estilos en un componente `App` de nivel superior y en los componentes layout pueden ser globales, pero todos los demás componentes deberían tener siempre un scope.
 
-Esto solo es relevante para los [Componentes de un Solo Archivo](/guide/scaling-up/sfc.html). _No_ se requiere que uses el [atributo `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html). El scope podría estar dado a través de [módulos CSS](https://vue-loader.vuejs.org/en/features/css-modules.html), una estrategia basada en clases como [BEM](http://getbem.com), u otra convención de alguna librería.
+Esto solo es relevante para los [Componentes de un Solo Archivo](/guide/scaling-up/sfc). _No_ se requiere que uses el [atributo `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html). El scope podría estar dado a través de [módulos CSS](https://vue-loader.vuejs.org/en/features/css-modules.html), una estrategia basada en clases como [BEM](http://getbem.com), u otra convención de alguna librería.
 
 **Las librerías de componentes, sin embargo, deberían preferir una estrategia basada en clases en lugar de usar el atributo `scoped`.**
 

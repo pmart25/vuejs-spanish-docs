@@ -35,11 +35,11 @@ El atributo especial `key` es usado primeramente por el algoritmo de DOM virtual
 
   Cuando `text` cambia, el elemento `<span>` será reemplazado en lugar de ser parchado, de modo que se activará la transición.
 
-- **Ver también:** [Guía - Renderizado de Listas - Manteniendo el estado con `key`](/guide/essentials/list.html#manteniendo-el-estado-con-key)
+- **Ver también:** [Guía - Renderizado de Listas - Manteniendo el estado con `key`](/guide/essentials/list#maintaining-state-with-key)
 
 ## ref {#ref}
 
-Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
+Evoca a una [ref de la plantilla](/guide/essentials/template-refs).
 
 - **Espera:** `string | Function`
 
@@ -80,11 +80,11 @@ Evoca a una [ref de la plantilla](/guide/essentials/template-refs.html).
 
   `this.$refs` es un objeto no reactivo, por lo que no debes intentar usarlo en la plantilla para hacer data-binding.
 
-- **Ver también:** [Refs de la Plantilla](/guide/essentials/template-refs.html)
+- **Ver también:** [Refs de la Plantilla](/guide/essentials/template-refs)
 
 ## is {#is}
 
-Usado para vincular [componentes dinámicos](/guide/essentials/component-basics.html#dynamic-components).
+Usado para vincular [componentes dinámicos](/guide/essentials/component-basics#dynamic-components).
 
 - **Espera:** `string | Component`
 
@@ -92,7 +92,7 @@ Usado para vincular [componentes dinámicos](/guide/essentials/component-basics.
 
   Cuando el atributo `is` es usado en un elemento nativo de HTML, será interpretado como un [Elemento integrado personalizado](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example), que es una funcionalidad nativa de la web.
 
-  Existe, sin embargo, un escenario donde tal vez necesites que Vue reemplace al elemento nativo por un componente de Vue, como se explica en [Advertencias sobre el Procesamiento de las Plantillas del DOM ](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom). Puedes agregarle el prefijo `vue:` al valor del atributo `is` así Vue renderizará el elemento como un componente Vue en su lugar:
+  Existe, sin embargo, un escenario donde tal vez necesites que Vue reemplace al elemento nativo por un componente de Vue, como se explica en [Advertencias sobre el Procesamiento de las Plantillas del DOM ](/guide/essentials/component-basics#dom-template-parsing-caveats). Puedes agregarle el prefijo `vue:` al valor del atributo `is` así Vue renderizará el elemento como un componente Vue en su lugar:
 
   ```vue-html
   <table>
@@ -102,5 +102,5 @@ Usado para vincular [componentes dinámicos](/guide/essentials/component-basics.
 
 - **Ver también:**
 
-  - [Elementos Especiales Integrados - `<component>`](/api/built-in-special-elements.html#component)
-  - [Componentes Dinámicos](/guide/essentials/component-basics.html#dynamic-components)
+  - [Elementos Especiales Integrados - `<component>`](/api/built-in-special-elements#component)
+  - [Componentes Dinámicos](/guide/essentials/component-basics#dynamic-components)

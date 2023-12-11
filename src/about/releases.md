@@ -3,9 +3,9 @@ outline: deep
 ---
 
 <script setup>
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
-let version = $ref()
+const version = ref()
 
 onMounted(async () => {
   const res = await fetch('https://api.github.com/repos/vuejs/core/releases?latest')

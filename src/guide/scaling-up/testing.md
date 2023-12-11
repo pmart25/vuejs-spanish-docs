@@ -82,7 +82,7 @@ Hay dos instancias en los que SÍ hay que hacer pruebas unitarias de caracterís
 
 ### Composables {#composables}
 
-Una categoría de funciones específicas de las aplicaciones de Vue son los [Composables](/guide/reusability/composables.html), que pueden requerir un manejo especial durante las pruebas. Consulta la sección [Pruebas de Composables](#pruebas-de-composables) más adelante para más detalles.
+Una categoría de funciones específicas de las aplicaciones de Vue son los [Composables](/guide/reusability/composables), que pueden requerir un manejo especial durante las pruebas. Consulta la sección [Pruebas de Composables](#testing-composables) más adelante para más detalles.
 
 ### Pruebas Unitarias en Componentes {#unit-testing-components}
 
@@ -357,7 +357,7 @@ Finalmente, actualice `package.json` para agregar el script de prueba y ejecúte
 
 ### Pruebas de Composables {#testing-composables}
 
-> Esta sección supone que has leído la sección [Composables](/guide/reusability/composables.html).
+> Esta sección supone que has leído la sección [Composables](/guide/reusability/composables).
 
 Cuando se trata de probar composables, podemos dividirlos en dos categorías: composables que no dependen de la instancia de un componente anfitrión y composables que sí lo hacen.
 

@@ -212,7 +212,7 @@ El sistema de reactividad de Vue se basa principalmente en el tiempo de ejecuci�
 
 Algunos frameworks, como [Svelte](https://svelte.dev/), optan por superar estas limitaciones implementando la reactividad durante la compilación. Este analiza y transforma el código para simular la reactividad. El paso de compilación permite a los frameworks alterar la semántica del propio JavaScript, por ejemplo, inyectando implícitamente código que realiza análisis de dependencias y activación de efectos en torno al acceso a variables definidas localmente. El inconveniente es que tales transformaciones requieren un paso de compilación, y al alterar la semántica de JavaScript es esencialmente crear un lenguaje que parece JavaScript pero que se compila en otra cosa.
 
-El equipo de Vue exploró esta dirección a través de una característica experimental llamada [Reactivity Transform](/guide/extras/reactivity-transform.html), pero al final hemos decidido que no sería un buen ajuste para el proyecto debido al [razonamiento explicado aquí](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
+El equipo de Vue exploró esta dirección a través de una característica experimental llamada [Reactivity Transform](/guide/extras/reactivity-transform), pero al final hemos decidido que no sería un buen ajuste para el proyecto debido al [razonamiento explicado aquí](https://github.com/vuejs/rfcs/discussions/369#discussioncomment-5059028).
 
 ## Depuración de la Reactividad {#reactivity-debugging}
 

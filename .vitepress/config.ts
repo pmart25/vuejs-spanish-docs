@@ -727,8 +727,4 @@ export default defineConfigWithTheme<ThemeConfig>({
       stringify: true
     }
   },
-
-  vue: {
-    reactivityTransform: true
-  }
 })

@@ -6,11 +6,11 @@ Los componentes nos permiten dividir la interfaz de usuario en piezas independie
 
 <!-- https://www.figma.com/file/qa7WHDQRWuEZNRs7iZRZSI/components -->
 
-Esto es muy similar a cómo anidamos los elementos HTML nativos, pero Vue implementa su propio modelo de componentes que nos permite encapsular contenido y lógica personalizados en cada componente. Vue también juega muy bien con los Componentes Web nativos. Si tienes curiosidad por saber la relación entre los Componentes de Vue y los Componentes Web nativos, [lee más aquí](/guide/extras/web-components.html).
+Esto es muy similar a cómo anidamos los elementos HTML nativos, pero Vue implementa su propio modelo de componentes que nos permite encapsular contenido y lógica personalizados en cada componente. Vue también juega muy bien con los Componentes Web nativos. Si tienes curiosidad por saber la relación entre los Componentes de Vue y los Componentes Web nativos, [lee más aquí](/guide/extras/web-components).
 
 ## Definiendo un Componente {#defining-a-component}
 
-Cuando usamos un paso de compilación, normalmente definimos cada componente de Vue en un archivo dedicado usando la extensión `.vue` conocido como [Componente de un Solo Archivo](/guide/scaling-up/sfc.html) (abreviado SFC):
+Cuando usamos un paso de compilación, normalmente definimos cada componente de Vue en un archivo dedicado usando la extensión `.vue` conocido como [Componente de un Solo Archivo](/guide/scaling-up/sfc) (abreviado SFC):
 
 <div class="options-api">
 
@@ -117,7 +117,7 @@ export default {
 </template>
 ```
 
-Para exponer el componente importado a nuestra plantilla, necesitamos [registrarlo](/guide/components/registration.html) con la opción `components`. El componente estará entonces disponible como una etiqueta usando la clave con la que está registrado.
+Para exponer el componente importado a nuestra plantilla, necesitamos [registrarlo](/guide/components/registration) con la opción `components`. El componente estará entonces disponible como una etiqueta usando la clave con la que está registrado.
 
 </div>
 
@@ -138,7 +138,7 @@ Gracias a `<script setup>`, los componentes importados se ponen automáticamente
 
 </div>
 
-También es posible registrar globalmente un componente, haciéndolo disponible para todos los componentes de una determinada aplicación sin tener que importarlo. Las ventajas y desventajas del registro global frente al local se discuten en la sección dedicada al [Registro de Componentes](/guide/components/registration.html).
+También es posible registrar globalmente un componente, haciéndolo disponible para todos los componentes de una determinada aplicación sin tener que importarlo. Las ventajas y desventajas del registro global frente al local se discuten en la sección dedicada al [Registro de Componentes](/guide/components/registration).
 
 Los componentes pueden ser reutilizados tantas veces como se quieras:
 
@@ -179,7 +179,7 @@ Consulta [análisis de advertencias de la plantilla del DOM](#advertencias-sobre
 
 Si estamos construyendo un blog, probablemente necesitaremos un componente que represente una entrada del blog. Queremos que todas las entradas del blog compartan el mismo diseño visual, pero con diferente contenido. Dicho componente no será útil a menos que puedas pasarle datos, como el título y el contenido de la entrada específica que queremos mostrar. Es ahí donde entran los props.
 
-Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state.html#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup.html#defineprops-y-defineemits)</span>:
+Las Props son atributos personalizados que puedes registrar en un componente. Para pasar un título a nuestro componente de entrada de blog, debemos declararlo en la lista de props que este componente acepta, utilizando la opción de la macro <span class="options-api">[`props`](/api/options-state#props)</span><span class="composition-api">[`defineProps`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -219,7 +219,7 @@ const props = defineProps(['title'])
 console.log(props.title)
 ```
 
-Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api.html#escritura-de-las-props-de-componentes) <sup class="vt-badge ts" />
+Mira también: [Escritura de las Props de Componentes](/guide/typescript/composition-api#typing-component-props) <sup class="vt-badge ts" />
 
 Si no está usando `<script setup>`, las props deben ser declaradas usando la opción `props`, y el objeto props será pasado a `setup()` como primer argumento:
 
@@ -299,7 +299,7 @@ Después queremos renderizar un componente para cada uno, usando `v-for`:
 
 Observa cómo podemos usar `v-bind` para pasar props dinámicos. Esto resulta especialmente útil cuando no conoces el contenido exacto que vas a renderizar con antelación.
 
-Eso es todo lo que necesitas saber sobre los props por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Props](/guide/components/props.html).
+Eso es todo lo que necesitas saber sobre los props por ahora, pero una vez que hayas terminado de leer esta página y te sientas cómodo con su contenido, te recomendamos que vuelvas más tarde para leer la guía completa sobre [Props](/guide/components/props).
 
 ## Escuchando los Eventos {#listening-to-events}
 
@@ -366,7 +366,7 @@ El botón de momento no hace nada; queremos que al hacer clic en el botón comun
  />
 ```
 
-Entonces el componente hijo puede emitir un evento sobre sí mismo llamando al [método **`emit`**](/api/component-instance.html#emit) integrado, pasando el nombre del evento:
+Entonces el componente hijo puede emitir un evento sobre sí mismo llamando al [método **`emit`**](/api/component-instance#emit) integrado, pasando el nombre del evento:
 
 ```vue{5}
 <!-- BlogPost.vue, omitiendo <script> -->
@@ -391,7 +391,7 @@ Gracias al escuchador `@enlarge-text="postFontSize += 0.1"`, el padre recibirá 
 
 </div>
 
-Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state.html#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup.html#defineprops-y-defineemits)</span>:
+Opcionalmente podemos declarar eventos emitidos utilizando la opción macro <span class="options-api">[`emits`](/api/options-state#emits)</span><span class="composition-api">[`defineEmits`](/api/sfc-script-setup#defineprops-defineemits)</span>:
 
 <div class="options-api">
 
@@ -418,7 +418,7 @@ defineEmits(['enlarge-text'])
 
 </div>
 
-Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events.html#validacion-de-eventos). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
+Esto documenta todos los eventos que emite un componente y opcionalmente [los valida](/guide/components/events#events-validation). También permite a Vue evitar aplicarlos implícitamente como oyentes nativos al elemento raíz del componente hijo.
 
 <div class="composition-api">
 
@@ -430,7 +430,7 @@ const emit = defineEmits(['enlarge-text'])
 emit('enlarge-text')
 ```
 
-Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api.html#escritura-de-emits-del-componente) <sup class="vt-badge ts" />
+Mira también: [Escritura de Emits del Componente](/guide/typescript/composition-api#typing-component-emits) <sup class="vt-badge ts" />
 
 Si no estás usando `<script setup>`, puedes declarar eventos emitidos usando la opción `emits`. Puedes acceder a la función `emit` como una propiedad del contexto de configuración (pasada a `setup()` como segundo argumento):
 
@@ -536,7 +536,7 @@ En el ejemplo anterior, el valor pasado a `:is` puede contener
 
 También puedes utilizar el atributo "is" para crear elementos HTML normales.
 
-Cuando se cambia entre varios componentes con `<component :is="...">`, un componente será desmontado cuando se cambie de lugar. Podemos forzar que los componentes inactivos permanezcan "vivos" con el componente integrado [`<KeepAlive>`](/guide/built-ins/keep-alive.html).
+Cuando se cambia entre varios componentes con `<component :is="...">`, un componente será desmontado cuando se cambie de lugar. Podemos forzar que los componentes inactivos permanezcan "vivos" con el componente integrado [`<KeepAlive>`](/guide/built-ins/keep-alive).
 
 ## Advertencias sobre el Procesamiento de las Plantillas del DOM {#dom-template-parsing-caveats}
 
@@ -613,7 +613,7 @@ Esto dará lugar a problemas cuando se utilicen componentes con elementos que te
 </table>
 ```
 
-El componente personalizado `<blog-post-row>` será captado como contenido inválido, causando errores en la eventual salida renderizada. Podemos utilizar el [atributo especial `is`](/api/built-in-special-attributes.html#is) como solución:
+El componente personalizado `<blog-post-row>` será captado como contenido inválido, causando errores en la eventual salida renderizada. Podemos utilizar el [atributo especial `is`](/api/built-in-special-attributes#is) como solución:
 
 ```vue-html
 <table>
@@ -622,7 +622,7 @@ El componente personalizado `<blog-post-row>` será captado como contenido invá
 ```
 
 :::tip
-Cuando se utiliza en elementos HTML nativos, el valor de `is` debe llevar el prefijo `vue:` para ser interpretado como un componente Vue. Esto es necesario para evitar la confusión con los [elementos integrados personalizados](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-customized-builtin-example) nativos.
+Cuando se utiliza en elementos HTML nativos, el valor de `is` debe llevar el prefijo `vue:` para ser interpretado como un componente Vue. Esto es necesario para evitar la confusión con los [elementos integrados personalizados](https://html.spec.whatwg.org/multipage/custom-elements#custom-elements-customized-builtin-example) nativos.
 :::
 
 ¡Enhorabuena! Por ahora, eso es todo lo que necesitas saber sobre el análisis de advertencias de la plantilla del DOM y, en definitiva, el final de los _Esenciales_ de Vue. Todavía hay más que aprender, pero primero, recomendamos tomar un descanso para que juegues con Vue tú mismo, construyas algo divertido o revises algunos de los [Ejemplos](/examples/) si aún no lo has hecho.

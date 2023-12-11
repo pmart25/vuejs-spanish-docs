@@ -1,7 +1,7 @@
 # Composition API: Hooks del Ciclo de Vida {#composition-api-lifecycle-hooks}
 
 :::info Nota de Uso
-Todas las APIs listadas en esta página deben ser llamadas en forma sincrónica durante la ejecución de la función `setup()`. Ver [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle.html) para más detalles.
+Todas las APIs listadas en esta página deben ser llamadas en forma sincrónica durante la ejecución de la función `setup()`. Ver [Guía - Hooks del Ciclo de Vida](/guide/essentials/lifecycle) para más detalles.
 :::
 
 ## onMounted() {#onmounted}
@@ -22,7 +22,7 @@ Registra un callback que será llamado una vez que el componente se haya montado
 
   - Su propio estructura de DOM es creado e insertado entro del contenedor padre. Ten en cuenta que esto solo garantiza que la estructura de DOM del componente esté en el documento siempre y cuando el contenedor raíz de la aplicación también lo esté.
 
-  Este hook para realizar tareas que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM en el cliente en una [aplicación renderizada del lado del servidor](/guide/scaling-up/ssr.html).
+  Este hook para realizar tareas que necesitan acceder al DOM renderizado del componente, o para limitar el código relacionado con el DOM en el cliente en una [aplicación renderizada del lado del servidor](/guide/scaling-up/ssr).
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
@@ -60,7 +60,7 @@ Registra un callback que será llamado luego de que el componente ha actualizado
 
   El hook de actualización de un componente padre es llamado después del de sus componentes hijos.
 
-  Este hook es llamado después de cualquier actualización del DOM del componente, que puede ser causada por diferentes cambios de estado. Si necesitas acceder al DOM actualizado después de un cambio de estado específico, utiliza [nextTick()](/api/general.html#nexttick) en su lugar.
+  Este hook es llamado después de cualquier actualización del DOM del componente, que puede ser causada por diferentes cambios de estado. Si necesitas acceder al DOM actualizado después de un cambio de estado específico, utiliza [nextTick()](/api/general#nexttick) en su lugar.
 
   **Este hook no es llamado durante el renderizado del lado del servidor.**
 
@@ -212,7 +212,7 @@ Registra un hook que será llamado cuando se capture un error que fue propagado 
 
   **Reglas de la Propagación de Errores**
 
-  - Por defecto, todos los errores son enviados al objeto [`app.config.errorHandler`](/api/application.html#app-config-errorhandler) si este está definido, por lo que estos errores pueden ser reportados incluso a un servicio de analytics en un solo lugar.
+  - Por defecto, todos los errores son enviados al objeto [`app.config.errorHandler`](/api/application#app-config-errorhandler) si este está definido, por lo que estos errores pueden ser reportados incluso a un servicio de analytics en un solo lugar.
 
   - Si exiten múltiples hooks `errorCaptured` en la cadena de herencia de un componente o en la cadena padre, todos ellos serán invocados ante el mismo error, partiendo del que esté más abajo en la cadena hacia arriba. Esto es similar al mecanismo de bubujeo naivo de los eventos del DOM.
 
@@ -241,7 +241,7 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## onRenderTriggered() <sup class="vt-badge dev-only" /> {#onrendertriggered}
 
@@ -267,11 +267,11 @@ Registra un hook de depuración que será llamado cuando una dependencia reactiv
   }
   ```
 
-- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth.html)
+- **Ver también:** [Reactividad en Profundidad](/guide/extras/reactivity-in-depth)
 
 ## onActivated() {#onactivated}
 
-Registra un callback que será llamado luego de que la instancia del componente es insertada en el DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Registra un callback que será llamado luego de que la instancia del componente es insertada en el DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Este hook no es llamado durante el renderizado del lado del servidor.**
 
@@ -281,11 +281,11 @@ Registra un callback que será llamado luego de que la instancia del componente 
   function onActivated(callback: () => void): void
   ```
 
-- **Ver también:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive.html#lifecycle-of-cached-instance)
+- **Ver también:** [Guide - Lifecycle of Cached Instance](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onDeactivated() {#ondeactivated}
 
-Registra un callback que será llamado luego de que la instancia del componente es removida del DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components.html#keepalive).
+Registra un callback que será llamado luego de que la instancia del componente es removida del DOM como parte de una estructura cacheada por [`<KeepAlive>`](/api/built-in-components#keepalive).
 
 **Este hook no es llamado durante el renderizado del lado del servidor.**
 
@@ -295,7 +295,7 @@ Registra un callback que será llamado luego de que la instancia del componente 
   function onDeactivated(callback: () => void): void
   ```
 
-- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive.html#ciclo-de-vida-de-la-instancia-en-cache)
+- **Ver también:** [Guía - Ciclo de Vida de la Instancia en Caché ](/guide/built-ins/keep-alive#lifecycle-of-cached-instance)
 
 ## onServerPrefetch() <sup class="vt-badge" data-text="SSR only" /> {#onserverprefetch}
 
@@ -338,4 +338,4 @@ Registra una función asíncrona que será resuelta antes de que la instancia de
   </script>
   ```
 
-- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr.html)
+- **Ver también:** [Renderizado del Lado del Servidor (SSR)](/guide/scaling-up/ssr)
