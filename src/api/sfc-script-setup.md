@@ -53,7 +53,7 @@ import { capitalize } from './helpers'
 
 ## Reactividad {#reactivity}
 
-El estado reactivo debe crearse explícitamente mediante las [API de reactividad](./reactivity-core.html). Al igual que los valores devueltos por una función `setup()`, las refs se desenvuelven automáticamente cuando se hace referencia a ellas en las plantillas:
+El estado reactivo debe crearse explícitamente mediante las [API de reactividad](./reactivity-core). Al igual que los valores devueltos por una función `setup()`, las refs se desenvuelven automáticamente cuando se hace referencia a ellas en las plantillas:
 
 ```vue
 <script setup>
@@ -244,7 +244,7 @@ El soporte para combinar `<script setup>` y `<script>` en el mismo componente es
 - **NO** utilice una sección `<script>` separada para opciones que ya pueden definirse utilizando `<script setup>`, tales como `props` y `emits`.
 - Las variables creadas dentro de `<script setup>` no se añaden como propiedades a la instancia del componente, haciéndolas inaccesibles desde la Options API. Se desaconseja encarecidamente mezclar APIs de este modo.
 
-Si se encuentra en uno de los escenarios no soportados, debería considerar cambiar a una función [`setup()`](/api/composition-api-setup.html) explícita, en lugar de utilizar `<script setup>`.
+Si se encuentra en uno de los escenarios no soportados, debería considerar cambiar a una función [`setup()`](/api/composition-api-setup) explícita, en lugar de utilizar `<script setup>`.
 
 ## Nivel Superior de `await` {#top-level-await}
 

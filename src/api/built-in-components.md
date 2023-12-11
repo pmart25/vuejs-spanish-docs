@@ -7,7 +7,7 @@ pageClass: api
 :::info Registración y Uso
 Los componentes integrados pueden ser usados directamente en las plantillas sin necesidad de registrarlos. Cabe destacar que solo se incluyen en el build cuando son usados.
 
-Cuando se usan en [funciones de renderizado](/guide/extras/render-function.html), necesitan ser importados explícitamente. Por ejemplo:
+Cuando se usan en [funciones de renderizado](/guide/extras/render-function), necesitan ser importados explícitamente. Por ejemplo:
 
 ```js
 import { h, Transition } from 'vue'
@@ -126,7 +126,7 @@ Proporciona efectos de transición animados a un **solo** elemento o componente.
   </Transition>
   ```
 
-- **Ver también:** [Transition](/guide/built-ins/transition.html)
+- **Ver también:** [Transition](/guide/built-ins/transition)
 
 ## `<TransitionGroup>` {#transitiongroup}
 
@@ -158,7 +158,7 @@ Proporciona efectos de transición para **múltiples** elementos o componentes e
 
   Por defecto, `<TransitionGroup>` no renderiza un elemento del DOM contenedor, pero se puede definir uno mendiante la prop `tag`.
 
-  Ten en cuenta que cada hijo en un `<transition-group>` debe estar con una [**única key**](/guide/essentials/list.html#maintaining-state-with-key) para que la animación funciones correctamente.
+  Ten en cuenta que cada hijo en un `<transition-group>` debe estar con una [**única key**](/guide/essentials/list#maintaining-state-with-key) para que la animación funciones correctamente.
 
   `<TransitionGroup>` soporta transiciones de movimiento mediante la propiedad CSS transform. Cuando la posición de un hijo en la pantalla es cambiada luego de una actualización de estado, se le aplicará una clase CSS de movimiento (auto generada a partir del atributo `name` o configurara con la prop `move-class`). Si la propiedad CSS `transform` admite animaciones cuando la clase de movimiento sea aplicada, el elemento se animará suavemente hasta su destino usando la [técnica FLIP](https://aerotwist.com/blog/flip-your-animations/).
 
@@ -172,7 +172,7 @@ Proporciona efectos de transición para **múltiples** elementos o componentes e
   </TransitionGroup>
   ```
 
-- **Ver también:** [Guía - TransitionGroup](/guide/built-ins/transition-group.html)
+- **Ver también:** [Guía - TransitionGroup](/guide/built-ins/transition-group)
 
 ## `<KeepAlive>` {#keepalive}
 
@@ -265,7 +265,7 @@ Almacena los componentes que alternan dinámicamente en su interior.
   </KeepAlive>
   ```
 
-- **Ver también:** [Guía - KeepAlive](/guide/built-ins/keep-alive.html)
+- **Ver también:** [Guía - KeepAlive](/guide/built-ins/keep-alive)
 
 ## `<Teleport>` {#teleport}
 
@@ -307,7 +307,7 @@ Renderiza su contenido en otra parte del DOM.
   </teleport>
   ```
 
-- **Ver también:** [Guía - Teleport](/guide/built-ins/teleport.html)
+- **Ver también:** [Guía - Teleport](/guide/built-ins/teleport)
 
 ## `<Suspense>` <sup class="vt-badge experimental" /> {#suspense}
 
@@ -331,6 +331,6 @@ Se utiliza para orquestar dependencias asíncronas anidadas en un árbol de comp
 
   `<Suspense>` acepta dos slots: el slot `#default` y el slot `#fallback`. Mostrará el contenido del slot fallback mientras renderiza el slot por defecto en la memoria.
 
-  Si encuentra dependencias asíncronas ([Componentes Asincrónicos](/guide/components/async.html) y componentes con [`async setup()`](/guide/built-ins/suspense.html#async-setup)) mientras se muestra el slot por defecto, esperará hasta que todas ellas se resuelvan antes de mostrar el slot por defecto.
+  Si encuentra dependencias asíncronas ([Componentes Asincrónicos](/guide/components/async) y componentes con [`async setup()`](/guide/built-ins/suspense#async-setup)) mientras se muestra el slot por defecto, esperará hasta que todas ellas se resuelvan antes de mostrar el slot por defecto.
 
-- **Ver también:** [Guía - Suspense](/guide/built-ins/suspense.html)
+- **Ver también:** [Guía - Suspense](/guide/built-ins/suspense)

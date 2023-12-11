@@ -275,7 +275,7 @@ export default {
 
 ### Manejo de los Modificadores de `v-model` {#handling-v-model-modifiers}
 
-Cuando aprendimos sobre los enlaces de entrada de formularios, vimos que `v-model` tiene [modificadores integrados](/guide/essentials/forms.html#modificadores): `.trim`, `.number` y `.lazy`. En algunos casos, es posible que también quieras que el `v-model` de tu componente de entrada personalizado soporte modificadores personalizados.
+Cuando aprendimos sobre los enlaces de entrada de formularios, vimos que `v-model` tiene [modificadores integrados](/guide/essentials/forms#modifiers): `.trim`, `.number` y `.lazy`. En algunos casos, es posible que también quieras que el `v-model` de tu componente de entrada personalizado soporte modificadores personalizados.
 
 Vamos a crear un ejemplo de modificador personalizado, `capitalize`, que pone en mayúsculas la primera letra de la cadena proporcionada por el enlace `v-model`:
 

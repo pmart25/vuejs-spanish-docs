@@ -133,7 +133,7 @@ Es posible que puedas imaginar cómo permitir contenido proporcionado por el usu
 <style>{{ userProvidedStyles }}</style>
 ```
 
-Para mantener a tus usuarios completamente a salvo del robo de clics, recomendamos permitir solo el control total sobre CSS dentro de un iframe aislado. Alternativamente, cuando se proporciona control de usuario a través de un enlace de estilo, recomendamos usar la [sintaxis de objeto](/guide/essentials/class-and-style.html#vinculacion-a-objetos-1) y solo permitir que los usuarios proporcionen valores para las propiedades específicas que puedan controlar con seguridad, como esta:
+Para mantener a tus usuarios completamente a salvo del robo de clics, recomendamos permitir solo el control total sobre CSS dentro de un iframe aislado. Alternativamente, cuando se proporciona control de usuario a través de un enlace de estilo, recomendamos usar la [sintaxis de objeto](/guide/essentials/class-and-style#binding-to-objects-1) y solo permitir que los usuarios proporcionen valores para las propiedades específicas que puedan controlar con seguridad, como esta:
 
 ```vue-html
 <a
@@ -180,4 +180,4 @@ Las vulnerabilidades de seguridad HTTP, como la falsificación de solicitudes en
 
 ## Renderizado del Lado del Servidor (SSR) {#server-side-rendering-ssr}
 
-Existen algunos problemas de seguridad adicionales al usar SSR, así que asegúrate de seguir las mejores prácticas descritas en [nuestra documentación de SSR](/guide/scaling-up/ssr.html) para evitar vulnerabilidades.
+Existen algunos problemas de seguridad adicionales al usar SSR, así que asegúrate de seguir las mejores prácticas descritas en [nuestra documentación de SSR](/guide/scaling-up/ssr) para evitar vulnerabilidades.

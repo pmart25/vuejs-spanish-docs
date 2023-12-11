@@ -23,7 +23,7 @@ Un modelo de cadena para el componente.
   Si el componente raíz de tu aplicación no tiene una opción `template` o `render` especificada, Vue intentará utilizar el `innerHTML` del elemento montado como plantilla en su lugar.
 
   :::warning Nota de seguridad
-  Utilice únicamente fuentes de plantillas en las que pueda confiar. No utilice contenido proporcionado por otros usuarios como tu plantilla. Consulte la [Guía de Seguridad](/guide/best-practices/security.html#rule-no-1-never-use-non-trusted-templates) para más detalles.
+  Utilice únicamente fuentes de plantillas en las que pueda confiar. No utilice contenido proporcionado por otros usuarios como tu plantilla. Consulte la [Guía de Seguridad](/guide/best-practices/security#rule-no-1-never-use-non-trusted-templates) para más detalles.
   :::
 
 ## render {#render}
@@ -58,8 +58,8 @@ Una función que devuelve mediante programación el árbol DOM virtual del compo
   Las plantillas precompiladas, por ejemplo las de los componentes de un solo archivo, se compilan en la opción `render` en el momento de la compilación. Si tanto `render` como `template` están presentes en un componente, `render` tendrá mayor prioridad.
 
 - **Ver también:**
-  - [Mecanismo de Renderizado](/guide/extras/rendering-mechanism.html)
-  - [Funciones de Renderizado y JSX](/guide/extras/render-function.html)
+  - [Mecanismo de Renderizado](/guide/extras/rendering-mechanism)
+  - [Funciones de Renderizado y JSX](/guide/extras/render-function)
 
 ## compilerOptions {#compileroptions}
 
@@ -80,6 +80,6 @@ Configurar las opciones del compilador en tiempo de ejecución para la plantilla
 
 - **Detalles**
 
-  Esta opción de configuración sólo se respeta cuando se utiliza la compilación completa (es decir, el `vue.js` independiente que puede compilar plantillas en el navegador). Éste soporta las mismas opciones que aquellas en el nivel de la aplicación [app.config.compilerOptions] (/api/application.html#app-config-compileroptions), y tiene mayor prioridad para el componente actual.
+  Esta opción de configuración sólo se respeta cuando se utiliza la compilación completa (es decir, el `vue.js` independiente que puede compilar plantillas en el navegador). Éste soporta las mismas opciones que aquellas en el nivel de la aplicación [app.config.compilerOptions](/api/application#app-config-compileroptions), y tiene mayor prioridad para el componente actual.
 
-- **Ver también:** [app.config.compilerOptions](/api/application.html#app-config-compileroptions)
+- **Ver también:** [app.config.compilerOptions](/api/application#app-config-compileroptions)

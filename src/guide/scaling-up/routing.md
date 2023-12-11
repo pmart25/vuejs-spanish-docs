@@ -21,7 +21,7 @@ Vue es muy adecuado para construir SPA. Para la mayoría de las SPA, se recomien
 
 ## Enrutamiento simple desde cero {#simple-routing-from-scratch}
 
-Si solo necesitas un enrutamiento muy simple y no deseas involucrar una librería de enrutamiento completa, puedes hacerlo con [Componentes Dinámicos](/guide/essentials/component-basics.html#componentes-dinamicos) y actualizar el estado del componente escuchando los [eventos de `hashchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event) del navegador o usando la [API de historial](https://developer.mozilla.org/en-US/docs/Web/API/History).
+Si solo necesitas un enrutamiento muy simple y no deseas involucrar una librería de enrutamiento completa, puedes hacerlo con [Componentes Dinámicos](/guide/essentials/component-basics#dynamic-components) y actualizar el estado del componente escuchando los [eventos de `hashchange`](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event) del navegador o usando la [API de historial](https://developer.mozilla.org/en-US/docs/Web/API/History).
 
 Este es un ejemplo de lo que se puede hacer:
 

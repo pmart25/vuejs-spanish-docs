@@ -313,7 +313,7 @@ function BaseLayout(slots) {
 </base-layout>
 ```
 
-Ten en cuenta que la expresión está sujeta a las [restricciones sintácticas](/guide/essentials/template-syntax.html#directivas) de los argumentos de la directiva dinámica.
+Ten en cuenta que la expresión está sujeta a las [restricciones sintácticas](/guide/essentials/template-syntax#directives) de los argumentos de la directiva dinámica.
 
 ## Slots con Ámbito {#scoped-slots}
 
@@ -374,7 +374,7 @@ function MyComponent(slots) {
 }
 ```
 
-De hecho, esto es muy parecido a cómo se compilan los slots de ámbito, y cómo se utilizarían los slots de ámbito en las [Funciones de Renderizado](/guide/extras/render-function.html) manuales.
+De hecho, esto es muy parecido a cómo se compilan los slots de ámbito, y cómo se utilizarían los slots de ámbito en las [Funciones de Renderizado](/guide/extras/render-function) manuales.
 
 Observa cómo `v-slot="slotProps"` coincide con la firma de la función slot. Al igual que con los argumentos de las funciones, podemos utilizar la desestructuración en `v-slot`:
 
@@ -473,6 +473,6 @@ Un ejemplo de componente sin renderizado podría ser uno que encapsule la lógic
 
 </div>
 
-Aunque se trata de un patrón interesante, la mayor parte de lo que se puede conseguir con los componentes sin renderizado se puede lograr de una manera más eficiente con la Composition API, sin incurrir en la sobrecarga de la anidación de componentes adicionales. Más adelante, veremos cómo podemos implementar la misma funcionalidad de seguimiento del ratón como un [Composable] (/guide/reusability/composables.html).
+Aunque se trata de un patrón interesante, la mayor parte de lo que se puede conseguir con los componentes sin renderizado se puede lograr de una manera más eficiente con la Composition API, sin incurrir en la sobrecarga de la anidación de componentes adicionales. Más adelante, veremos cómo podemos implementar la misma funcionalidad de seguimiento del ratón como un [Composable] (/guide/reusability/composables).
 
 Dicho esto, los slots de ámbito siguen siendo útiles en los casos en los que necesitamos encapsular la lógica **y** componer la salida visual, como en el ejemplo de `<FancyList>`.

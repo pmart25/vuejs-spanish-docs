@@ -32,7 +32,7 @@ Hay dos tipos de dependencias asíncronas a las que `<Suspense>` puede esperar:
 
 1. Componentes con un hook asíncrono `setup()`. Esto incluye componentes que utilizan `<script setup>` con expresiones `await` de nivel superior.
 
-2. [Componentes Asíncronos](/guide/components/async.html).
+2. [Componentes Asíncronos](/guide/components/async).
 
 ### `async setup()` {#async-setup}
 
@@ -101,7 +101,7 @@ Los eventos podrían utilizarse, por ejemplo, para mostrar un indicador de carga
 
 ## Manejo de Errores {#error-handling}
 
-Actualmente, `<Suspense>` no proporciona un manejo de errores a través del propio componente; sin embargo, puedes utilizar la opción [`errorCaptured`](/api/options-lifecycle.html#errorcaptured) o el hook [`onErrorCaptured()`](/api/composition-api-lifecycle.html#onerrorcaptured) para capturar y manejar errores asíncronos en el componente padre de `<Suspense>`.
+Actualmente, `<Suspense>` no proporciona un manejo de errores a través del propio componente; sin embargo, puedes utilizar la opción [`errorCaptured`](/api/options-lifecycle#errorcaptured) o el hook [`onErrorCaptured()`](/api/composition-api-lifecycle#onerrorcaptured) para capturar y manejar errores asíncronos en el componente padre de `<Suspense>`.
 
 ## Combinación con Otros Componentes {#combining-with-other-components}
 

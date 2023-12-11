@@ -14,14 +14,14 @@ import ListStagger from './transition-demos/ListStagger.vue'
 
 - Por defecto, no renderiza un elemento contenedor. Sin embargo, puedes especificar un elemento que se renderice con la prop `tag`.
 
-- Los [modos de transición](./transition.html#modos-de-transicion) no están disponibles, porque ya no alternamos entre elementos mutuamente excluyentes.
+- Los [modos de transición](./transition#transition-modes) no están disponibles, porque ya no alternamos entre elementos mutuamente excluyentes.
 
 - Se requiere que los elementos en el interior **siempre** tengan un atributo `key` único.
 
 - Las clases de transición de CSS se aplicarán a los elementos individuales de la lista, **no** al grupo / contenedor en sí.
 
 :::tip
-Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics.html#advertencias-sobre-el-procesamiento-de-las-plantillas-del-dom), se debe hacer referencia a este como `<transition-group>`.
+Cuando se utiliza en [plantillas del DOM](/guide/essentials/component-basics#dom-template-parsing-caveats), se debe hacer referencia a este como `<transition-group>`.
 :::
 
 ## Transiciones de Entrada / Salida {#enter-leave-transitions}
@@ -132,4 +132,4 @@ function onEnter(el, done) {
 
 **Relacionado**
 
-- [Referencia de la API sobre `<TransitionGroup>`](/api/built-in-components.html#transitiongroup)
+- [Referencia de la API sobre `<TransitionGroup>`](/api/built-in-components#transitiongroup)

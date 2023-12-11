@@ -243,7 +243,7 @@ Renderizará:
 <span>Este es un componente hijo</span>
 ```
 
-Puedes aprender más sobre la herencia de atributos de los componentes en la sección [Atributos Fallthrough](/guide/components/attrs.html).
+Puedes aprender más sobre la herencia de atributos de los componentes en la sección [Atributos Fallthrough](/guide/components/attrs).
 
 ## Vinculación de Estilos en Línea {#binding-inline-styles}
 

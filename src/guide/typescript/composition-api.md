@@ -100,24 +100,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 Esto se compilará con las opciones de las props `default` equivalentes en tiempo de ejecución. Además, el helper `withDefaults` permite realizar comprobaciones de tipo para los valores por defecto, y asegura que el tipo `props` devuelto tiene las banderas opcionales removidas para las propiedades que sí tienen valores por defecto declarados.
 
-Alternativamente, puedes usar la versión actualmente experimental [Transformación de la Reactividad](/guide/extras/reactivity-transform.html):
-
-```vue
-<script setup lang="ts">
-interface Props {
-  name: string
-  count?: number
-}
-
-// desestructuración reactiva para defineProps()
-// el valor por defecto se compila a la opción
-// equivalente en tiempo de ejecución
-const { name, count = 100 } = defineProps<Props>()
-</script>
-```
-
-Este comportamiento requiere por el momento [opt-in explícito](/guide/extras/reactivity-transform.html#opt-in-explicito).
-
 ### Sin `<script setup>` {#without-script-setup}
 
 Si no usas `<script setup>`, es necesario utilizar `defineComponent()` para habilitar la inferencia del tipo de props. El tipo del objeto props pasado a `setup()` se infiere de la opción `props`.
@@ -173,7 +155,7 @@ export default defineComponente({
 })
 ```
 
-La opción `props` se utiliza más comúnmente con la Options API, por lo que encontrarás ejemplos más detallados en la guía de [TypeScript con Options API](/guide/typescript/options-api.html#escritura-de-las-props-de-componentes). Las técnicas mostradas en esos ejemplos también se aplican a las declaraciones en tiempo de ejecución usando `defineProps()`.
+La opción `props` se utiliza más comúnmente con la Options API, por lo que encontrarás ejemplos más detallados en la guía de [TypeScript con Options API](/guide/typescript/options-api#typing-component-props). Las técnicas mostradas en esos ejemplos también se aplican a las declaraciones en tiempo de ejecución usando `defineProps()`.
 
 ## Escritura de Emits del Componente {#typing-component-emits}
 
@@ -415,4 +397,4 @@ const openModal = () => {
 </script>
 ```
 
-Ten en cuenta que si quieres usar esta técnica en archivos TypeScript en lugar de SFCs de Vue, necesitas habilitar el [Modo Takeover de Volar](./overview.html#modo-takeover-de-volar).
+Ten en cuenta que si quieres usar esta técnica en archivos TypeScript en lugar de SFCs de Vue, necesitas habilitar el [Modo Takeover de Volar](./overview#volar-takeover-mode).

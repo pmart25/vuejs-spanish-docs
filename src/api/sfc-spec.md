@@ -46,7 +46,7 @@ export default {
 
 - El script se ejecuta como un Módulo ES.
 
-- La **exportación por defecto** debe ser un objeto de opciones de componentes de Vue, ya sea como un objeto simple o como el valor de retorno de [defineComponent](/api/general.html#definecomponent).
+- La **exportación por defecto** debe ser un objeto de opciones de componentes de Vue, ya sea como un objeto simple o como el valor de retorno de [defineComponent](/api/general#definecomponent).
 
 ### `<script setup>` {#script-setup}
 

@@ -116,7 +116,8 @@ El objetivo `to` de `<Teleport>` espera una cadena de selección CSS o un nodo D
 Puedes hacer clic en el botón de abajo e inspeccionar la etiqueta `<body>` a través de las herramientas de desarrollo de tu navegador:
 
 <script setup>
-let open = $ref(false)
+import { ref } from 'vue'
+const open = ref(false)
 </script>
 
 <div class="demo">
@@ -198,5 +199,5 @@ El resultado renderizado sería:
 
 **Relacionado**
 
-- [Referencia de la API sobre `<Teleport>`](/api/built-in-components.html#teleport)
-- [Manejo de Teleports en SSR](/guide/scaling-up/ssr.html#teleports)
+- [Referencia de la API sobre `<Teleport>`](/api/built-in-components#teleport)
+- [Manejo de Teleports en SSR](/guide/scaling-up/ssr#teleports)

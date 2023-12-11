@@ -10,7 +10,7 @@ Vue [obtiene una puntuación perfecta del 100% en las pruebas de Elementos Perso
 
 ### Omisión de la Resolución del Componente {#skipping-component-resolution}
 
-Por defecto, Vue intentará resolver una etiqueta HTML no nativa como un componente Vue registrado antes de volver a renderizarlo como un elemento personalizado. Esto hará que Vue emita una advertencia de "fallo en la resolución del componente" durante el desarrollo. Para que Vue sepa que ciertos elementos deben ser tratados como elementos personalizados y saltarse la resolución de componentes, podemos especificar la opción [`compilerOptions.isCustomElement`](/api/application.html#app-config-compileroptions).
+Por defecto, Vue intentará resolver una etiqueta HTML no nativa como un componente Vue registrado antes de volver a renderizarlo como un elemento personalizado. Esto hará que Vue emita una advertencia de "fallo en la resolución del componente" durante el desarrollo. Para que Vue sepa que ciertos elementos deben ser tratados como elementos personalizados y saltarse la resolución de componentes, podemos especificar la opción [`compilerOptions.isCustomElement`](/api/application#app-config-compileroptions).
 
 Si estás usando Vue con una versión de compilación, la opción debe pasarse a través de las configuraciones de compilación, ya que esta es una opción en tiempo de compilación.
 
@@ -83,7 +83,7 @@ El principal beneficio de los elementos personalizados es que pueden ser utiliza
 
 ### defineCustomElement {#definecustomelement}
 
-Vue soporta la creación de elementos personalizados utilizando exactamente las mismas APIs de los componentes de Vue a través del método [`defineCustomElement`](/api/general.html#definecustomelement). El método acepta el mismo argumento que [`defineComponent`](/api/general.html#definecomponent), pero en su lugar devuelve un constructor de elemento personalizado que extiende `HTMLElement`:
+Vue soporta la creación de elementos personalizados utilizando exactamente las mismas APIs de los componentes de Vue a través del método [`defineCustomElement`](/api/general#definecustomelement). El método acepta el mismo argumento que [`defineComponent`](/api/general#definecomponent), pero en su lugar devuelve un constructor de elemento personalizado que extiende `HTMLElement`:
 
 ```vue-html
 <my-vue-element></my-vue-element>
@@ -159,7 +159,7 @@ Los eventos emitidos a través de `this.$emit` o setup `emit` se envían como [C
 
 Dentro del componente, los slots pueden ser renderizados usando el elemento `<slot/>` como es habitual. No obstante, al consumir el elemento resultante, este solo acepta la [sintaxis nativa de los slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots):
 
-- No se admiten los [slots con ámbito](/guide/components/slots.html#slots-con-ambito).
+- No se admiten los [slots con ámbito](/guide/components/slots#scoped-slots).
 
 - Al pasar slots asignados, utiliza el atributo `slot` en lugar de la directiva `v-slot`:
 
@@ -171,7 +171,7 @@ Dentro del componente, los slots pueden ser renderizados usando el elemento `<sl
 
 #### Provide / Inject {#provide-inject}
 
-La [API Provide / Inject](/guide/components/provide-inject.html#provide-inject) y su [equivalente de la Composition API](/api/composition-api-dependency-injection.html#provide) también funcionan entre elementos personalizados definidos por Vue. Sin embargo, ten en cuenta que esto funciona **sólo entre elementos personalizados**; es decir, un elemento personalizado definido por Vue no podrá inyectar propiedades proporcionadas por un componente Vue que no sea un elemento personalizado.
+La [API Provide / Inject](/guide/components/provide-inject#provide-inject) y su [equivalente de la Composition API](/api/composition-api-dependency-injection#provide) también funcionan entre elementos personalizados definidos por Vue. Sin embargo, ten en cuenta que esto funciona **sólo entre elementos personalizados**; es decir, un elemento personalizado definido por Vue no podrá inyectar propiedades proporcionadas por un componente Vue que no sea un elemento personalizado.
 
 ### SFC como Elemento Personalizado {#sfc-as-custom-element}
 
@@ -246,8 +246,8 @@ También hay frameworks construidos utilizando Elementos Personalizados como bas
 
 También hay algunas áreas en las que encontramos que los elementos personalizados son limitantes:
 
-- La evaluación de los slots anticipados dificulta la composición de los componentes. Los [slots con ámbito](/guide/components/slots.html#slots-con-ambito) de Vue son un poderoso mecanismo para la composición de componentes, que no puede ser soportado por los elementos personalizados debido a la naturaleza de los slots nativos. Los slots anticipados también significan que el componente receptor no puede controlar cuándo o si debe renderizar una parte del contenido del slot.
+- La evaluación de los slots anticipados dificulta la composición de los componentes. Los [slots con ámbito](/guide/components/slots#scoped-slots) de Vue son un poderoso mecanismo para la composición de componentes, que no puede ser soportado por los elementos personalizados debido a la naturaleza de los slots nativos. Los slots anticipados también significan que el componente receptor no puede controlar cuándo o si debe renderizar una parte del contenido del slot.
 
-- El envío de elementos personalizados con CSS de ámbito del shadow DOM requiere hoy en día incrustar el CSS dentro de JavaScript para que pueda ser inyectado en el shadow root en tiempo de ejecución. También da lugar a estilos duplicados en el marcado en los escenarios de SSR. Hay [características de la plataforma](https://github.com/whatwg/html/pull/4898/) en las que se está trabajando en esta área; pero por ahora no están soportadas universalmente, y todavía hay problemas de rendimiento de producción / SSR que deben ser abordados. Mientras tanto, los SFC de Vue proporcionan [mecanismos de alcance de CSS](/api/sfc-css-features.html) que soportan la extracción de los estilos en archivos CSS planos.
+- El envío de elementos personalizados con CSS de ámbito del shadow DOM requiere hoy en día incrustar el CSS dentro de JavaScript para que pueda ser inyectado en el shadow root en tiempo de ejecución. También da lugar a estilos duplicados en el marcado en los escenarios de SSR. Hay [características de la plataforma](https://github.com/whatwg/html/pull/4898/) en las que se está trabajando en esta área; pero por ahora no están soportadas universalmente, y todavía hay problemas de rendimiento de producción / SSR que deben ser abordados. Mientras tanto, los SFC de Vue proporcionan [mecanismos de alcance de CSS](/api/sfc-css-features) que soportan la extracción de los estilos en archivos CSS planos.
 
 Vue siempre se mantendrá al día con los últimos estándares de la plataforma web, y estaremos encantados de aprovechar cualquier cosa que la plataforma proporcione si hace nuestro trabajo más fácil. Sin embargo, nuestro objetivo es proporcionar soluciones que funcionen bien y que funcionen hoy. Eso significa que tenemos que incorporar las nuevas características de la plataforma con una mentalidad crítica, y eso implica llenar los vacíos en los que los estándares se quedan cortos mientras sea el caso.

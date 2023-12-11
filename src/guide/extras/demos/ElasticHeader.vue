@@ -30,10 +30,10 @@ function startDrag(e) {
 function onDrag(e) {
   e = e.changedTouches ? e.changedTouches[0] : e
   if (isDragging) {
-    c.x = headerHeight + (e.pageX - start.x)
+    x.value = headerHeight + (e.pageX - start.x)
     const dy = e.pageY - start.y
     const dampen = dy > 0 ? 1.5 : 4
-    c.y = headerHeight + dy / dampen
+    y.value = headerHeight + dy / dampen
   }
 }
 
@@ -41,7 +41,7 @@ function stopDrag() {
   if (isDragging) {
     isDragging = false
     dynamics.animate(
-      c,
+      { x: x.value, y: y.value },
       { x: headerHeight, y: headerHeight },
       { type: dynamics.spring, duration: 700, friction: 280 }
     )

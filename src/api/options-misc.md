@@ -22,11 +22,11 @@ Declara explícitamente un nombre de visualización para el componente.
 
   Cuando se utilizan componentes de un solo archivo, el componente ya infiere su propio nombre a partir del nombre del archivo. Por ejemplo, un archivo llamado `MiComponente.vue` tendrá el nombre de visualización inferido "MiComponente".
 
-  Otro caso es que cuando un componente se registra globalmente con [`app.component`] (/api/application.html#app-component), el ID global se establece automáticamente como su nombre.
+  Otro caso es que cuando un componente se registra globalmente con [`app.component`](/api/application#app-component), el ID global se establece automáticamente como su nombre.
 
   La opción `name` le permite anular el nombre inferido, o proporcionar explícitamente un nombre cuando no se puede inferir ningún nombre (por ejemplo, cuando no se utilizan herramientas de compilación, o un componente no SFC).
 
-  Hay un caso en el que `nombre` es explícitamente necesario: cuando se compara con componentes almacenables en caché en [`<KeepAlive>`] (/guide/built-ins/keep-alive.html) a través de sus propiedades `include / exclude`.
+  Hay un caso en el que `nombre` es explícitamente necesario: cuando se compara con componentes almacenables en caché en [`<KeepAlive>`](/guide/built-ins/keep-alive) a través de sus propiedades `include / exclude`.
 
   :::consejo
   Desde la versión 3.2.34, un componente de un solo archivo que utilice `<script setup>` inferirá automáticamente su opción `name` basándose en el nombre del archivo, eliminando la necesidad de declarar manualmente el nombre incluso cuando se utilice con `<KeepAlive>`.
@@ -104,7 +104,7 @@ Controla si el comportamiento por defecto de los atributos de los componentes de
 
   </div>
 
-- **Ver también:** [Attributos Fallthrough](/guide/components/attrs.html)
+- **Ver también:** [Attributos Fallthrough](/guide/components/attrs)
 
 ## components {#components}
 
@@ -134,7 +134,7 @@ Un objeto que registra los componentes que se pondrán a disposición de la inst
   }
   ```
 
-- **Ver también:** [Registro de Componentes](/guide/components/registration.html)
+- **Ver también:** [Registro de Componentes](/guide/components/registration)
 
 ## directives {#directives}
 
@@ -169,4 +169,4 @@ Un objeto que registra las directivas que se pondrán a disposición de la insta
 
   Un hash de directivas que se pondrán a disposición de la instancia del componente.
 
-- **Ver también:** [Directivas personalizadas](/guide/reusability/custom-directives.html)
+- **Ver también:** [Directivas personalizadas](/guide/reusability/custom-directives)

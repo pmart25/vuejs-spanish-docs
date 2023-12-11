@@ -20,7 +20,7 @@ footer: false
 - Instalar [Node.js](https://nodejs.org/) versión 16.0 o superior
   :::
 
-En esta sección presentaremos cómo crear una [Aplicación de una Sola Página (SPA)](/guide/extras/ways-of-using-vue.html#aplicaciones-de-una-sola-pagina-spa) de Vue en tu máquina local. El proyecto creado utilizará una configuración de compilación basada en [Vite](https://vitejs.dev) y nos permitirá utilizar los [Componentes de un Solo Archivo (SFCs)](/guide/scaling-up/sfc) de Vue.
+En esta sección presentaremos cómo crear una [Aplicación de una Sola Página (SPA)](/guide/extras/ways-of-using-vue#single-page-application-spa) de Vue en tu máquina local. El proyecto creado utilizará una configuración de compilación basada en [Vite](https://vitejs.dev) y nos permitirá utilizar los [Componentes de un Solo Archivo (SFCs)](/guide/scaling-up/sfc) de Vue.
 
 Asegúrate de tener instalada una versión actualizada de [Node.js](https://nodejs.org/), luego ejecuta el siguiente comando en tu línea de comandos (sin el signo `>`):
 
@@ -48,10 +48,10 @@ Si no estás seguro de alguna opción, simplemente elige `No` pulsando enter por
 <span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run dev</span></span>
 <span class="line"></span></code></pre></div>
 
-Ahora deberías tener tu primer proyecto Vue funcionando. Ten en cuenta que los componentes de ejemplo del proyecto generado están escritos utilizando la [Composition API](/guide/introduction.html#composition-api) y `<script setup>`, en lugar de la [Options API](/guide/introduction.html#options-api). He aquí algunos consejos adicionales:
+Ahora deberías tener tu primer proyecto Vue funcionando. Ten en cuenta que los componentes de ejemplo del proyecto generado están escritos utilizando la [Composition API](/guide/introduction#composition-api) y `<script setup>`, en lugar de la [Options API](/guide/introduction#options-api). He aquí algunos consejos adicionales:
 
-- La configuración de IDE recomendada es [Visual Studio Code](https://code.visualstudio.com/) + la [extensión Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Si utilizas otros editores, consulta la sección [Soporte para IDE](/guide/scaling-up/tooling.html#soporte-para-ide).
-- En la [Guía de Herramientas](/guide/scaling-up/tooling.html) se discuten más detalles sobre las herramientas, incluyendo la integración con frameworks backend.
+- La configuración de IDE recomendada es [Visual Studio Code](https://code.visualstudio.com/) + la [extensión Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar). Si utilizas otros editores, consulta la sección [Soporte para IDE](/guide/scaling-up/tooling#ide-support).
+- En la [Guía de Herramientas](/guide/scaling-up/tooling) se discuten más detalles sobre las herramientas, incluyendo la integración con frameworks backend.
 - Para obtener más información sobre la herramienta de compilación subyacente Vite, consulta la [documentación de Vite](https://vitejs.dev).
 - Si decides utilizar TypeScript, consulta la guía [Usando Vue con TypeScript](typescript/overview.html).
 
@@ -60,7 +60,7 @@ Cuando estés listo para enviar tu aplicación a producción, ejecuta lo siguien
 <div class="language-sh"><pre><code><span class="line"><span style="color:var(--vt-c-green);">&gt; </span><span style="color:#A6ACCD;">npm run build</span></span>
 <span class="line"></span></code></pre></div>
 
-Esto creará una compilación de tu aplicación lista para producción en el directorio `./dist` del proyecto. Consulta la guía de [Implementación de Producción (Deployment)](/guide/best-practices/production-deployment.html) para aprender más sobre cómo enviar tu aplicación a producción.
+Esto creará una compilación de tu aplicación lista para producción en el directorio `./dist` del proyecto. Consulta la guía de [Implementación de Producción (Deployment)](/guide/best-practices/production-deployment) para aprender más sobre cómo enviar tu aplicación a producción.
 
 [Siguientes Pasos >](#siguientes-pasos)
 
@@ -171,7 +171,7 @@ Si tu navegador preferido aún no soporta la importación de mapas, puedes relle
 :::
 
 :::warning Notas sobre el Uso en Producción
-Los ejemplos mostrados hasta ahora usan la versión de desarrollo de Vue. Si quieres usar Vue desde un CDN en producción, asegúrate de consultar la guía de [Implementación en Producción (Deployment)](/guide/best-practices/production-deployment.html#sin-herramientas-de-compilacion).
+Los ejemplos mostrados hasta ahora usan la versión de desarrollo de Vue. Si quieres usar Vue desde un CDN en producción, asegúrate de consultar la guía de [Implementación en Producción (Deployment)](/guide/best-practices/production-deployment#without-build-tools).
 :::
 
 ### Distribución de los Módulos {#splitting-up-the-modules}
@@ -208,7 +208,7 @@ Puede que hayas notado que la plantilla del componente importado está en línea
 
 ### Usando la Composition API sin un Paso de Compilación {#using-composition-api-without-a-build-step}
 
-Muchos de los ejemplos para la Composition API utilizarán la sintaxis `<script setup>`. Si piensas utilizar la Composition API sin un paso de compilación, consulta el uso de la [opción `setup()`](/api/composition-api-setup.html).
+Muchos de los ejemplos para la Composition API utilizarán la sintaxis `<script setup>`. Si piensas utilizar la Composition API sin un paso de compilación, consulta el uso de la [opción `setup()`](/api/composition-api-setup).
 
 ## Siguientes pasos {#next-steps}
 

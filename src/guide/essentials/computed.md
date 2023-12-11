@@ -97,7 +97,7 @@ Intenta cambiar el valor del array `books` en la aplicación `data` y verás có
 
 Puedes enlazar datos a las propiedades computadas en las plantillas como si se tratara de una propiedad normal. Vue es consciente de que `this.publishedBooksMessage` depende de `this.author.books`, por lo que actualizará cualquier enlace que dependa de `this.publishedBooksMessage` cuando cambie `this.author.books`.
 
-Mira también: [Escritura de Propiedades Computadas](/guide/typescript/options-api.html#escritura-de-propiedades-computadas) <sup class="vt-badge ts" />
+Mira también: [Escritura de Propiedades Computadas](/guide/typescript/options-api#typing-computed-properties) <sup class="vt-badge ts" />
 
 </div>
 
@@ -134,7 +134,7 @@ Aquí hemos declarado la propiedad computada `publishedBooksMessage`. La funció
 
 Una propiedad computada rastrea automáticamente sus dependencias reactivas. Vue es consciente de que el cálculo de `publishedBooksMessage` depende de `author.books`, por lo que actualizará cualquier enlace que dependa de `publishedBooksMessage` cuando cambie `author.books`.
 
-Véase también: [Escritura de computed()](/guide/typescript/composition-api.html#escritura-de-computed) <sup class="vt-badge ts" />
+Véase también: [Escritura de computed()](/guide/typescript/composition-api#typing-computed) <sup class="vt-badge ts" />
 
 </div>
 
