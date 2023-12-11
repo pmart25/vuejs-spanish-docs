@@ -8,8 +8,8 @@ import { onMounted } from 'vue'
 let version = $ref()
 
 onMounted(async () => {
-  const res = await fetch('https://api.github.com/repos/vuejs/core/releases?per_page=1')
-  version = (await res.json())[0].name
+  const res = await fetch('https://api.github.com/repos/vuejs/core/releases?latest')
+  version = (await res.json()).name
 })
 </script>
 

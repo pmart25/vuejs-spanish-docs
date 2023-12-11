@@ -416,3 +416,12 @@ const openModal = () => {
 ```
 
 Ten en cuenta que si quieres usar esta técnica en archivos TypeScript en lugar de SFCs de Vue, necesitas habilitar el [Modo Takeover de Volar](./overview.html#modo-takeover-de-volar).
+
+En casos donde el tipo exacto del componente no está disponible o no es importante, se puede usar `ComponentPublicInstance`. Esto incluirá solo las propiedades compartidas por todos los componentes, tales como `$el`:
+
+```ts
+import { ref } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
+
+const child = ref<ComponentPublicInstance | null>(null)
+```
