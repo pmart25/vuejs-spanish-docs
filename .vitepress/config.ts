@@ -582,7 +582,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: 'Vue.js - El Framework Progresivo de JavaScript',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
-  scrollOffset: 'header',
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
@@ -617,6 +616,13 @@ export default defineConfigWithTheme<ThemeConfig>({
         'data-site': 'XNOLWPLB',
         'data-spa': 'auto',
         defer: ''
+      }
+    ],
+    [
+      'script',
+      {
+        src: 'https://vueschool.io/banner.js?affiliate=vuejs&type=top',
+        async: 'true'
       }
     ]
   ],
