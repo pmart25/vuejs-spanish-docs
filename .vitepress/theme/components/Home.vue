@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-// import SiteMap from './SiteMap.vue'
+import SiteMap from './SiteMap.vue'
 // import NewsLetter from './NewsLetter.vue'
 import { load, data, base } from './sponsors'
 import SponsorsGroup from './SponsorsGroup.vue'
@@ -54,7 +54,13 @@ onMounted(async () => {
             />
             <img :src="`${base}/images/${img}`" :alt="name" />
           </picture>
-          <img v-else :src="`${base}/images/${img}`" :alt="name" />
+          <img
+            width="168"
+            height="42"
+            v-else
+            :src="`${base}/images/${img}`"
+            :alt="name"
+          />
         </a>
         <span>{{ description }}</span>
       </template>
@@ -92,7 +98,7 @@ onMounted(async () => {
     <SponsorsGroup tier="gold" placement="landing" />
   </section>
 
-  <!-- <SiteMap /> -->
+  <SiteMap />
   <!-- <NewsLetter /> -->
 </template>
 
