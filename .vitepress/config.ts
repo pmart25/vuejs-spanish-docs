@@ -582,7 +582,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: 'Vue.js - El Framework Progresivo de JavaScript',
   srcDir: 'src',
   srcExclude: ['tutorial/**/description.md'],
-  scrollOffset: 'header',
 
   head: [
     ['meta', { name: 'theme-color', content: '#3c8772' }],
