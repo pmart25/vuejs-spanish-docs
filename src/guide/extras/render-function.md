@@ -644,6 +644,42 @@ const vnode = withDirectives(h('div'), [
 
 Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function#resolvedirective).
 
+### Referencias de plantilla (template refs)
+
+<div class="composition-api">
+
+Con la Composition API, las referencias de plantilla son creadas pasando el `ref()` mismo como una prop al vnode.
+
+```js
+import { h, ref } from 'vue'
+
+export default {
+  setup() {
+    const divEl = ref()
+
+    // <div ref="divEl">
+    return () => h('div', { ref: divEl })
+  }
+}
+```
+
+</div>
+
+<div class="options-api">
+
+Con la Options API, las referencias de plantilla son creadas pasando el nombre del ref como string en las props de vnode:
+
+```js
+export default {
+  render() {
+    // <div class="divEl">
+    return h('div', { ref: divEl })
+  }
+}
+```
+
+</div>
+
 ## Componentes Funcionales {#functional-components}
 
 Los componentes funcionales son una forma alternativa de componente que no tienen ningún estado propio. Actúan como funciones puras: entrada de props, salida de vnodes. Se renderizan sin crear una instancia del componente (es decir, sin `this`), y sin los hooks habituales del ciclo de vida del componente.
