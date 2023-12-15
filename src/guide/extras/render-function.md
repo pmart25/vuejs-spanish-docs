@@ -648,7 +648,7 @@ Si la directiva está registrada por su nombre y no se puede importar directamen
 
 <div class="composition-api">
 
-Con la Composition API, las referencias de plantilla son creadas pasando el `ref()` mismo como una prop al vnode.
+Con Composition API, las referencias de plantilla son creadas pasando el `ref()` mismo como una prop al vnode.
 
 ```js
 import { h, ref } from 'vue'
@@ -667,7 +667,7 @@ export default {
 
 <div class="options-api">
 
-Con la Options API, las referencias de plantilla son creadas pasando el nombre del ref como string en las props de vnode:
+Con Options API, las referencias de plantilla son creadas pasando el nombre del ref como string en las props del vnode:
 
 ```js
 export default {
