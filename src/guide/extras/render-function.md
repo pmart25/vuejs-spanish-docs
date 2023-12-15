@@ -644,11 +644,11 @@ const vnode = withDirectives(h('div'), [
 
 Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function#resolvedirective).
 
-### Referencias de plantilla (template refs)
+### Refs de la plantilla (template refs)
 
 <div class="composition-api">
 
-Con Composition API, las referencias de plantilla son creadas pasando el `ref()` mismo como una prop al vnode.
+Con Composition API, se crean refs de la plantilla pasando el `ref()` mismo como una prop al vnode.
 
 ```js
 import { h, ref } from 'vue'
@@ -667,7 +667,7 @@ export default {
 
 <div class="options-api">
 
-Con Options API, las referencias de plantilla son creadas pasando el nombre del ref como string en las props del vnode:
+Con Options API, se crean refs de la plantilla pasando el nombre del ref como string en las props del vnode:
 
 ```js
 export default {
