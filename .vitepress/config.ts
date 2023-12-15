@@ -32,7 +32,7 @@ const nav: ThemeConfig['nav'] = [
   },
   {
     text: 'Zona de Práctica',
-    link: 'https://sfc.vuejs.org'
+    link: 'https://play.vuejs.org'
   },
   {
     text: 'Ecosistema',
@@ -43,6 +43,7 @@ const nav: ThemeConfig['nav'] = [
         items: [
           { text: 'Socios', link: '/partners/' },
           { text: 'Temas', link: '/ecosystem/themes' },
+          { text: 'Certificación', link: 'https://certification.vuejs.org/?ref=vuejs-nav' },
           { text: 'Empleos', link: 'https://vuejobs.com/?ref=vuejs' },
           {
             text: 'Tienda de Camisetas',
