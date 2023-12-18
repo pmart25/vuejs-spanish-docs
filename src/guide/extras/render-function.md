@@ -682,7 +682,7 @@ export default {
 
 ## Componentes Funcionales {#functional-components}
 
-Los componentes funcionales son una forma alternativa de componente que no tienen ningún estado propio. Actúan como funciones puras: entrada de props, salida de vnodes. Se renderizan sin crear una instancia del componente (es decir, sin `this`), y sin los hooks habituales del ciclo de vida del componente.
+Los componentes funcionales son una forma alternativa de componente que no tienen ningún estado propio. Actúan como funciones puras: entrada de props, salida de vnodos. Se renderizan sin crear una instancia del componente (es decir, sin `this`), y sin los hooks habituales del ciclo de vida del componente.
 
 Para crear un componente funcional utilizamos una función simple, en lugar de un objeto de opciones. La función es efectivamente la función `render` para el componente.
 
