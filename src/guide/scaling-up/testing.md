@@ -137,19 +137,13 @@ const { getByText } = render(Stepper, {
     max: 1
   }
 })
-
-getByText('0') // Afirmación implícita de que "0" está dentro del componente
-
+getByText('0') // Aserción implícita de que "0" está dentro del componente.
 const button = getByText('increment')
-
-// Enviar un evento de clic a nuestro botón de incremento.
+// Ejecuta un evento de clic al botón de incremento.
 await fireEvent.click(button)
-
 getByText('1')
-
 await fireEvent.click(button)
 ```
-
 </div>
 
 <div class="vtu-api">
@@ -185,13 +179,9 @@ mount(Stepper, {
   }
 })
 
-cy.get(valueSelector)
-  .should('be.visible')
-  .and('contain.text', '0')
-  .get(buttonSelector)
-  .click()
-  .get(valueSelector)
-  .should('contain.text', '1')
+cy.get(valueSelector).should('be.visible').and('contain.text', '0')
+  .get(buttonSelector).click()
+  .get(valueSelector).should('contain.text', '1')
 ```
 
 </div>
@@ -210,21 +200,21 @@ cy.get(valueSelector)
 
 ### Recomendación {#recommendation-1}
 
-- [Vitest](https://vitest.dev/) para componentes o composables que se renderizan sin el head (por ejemplo, la función [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) en VueUse). Los componentes y el DOM se pueden probar usando [@testing-library/vue](https://testing-library.com/docs/vue-testing-library/intro).
+- [Vitest](https://vitest.dev/) para componentes o composables que se renderizan sin el head (por ejemplo, la función [`useFavicon`](https://vueuse.org/core/useFavicon/#usefavicon) en VueUse). Los componentes y el DOM se pueden probar usando [`@vue/test-utils`](https://github.com/vuejs/test-utils).
 
 - [Pruebas de Componentes de Cypress](https://on.cypress.io/component) para componentes cuyo comportamiento esperado depende de la representación adecuada de estilos o la activación de eventos nativos del DOM. Se puede usar con Librería de Pruebas a través de [@testing-library/cypress](https://testing-library.com/docs/cypress-testing-library/intro).
 
-Las principales diferencias entre Vitest y los ejecutores de pruebas basados en el navegador son la velocidad y el contexto de ejecución. En resumen, los ejecutores basados en navegador, como Cypress, pueden detectar problemas que los ejecutores basados en nodos, como Vitest, no pueden (por ejemplo, problemas de estilo, eventos reales nativos del DOM, cookies, almacenamiento local y fallas de red), pero los ejecutores basados en el navegador son _órdenes de magnitud más lentos que Vitest_ porque abren un navegador, compilan sus hojas de estilo y más. Cypress es un ejecutor basado en el navegador que soporta pruebas de componentes. Por favor, lee la [página de comparación de Vitest](https://vitest.dev/guide/comparisons.html#cypress) para obtener la información más reciente que compara Vitest y Cypress.
+Las principales diferencias entre Vitest y los ejecutores de pruebas basados en el navegador son la velocidad y el contexto de ejecución. En resumen, los ejecutores basados en navegador, como Cypress, pueden detectar problemas que los ejecutores basados en nodos, como Vitest, no pueden (por ejemplo, problemas de estilo, eventos reales nativos del DOM, cookies, almacenamiento local y fallas de red), pero los ejecutores basados en el navegador son *órdenes de magnitud más lentos que Vitest* porque abren un navegador, compilan sus hojas de estilo y más. Cypress es un ejecutor basado en el navegador que soporta pruebas de componentes. Por favor, lee la [página de comparación de Vitest](https://vitest.dev/guide/comparisons.html#cypress) para obtener la información más reciente que compara Vitest y Cypress.
 
 ### Librerías de Montaje {#mounting-libraries}
 
 La prueba de componentes a menudo implica montar el componente que se está probando de forma aislada, desencadenar eventos simulados de entrada de usuario y la realización de pruebas en la salida del DOM renderizado. Existen librerías dedicadas que simplifican estas tareas.
 
-- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) es una librería de pruebas de Vue centrada en probar componentes sin depender de los detalles de implementación. Creada con la accesibilidad en mente, su enfoque también hace que la refactorización sea muy sencilla. Su objetivo principal es que cuanto más se parezcan las pruebas a la forma en que se usa el software, más confianza pueden brindar.
-
 - [`@vue/test-utils`](https://github.com/vuejs/test-utils) es la librería oficial de prueba de componentes de bajo nivel que se escribió para proporcionar a los usuarios acceso a las API específicas de Vue. También es la librería de bajo nivel sobre la que está construida `@testing-library/vue`.
 
-Recomendamos usar `@testing-library/vue` para probar componentes en aplicaciones, ya que su enfoque se alinea mejor con las prioridades de prueba de las aplicaciones. Usa `@vue/test-utils` solo si estás creando componentes avanzados que requieren pruebas internas específicas de Vue.
+- [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) es una librería de pruebas de Vue centrada en probar componentes sin depender de los detalles de implementación. Su objetivo principal es que cuanto más se parezcan las pruebas a la forma en que se usa el software, más confianza pueden brindar.
+
+Recomendamos usar `@testing-library/vue` para probar componentes en aplicaciones. Usa `@vue/test-utils` solo si estás creando componentes avanzados que requieren pruebas internas específicas de Vue.
 
 ### Otras opciones {#other-options-1}
 

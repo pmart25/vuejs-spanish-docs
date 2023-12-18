@@ -44,7 +44,7 @@ Además, `v-model` se puede utilizar en entradas de diferentes tipos, `<textarea
 - `<select>` utiliza la propiedad `value` y `change` como un evento.
 
 ::: tip Nota
-`v-model` ignorará los atributos iniciales `value`, `checked` o `selected` encontrados en cualquier elemento del formulario. Este siempre tratará el estado del JavaScript enlazado actual como la fuente de la verdad. Debes declarar el valor inicial en el lado de JavaScript, utilizando <span class="options-api">la opción `data`</span><span class="composition-api">las APIs de reactividad</span>.
+`v-model` ignorará los atributos iniciales `value`, `checked` o `selected` encontrados en cualquier elemento del formulario. Este siempre tratará el estado del JavaScript enlazado actual como la fuente de la verdad. Debes declarar el valor inicial en el lado de JavaScript, utilizando <span class="options-api">la opción [`data`](/api/options-state.html#data)</span><span class="composition-api">las [APIs de reactividad](/api/reactivity-core.html#reactivity-api-core)</span>.
 :::
 
 ## Uso Básico {#basic-usage}
