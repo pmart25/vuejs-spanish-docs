@@ -191,6 +191,12 @@ const emit = defineEmits<{
   (e: 'change', id: number): void
   (e: 'update', value: string): void
 }>()
+
+// 3.3+: sintaxis alternativa más sucinta
+const emit = defineEmits<{
+  change: [id: number] // sintaxis de named tuple
+  update: [value: string]
+}>()
 ```
 
 - `defineProps` o `defineEmits` sólo puede utilizar la declaración en tiempo de ejecución O una declaración de tipo. El uso de ambos al mismo tiempo dará como resultado un error de compilación.
