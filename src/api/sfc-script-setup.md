@@ -249,6 +249,24 @@ defineExpose({
 
 Cuando un padre obtiene una instancia de este componente a través de refs de plantilla, la instancia recuperada tendrá la forma `{ a: number, b: number }` (las refs se desenvuelven automáticamente como en las instancias normales).
 
+## defineOptions() {#defineoptions}
+
+Esta macro puede usarse para declarar opciones de componentes directamente dentro de `<script setup>` sin tener que usar un bloque `<script>` separado:
+
+```vue
+<script setup>
+defineOptions({
+  inheritAttrs: false,
+  customOptions: {
+    /* ... */
+  }
+})
+</script>
+```
+
+- Sólo se admite en 3.3+.
+- Se trata de una macro. Las opciones serán elevadas al ámbito del módulo y no podrán acceder a variables locales en `<script setup>` que no sean constantes literales.
+
 ## `useSlots()` y `useAttrs()` {#useslots-useattrs}
 
 El uso de `slots` y `attrs` dentro de `<script setup>` debería ser relativamente raro, ya que puedes acceder a ellos directamente como `$slots` y `$attrs` en la plantilla. En el raro caso de que los necesites, utiliza los ayudantes `useSlots` y `useAttrs` respectivamente:
@@ -312,7 +330,7 @@ Además, la expresión esperada se compilará automáticamente en un formato que
 `async setup()` debe usarse en combinación con `Suspense`, que actualmente sigue siendo una característica experimental. Planeamos finalizarla y documentarla en una versión futura, pero si tienes curiosidad ahora, puedes consultar sus [pruebas](https://github.com/vuejs/core/blob/main/packages/runtime-core/__tests__/components/Suspense.spec.ts) para ver cómo funciona.
 :::
 
-### Genéricos <sup class="vt-badge ts" />
+### Genéricos <sup class="vt-badge ts" /> {#generics}
 
 Los parámetros de tipo genérico pueden declararse utilizando el atributo `generic` de la etiqueta `<script>`:
 
