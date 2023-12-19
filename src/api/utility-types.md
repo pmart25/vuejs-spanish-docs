@@ -32,6 +32,77 @@ Se usa para anotar una prop con tipos más avanzados cuando se usan declaracione
 
 - **Véase también:** [Guía - Escritura de las Props de Componentes](/guide/typescript/options-api#typing-component-props)
 
+## MaybeRef\<T> {#mayberef}
+
+Alias para `T | Ref<T>`. Útil para anotar argumentos de [Composables](/guide/reusability/composables.html).
+
+- Sólo se admite en 3.3+.
+
+## MaybeRefOrGetter\<T> {#maybereforgetter}
+
+Alias para `T | Ref<T> | (() => T)`. Útil para anotar argumentos de [Composables](/guide/reusability/composables.html).
+
+- Sólo se admite en 3.3+.
+
+## ExtractPropTypes\<T> {#extractproptypes}
+
+Extrae tipos de props de un objeto de opciones de props en tiempo de ejecución. Los tipos extraídos son de cara interna - es decir, las props resueltas recibidas por el componente. Esto significa que las props booleanas y las props con valores por defecto siempre se definen, incluso si no son necesarias.
+
+Para extraer props públicas, es decir, props que el padre puede pasar, utilice [`ExtractPublicPropTypes`](#extractpublicproptypes).
+
+- **Ejemplo**
+
+  ```ts
+  const propsOptions = {
+    foo: String,
+    bar: Boolean,
+    baz: {
+      type: Number,
+      required: true
+    },
+    qux: {
+      type: Number,
+      default: 1
+    }
+  } as const
+
+  type Props = ExtractPropTypes<typeof propsOptions>
+  // {
+  //   foo?: string,
+  //   bar: boolean,
+  //   baz: number,
+  //   qux: number
+  // }
+  ```
+
+## ExtractPublicPropTypes\<T> {#extractpublicproptypes}
+
+Extrae tipos de props de un objeto de opciones de props en tiempo de ejecución. Los tipos extraídos son de cara pública, es decir, las props que el padre tiene permitido pasar.
+
+- **Ejemplo**
+  ```ts
+  const propsOptions = {
+    foo: String,
+    bar: Boolean,
+    baz: {
+      type: Number,
+      required: true
+    },
+    qux: {
+      type: Number,
+      default: 1
+    }
+  } as const
+
+  type Props = ExtractPublicPropTypes<typeof propsOptions>
+  // {
+  //   foo?: string,
+  //   bar?: boolean,
+  //   baz: number,
+  //   qux?: number
+  // }
+  ```
+
 ## ComponentCustomProperties {#componentcustomproperties}
 
 Se utiliza para aumentar el tipo de instancia del componente para admitir propiedades globales personalizadas.
