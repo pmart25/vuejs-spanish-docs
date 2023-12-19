@@ -288,14 +288,7 @@ const emit = defineEmits<{
 
   - En el modo de producción, el compilador generará la declaración de formato del array para reducir el tamaño del paquete (los props aquí serán compilados en `['foo', 'bar']`)
 
-  - El código emitido sigue siendo TypeScript con escritura válida, que puede ser procesado posteriormente por otras herramientas.
-
-- A partir de ahora, el argumento de declaración de tipo debe ser uno de los siguientes para garantizar un análisis estático correcto:
-
-  - Un tipo literal
-  - Una referencia a una interfaz o a un tipo literal en el mismo archivo
-
-  Actualmente, los tipos complejos y las importaciones de tipos de otros archivos no están soportados. Es posible admitir importaciones de tipos en el futuro.
+  - En las versiones 3.2 e inferiores, el parámetro de tipo está limitado a un literal de tipo o a una referencia a un tipo local. Esta limitación se ha eliminado en 3.3. A partir de 3.3, Vue es capaz de inferir props en tiempo de ejecución a partir de los tipos más comunes, incluidos los importados externamente.
 
 ### Valores por defecto de props cuando se usa declaración de tipo {#default-props-values-when-using-type-declaration}
 
