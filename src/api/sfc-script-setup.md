@@ -273,14 +273,14 @@ defineOptions({
 
 Esta macro puede usarse para proporcionar type hints a los IDEs para la comprobación de tipo de nombre de slot y props.
 
-`defineSlots()` sólo acepta un parámetro de tipo y ningún argumento de tiempo de ejecución. El parámetro de tipo debe ser un literal de tipo donde la clave de propiedad es el nombre del slot, y el tipo de valor son los props esperados para ese slot.
+`defineSlots()` sólo acepta un parámetro de tipo y ningún argumento de ejecución. El parámetro de tipo debe ser un literal de tipo donde la clave de propiedad es el nombre del slot, y el tipo de valor es la función del slot. El primer argumento de la función son las props que el slot espera recibir, y su tipo se utilizará para las props del slot en la plantilla. El tipo de retorno se ignora actualmente y puede ser `any`, pero puede que lo utilicemos para comprobar el contenido del slot en el futuro.
 
 También retorna el objeto `slots`, que es equivalente al objeto `slots` expuesto en el contexto de setup o retornado por `useSlots()`.
 
 ```vue
 <script setup lang="ts">
 const slots = defineSlots<{
-  default: { msg: string }
+  default(props: { msg: string }): any
 }>()
 </script>
 ```
