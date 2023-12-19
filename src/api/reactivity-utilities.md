@@ -132,6 +132,43 @@ También se puede utilizar para crear una referencia para una propiedad en un ob
 
   Cuando se utiliza la signatura de propiedad del objeto, `toRef()` devolverá una ref utilizable incluso si la propiedad de origen no existe actualmente. Esto hace posible trabajar con propiedades opcionales, que no serían recogidas por [`toRefs`](#torefs).
 
+## toValue() <sup class="vt-badge" data-text="3.3+" /> {#tovalue}
+
+Normaliza valores / refs / getters a valores. Esto es similar a [unref()](#unref), excepto que también normaliza getters. Si el argumento es un getter, se invocará y se devolverá su valor de retorno.
+
+Se puede utilizar en [Composables](/guide/reusability/composables.html) para normalizar un argumento que puede ser un valor, una ref o un getter.
+
+- **Tipo**
+
+  ```ts
+  function toValue<T>(source: T | Ref<T> | (() => T)): T
+  ```
+
+- **Ejemplo**
+
+  ```js
+  toValue(1) //       --> 1
+  toValue(ref(1)) //  --> 1
+  toValue(() => 1) // --> 1
+  ```
+
+  Normalización de argumentos en composables:
+
+  ```ts
+  import type { MaybeRefOrGetter } from 'vue'
+
+  function useFeature(id: MaybeRefOrGetter<number>) {
+    watch(() => toValue(id), id => {
+      // Reaccionar a cambios al id
+    })
+  }
+
+  // este composable admite cualquiera de los siguientes:
+  useFeature(1)
+  useFeature(ref(1))
+  useFeature(() => 1)
+  ```
+
 ## toRefs() {#torefs}
 
 Convierte un objeto reactivo en un objeto simple donde cada propiedad del objeto resultante es una ref que apunta a la propiedad correspondiente del objeto original. Cada ref individual se crea utilizando [`toRef()`](#toref).
