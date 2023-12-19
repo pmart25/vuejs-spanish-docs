@@ -308,6 +308,35 @@ const props = withDefaults(defineProps<Props>(), {
 
 Esto se compilará con las opciones equivalentes de props `default` en tiempo de ejecución. Además, el ayudante `withDefaults` proporciona comprobaciones de tipo para los valores por defecto y garantiza que el tipo `props` devuelto tenga los indicadores opcionales eliminados para las propiedades que sí tienen valores por defecto declarados.
 
+### Genéricos
+
+Los parámetros de tipo genérico pueden declararse utilizando el atributo `generic` de la etiqueta `<script>`:
+
+```vue
+<script setup lang="ts" generic="T">
+defineProps<{
+  id: T
+  list: T[]
+}>()
+</script>
+```
+
+El valor de `generic` funciona exactamente igual que la lista de parámetros entre `<...>` en TypeScript. Por ejemplo, puedes usar múltiples parámetros, restricciones `extends`, tipos por defecto o tipos importados de referencia:
+
+```vue
+<script
+  setup
+  lang="ts"
+  generic="T extends string | number, U extends Item"
+>
+import type { Item } from './types'
+defineProps<{
+  id: T
+  list: U[]
+}>()
+</script>
+```
+
 ## Restricciones {#restrictions}
 
 Debido a la diferencia en la semántica de ejecución del módulo, el código dentro de `<script setup>` depende del contexto de un SFC. Cuando se mueve a archivos externos `.js` o `.ts`, puede generar confusión tanto para los desarrolladores como para las herramientas. Por lo tanto, **`<script setup>`** no se puede utilizar con el atributo `src`.
