@@ -207,7 +207,9 @@ const emit = defineEmits<{
 
   - En el modo de producción, el compilador generará la declaración de formato del array para reducir el tamaño del paquete (los props aquí serán compilados en `['foo', 'bar']`)
 
-  - En las versiones 3.2 e inferiores, el parámetro de tipo está limitado a un literal de tipo o a una referencia a un tipo local. Esta limitación se ha eliminado en 3.3. A partir de 3.3, Vue es capaz de inferir props en tiempo de ejecución a partir de los tipos más comunes, incluidos los importados externamente.
+  - En la versión 3.2 e inferiores, el parámetro de tipo genérico para `defineProps()` estaba limitado a un literal de tipo o a una referencia a una interfaz local.
+
+  Esta limitación se ha resuelto en la versión 3.3. La última versión de Vue soporta la referencia a tipos importados y a un conjunto limitado de tipos complejos en la posición del parámetro de tipo. Sin embargo, debido a que la conversión de tipo a tiempo de ejecución sigue basándose en AST, algunos tipos complejos que requieren un análisis de tipo real, por ejemplo, los tipos condicionales, no son compatibles. Puede utilizar tipos condicionales para el tipo de una única prop, pero no para todo el objeto props.
 
 ### Valores por defecto de props cuando se usa declaración de tipo {#default-props-values-when-using-type-declaration}
 
@@ -365,13 +367,13 @@ Los parámetros de tipo genérico pueden declararse utilizando el atributo `gene
 ```vue
 <script setup lang="ts" generic="T">
 defineProps<{
-  id: T
-  list: T[]
+  items: T[]
+  selected: T
 }>()
 </script>
 ```
 
-El valor de `generic` funciona exactamente igual que la lista de parámetros entre `<...>` en TypeScript. Por ejemplo, puedes usar múltiples parámetros, restricciones `extends`, tipos por defecto o tipos importados de referencia:
+El valor de `generic` funciona exactamente igual que la lista de parámetros entre `<...>` en TypeScript. Por ejemplo, puedes usar múltiples parámetros, restricciones `extends`, tipos por defecto y tipos importados de referencia:
 
 ```vue
 <script

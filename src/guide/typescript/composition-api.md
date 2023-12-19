@@ -54,7 +54,7 @@ const props = defineProps<Props>()
 
 En la versión 3.2 e inferiores, el parámetro de tipo genérico para `defineProps()` se limitaba a un literal de tipo o a una referencia a una interfaz local.
 
-Esta limitación se ha resuelto en 3.3. La última versión de Vue soporta referenciar tipos importados y complejos en la posición del parámetro de tipo. Sin embargo, ten en cuenta que el soporte de tipos complejos está basado en AST y por lo tanto no es 100% completo.
+Esta limitación se ha resuelto en la versión 3.3. La última versión de Vue soporta la referencia a tipos importados y a un conjunto limitado de tipos complejos en la posición del parámetro de tipo. Sin embargo, debido a que la conversión de tipo a tiempo de ejecución sigue basándose en AST, algunos tipos complejos que requieren un análisis de tipo real, por ejemplo, los tipos condicionales, no son compatibles. Puede utilizar tipos condicionales para el tipo de una única prop, pero no para todo el objeto props.
 
 ### Valores por Defecto de las Props {#props-default-values}
 
