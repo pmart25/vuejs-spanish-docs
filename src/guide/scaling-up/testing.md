@@ -137,11 +137,16 @@ const { getByText } = render(Stepper, {
     max: 1
   }
 })
+
 getByText('0') // Aserción implícita de que "0" está dentro del componente.
+
 const button = getByText('increment')
+
 // Ejecuta un evento de clic al botón de incremento.
 await fireEvent.click(button)
+
 getByText('1')
+
 await fireEvent.click(button)
 ```
 </div>
@@ -204,7 +209,7 @@ cy.get(valueSelector).should('be.visible').and('contain.text', '0')
 
 - [Pruebas de Componentes de Cypress](https://on.cypress.io/component) para componentes cuyo comportamiento esperado depende de la representación adecuada de estilos o la activación de eventos nativos del DOM. Se puede usar con Librería de Pruebas a través de [@testing-library/cypress](https://testing-library.com/docs/cypress-testing-library/intro).
 
-Las principales diferencias entre Vitest y los ejecutores de pruebas basados en el navegador son la velocidad y el contexto de ejecución. En resumen, los ejecutores basados en navegador, como Cypress, pueden detectar problemas que los ejecutores basados en nodos, como Vitest, no pueden (por ejemplo, problemas de estilo, eventos reales nativos del DOM, cookies, almacenamiento local y fallas de red), pero los ejecutores basados en el navegador son *órdenes de magnitud más lentos que Vitest* porque abren un navegador, compilan sus hojas de estilo y más. Cypress es un ejecutor basado en el navegador que soporta pruebas de componentes. Por favor, lee la [página de comparación de Vitest](https://vitest.dev/guide/comparisons.html#cypress) para obtener la información más reciente que compara Vitest y Cypress.
+Las principales diferencias entre Vitest y los ejecutores de pruebas basados en el navegador son la velocidad y el contexto de ejecución. En resumen, los ejecutores basados en navegador, como Cypress, pueden detectar problemas que los ejecutores basados en nodos, como Vitest, no pueden (por ejemplo, problemas de estilo, eventos reales nativos del DOM, cookies, almacenamiento local y fallas de red), pero los ejecutores basados en el navegador son _órdenes de magnitud más lentos que Vitest_ porque abren un navegador, compilan sus hojas de estilo y más. Cypress es un ejecutor basado en el navegador que soporta pruebas de componentes. Por favor, lee la [página de comparación de Vitest](https://vitest.dev/guide/comparisons.html#cypress) para obtener la información más reciente que compara Vitest y Cypress.
 
 ### Librerías de Montaje {#mounting-libraries}
 
@@ -214,7 +219,7 @@ La prueba de componentes a menudo implica montar el componente que se está prob
 
 - [`@testing-library/vue`](https://github.com/testing-library/vue-testing-library) es una librería de pruebas de Vue centrada en probar componentes sin depender de los detalles de implementación. Su objetivo principal es que cuanto más se parezcan las pruebas a la forma en que se usa el software, más confianza pueden brindar.
 
-Recomendamos usar `@testing-library/vue` para probar componentes en aplicaciones. Usa `@vue/test-utils` solo si estás creando componentes avanzados que requieren pruebas internas específicas de Vue.
+Recomendamos usar `@vue/test-utils` para probar componentes en aplicaciones. `@testing-library/vue` tiene problemas al probar componentes asincrónicos con Suspense, por lo que se debe usar con precaución.
 
 ### Otras opciones {#other-options-1}
 
