@@ -90,64 +90,6 @@ Desmonta una instancia de una aplicación montada, activando el hook del ciclo d
   }
   ```
 
-## app.provide() {#app-provide}
-
-Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de la aplicación.
-
-- **Tipo**
-
-  ```ts
-  interface App {
-    provide<T>(key: InjectionKey<T> | symbol | string, value: T): this
-  }
-  ```
-
-- **Detalles**
-
-  Espera la key de inyección como el primer argumento, y el valor provisto como el segundo. Devuelve la propia instancia de la aplicación.
-
-- **Ejemplo**
-
-  ```js
-  import { createApp } from 'vue'
-
-  const app = createApp(/* ... */)
-
-  app.provide('message', 'hello')
-  ```
-
-  Dentro de un componente en la aplicación:
-
-  <div class="composition-api">
-
-  ```js
-  import { inject } from 'vue'
-
-  export default {
-    setup() {
-      console.log(inject('message')) // 'hola'
-    }
-  }
-  ```
-
-  </div>
-  <div class="options-api">
-
-  ```js
-  export default {
-    inject: ['message'],
-    created() {
-      console.log(this.message) // 'hola'
-    }
-  }
-  ```
-
-  </div>
-
-- **Ver también:**
-  - [Provide / Inject](/guide/components/provide-inject)
-  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#app-level-provide)
-
 ## app.component() {#app-component}
 
 Registra un componente global si se le pasa tanto un nombre como la definición del componente, o recupera uno ya registrado si solo se pasa el nombre.
@@ -268,6 +210,92 @@ Para la reutilización de lógica, usar preferentemente [Composables](/guide/reu
   interface App {
     mixin(mixin: ComponentOptions): this
   }
+  ```
+
+## app.provide() {#app-provide}
+
+Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de la aplicación.
+
+- **Tipo**
+
+  ```ts
+  interface App {
+    provide<T>(key: InjectionKey<T> | symbol | string, value: T): this
+  }
+  ```
+
+- **Detalles**
+
+  Espera la key de inyección como el primer argumento, y el valor provisto como el segundo. Devuelve la propia instancia de la aplicación.
+
+- **Ejemplo**
+
+  ```js
+  import { createApp } from 'vue'
+
+  const app = createApp(/* ... */)
+
+  app.provide('message', 'hello')
+  ```
+
+  Dentro de un componente en la aplicación:
+
+  <div class="composition-api">
+
+  ```js
+  import { inject } from 'vue'
+
+  export default {
+    setup() {
+      console.log(inject('message')) // 'hola'
+    }
+  }
+  ```
+
+  </div>
+  <div class="options-api">
+
+  ```js
+  export default {
+    inject: ['message'],
+    created() {
+      console.log(this.message) // 'hola'
+    }
+  }
+  ```
+
+  </div>
+
+- **Ver también:**
+  - [Provide / Inject](/guide/components/provide-inject)
+  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#app-level-provide)
+  - [app.runWithContext()](#app-runwithcontext)
+
+## app.runWithContext()<sup class="vt-badge" data-text="3.3+" /> {#app-runwithcontext}
+
+Ejecuta una llamada de retorno con la aplicación actual como contexto de inyección.
+
+- **Type**
+
+  ```ts
+  interface App {
+    runWithContext<T>(fn: () => T): T
+  }
+  ```
+
+- **Details**
+
+Espera una función de devolución de llamada y la ejecuta inmediatamente. Durante la llamada síncrona de la devolución de llamada, las llamadas a `inject()` pueden buscar inyecciones a partir de los valores proporcionados por la aplicación actual, incluso cuando no hay ninguna instancia de componente activa en ese momento. También se devolverá el valor de retorno de la llamada de retorno.
+
+- **Ejemplo**
+
+  ```js
+  import { inject } from 'vue'
+  app.provide('id', 1)
+  const injected = app.runWithContext(() => {
+    return inject('id')
+  })
+  console.log(injected) // 1
   ```
 
 ## app.version {#app-version}
