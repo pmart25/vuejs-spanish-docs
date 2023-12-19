@@ -48,7 +48,7 @@ Alias para `T | Ref<T> | (() => T)`. Útil para anotar argumentos de [Composable
 
 Extrae tipos de props de un objeto de opciones de props en tiempo de ejecución. Los tipos extraídos son de cara interna - es decir, las props resueltas recibidas por el componente. Esto significa que las props booleanas y las props con valores por defecto siempre se definen, incluso si no son necesarias.
 
-Para extraer props públicas, es decir, props que el padre puede pasar, utilice [`ExtractPublicPropTypes`](#extractpublicproptypes).
+Para extraer props públicas, es decir, props que el padre puede pasar, utiliza [`ExtractPublicPropTypes`](#extractpublicproptypes).
 
 - **Ejemplo**
 

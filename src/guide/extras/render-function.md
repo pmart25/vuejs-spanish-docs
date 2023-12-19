@@ -237,7 +237,7 @@ Similar a la transformación, JSX de Vue también necesita diferentes definicion
 
 Los tipos JSX globales pueden causar conflictos si se usan junto con otras bibliotecas que también necesitan la inferencia de tipos JSX, en particular React. A partir de la versión 3.3, Vue permite especificar el espacio de nombres JSX mediante la opción [jsxImportSource](https://www.typescriptlang.org/tsconfig#jsxImportSource) de TypeScript. Planeamos eliminar el registro global por defecto del espacio de nombres JSX en 3.4.
 
-Para los usuarios de TSX, se sugiere establecer [jsxImportSource](https://www.typescriptlang.org/tsconfig#jsxImportSource) a `'vue'` en `tsconfig.json` después de actualizar a 3.3, u optar por archivo con `/* @jsxImportSource vue */`. Esto les permitirá optar por el nuevo comportamiento ahora y actualizar sin problemas cuando la versión 3.4 sea lanzada.
+Para los usuarios de TSX, se les sugiere establecer [jsxImportSource](https://www.typescriptlang.org/tsconfig#jsxImportSource) a `'vue'` en `tsconfig.json` después de actualizar a 3.3, u optar por archivo con `/* @jsxImportSource vue */`. Esto les permitirá optar por el nuevo comportamiento ahora y actualizar sin problemas cuando la versión 3.4 sea lanzada.
 
 Si hay código que depende de la presencia del espacio de nombres global `JSX`, puedes conservar el comportamiento global exacto anterior a 3.4 haciendo referencia explícita a `vue/jsx`, que registra el espacio de nombres global `JSX`.
 

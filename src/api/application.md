@@ -285,7 +285,7 @@ Ejecuta una llamada de retorno con la aplicación actual como contexto de inyecc
 
 - **Detalles**
 
-Espera una función de devolución de llamada y la ejecuta inmediatamente. Durante la llamada síncrona de la devolución de llamada, las llamadas a `inject()` pueden buscar inyecciones a partir de los valores proporcionados por la aplicación actual, incluso cuando no hay ninguna instancia de componente activa en ese momento. También se devolverá el valor de retorno de la llamada de retorno.
+Espera un callback y lo ejecuta inmediatamente. Durante la llamada síncrona del callback, las llamadas a `inject()` pueden buscar inyecciones a partir de los valores proporcionados por la aplicación actual, incluso cuando no hay ninguna instancia de componente activa en ese momento. También se devolverá el valor del callback.
 
 - **Ejemplo**
 
