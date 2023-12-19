@@ -268,7 +268,7 @@ Provee un valor que puede ser inyectado en todos sus componentes hijos dentro de
 
 - **Ver también:**
   - [Provide / Inject](/guide/components/provide-inject)
-  - [Nivel de Aplicación de Provide](/guide/components/provide-inject#app-level-provide)
+  - [Provide de Nivel de Aplicación](/guide/components/provide-inject#app-level-provide)
   - [app.runWithContext()](#app-runwithcontext)
 
 ## app.runWithContext()<sup class="vt-badge" data-text="3.3+" /> {#app-runwithcontext}
@@ -283,7 +283,7 @@ Ejecuta una llamada de retorno con la aplicación actual como contexto de inyecc
   }
   ```
 
-- **Details**
+- **Detalles**
 
 Espera una función de devolución de llamada y la ejecuta inmediatamente. Durante la llamada síncrona de la devolución de llamada, las llamadas a `inject()` pueden buscar inyecciones a partir de los valores proporcionados por la aplicación actual, incluso cuando no hay ninguna instancia de componente activa en ese momento. También se devolverá el valor de retorno de la llamada de retorno.
 

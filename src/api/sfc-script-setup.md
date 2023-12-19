@@ -175,8 +175,6 @@ const emit = defineEmits(['change', 'delete'])
 
 - Las opciones pasadas a `defineProps` y `defineEmits` se sacarán del setup al ámbito del módulo. Por lo tanto, las opciones no pueden hacer referencia a las variables locales declaradas en el ámbito de setup. Si lo hacen, se producirá un error de compilación. Sin embargo, _puede_ hacer referencia a enlaces importados ya que también están en el ámbito del módulo.
 
-## Funcionalidades Exclusivas de TypeScript <sup class="vt-badge ts" /> {#typescript-only-features}
-
 ### Declaraciones de props/emit de sólo tipo {#type-only-props-emit-declarations}
 
 Los props y los emits también pueden declararse utilizando la sintaxis de tipo puro, pasando un argumento de tipo literal a `defineProps` o `defineEmits`:
@@ -194,12 +192,12 @@ const emit = defineEmits<{
 
 // 3.3+: sintaxis alternativa más sucinta
 const emit = defineEmits<{
-  change: [id: number] // sintaxis de named tuple
+  change: [id: number] // sintaxis de tupla nombrada
   update: [value: string]
 }>()
 ```
 
-- `defineProps` o `defineEmits` sólo puede utilizar la declaración en tiempo de ejecución O una declaración de tipo. El uso de ambos al mismo tiempo dará como resultado un error de compilación.
+- `defineProps` o `defineEmits` sólo pueden utilizar la declaración en tiempo de ejecución O una declaración de tipo. El uso de ambos al mismo tiempo dará como resultado un error de compilación.
 
 - Cuando se utiliza la declaración de tipo, la declaración equivalente en tiempo de ejecución se genera automáticamente a partir del análisis estático para eliminar la necesidad de una doble declaración y seguir garantizando un comportamiento correcto en tiempo de ejecución.
 
@@ -209,7 +207,7 @@ const emit = defineEmits<{
 
   - En la versión 3.2 e inferiores, el parámetro de tipo genérico para `defineProps()` estaba limitado a un literal de tipo o a una referencia a una interfaz local.
 
-  Esta limitación se ha resuelto en la versión 3.3. La última versión de Vue soporta la referencia a tipos importados y a un conjunto limitado de tipos complejos en la posición del parámetro de tipo. Sin embargo, debido a que la conversión de tipo a tiempo de ejecución sigue basándose en AST, algunos tipos complejos que requieren un análisis de tipo real, por ejemplo, los tipos condicionales, no son compatibles. Puede utilizar tipos condicionales para el tipo de una única prop, pero no para todo el objeto props.
+  Esta limitación se ha resuelto en la versión 3.3. La última versión de Vue soporta la referencia a tipos importados y a un conjunto limitado de tipos complejos en la posición del parámetro de tipo. Sin embargo, debido a que la conversión de tipo a tiempo de ejecución sigue basándose en AST, algunos tipos complejos que requieren un análisis de tipo real, por ejemplo, los tipos condicionales, no son compatibles. Puedes utilizar tipos condicionales para el tipo de una única prop, pero no para todo el objeto props.
 
 ### Valores por defecto de props cuando se usa declaración de tipo {#default-props-values-when-using-type-declaration}
 
@@ -227,7 +225,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 ```
 
-Esto se compilará con las opciones equivalentes de props `default` en tiempo de ejecución. Además, el ayudante `withDefaults` proporciona comprobaciones de tipo para los valores por defecto y garantiza que el tipo `props` devuelto tenga los indicadores opcionales eliminados para las propiedades que sí tienen valores por defecto declarados.
+Esto se compilará con las opciones equivalentes de props `default` en tiempo de ejecución. Además, el ayudante `withDefaults` proporciona comprobaciones de tipo para los valores por defecto, y garantiza que el tipo `props` devuelto tenga los indicadores opcionales eliminados para las propiedades que sí tienen valores por defecto declarados.
 
 ## defineExpose() {#defineexpose}
 
@@ -271,7 +269,7 @@ defineOptions({
 
 ## defineSlots()<sup class="vt-badge ts"/> {#defineslots}
 
-Esta macro puede usarse para proporcionar type hints a los IDEs para la comprobación de tipo de nombre de slot y props.
+Esta macro puede usarse para proporcionar sugerencias de tipo a los IDEs para la comprobación de tipo de nombre de slot y props.
 
 `defineSlots()` sólo acepta un parámetro de tipo y ningún argumento de ejecución. El parámetro de tipo debe ser un literal de tipo donde la clave de propiedad es el nombre del slot, y el tipo de valor es la función del slot. El primer argumento de la función son las props que el slot espera recibir, y su tipo se utilizará para las props del slot en la plantilla. El tipo de retorno se ignora actualmente y puede ser `any`, pero puede que lo utilicemos para comprobar el contenido del slot en el futuro.
 
@@ -295,7 +293,7 @@ const slots = defineSlots<{
 </script>
 ```
 
-- Only supported in 3.3+.
+- Sólo se admite en 3.3+.
 
 ## `useSlots()` y `useAttrs()` {#useslots-useattrs}
 

@@ -88,9 +88,8 @@ Configurar las opciones del compilador en tiempo de ejecución para la plantilla
 
 Una opción para ayudar con la inferencia de tipo cuando se utilizan slots de forma programática en funciones de renderizado. Sólo se admite en 3.3+.
 
-- **Details**
+- **Detalles**
 
-  This option's runtime value is not used. The actual types should be declared via type casting using the `SlotsType` type helper:
   El valor en tiempo de ejecución de esta opción no se utiliza. Los tipos reales deben ser declarados a través de type casting utilizando el ayudante de tipo `SlotsType`:
 
   ```ts

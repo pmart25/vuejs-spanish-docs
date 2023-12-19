@@ -159,7 +159,7 @@ Se puede utilizar en [Composables](/guide/reusability/composables.html) para nor
 
   function useFeature(id: MaybeRefOrGetter<number>) {
     watch(() => toValue(id), id => {
-      // Reaccionar a cambios al id
+      // Reaccionar a cambios del id
     })
   }
 

@@ -218,7 +218,7 @@ Vue también soporta la creación de componentes con JSX / TSX. Los detalles est
 
 ## Componentes Genéricos {#generic-components}
 
-Generic components are supported in two cases:
+Los componentes genéricos se admiten en dos casos:
 
 - En SFCs: [`<script setup>` con el atributo `generic`](/api/sfc-script-setup.html#generics)
 - Función de renderizado / componentes JSX: [signatura de la función `defineComponent()`](/api/general.html#function-signature)
