@@ -151,7 +151,10 @@ Por lo tanto, lo siguiente **NO** funcionará:
 Es posible llamar a un método expuesto a componentes dentro de una expresión vinculante:
 
 ```vue-html
-<time :title="toTitleDate(date)" :datetime="date">
+<time 
+  :title="toTitleDate(date)" 
+  :datetime="date"
+>
   {{ formatDate(date) }}
 </time>
 ```
