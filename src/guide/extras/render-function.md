@@ -644,7 +644,7 @@ const vnode = withDirectives(h('div'), [
 
 Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function#resolvedirective).
 
-### Refs de la plantilla (template refs)
+### Refs de la plantilla (template refs) {#template-refs}
 
 <div class="composition-api">
 
