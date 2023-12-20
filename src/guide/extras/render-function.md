@@ -231,6 +231,16 @@ Aunque fue introducido por primera vez por React, JSX en realidad no tiene una s
 
 La definición de tipos de Vue también proporciona inferencia de tipos para el uso de TSX. Al utilizar TSX, asegúrate de especificar `"jsx": "preserve"` en `tsconfig.json` para que TypeScript deje la sintaxis JSX intacta a la hora de procesar la transformación JSX de Vue.
 
+### Inferencia de tipos JSX
+
+Similar a la transformación, JSX de Vue también necesita diferentes definiciones de tipos. Actualmente, los tipos de Vue registran automáticamente los tipos JSX de Vue de forma global. Esto significa que TSX funcionará de forma automática cuando los tipos de Vue estén disponibles.
+
+Los tipos JSX globales pueden causar conflictos si se usan junto con otras bibliotecas que también necesitan la inferencia de tipos JSX, en particular React. A partir de la versión 3.3, Vue permite especificar el espacio de nombres JSX mediante la opción [jsxImportSource](https://www.typescriptlang.org/tsconfig#jsxImportSource) de TypeScript. Planeamos eliminar el registro global por defecto del espacio de nombres JSX en 3.4.
+
+Para los usuarios de TSX, se les sugiere establecer [jsxImportSource](https://www.typescriptlang.org/tsconfig#jsxImportSource) a `'vue'` en `tsconfig.json` después de actualizar a 3.3, u optar por archivo con `/* @jsxImportSource vue */`. Esto les permitirá optar por el nuevo comportamiento ahora y actualizar sin problemas cuando la versión 3.4 sea lanzada.
+
+Si hay código que depende de la presencia del espacio de nombres global `JSX`, puedes conservar el comportamiento global exacto anterior a 3.4 haciendo referencia explícita a `vue/jsx`, que registra el espacio de nombres global `JSX`.
+
 ## Recetas de Funciones de Renderizado {#render-function-recipes}
 
 A continuación vamos a proporcionar algunas recetas comunes para la implementación de funciones de plantilla con sus equivalentes funciones de renderizado / JSX.
@@ -644,7 +654,7 @@ const vnode = withDirectives(h('div'), [
 
 Si la directiva está registrada por su nombre y no se puede importar directamente, se puede resolver utilizando el helper [`resolveDirective`](/api/render-function#resolvedirective).
 
-### Refs de la plantilla (template refs)
+### Refs de la plantilla (template refs) {#template-refs}
 
 <div class="composition-api">
 

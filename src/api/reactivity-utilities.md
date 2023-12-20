@@ -41,11 +41,23 @@ Devuelve el valor interno si el argumento es una ref, de lo contrario devuelve e
 
 ## toRef() {#toref}
 
-Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de origen. La ref creada se sincroniza con su propiedad de origen: al mutar la propiedad de origen se actualizará la ref y viceversa.
+Se puede utilizar para normalizar valores / refs / getters convirtiéndolos en refs (3.3+).
+
+También se puede utilizar para crear una referencia para una propiedad en un objeto fuente reactivo. La referencia creada se sincroniza con su propiedad fuente: el mutar la propiedad fuente actualizará la referencia y viceversa.
 
 - **Tipo**
 
   ```ts
+  // signatura de normalización (3.3+)
+  function toRef<T>(
+    value: T
+  ): T extends () => infer R
+    ? Readonly<Ref<R>>
+    : T extends Ref
+    ? T
+    : Ref<UnwrapRef<T>>
+
+  // signatura de propiedad del objeto
   function toRef<T extends object, K extends keyof T>(
     object: T,
     key: K,
@@ -57,12 +69,29 @@ Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de
 
 - **Ejemplo**
 
+  Signatura de normalización (3.3+)
+
+  ```js
+  // devuelve los refs existentes tal cual
+  toRef(existingRef)
+
+  // crea un ref de sólo lectura que llama al getter en el acceso a .value
+  toRef(() => props.foo)
+
+  // crea refs normales a partir de valores no funcionales
+  // equivalente a ref(1)
+  toRef(1)
+  ```
+
+  Signatura de propiedad del objeto
+
   ```js
   const state = reactive({
     foo: 1,
     bar: 2
   })
 
+  // un ref bidireccional que se sincroniza con la propiedad original
   const fooRef = toRef(state, 'foo')
 
   // la mutación de la ref actualiza el original
@@ -93,12 +122,52 @@ Se puede utilizar para crear una ref para una propiedad en un objeto reactivo de
   // convertir `props.foo` en una ref, y luego pasarla a
   // una composable
   useSomeFeature(toRef(props, 'foo'))
+
+  // sintaxis getter - recomendada en 3.3+
+  useSomeFeature(toRef(() => props.foo))
   </script>
   ```
 
   Cuando `toRef` se usa con props de componentes, se siguen aplicando las restricciones habituales sobre la mutación de las props. Intentar asignar un nuevo valor a la ref es equivalente a intentar modificar la prop directamente y no está permitido. En ese escenario, puedes considerar el uso de [`computed`](./reactivity-core#computed) con `get` y `set` en su lugar. Consulta la guía para [usar `v-model` con componentes](/guide/components/v-model) para más información.
 
-  `toRef()` devolverá una ref utilizable incluso si la propiedad de origen no existe actualmente. Esto hace posible trabajar con propiedades opcionales, que no serían recogidas por [`toRefs`](#torefs).
+  Cuando se utiliza la signatura de propiedad del objeto, `toRef()` devolverá una ref utilizable incluso si la propiedad de origen no existe actualmente. Esto hace posible trabajar con propiedades opcionales, que no serían recogidas por [`toRefs`](#torefs).
+
+## toValue() <sup class="vt-badge" data-text="3.3+" /> {#tovalue}
+
+Normaliza valores / refs / getters a valores. Esto es similar a [unref()](#unref), excepto que también normaliza getters. Si el argumento es un getter, se invocará y se devolverá su valor de retorno.
+
+Se puede utilizar en [Composables](/guide/reusability/composables.html) para normalizar un argumento que puede ser un valor, una ref o un getter.
+
+- **Tipo**
+
+  ```ts
+  function toValue<T>(source: T | Ref<T> | (() => T)): T
+  ```
+
+- **Ejemplo**
+
+  ```js
+  toValue(1) //       --> 1
+  toValue(ref(1)) //  --> 1
+  toValue(() => 1) // --> 1
+  ```
+
+  Normalización de argumentos en composables:
+
+  ```ts
+  import type { MaybeRefOrGetter } from 'vue'
+
+  function useFeature(id: MaybeRefOrGetter<number>) {
+    watch(() => toValue(id), id => {
+      // Reaccionar a cambios del id
+    })
+  }
+
+  // este composable admite cualquiera de los siguientes:
+  useFeature(1)
+  useFeature(ref(1))
+  useFeature(() => 1)
+  ```
 
 ## toRefs() {#torefs}
 
