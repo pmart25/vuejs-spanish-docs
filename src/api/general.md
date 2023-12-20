@@ -102,9 +102,15 @@ Un ayudante de tipo para definir un componente Vue con inferencia de tipo.
 - **Tipo**
 
   ```ts
+  // sintaxis de opciones
   function defineComponent(
-    component: ComponentOptions | ComponentOptions['setup']
+    component: ComponentOptions
   ): ComponentConstructor
+  // sintaxis de función (requiere 3.3+)
+  function defineComponent(
+    setup: ComponentOptions['setup'],
+    extraOptions?: ComponentOptions
+  ): () => any
   ```
 
   > El tipo está simplificado para facilitar la lectura.
@@ -122,6 +128,57 @@ Un ayudante de tipo para definir un componente Vue con inferencia de tipo.
 
   type FooInstance = InstanceType<typeof Foo>
   ```
+
+  ### Signatura de Función <sup class="vt-badge" data-text="3.3+" /> {#function-signature}
+
+  `defineComponent()` también tiene una signatura alternativa que está pensada para ser utilizada con Composition API y [funciones render o JSX](/guide/extras/render-function.html).
+
+  En lugar de pasar un objeto de opciones, se espera una función. Esta función trabaja igual que la función [`setup()`](/api/composition-api-setup.html#composition-api-setup) de la Composition API: recibe los props y el contexto de setup. El valor de retorno debe ser una función de renderizado - se admiten tanto `h()` como JSX:
+
+  ```js
+  import { ref, h } from 'vue'
+
+  const Comp = defineComponent(
+    (props) => {
+      // utiliza aquí la Composition API como en <script setup>.
+      const count = ref(0)
+
+      return () => {
+        // función de renderizado o JSX
+        return h('div', count.value)
+      }
+    },
+    // opciones extra, por ejemplo declarar props y emits
+    {
+      props: {
+        /* ... */
+      }
+    }
+  )
+  ```
+
+  El principal caso de uso de esta signatura es su uso con TypeScript (y en particular con TSX), ya que soporta genéricos:
+
+  ```tsx
+  const Comp = defineComponent(
+    <T extends string | number>(props: { msg: T; list: T[] }) => {
+      // utiliza aquí la Composition API como en <script setup>.
+      const count = ref(0)
+
+      return () => {
+        // función de renderizado o JSX
+        return <div>{count.value}</div>
+      }
+    },
+    // la declaración manual de props en tiempo de ejecución
+    // sigue siendo necesaria.
+    {
+      props: ['msg', 'list']
+    }
+  )
+  ```
+
+  En el futuro, planeamos proporcionar un plugin de Babel que automáticamente infiera e inyecte los props en tiempo de ejecución (como para `defineProps` en SFCs) para que la declaración de props en tiempo de ejecución pueda ser omitida.
 
   ### Nota sobre el Treeshaking de webpack {#nota-sobre-el-treeshaking-de-webpack}
 

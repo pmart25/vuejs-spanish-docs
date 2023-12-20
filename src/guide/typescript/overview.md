@@ -175,6 +175,10 @@ const count = ref(1)
 </template>
 ```
 
+Véase también:
+
+- [Funciones exclusivas de TypeScript en `<script setup>`](/api/sfc-script-setup.html#typescript-only-features)
+
 ### TypeScript en Plantillas {#typescript-in-templates}
 
 La `<template>` también soporta TypeScript en expresiones vinculadas cuando se utiliza `<script lang="ts">` o `<script setup lang="ts">`. Esto es útil en los casos en los que se necesita realizar un control de tipos en las expresiones de las plantillas.
@@ -207,6 +211,17 @@ let x: string | number = 1
 :::tip
 Si se utiliza Vue CLI o una configuración basada en webpack, TypeScript requiere `vue-loader@^16.8.0` en las expresiones de plantilla.
 :::
+
+### Uso con TSX
+
+Vue también soporta la creación de componentes con JSX / TSX. Los detalles están cubiertos en la guía [Funciones de Renderizado y JSX](/guide/extras/render-function.html#jsx-tsx).
+
+## Componentes Genéricos {#generic-components}
+
+Los componentes genéricos se admiten en dos casos:
+
+- En SFCs: [`<script setup>` con el atributo `generic`](/api/sfc-script-setup.html#generics)
+- Función de renderizado / componentes JSX: [signatura de la función `defineComponent()`](/api/general.html#function-signature)
 
 ## Recomendaciones Específicas de la API {#api-specific-recipes}
 
