@@ -262,7 +262,7 @@ function useFeature(maybeRefOrGetter) {
 
 Si tu composable crea efectos reactivos cuando la entrada es una ref o un getter,asegúrate de vigilar explícitamente la ref / getter con `watch()`, o llama a `toValue()` dentro de un `watchEffect()` para que sea rastreado correctamente.
 
-La [implementación de useFetch() discutida anteriormente](#aceptando-estado-reactivo) da un ejemplo concreto de una composable que acepta refs, getters y valores simples como argumento de entrada.
+La [implementación de useFetch() discutida anteriormente](#accepting-reactive-state) da un ejemplo concreto de una composable que acepta refs, getters y valores simples como argumento de entrada.
 
 ### Valores de Retorno {#return-values}
 
