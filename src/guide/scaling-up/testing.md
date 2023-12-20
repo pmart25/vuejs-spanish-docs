@@ -22,7 +22,7 @@ Cuando diseñes la estrategia de pruebas de tu aplicación Vue, debes aprovechar
 
 - **Unitaria**: Comprueba que las entradas a una determinada función, clase o composable están produciendo la salida o los efectos secundarios esperados.
 - **De componente**: Comprueba que tu componente se monta, se renderiza, se puede interactuar con él y se comporta como se espera. Estas pruebas importan más código que las pruebas unitarias, son más complejas y requieren más tiempo de ejecución.
-- **De extremo a extremo**: Comprueban las características que abarcan varias páginas y hacen peticiones reales de red contra tu aplicación Vue construida en producción. Estas pruebas a menudo implican la puesta en marcha de una base de datos u otro backend.
+- **De extremo a extremo**: Comprueba las características que abarcan varias páginas y hace peticiones reales de red contra tu aplicación Vue construida en producción. Estas pruebas a menudo implican la puesta en marcha de una base de datos u otro backend.
 
 Cada tipo de prueba desempeña un papel en la estrategia de pruebas de tu aplicación y cada una te protegerá contra diferentes tipos de problemas.
 
