@@ -206,7 +206,7 @@ O, aceptar una función getter:
 const { data, error } = useFetch(() => `/posts/${props.id}`)
 ```
 
-Podemos refactorizar nuestra implementacion existente con las APIs [`watchEffect()`](/api/reactivity-core-html#watcheffect) y [`toValue()`](/api/reactivity-utilities.html#tovalue):
+Podemos refactorizar nuestra implementacion existente con las APIs [`watchEffect()`](/api/reactivity-core.html#watcheffect) y [`toValue()`](/api/reactivity-utilities.html#tovalue):
 
 ```js{8, 13}
 // fetch.js
