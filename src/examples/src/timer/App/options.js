@@ -19,7 +19,6 @@ export default {
   methods: {
     update() {
       this.elapsed = performance.now() - this.lastTime
-
       if (this.elapsed >= this.duration) {
         cancelAnimationFrame(this.handle)
       } else {
