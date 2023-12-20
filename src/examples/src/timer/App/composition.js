@@ -7,6 +7,7 @@ export default {
 
     let lastTime
     let handle
+
     const update = () => {
       elapsed.value = performance.now() - lastTime
       if (elapsed.value >= duration.value) {
@@ -22,7 +23,9 @@ export default {
       update()
     }
 
-    const progressRate = computed(() => Math.min(elapsed.value / duration.value, 1))
+    const progressRate = computed(() => 
+      Math.min(elapsed.value / duration.value, 1)
+    )
 
     reset()
 
