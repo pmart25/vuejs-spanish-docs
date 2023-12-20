@@ -165,7 +165,7 @@ Las funciones llamadas dentro de las expresiones vinculantes se llamarán cada v
 
 ### Acceso Global Restringido {#restricted-globals-access}
 
-Las expresiones de plantillas están en un espacio aislado y solo tienen acceso a una [lista restringida de elementos globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3). La lista expone métodos globales integrados de uso común, como `Math` y `Date`.
+Las expresiones de plantillas están en un espacio aislado y solo tienen acceso a una [lista restringida de elementos globales](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsAllowList.ts#L3). La lista expone métodos globales integrados de uso común, como `Math` y `Date`.
 
 Los elementos globales no incluidos explícitamente en la lista, por ejemplo, las propiedades adjuntas por el usuario en `window`, no serán accesibles en las expresiones de la plantilla. Sin embargo, explícitamente, puedes definir métodos globales adicionales para todas las expresiones de Vue agregándolos a [`app.config.globalProperties`](/api/application#app-config-globalproperties).
 
