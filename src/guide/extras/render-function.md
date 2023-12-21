@@ -231,7 +231,7 @@ Aunque fue introducido por primera vez por React, JSX en realidad no tiene una s
 
 La definición de tipos de Vue también proporciona inferencia de tipos para el uso de TSX. Al utilizar TSX, asegúrate de especificar `"jsx": "preserve"` en `tsconfig.json` para que TypeScript deje la sintaxis JSX intacta a la hora de procesar la transformación JSX de Vue.
 
-### Inferencia de tipos JSX
+### Inferencia de tipos JSX  {#jsx-type-inference}
 
 Similar a la transformación, JSX de Vue también necesita diferentes definiciones de tipos. Actualmente, los tipos de Vue registran automáticamente los tipos JSX de Vue de forma global. Esto significa que TSX funcionará de forma automática cuando los tipos de Vue estén disponibles.
 

@@ -175,10 +175,6 @@ const count = ref(1)
 </template>
 ```
 
-Véase también:
-
-- [Funciones exclusivas de TypeScript en `<script setup>`](/api/sfc-script-setup.html#typescript-only-features)
-
 ### TypeScript en Plantillas {#typescript-in-templates}
 
 La `<template>` también soporta TypeScript en expresiones vinculadas cuando se utiliza `<script lang="ts">` o `<script setup lang="ts">`. Esto es útil en los casos en los que se necesita realizar un control de tipos en las expresiones de las plantillas.

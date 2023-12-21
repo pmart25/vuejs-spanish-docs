@@ -111,7 +111,7 @@ Hay dos puntos problemáticos con el uso actual de `defineProps()` en `<script s
 
 1. Al igual que con `.value`, necesitas acceder siempre a los props como `props.x` para mantener la reactividad. Esto significa que no puedes desestructurar `defineProps` porque las variables desestructuradas resultantes no son reactivas y no se actualizarán.
 
-2. Cuando se utiliza la [declaración de props de sólo tipo](/api/sfc-script-setup#typescript-only-features), no hay una manera fácil de declarar valores por defecto para las props. Hemos introducido la API `withDefaults()` para este propósito, pero sigue siendo difícil de usar.
+2. Cuando se utiliza la [declaración de props de sólo tipo](/api/sfc-script-setup#type-only-props-emit-declarations), no hay una manera fácil de declarar valores por defecto para las props. Hemos introducido la API `withDefaults()` para este propósito, pero sigue siendo difícil de usar.
 
 Podemos solucionar estos problemas aplicando una transformación en tiempo de compilación cuando se utiliza `defineProps` con desestructuración, similar a lo que vimos antes con `$()`:
 
