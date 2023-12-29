@@ -271,6 +271,66 @@ En el ejemplo anterior, se llamará al método `increment` cuando se haga clic e
 
 </div>
 
+### Reactividad profunda {#deep-reactivity}
+
+<div class="options-api">
+
+En Vue, el estado es profundamente reactivo por defecto. Esto significa que puedes esperar que los cambios sean detectados aún cuando mutes objetos o arrays anidados:
+
+```js
+export default {
+  data() {
+    return {
+      obj: {
+        nested: { count: 0 },
+        arr: ['foo', 'bar']
+      }
+    }
+  },
+  methods: {
+    mutateDeeply() {
+      // estos funcionarán como es esperado
+      this.obj.nested.count++
+      this.obj.arr.push('baz')
+    }
+  }
+}
+```
+
+</div>
+
+<div class="composition-api">
+
+Las refs pueden tener cualquier tipo de valor, incluyendo objetos profundamente anidados, arrays, o estructuras que son parte de JavaScript como `Map`.
+
+Una ref hará que su valor sea profundamente reactivo. Esto significa que puedes esperar que se detecten cambios aún cuando mutas objetos o arrays anidados.
+
+```js
+import { ref } from 'vue'
+
+const obj = ref({
+  nested: { count : 0 },
+  arr: ['foo', 'bar']
+})
+
+function mutateDeeply() {
+  // estos funcionarán como es esperado
+  obj.value.nested.count++
+  obj.value.arr.push('baz')
+}
+```
+
+Valores no primitivos son convertidos en proxies mediante [`reactive()`](#reactive), discutido más abajo.
+
+También es posible no optar por reactividad profunda con [refs poco profundas](/api/reactivity-advanced#shallowref). Para refs poco profundas, solo el acceso de `.value` es seguido para reactividad. Las refs poco profundas pueden ser usadas para optimizar rendimiento al evitar los costos de observación de objetos grandes, o en casos donde el estado interno es manejado por una librería externa.
+
+Véase también:
+
+- [Reducción de la Sobrecarga de Reactividad en Estructuras Inmutables de Gran Tamaño](/guide/best-practices/performance#reduce-reactivity-overhead-for-large-immutable-structures)
+- [Integración con los Sistemas de Estado Externos](/guide/extras/reactivity-in-depth#integration-with-external-state-systems)
+
+</div>
+
 ### Tiempo de Actualización del DOM {#dom-update-timing}
 
 Cuando mutas el estado reactivo, el DOM se actualiza automáticamente. Sin embargo, hay que tener en cuenta que las actualizaciones del DOM no se aplican de forma sincrónica. En su lugar, Vue las almacena en búfer hasta la "siguiente marca" (next tick) del ciclo de actualización para garantizar que cada componente tenga que actualizarse sólo una vez, independientemente de cuántos cambios de estado hayas realizado.
