@@ -83,3 +83,30 @@ Configurar las opciones del compilador en tiempo de ejecución para la plantilla
   Esta opción de configuración sólo se respeta cuando se utiliza la compilación completa (es decir, el `vue.js` independiente que puede compilar plantillas en el navegador). Éste soporta las mismas opciones que aquellas en el nivel de la aplicación [app.config.compilerOptions](/api/application#app-config-compileroptions), y tiene mayor prioridad para el componente actual.
 
 - **Ver también:** [app.config.compilerOptions](/api/application#app-config-compileroptions)
+
+## slots<sup class="vt-badge ts"/> {#slots}
+
+Una opción para ayudar con la inferencia de tipo cuando se utilizan slots de forma programática en funciones de renderizado. Sólo se admite en 3.3+.
+
+- **Detalles**
+
+  El valor en tiempo de ejecución de esta opción no se utiliza. Los tipos reales deben ser declarados a través de type casting utilizando el ayudante de tipo `SlotsType`:
+
+  ```ts
+  import { SlotsType } from 'vue'
+
+  defineComponent({
+    slots: Object as SlotsType<{
+      default: { foo: string; bar: number }
+      item: { data: number }
+    }>,
+    setup(props, { slots }) {
+      expectType<
+        undefined | ((scope: { foo: string; bar: number }) => any)
+      >(slots.default)
+      expectType<undefined | ((scope: { data: number }) => any)>(
+        slots.item
+      )
+    }
+  })
+  ```

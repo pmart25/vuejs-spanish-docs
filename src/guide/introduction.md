@@ -140,8 +140,8 @@ export default {
   },
 
   // Los métodos son funciones que mutan el estado y disparan
-  // actualizaciones. Estos pueden ser ligados como eventos de
-  // escucha en las plantillas.
+  // actualizaciones. Estos pueden ser ligados como manejadores de
+  // eventos en las plantillas.
   methods: {
     increment() {
       this.count++

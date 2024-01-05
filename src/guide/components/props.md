@@ -494,7 +494,7 @@ Cuando falla la validación de la prop, Vue generará una advertencia en la cons
 
 <div class="composition-api">
 
-Cuando se utilizan [declaraciones de props basadas en tipos](/api/sfc-script-setup#typescript-only-features) <sup class="vt-badge ts" />, Vue hará todo lo posible para compilar las anotaciones de tipos en declaraciones de props equivalentes en tiempo de ejecución. Por ejemplo, `defineProps<{ msg: string }>` se compilará en `{ msg: { type: String, required: true }}`.
+Cuando se utilizan [declaraciones de props basadas en tipos](/api/sfc-script-setup#type-only-props-emit-declarations) <sup class="vt-badge ts" />, Vue hará todo lo posible para compilar las anotaciones de tipos en declaraciones de props equivalentes en tiempo de ejecución. Por ejemplo, `defineProps<{ msg: string }>` se compilará en `{ msg: { type: String, required: true }}`.
 
 </div>
 <div class="options-api">
