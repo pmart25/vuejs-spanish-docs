@@ -186,7 +186,7 @@ const { data, error } = useFetch('...')
 
 ### Aceptando Estado Reactivo {#accepting-reactive-state}
 
-`useFetch()` toma una cadena de URL estática como entrada, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que se recupere cada vez que la URL cambie? Para lograr esto, necesitamos pasar estado reactivo a la función composable, y dejar a la composable crear watchers que realicen acciones usando el estado dado.
+`useFetch()` toma una cadena de URL estática como entrada, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que vuelva a correr un nuevo fetch cada vez que la URL cambie? Para lograr esto, necesitamos pasar estado reactivo a la función composable, y dejar a la composable crear watchers que realicen acciones usando el estado dado.
 
 Por ejemplo, `useFetch()` debería ser capaz de aceptar una ref:
 
@@ -195,7 +195,7 @@ const url = ref('/initial-url')
 
 const { data, error } = useFetch(url)
 
-// esto debería gatillar un nuevo fetch
+// esto debería activar un nuevo fetch
 url.value = '/new-url'
 ```
 
@@ -231,13 +231,13 @@ export function useFetch(url) {
 }
 ```
 
-`toValue()` es una API añadida en la versión 3.3. Está diseñada para normalizar refs o getters en valores. Si el argumento es una ref, el retorno será un valor ref; si el argumento es una función, llamará la función y dará su valor de retorno. De lo contrario, devolverá el argumento como tal. Funciona de manera similar a [`unref()`](/api/reactivity-utilities.html#unref), pero con un tratamiento especial para funciones.
+`toValue()` es una API añadida en la versión 3.3. Está diseñada para normalizar refs o getters en valores. Si el argumento es una ref, el retorno será el valor de la ref; si el argumento es una función, llamará la función y dará su valor de retorno. De lo contrario, devolverá el argumento como tal. Funciona de manera similar a [`unref()`](/api/reactivity-utilities.html#unref), pero con un tratamiento especial para funciones.
 
 Nota como `toValue(url)` es llamado **dentro** de la llamada de retorno de  `watchEffect`. Esto asegura que cualquier dependencia reactiva accedida durante la normalización de `toValue()` sea rastreada por el watcher.
 
-Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas, refs y getters, haciéndola mucho más flexible. El efecto observador se ejecutará inmediatamente, y rastreará cualquier dependencia accedida durante `toValue()`. Si ninguna dependencia es rastreada (por ejemplo, url ya es una cadena), el efecto se ejecuta solo una vez; de lo contrario, volverá a ser ejecutado cuando una dependencia rastreada cambie.
+Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas, refs y getters, haciéndola mucho más flexible. El efecto observador se ejecutará inmediatamente, y rastreará cualquier dependencia accedida durante `toValue()`. Si ninguna dependencia es rastreada (por ejemplo, url ya es una cadena de texto), el efecto se ejecuta solo una vez; de lo contrario, volverá a ser ejecutado cuando una dependencia rastreada cambie.
 
-Acá está [la versión actualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOFztYZncodgmSYAPWnTZsKLadfFFsulHrSIZEJwuC/PtIyXaTtkALxxT5yPf45FPypevyfY/JIln6yumOwCP13bo0etdZR3ACh80cKrvresIaztA4u4OUi9KLpN7jN6RqO53nxRjKHz1nlqayxhNslMc/roUVpFuizi+K4tFb07Wqwq1ta3Q5HTtd2RpzblqQra0vGCCW65oreaIs/ZjOxmAf8MYRs2wGq/XU6D3X5HvV9sj5Y8UJakVqDuicdXMGJHfk0VcTj4wxOX9ZRFVYD34h3PGchPwG8N2qGjobZlpIYLnpiayB/YfGulWZaNAGPpUJfK5aXT1JRIbXZbI+nUDD+bwsYklAL2lZ6z1X64ZTw2CcKcAM3a1/2s6/gzsJAzKL3hA6rBfAWCE536H36gEDriwwFA4zTSMEpox7L8+L/pxacPv4K86Brcc4jGjFNV/5AS3TlrbLzqHwkLPYkt/fxFiLUto85Hk+ni+LScpknlwYhX147buD4oO7psGK5kD2r+zxhQdLg/9CSdObijSzvVoinGSeuPYwbPSP6VtZ8HgSJHx5JP8XA2TKH00F0V4BFaAouISvDHhiNrBB3j1CI90D5ZglfaMHuYXAx3Dc2+v4JbRt9wi0xWDymCpTbJ01tvftEbwFTakHcqp64guqPKgJoMYOTc1+OcLmeMUlEBzZM3ZUdjVqPPj/eRq5IAPngKwc6UZXWrXcpFVH4GmVqXkt0boiHwGog9IEpHdo+6GphBmgN6L1DA66beUC9s4EnhwdeOomMlMSkwsytLac5g7aR11ibkDZSLUABRk+aD8QoMiS1WSCcaKwISEZ2MqXIaBfLSpmchUb05pRsTNUIiNkOFjr9SZxyJTHOXx1YGR49eGRDP4rzRt6lmay86Re7DcgGTzAL74GrEOWDUaRL9kjb/fSoWzO3wPAlXNB9M1+KNrmcXF8uoab/PaCljQLwCN5oS93+jpFWmYyT/g8Zel9NEJ4S2fPpYMsc7i9uQlREeecnP8DWEwr0Q==), con un retardo artificial y un error aleatorio para fines de demostración.
+Aquí está [la versión actualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOFztYZncodgmSYAPWnTZsKLadfFFsulHrSIZEJwuC/PtIyXaTtkALxxT5yPf45FPypevyfY/JIln6yumOwCP13bo0etdZR3ACh80cKrvresIaztA4u4OUi9KLpN7jN6RqO53nxRjKHz1nlqayxhNslMc/roUVpFuizi+K4tFb07Wqwq1ta3Q5HTtd2RpzblqQra0vGCCW65oreaIs/ZjOxmAf8MYRs2wGq/XU6D3X5HvV9sj5Y8UJakVqDuicdXMGJHfk0VcTj4wxOX9ZRFVYD34h3PGchPwG8N2qGjobZlpIYLnpiayB/YfGulWZaNAGPpUJfK5aXT1JRIbXZbI+nUDD+bwsYklAL2lZ6z1X64ZTw2CcKcAM3a1/2s6/gzsJAzKL3hA6rBfAWCE536H36gEDriwwFA4zTSMEpox7L8+L/pxacPv4K86Brcc4jGjFNV/5AS3TlrbLzqHwkLPYkt/fxFiLUto85Hk+ni+LScpknlwYhX147buD4oO7psGK5kD2r+zxhQdLg/9CSdObijSzvVoinGSeuPYwbPSP6VtZ8HgSJHx5JP8XA2TKH00F0V4BFaAouISvDHhiNrBB3j1CI90D5ZglfaMHuYXAx3Dc2+v4JbRt9wi0xWDymCpTbJ01tvftEbwFTakHcqp64guqPKgJoMYOTc1+OcLmeMUlEBzZM3ZUdjVqPPj/eRq5IAPngKwc6UZXWrXcpFVH4GmVqXkt0boiHwGog9IEpHdo+6GphBmgN6L1DA66beUC9s4EnhwdeOomMlMSkwsytLac5g7aR11ibkDZSLUABRk+aD8QoMiS1WSCcaKwISEZ2MqXIaBfLSpmchUb05pRsTNUIiNkOFjr9SZxyJTHOXx1YGR49eGRDP4rzRt6lmay86Re7DcgGTzAL74GrEOWDUaRL9kjb/fSoWzO3wPAlXNB9M1+KNrmcXF8uoab/PaCljQLwCN5oS93+jpFWmYyT/g8Zel9NEJ4S2fPpYMsc7i9uQlREeecnP8DWEwr0Q==), con un retardo artificial y un error aleatorio para fines de demostración.
 
 ## Convenciones y Mejores Prácticas {#conventions-and-best-practices}
 
