@@ -160,7 +160,7 @@ Acá hay un ejemplo en [CodePen](https://codepen.io/vuejs-examples/pen/WNYbaqo),
 
 ### `<script setup>` \*\* {#script-setup}
 
-Exponer manualmente el estado y los métodos a través de `setup()` puede ser exagerado. Por suerte, se puede evitar cuando se utilizan [Componentes de un Solo Archivo (SFC)](/guide/scaling-up/sfc). Podemos simplificar el uso con `<script setup>`:
+Exponer manualmente el estado y los métodos a través de `setup()` puede ser verboso. Por suerte, se puede evitar cuando se utilizan [Componentes de un Solo Archivo (SFC)](/guide/scaling-up/sfc). Podemos simplificar el uso con `<script setup>`:
 
 ```vue{1}
 <script setup>
@@ -194,11 +194,11 @@ Si no estas usando SFC, puedes seguir usando la Composition API con la opción [
 
 Te puedes estar preguntando la razón de necesitar refs con el `.value` en vez de variables simples. Para explicar eso, necesitamos discutir brevemente cómo funciona el sistema de reactividad de Vue.
 
-Cuando usas una ref en la plantilla, y después cambias el valor de la ref, Vue detecta el cambio automáticamente y actualiza el DOM como corresponda. Esto es posible con un sistema de reactividad basado en el seguimiento de dependencias. Cuando un componente es renderizado por primera vez, Vue **rastrea** toda ref que fue usada durante la renderización. Luego, cuando alguna ref mute, **gatillrá*+ una nueva renderización de los componentes que la están rastreando.
+Cuando usas una ref en la plantilla, y después cambias el valor de la ref, Vue detecta el cambio automáticamente y actualiza el DOM como corresponda. Esto es posible con un sistema de reactividad basado en el seguimiento de dependencias. Cuando un componente es renderizado por primera vez, Vue **rastrea** cada ref que fue usada durante la renderización. Luego, cuando alguna ref mute, **activará** una nueva renderización de los componentes que la están rastreando.
 
 En JavaScript estándar, no hay una manera de detectar el acceso o mutación de variables simples. Pero podemos interceptar las operaciones get y set de una propiedad.
 
-La propiedad `.value` le da a Vue la oportunidad de detectar cuando una ref ha sido accedida o mutada. Bajo la superficie, Vue realiza el seguimiento en su getter, y gatilla en su setter. Conceptualmente, puedes pensar en una ref como un objeto que se ve así:
+La propiedad `.value` le da a Vue la oportunidad de detectar cuando una ref ha sido accedida o mutada. Bajo la superficie, Vue realiza el seguimiento en su getter, y activa en su setter. Conceptualmente, puedes pensar en una ref como un objeto que se ve así:
 
 ```js
 // pseudocódigo, no la implementación real
@@ -320,9 +320,9 @@ function mutateDeeply() {
 }
 ```
 
-Valores no primitivos son convertidos en proxies reactivas mediante [`reactive()`](#reactive), lo que es discutido más abajo.
+Valores no primitivos son convertidos en proxies reactivos mediante [`reactive()`](#reactive), lo que es discutido más abajo.
 
-También es posible no optar por reactividad profunda con [refs superficiales](/api/reactivity-advanced#shallowref). Para refs superficiales, solo el acceso de `.value` es seguido para reactividad. Las refs superficiales pueden ser usadas para optimizar rendimiento al evitar los costos de observación de objetos grandes, o en casos donde el estado interno es manejado por una librería externa.
+También es posible no optar por reactividad profunda con [refs superficiales](/api/reactivity-advanced#shallowref). Para refs superficiales, sólo se registra el acceso a .value para la reactividad. Las refs superficiales pueden ser usadas para optimizar rendimiento al evitar los costos de observación de objetos grandes, o en casos donde el estado interno es manejado por una librería externa.
 
 Véase también:
 
@@ -392,9 +392,9 @@ Uso en plantillas:
 </button>
 ```
 
-Los objetos reactivos son [proxies de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue es capaz de interceptar el acceso y mutación de todas las propiedades de un objeto reactivo para seguir y gatillar la reactividad.
+Los objetos reactivos son [proxies de JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) y se comportan como objetos normales. La diferencia es que Vue es capaz de interceptar el acceso y la mutación de todas las propiedades de un objeto reactivo para el seguimiento y activación de la reactividad.
 
-`reactive()` convierte profundamente los objetos: objetos anidados también son envueltos con `reactive()`al ser accedidos. También es lamado por `ref()` internamente cuando el valor de la ref es un objeto. Similar a las refs superficiales, también está la API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) para no optar por la reactividad profunda.
+`reactive()` convierte profundamente los objetos: objetos anidados también son envueltos con `reactive()`al ser accedidos. También es llamado por `ref()` internamente cuando el valor de la ref es un objeto. Similar a las refs superficiales, también está la API [`shallowReactive()`](/api/reactivity-advanced#shallowreactive) para no optar por la reactividad profunda.
 
 ### Proxy Reactivo vs. Original \*\* {#reactive-proxy-vs-original-1}
 
@@ -467,9 +467,9 @@ Debido a estas limitaciones, recomendamos usar `ref()`como la API principal para
 
 ## Detalles adicionales sobre desempaquetado de refs \*\* {#additional-ref-unwrapping-details}
 
-### Como propiedad de unn objeto reactivo \*\* {#ref-unwrapping-as-reactive-object-property}
+### Como propiedad de un objeto reactivo \*\* {#ref-unwrapping-as-reactive-object-property}
 
-Una ref es automaticamente desempaquetada cuando accedida o mutada como propiedad de un objeto reactivo. En otras palabras, se comporta como una propiedad normal:
+Una ref es automaticamente desempaquetada cuando es accedida o mutada como propiedad de un objeto reactivo. En otras palabras, se comporta como una propiedad normal:
 
 ```js
 const count = ref(0)
