@@ -514,7 +514,7 @@ console.log(map.get('count').value)
 
 Desempaquetar a refs en plantillas solo aplica si la ref es una propiedad de nivel superior en el contexto del renderizado de la plantilla.
 
-En el siguiente ejemplo, `count` y `object` son propiedades de nivel superior, pero `object.count` no lo es:
+En el siguiente ejemplo, `count` y `object` son propiedades de nivel superior, pero `object.id` no lo es:
 
 ```js
 const count = ref(0)
