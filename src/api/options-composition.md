@@ -188,7 +188,7 @@ Una matriz de objetos de opción que se mezclan en el componente actual.
   Los hooks del mixin se llaman en el orden en que se proporcionan, y se llaman antes que los hooks propios del componente.
 
   :::warning Ya no se recomienda
-  En Vue 2, los mixins eran el mecanismo principal para crear fragmentos reutilizables de lógica de componentes. Aunque los mixins siguen siendo compatibles en Vue 3, [las funciones componibles mediante la API de composición](/guide/reusability/composables) son ahora el enfoque preferido para la reutilización de código entre componentes.
+  En Vue 2, los mixins eran el mecanismo principal para crear fragmentos reutilizables de lógica de componentes. Aunque los mixins siguen siendo compatibles en Vue 3, [los composables mediante la API de composición](/guide/reusability/composables) son ahora el enfoque preferido para la reutilización de código entre componentes.
   :::
 
 - **Ejemplo:**
