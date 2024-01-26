@@ -16,6 +16,7 @@ const nav: ThemeConfig['nav'] = [
       { text: 'Ejemplos', link: '/examples/' },
       { text: 'Inicio Rápido', link: '/guide/quick-start' },
       // { text: 'Guía de Estilo', link: '/style-guide/' },
+      { text: 'Glosario', link: '/glossary/' },
       {
         text: 'Documentación de Vue 2',
         link: 'https://v2.vuejs.org'
@@ -738,5 +739,5 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true
     }
-  },
+  }
 })

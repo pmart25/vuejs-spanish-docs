@@ -110,7 +110,7 @@ Sí, en términos de lógica de estado. Cuando se utiliza la Composition API, s�
 
 Si tienes la intención de utilizar exclusivamente la Composition API (junto con las opciones mencionadas anteriormente), puedes reducir algunos kbs de tu paquete de producción mediante una [bandera de compilación](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) que elimina el código relacionado con la Options API de Vue. Ten en cuenta que esto también afecta a los componentes de Vue en tus dependencias.
 
-### ¿Puedo utilizar ambas APIs juntas? {#can-i-use-both-apis-together}
+### ¿Puedo utilizar ambas APIs en el mismo componente? {#can-i-use-both-apis-in-the-same-component}
 
 Sí, puedes utilizar la Composition API a través de la opción [`setup()`](/api/composition-api-setup) en un componente de la Options API.
 

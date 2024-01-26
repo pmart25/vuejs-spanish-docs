@@ -5,7 +5,7 @@ Hasta ahora, Vue ha manejado todas las actualizaciones del DOM por nosotros, gra
 Para ello podemos solicitar una **template ref**; es decir, una referencia a un elemento de la plantilla, utilizando el <a target="_blank" href="/api/built-in-special-attributes.html#ref">atributo especial `ref`</a>:
 
 ```vue-html
-<p ref="p">hola</p>
+<p ref="pElementRef">hola</p>
 ```
 
 <div class="composition-api">
@@ -15,7 +15,7 @@ Para acceder a la ref, necesitamos declarar<span class="html"> y exponer</span> 
 <div class="sfc">
 
 ```js
-const p = ref(null)
+const pElementRef = ref(null)
 ```
 
 </div>
@@ -23,10 +23,10 @@ const p = ref(null)
 
 ```js
 setup() {
-  const p = ref(null)
+  const pElementRef = ref(null)
 
   return {
-    p
+    pElementRef
   }
 }
 ```
@@ -67,7 +67,7 @@ createApp({
 
 <div class="options-api">
 
-El elemento será expuesto en `this.$refs` como `this.$refs.p`. Sin embargo, sólo se puede acceder a él después de que el componente esté **montado**.
+El elemento será expuesto en `this.$refs` como `this.$refs.pElementRef`. Sin embargo, sólo se puede acceder a él después de que el componente esté **montado**.
 
 Para ejecutar el código después del montaje, podemos utilizar la opción `mounted`:
 
@@ -97,4 +97,4 @@ createApp({
 
 Esto se denomina "**hook del ciclo de vida**"; este nos permite registrar un callback para ser llamado en ciertos momentos del ciclo de vida del componente. Hay otros hooks como <span class="options-api">`created` y `updated`</span><span class="composition-api">`onUpdated` y `onUnmounted`</span>. Consulta el <a target="_blank" href="/guide/essentials/lifecycle.html#diagrama-del-ciclo-de-vida">Diagrama del Ciclo de Vida</a> para obtener más detalles.
 
-A continuación, intenta añadir un hook <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>, accede a `<p>` a través de <span class="options-api">`this.$refs.p`</span><span class="composition-api">`p.value`</span>, y realiza algunas operaciones directas en el DOM (por ejemplo, cambiar su `textContent`).
+A continuación, intenta añadir un hook <span class="options-api">`mounted`</span><span class="composition-api">`onMounted`</span>, accede a `<p>` a través de <span class="options-api">`this.$refs.pElementRef`</span><span class="composition-api">`pElementRef.value`</span>, y realiza algunas operaciones directas en el DOM (por ejemplo, cambiar su `textContent`).

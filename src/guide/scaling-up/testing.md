@@ -149,6 +149,7 @@ getByText('1')
 
 await fireEvent.click(button)
 ```
+
 </div>
 
 <div class="vtu-api">
@@ -184,9 +185,13 @@ mount(Stepper, {
   }
 })
 
-cy.get(valueSelector).should('be.visible').and('contain.text', '0')
-  .get(buttonSelector).click()
-  .get(valueSelector).should('contain.text', '1')
+cy.get(valueSelector)
+  .should('be.visible')
+  .and('contain.text', '0')
+  .get(buttonSelector)
+  .click()
+  .get(valueSelector)
+  .should('contain.text', '1')
 ```
 
 </div>
@@ -223,7 +228,9 @@ Recomendamos usar `@vue/test-utils` para probar componentes en aplicaciones. `@t
 
 ### Otras opciones {#other-options-1}
 
-- [Nightwatch](https://v2.nightwatchjs.org/) es un ejecutor de pruebas E2E con soporte para Pruebas de componentes de Vue. ([Proyecto de ejemplo](https://github.com/nightwatchjs-community/todo-vue) en Nightwatch v2)
+- [Nightwatch](https://nightwatchjs.org/) es un ejecutor de pruebas de extremo a extremo (E2E) con soporte para pruebas de componentes Vue. ([Proyecto de ejemplo](https://github.com/nightwatchjs-community/todo-vue))
+
+- [WebdriverIO](https://webdriver.io/docs/component-testing/vue) para pruebas de componentes que se ejecutan en múltiples navegadores y se basan en la interacción nativa del usuario mediante automatización estandarizada. También se puede usar con Testing Library.
 
 ## Pruebas E2E {#e2e-testing}
 
@@ -271,7 +278,9 @@ Cuando las pruebas de extremo a extremo (E2E) se ejecutan en canalizaciones de i
 
 - [Playwright](https://playwright.dev/) también es una excelente solución de pruebas E2E con una mayor compatibilidad con los navegadores (principalmente WebKit). Vea [Por qué Playwright](https://playwright.dev/docs/why-playwright) para más detalles.
 
-- [Nightwatch v2](https://v2.nightwatchjs.org/) es una solución de pruebas E2E basada en [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Esto le da un rango más amplio de compatibilidad con los navegadores.
+- [Nightwatch](https://nightwatchjs.org/) es una solución de pruebas de extremo a extremo (E2E) basada en [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Esto le otorga la gama más amplia de compatibilidad con navegadores.
+
+- [WebdriverIO](https://webdriver.io/) es un marco de automatización de pruebas para pruebas web y móviles basado en el protocolo WebDriver.
 
 ## Instrucciones {#recipes}
 

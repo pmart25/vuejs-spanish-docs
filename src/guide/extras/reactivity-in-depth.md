@@ -104,7 +104,7 @@ Los snippets de código aquí y más abajo pretenden explicar los conceptos bás
 
 Esto explica algunas [limitaciones de los objetos reactivos](/guide/essentials/reactivity-fundamentals.html#limitaciones-de-reactive) que hemos discutido en la sección de fundamentos:
 
-- Cuando asignas o desestructuras una propiedad de un objeto reactivo a una variable local, la reactividad se "desconecta" porque el acceso a la variable local ya no acciona las capturas del proxy get / set.
+- Cuando asignas o deconstruyes la propiedad de un objeto reactivo a una variable local, acceder o asignar a esa variable no es reactivo porque ya no activa las trampas get/set de proxy en el objeto fuente. Ten en cuenta que esta "desconexión" solo afecta al enlace de la variable; si la variable apunta a un valor no primitivo como un objeto, la mutación del objeto seguirá siendo reactiva.
 
 - El proxy devuelto por `reactive()`, aunque se comporta igual que el original, tiene una identidad diferente si lo comparamos con el original usando el operador `===`.
 
@@ -490,4 +490,4 @@ En comparación con las refs de Vue, el estilo de API basado en getters de Solid
 
 - `()` es ligeramente menos verboso que `.value`, pero actualizar el valor es más verboso.
 - No hay desenvolvimiento de refs: el acceso a los valores siempre requiere `()`. Esto hace que el acceso a valores sea consistente en todas partes. Esto también significa que puedes pasar las signals como componentes.
-Si estos estilos de API te convienen o no es hasta cierto punto subjetivo. Nuestro objetivo aquí es demostrar la similitud fundamental y las ventajas y desventajas entre estos diferentes diseños de API. También queremos mostrar que Vue es flexible: no estás realmente encerrado en las APIs existentes. Si es necesario, puedes crear tu propia API primitiva de reactividad para satisfacer necesidades más específicas.
+  Si estos estilos de API te convienen o no es hasta cierto punto subjetivo. Nuestro objetivo aquí es demostrar la similitud fundamental y las ventajas y desventajas entre estos diferentes diseños de API. También queremos mostrar que Vue es flexible: no estás realmente encerrado en las APIs existentes. Si es necesario, puedes crear tu propia API primitiva de reactividad para satisfacer necesidades más específicas.

@@ -18,7 +18,6 @@ Proporcionar valores que puedan ser inyectados por los componentes descendientes
 
   La opción `provide` debe ser un objeto o una función que devuelva un objeto. Este objeto contiene las propiedades que están disponibles para ser inyectadas en sus descendientes. Puedes utilizar símbolos como claves en este objeto.
 
-
 - **Ejemplo**
 
   Uso básico:
@@ -189,7 +188,7 @@ Una matriz de objetos de opción que se mezclan en el componente actual.
   Los hooks del mixin se llaman en el orden en que se proporcionan, y se llaman antes que los hooks propios del componente.
 
   :::warning Ya no se recomienda
-  En Vue 2, los mixins eran el mecanismo principal para crear trozos reutilizables de la lógica del componente. Aunque los mixins siguen siendo compatibles con Vue 3, la [API de composición] (/guide/reusability/composables) es ahora el método preferido para la reutilización de código entre componentes.
+  En Vue 2, los mixins eran el mecanismo principal para crear fragmentos reutilizables de lógica de componentes. Aunque los mixins siguen siendo compatibles en Vue 3, [las funciones componibles mediante la API de composición](/guide/reusability/composables) son ahora el enfoque preferido para la reutilización de código entre componentes.
   :::
 
 - **Ejemplo:**
@@ -232,7 +231,7 @@ Un componente de "clase base" para extender.
 
   Sin embargo, `extends` y `mixins` expresan intenciones diferentes. La opción `mixins` se utiliza principalmente para componer trozos de funcionalidad, mientras que `extends` se ocupa principalmente de la herencia.
 
-  Al igual que con `mixins`, cualquier opción se fusionará utilizando la estrategia de fusión correspondiente.
+  Al igual que con `mixins`, cualquier opción (excepto `setup()`) se fusionará utilizando la estrategia de fusión correspondiente.
 
 - **Ejemplo:**
 
@@ -244,3 +243,25 @@ Un componente de "clase base" para extender.
     ...
   }
   ```
+
+:::warning No recomendado para la API de Composición
+`extends` está diseñado para la API de Opciones y no maneja la fusión del hook `setup()`.
+
+En la API de Composición, el modelo mental preferido para la reutilización de lógica es "componer" en lugar de "heredar". Si tiene lógica de un componente que debe reutilizarse en otro, considera extraer la lógica relevante en un [Composable](/guide/reusability/composables#composables).
+
+Si aún tienes la intención de "extender" un componente utilizando la API de Composición, puede llamar al `setup()` del componente base en el `setup()` del componente que lo extiende:
+
+```js
+import Base from './Base.js'
+export default {
+  extends: Base,
+  setup(props, ctx) {
+    return {
+      ...Base.setup(props, ctx)
+      // enlaces locales
+    }
+  }
+}
+```
+
+:::

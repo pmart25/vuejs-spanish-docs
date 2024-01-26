@@ -277,9 +277,9 @@ Está bien utilizar efectos secundarios (por ejemplo, añadir escuchadores de ev
 
 ### Restricciones de Uso {#usage-restrictions}
 
-Los composables sólo deben ser llamados **sincrónicamente** en `<script setup>` o en el hook `setup()`. En algunos casos, también puedes llamarlos en hooks del ciclo de vida como `onMounted()`.
+Los "composables" deberían ser llamados solo en `<script setup>` o en el hook `setup()`. También deberían ser llamados de manera **sincrónica** en estos contextos. En algunos casos, también puedes llamarlos en hooks del ciclo de vida como `onMounted()`.
 
-Estos son los contextos en los que Vue es capaz de determinar la instancia actual del componente activo. El acceso a una instancia de componente activo es necesario para que:
+Estas restricciones son importantes porque son los contextos donde Vue puede determinar la instancia activa actual del componente. El acceso a una instancia activa del componente es necesario para que:
 
 1. Los hooks del ciclo de vida puedan ser registrados en ella.
 
