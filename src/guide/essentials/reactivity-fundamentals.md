@@ -67,9 +67,9 @@ Cuando accedes a `this.someObject` después de asignarlo, el valor es un proxy r
 
 <div class="composition-api">
 
-## Declarando Estado Reactivo \** {#declaring-reactive-state-1}
+## Declarando Estado Reactivo \*\* {#declaring-reactive-state-1}
 
-### `ref()` \** {#ref}
+### `ref()` \*\* {#ref}
 
 En la Composition API, la manera recomendada de declarar estado reactivo es usando la función [`ref()`](/api/reactivity-core#ref):
 
@@ -372,7 +372,7 @@ export default {
 
 <div class="composition-api">
 
-## `reactive()` \** {#reactive}
+## `reactive()` \*\* {#reactive}
 
 Existe otra forma de declarar estado reactivo, con la API `reactive()`. A diferencia de una ref, que envuelve el valor interno en un objeto especial, `reactive()` hace reactivo al objeto mismo:
 
@@ -496,7 +496,7 @@ console.log(count.value) // 1
 
 El desempaquetado de la ref sólo ocurre cuando se anida dentro de un objeto reactivo profundo. No se aplica cuando se accede como una propiedad de un [objeto reactivo superficial](/api/reactivity-advanced#shallowreactive).
 
-### Advertencias en Arrays y Collecciones \** {#caveat-in-arrays-and-collections}
+### Advertencias en Arrays y Collecciones \*\* {#caveat-in-arrays-and-collections}
 
 A diferencia de los objetos reactivos, **no** se realiza ningún desempaquetado cuando se accede a la ref como elemento de un array reactivo o de un tipo de colección nativa como `Map`
 
