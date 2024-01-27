@@ -45,7 +45,7 @@ const HelloWorldComponent = {
 
 En la práctica, la mayoría de las aplicaciones de Vue se escriben utilizando [Componentes de un solo archivo](#single-file-component) (archivos `.vue`). Aunque estos componentes pueden no parecer objetos a primera vista, el compilador de SFC los convertirá en un objeto, que se utiliza como la exportación predeterminada del archivo. Desde una perspectiva externa, un archivo `.vue` es simplemente un módulo ES que exporta un objeto de componente.
 
-Las propiedades de un objeto de componente generalmente se denominan _opciones_. Aquí es donde la [API de opciones](#options-api) obtiene su nombre.
+Las propiedades de un objeto de componente generalmente se denominan _opciones_. Aquí es donde la [Options API](#options-api) obtiene su nombre.
 
 Las opciones de un componente definen cómo se deben crear las instancias de ese componente. Los componentes son conceptualmente similares a las clases, aunque Vue no utiliza clases JavaScript reales para definirlos.
 
@@ -64,7 +64,7 @@ La palabra 'componente' también aparece en varios otros términos:
 
 ## Composable {#composable}
 
-El término _composable_ describe un patrón de uso común en Vue. No es una característica separada de Vue, es simplemente una forma de usar la [API de composición](#composition-api) del marco.
+El término _composable_ describe un patrón de uso común en Vue. No es una característica separada de Vue, es simplemente una forma de usar la [Composition API](#composition-api) del marco.
 
 - Un composable es una función.
 - Los composables se utilizan para encapsular y reutilizar la lógica con estado.
@@ -72,13 +72,13 @@ El término _composable_ describe un patrón de uso común en Vue. No es una car
 - Se espera que la función se llame durante la ejecución síncrona de la función `setup()` de un componente (o, de manera equivalente, durante la ejecución de un bloque `<script setup>`). Esto vincula la invocación del composable al contexto actual del componente, por ejemplo, mediante llamadas a `provide()`, `inject()` o `onMounted()`.
 - Los composables suelen devolver un objeto plano, no un objeto reactivo. Este objeto suele contener refs y funciones y se espera que se destructure dentro del código que lo llama.
 
-Al igual que con muchos patrones, puede haber cierta discrepancia sobre si un código específico califica para la etiqueta. No todas las funciones de utilidad de JavaScript son composables. Si una función no utiliza la API de composición, probablemente no sea un composable. Si no espera ser llamado durante la ejecución síncrona de `setup()`, probablemente no sea un composable. Los composables se utilizan específicamente para encapsular la lógica con estado, no son solo una convención de nombres para funciones.
+Al igual que con muchos patrones, puede haber cierta discrepancia sobre si un código específico califica para la etiqueta. No todas las funciones de utilidad de JavaScript son composables. Si una función no utiliza la Composition API, probablemente no sea un composable. Si no espera ser llamado durante la ejecución síncrona de `setup()`, probablemente no sea un composable. Los composables se utilizan específicamente para encapsular la lógica con estado, no son solo una convención de nombres para funciones.
 
 Consulta la [Guía - Composables](/guide/reusability/composables.html) para obtener más detalles sobre cómo escribir composables.
 
-### API de Composición {#composition-api}
+### Composition API {#composition-api}
 
-La _API de Composición_ es una colección de funciones utilizadas para escribir componentes y composables en Vue. El término también se usa para describir uno de los dos estilos principales utilizados para escribir componentes, siendo el otro la [API de Opciones](#options-api). Los componentes escritos utilizando la API de Composición utilizan ya sea `<script setup>` o una función `setup()` explícita. Consulta las [preguntas frecuentes sobre la API de Composición](/guide/extras/composition-api-faq) para obtener más detalles.
+La _Composition API_ es una colección de funciones utilizadas para escribir componentes y composables en Vue. El término también se usa para describir uno de los dos estilos principales utilizados para escribir componentes, siendo el otro la [Options API](#options-api). Los componentes escritos utilizando la Composition API utilizan ya sea `<script setup>` o una función `setup()` explícita. Consulta las [preguntas frecuentes sobre la Composition API](/guide/extras/composition-api-faq) para obtener más detalles.
 
 ### Elementos personalizados {#custom-element}
 
@@ -160,7 +160,7 @@ Una instancia de componente Vue atraviesa un ciclo de vida. Por ejemplo, se crea
 
 Los _hooks de ciclo de vida_ son una forma de escuchar estos eventos del ciclo de vida.
 
-Con la API de Opciones, cada hook se proporciona como una opción separada, por ejemplo, `mounted`. La API de Composición utiliza funciones en su lugar, como `onMounted()`.
+Con la Options API, cada hook se proporciona como una opción separada, por ejemplo, `mounted`. La Composition API utiliza funciones en su lugar, como `onMounted()`.
 
 Para más detalles, consulta:
 
@@ -178,17 +178,17 @@ Para más detalles, consulta:
 
 - [Guía - Slots - Slots con Nombre](/guide/components/slots.html#named-slots)
 
-## API de opciones {#options-api}
+## Options API {#options-api}
 
 Los componentes Vue se definen utilizando objetos. Las propiedades de estos objetos de componente se conocen como _opciones_.
 
-Los componentes pueden escribirse de dos maneras. Un estilo utiliza la [API de Composición](#composition-api) en conjunto con `setup` (ya sea a través de una opción `setup()` o `<script setup>`). El otro estilo hace muy poco uso directo de la API de Composición, en su lugar utiliza varias opciones del componente para lograr un resultado similar. Las opciones del componente que se utilizan de esta manera se denominan _API de opciones_.
+Los componentes pueden escribirse de dos maneras. Un estilo utiliza la [Composition API](#composition-api) en conjunto con `setup` (ya sea a través de una opción `setup()` o `<script setup>`). El otro estilo hace muy poco uso directo de la Composition API, en su lugar utiliza varias opciones del componente para lograr un resultado similar. Las opciones del componente que se utilizan de esta manera se denominan _Options API_.
 
-La API de opciones incluye opciones como `data()`, `computed`, `methods` y `created()`.
+La Options API incluye opciones como `data()`, `computed`, `methods` y `created()`.
 
-Algunas opciones, como `props`, `emits` e `inheritAttrs`, se pueden utilizar al escribir componentes con cualquiera de las API. Dado que son opciones del componente, podrían considerarse parte de la API de opciones. Sin embargo, como estas opciones también se utilizan junto con `setup()`, suele ser más útil pensar en ellas como compartidas entre los dos estilos de componente.
+Algunas opciones, como `props`, `emits` e `inheritAttrs`, se pueden utilizar al escribir componentes con cualquiera de las API. Dado que son opciones del componente, podrían considerarse parte de la Options API. Sin embargo, como estas opciones también se utilizan junto con `setup()`, suele ser más útil pensar en ellas como compartidas entre los dos estilos de componente.
 
-La función `setup()` en sí es una opción del componente, por lo que _podría_ describirse como parte de la API de opciones. Sin embargo, esto no es lo que normalmente se entiende por el término 'API de opciones'. En cambio, la función `setup()` se considera parte de la API de Composición.
+La función `setup()` en sí es una opción del componente, por lo que _podría_ describirse como parte de la Options API. Sin embargo, esto no es lo que normalmente se entiende por el término 'Options API'. En cambio, la función `setup()` se considera parte de la Composition API.
 
 ## Complemento {#plugin}
 
@@ -271,7 +271,7 @@ Para más detalles, consulta:
 
 La _API de Reactividad_ es una colección de funciones principales de Vue relacionadas con la [reactividad](#reactividad). Estas funciones se pueden utilizar de manera independiente de los componentes. Incluye funciones como `ref()`, `reactive()`, `computed()`, `watch()` y `watchEffect()`.
 
-La API de Reactividad es un subconjunto de la API de Composición.
+La API de Reactividad es un subconjunto de la Composition API.
 
 Para obtener más detalles, consulta:
 
@@ -363,9 +363,9 @@ Para obtener más detalles, consulta:
 
 El término _referencia de plantilla_ se refiere al uso de un atributo `ref` en una etiqueta dentro de una plantilla. Después de que el componente se renderiza, este atributo se utiliza para llenar una propiedad correspondiente con el elemento HTML o la instancia del componente que corresponde a la etiqueta en la plantilla.
 
-Si estás utilizando la API de opciones, entonces las referencias de plantilla se exponen a través de las propiedades del objeto `$refs`.
+Si estás utilizando la Options API, entonces las referencias de plantilla se exponen a través de las propiedades del objeto `$refs`.
 
-Con la API de Composición, las referencias de plantilla llenan un [ref](#ref) reactivo con el mismo nombre.
+Con la Composition API, las referencias de plantilla llenan un [ref](#ref) reactivo con el mismo nombre.
 
 Las referencias de plantilla no deben confundirse con los refs reactivos que se encuentran en el sistema de reactividad de Vue.
 

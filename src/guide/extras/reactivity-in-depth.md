@@ -202,7 +202,7 @@ De hecho, esto es bastante parecido a cómo un componente de Vue mantiene el est
 
 <div class="options-api">
 
-Las APIs `ref()`, `computed()` y `watchEffect()` forman parte de la API de composición. Si hasta ahora sólo has utilizado la Options API con Vue, te darás cuenta de que la Composition API está más cerca de cómo funciona el sistema de reactividad de Vue. De hecho, en Vue 3 la Options API está implementada sobre la Composition API. Todo el acceso a las propiedades en la instancia del componente (`this`) activa getter / setters para el seguimiento de la reactividad, y las opciones como `watch` y `computed` invocan sus equivalentes de la Composition API internamente.
+Las APIs `ref()`, `computed()` y `watchEffect()` forman parte de la Composition API. Si hasta ahora sólo has utilizado la Options API con Vue, te darás cuenta de que la Composition API está más cerca de cómo funciona el sistema de reactividad de Vue. De hecho, en Vue 3 la Options API está implementada sobre la Composition API. Todo el acceso a las propiedades en la instancia del componente (`this`) activa getter / setters para el seguimiento de la reactividad, y las opciones como `watch` y `computed` invocan sus equivalentes de la Composition API internamente.
 
 </div>
 

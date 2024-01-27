@@ -1,6 +1,6 @@
 # \<script setup> {#script-setup}
 
-`<script setup>` es un azúcar sintáctico en tiempo de compilación para usar la API de composición dentro de los componentes de un solo archivo (SFC). Es la sintaxis recomendada si estás utilizando tanto SFC como API de composición. Proporciona una serie de ventajas sobre la sintaxis normal de `<script>`:
+`<script setup>` es un azúcar sintáctico en tiempo de compilación para usar la Composition API dentro de los componentes de un solo archivo (SFC). Es la sintaxis recomendada si estás utilizando tanto SFC como Composition API. Proporciona una serie de ventajas sobre la sintaxis normal de `<script>`:
 
 - Código más breve y con menos repeticiones
 - Capacidad para declarar props y eventos emitidos usando TypeScript puro
@@ -308,7 +308,7 @@ const attrs = useAttrs()
 </script>
 ```
 
-`useSlots` y `useAttrs` son funciones reales en tiempo de ejecución que devuelven el equivalente de `setupContext.slots` y `setupContext.attrs`. También se pueden utilizar en las funciones normales de la API de composición.
+`useSlots` y `useAttrs` son funciones reales en tiempo de ejecución que devuelven el equivalente de `setupContext.slots` y `setupContext.attrs`. También se pueden utilizar en las funciones normales de la Composition API.
 
 ## Usando junto a un `<script>` normal {#usage-alongside-normal-script}
 

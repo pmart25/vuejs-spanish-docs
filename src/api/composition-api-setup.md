@@ -8,7 +8,7 @@ El hook `setup()` sirve como el punto de entrada para el uso de Composition API,
 2. Cuando se integra código basado en Composition API en un componente que usa Options API.
 
 :::info Nota
-El uso de [`<script setup>`](/api/sfc-script-setup) está fuertemente recomendado si está utilizando Composition API (la API de Composición) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
+El uso de [`<script setup>`](/api/sfc-script-setup) está fuertemente recomendado si está utilizando Composition API (la Composition API) con Componentes de un Solo Archivo (SFC), de esta manera se obtiene una sintaxis mas sucinta y ergonómica
 :::
 
 Podemos declarar el estado reactivo usando [Reactivity APIs](./reactivity-core) y exponerlos a la plantilla devolviendo un objeto desde `setup()`. Las propiedades del objeto devuelto también estarán disponibles en la instancia del componente (si otras opciones son usadas):
@@ -63,7 +63,6 @@ Tenga en cuenta que si desestructura el objeto `props`, las variables desestruct
 
 Si realmente necesita desestructurar los props, o necesita pasar una propiedad a una función externa mientras conserva la reactividad, puede hacerlo con las APIs de utilidad [toRefs()](./reactivity-utilities#torefs) y [toRef()](/api/reactivity-utilities#toref):
 
-
 ```js
 import { toRefs, toRef } from 'vue'
 
@@ -111,6 +110,7 @@ export default {
   }
 }
 ```
+
 Las propiedades `attrs` y `slots` son objetos con estado que siempre son actualizados cuando el mismo componente es actualizado. Esto significa que debes evitar desestructurarlos y siempre referenciar las propiedades como `attrs.x` o `slots.x`. Ten en cuenta también que, a diferencia de `props`, las propiedades de `attrs` y `slots` **no** son reactivas. Si pretendes aplicar efectos secundarios basados en los cambios de `attrs` o `slots`, debes hacerlo dentro de un hook del ciclo de vida `onBeforeUpdate`.
 
 ### Exponiendo Propiedades Públicas {#exposing-public-properties}
