@@ -186,7 +186,7 @@ const { data, error } = useFetch('...')
 
 ### Aceptando Estado Reactivo {#accepting-reactive-state}
 
-`useFetch()` toma una cadena de URL estática como entrada, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que vuelva a correr un nuevo fetch cada vez que la URL cambie? Para lograr esto, necesitamos pasar estado reactivo a la función composable, y dejar a la composable crear watchers que realicen acciones usando el estado dado.
+`useFetch()` acepta un argumento de tipo string, que representa una URL estática, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que vuelva a correr un nuevo fetch cada vez que la URL cambie? Para lograr esto, necesitamos pasar estado reactivo a la función composable, y dejar a la composable crear watchers que realicen acciones usando el estado dado.
 
 Por ejemplo, `useFetch()` debería ser capaz de aceptar una ref:
 
