@@ -94,6 +94,17 @@ export default {
 </script>
 ```
 
+Desde la versión 3.3 puedes usar también `defineOptions` directamente en `<script setup`:
+
+```vue
+<script setup>
+defineOptions({
+  inheritAttrs: false
+})
+// ...setup logic
+</script>
+```
+
 </div>
 
 El escenario común para la deshabilitación de la herencia de atributos es cuando los atributos necesitan ser aplicados a otros elementos además del nodo raíz. Fijando la opción `inheritAttrs` a `false`, puedes tener un control total sobre dónde deben aplicarse los atributos fallthrough.

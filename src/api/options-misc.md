@@ -102,6 +102,27 @@ Controla si el comportamiento por defecto de los atributos de los componentes de
   </template>
   ```
 
+  Desde la versión 3.3 puedes usar también `defineOptions` directamente en `<script setup>`:
+  
+  ```vue
+  <script setup>
+  defineProps(['label', 'value'])
+  defineEmits(['input'])
+  defineOptions({ inheritAttrs: false})
+  </script>
+
+  <template>
+    <label>
+      {{ label }}
+      <input
+        v-bind="$attrs"
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)" 
+      />
+    </label>
+  </template>
+  ```
+  
   </div>
 
 - **Ver también:** [Attributos Fallthrough](/guide/components/attrs)

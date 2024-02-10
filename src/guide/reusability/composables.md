@@ -184,43 +184,60 @@ const { data, error } = useFetch('...')
 </script>
 ```
 
-`useFetch()` toma una cadena de URL estática como entrada, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que se recupere cada vez que la URL cambie? Podemos conseguirlo aceptando también refs como argumento:
+### Aceptando Estado Reactivo {#accepting-reactive-state}
+
+`useFetch()` acepta un argumento de tipo string, que representa una URL estática, por lo que realiza la búsqueda sólo una vez y termina. ¿Qué pasa si queremos que vuelva a correr un nuevo fetch cada vez que la URL cambie? Para lograr esto, necesitamos pasar estado reactivo a la función composable, y dejar a la composable crear watchers que realicen acciones usando el estado dado.
+
+Por ejemplo, `useFetch()` debería ser capaz de aceptar una ref:
 
 ```js
+const url = ref('/initial-url')
+
+const { data, error } = useFetch(url)
+
+// esto debería activar un nuevo fetch
+url.value = '/new-url'
+```
+
+O, aceptar una función getter:
+
+```js
+// nuevo fetch cuando cambie props.id
+const { data, error } = useFetch(() => `/posts/${props.id}`)
+```
+
+Podemos refactorizar nuestra implementacion existente con las APIs [`watchEffect()`](/api/reactivity-core.html#watcheffect) y [`toValue()`](/api/reactivity-utilities.html#tovalue):
+
+```js{8, 13}
 // fetch.js
-import { ref, isRef, unref, watchEffect } from 'vue'
+import { ref, watchEffect, toValue } from 'vue'
 
 export function useFetch(url) {
   const data = ref(null)
   const error = ref(null)
 
-  function doFetch() {
+  watchEffect(() {
     // restablecer el estado antes de la recuperación..
     data.value = null
     error.value = null
-    // unref() desenvuelve las refs potenciales
-    fetch(unref(url))
+    // toValue() desenvuelve potenciales refs o getters
+    fetch(toValue(url))
       .then((res) => res.json())
       .then((json) => (data.value = json))
       .catch((err) => (error.value = err))
-  }
-
-  if (isRef(url)) {
-    // configurar la recuperación reactiva si la URL de entrada es una ref
-    watchEffect(doFetch)
-  } else {
-    // de lo contrario, sólo se obtiene una vez
-    // y se evita la sobrecarga de un watcher
-    doFetch()
-  }
+  })
 
   return { data, error }
 }
 ```
 
-Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas como refs de cadenas de URL. Cuando detecta que la URL es una referencia dinámica utilizando [`isRef()`](/api/reactivity-utilities#isref), establece un efecto reactivo utilizando [`watchEffect()`](/api/reactivity-core#watcheffect). El efecto se ejecutará inmediatamente y también hará un seguimiento de la referencia de la URL como una dependencia. Cada vez que la referencia de la URL cambie, se restablecerán los datos y se obtendrán de nuevo.
+`toValue()` es una API añadida en la versión 3.3. Está diseñada para normalizar refs o getters en valores. Si el argumento es una ref, el retorno será el valor de la ref; si el argumento es una función, llamará la función y dará su valor de retorno. De lo contrario, devolverá el argumento como tal. Funciona de manera similar a [`unref()`](/api/reactivity-utilities.html#unref), pero con un tratamiento especial para funciones.
 
-Aquí está [la versión actualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOl7hYancYdgnSYAO2nTZsKLadfFFsulHrSIYkJwuC/PtISnbdrpc4ksjH9x4pnbNPfV8cBsxW2drXTvcBPIah31RG73vrApzBYbuE2u77IWADF2id3cOCkhazoMHjVwz1bjovynGrePAUWZnaGh9gqzz+dh3cwmIXQu9XZfngrek7VePOdg26Ipx6XdsGCypaBttYXxJATNcNZRKjfPFucTVuDoI3UszzK7jdTIXeUk5xUN2AFD9mnKFRQS0BnbNuSYDBnYj67aQjJ0yKX5fRFfKDFgH3xDMgrQC+WdVAb4XTijfW2yEEa+Bw3Vp3W2UatIEPVQYf607Xj7zD5HWVbc5n0HC5rMuYIuhVWDf6QNm6pVAhRpEMTND95oft/Rv4wtuApGIwAR02KyAsCS726L26R8HlBkpi4jRREKWEe8ffWX0KLal8/Bd5YOcxkmGvKOczfaAj2Vx23TtkHXwWS9L6VYwNO6XNfVEU4/m6nKzMltlsUGgOn8+d9nf8GYysjorCvrQt1uHFIFYG/0peO5g6aJL8rJNwZlKx98I4DpEZOu7yeCI+Pj/iQ+VPpn4CbmzETaAAZUkZdG3AB1IEW6T+I7QcJLJjFJeNc0gVGD1ux979vz+Htt0BIexQBj2GMqWds8YOvjuBt6DDwkNwqn6kS6o8qAmgwR5NQzNzgu1pbmEu0kfxhP0nsRC30w144sJXJCkWXOWCbnWtVUclOnUC4qpMQz2Jw0uRVSD3jkoHCHqPdkgleZsAYpkrOOqu4ys4OCMqaTep1G3UpXiPr0gqbSnMHbWPrsRYQdlyNgOJCdfaJwEhaiQvSV5kJP1hkaKaWy3oz9oUIymLRtOa0a8L1Gwi5DiNwMs+YorkD/3wh7TkMs1i7Hx45MWlKormixrt8Fq4iXpDTxr8vvtGF2F0gbPmXUzzKOQuwDduhj05tYSHgRyIyNbUieE0zDOmqRWvvZGrMYFjJfyVQajMdFemtkdKCdngEX7S5SVaeZ7mmws8kBx5uxN/MuZXAohv+uQ2m/ldhV0RJ45ON3BTvJ/1g4sJ8Ni1l+bEEC6ZMx95WfPFXZxgWS2unlJTP5fw/uYmekW/l+zyD/mIah0=), con un retardo artificial y un error aleatorio para fines de demostración.
+Nota como `toValue(url)` es llamado **dentro** de la llamada de retorno de  `watchEffect`. Esto asegura que cualquier dependencia reactiva accedida durante la normalización de `toValue()` sea rastreada por el watcher.
+
+Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas, refs y getters, haciéndola mucho más flexible. El efecto observador se ejecutará inmediatamente, y rastreará cualquier dependencia accedida durante `toValue()`. Si ninguna dependencia es rastreada (por ejemplo, url ya es una cadena de texto), el efecto se ejecuta solo una vez; de lo contrario, volverá a ser ejecutado cuando una dependencia rastreada cambie.
+
+Aquí está [la versión actualizada de `useFetch()`](https://play.vuejs.org/#eNptVMFu2zAM/RXOFztYZncodgmSYAPWnTZsKLadfFFsulHrSIZEJwuC/PtIyXaTtkALxxT5yPf45FPypevyfY/JIln6yumOwCP13bo0etdZR3ACh80cKrvresIaztA4u4OUi9KLpN7jN6RqO53nxRjKHz1nlqayxhNslMc/roUVpFuizi+K4tFb07Wqwq1ta3Q5HTtd2RpzblqQra0vGCCW65oreaIs/ZjOxmAf8MYRs2wGq/XU6D3X5HvV9sj5Y8UJakVqDuicdXMGJHfk0VcTj4wxOX9ZRFVYD34h3PGchPwG8N2qGjobZlpIYLnpiayB/YfGulWZaNAGPpUJfK5aXT1JRIbXZbI+nUDD+bwsYklAL2lZ6z1X64ZTw2CcKcAM3a1/2s6/gzsJAzKL3hA6rBfAWCE536H36gEDriwwFA4zTSMEpox7L8+L/pxacPv4K86Brcc4jGjFNV/5AS3TlrbLzqHwkLPYkt/fxFiLUto85Hk+ni+LScpknlwYhX147buD4oO7psGK5kD2r+zxhQdLg/9CSdObijSzvVoinGSeuPYwbPSP6VtZ8HgSJHx5JP8XA2TKH00F0V4BFaAouISvDHhiNrBB3j1CI90D5ZglfaMHuYXAx3Dc2+v4JbRt9wi0xWDymCpTbJ01tvftEbwFTakHcqp64guqPKgJoMYOTc1+OcLmeMUlEBzZM3ZUdjVqPPj/eRq5IAPngKwc6UZXWrXcpFVH4GmVqXkt0boiHwGog9IEpHdo+6GphBmgN6L1DA66beUC9s4EnhwdeOomMlMSkwsytLac5g7aR11ibkDZSLUABRk+aD8QoMiS1WSCcaKwISEZ2MqXIaBfLSpmchUb05pRsTNUIiNkOFjr9SZxyJTHOXx1YGR49eGRDP4rzRt6lmay86Re7DcgGTzAL74GrEOWDUaRL9kjb/fSoWzO3wPAlXNB9M1+KNrmcXF8uoab/PaCljQLwCN5oS93+jpFWmYyT/g8Zel9NEJ4S2fPpYMsc7i9uQlREeecnP8DWEwr0Q==), con un retardo artificial y un error aleatorio para fines de demostración.
 
 ## Convenciones y Mejores Prácticas {#conventions-and-best-practices}
 
@@ -230,19 +247,22 @@ Es una convención nombrar las funciones composables con nombres camelCase que c
 
 ### Argumentos de Entrada {#input-arguments}
 
-Un composable puede aceptar argumentos de referencia incluso si no depende de ellos para la reactividad. Si estás escribiendo un composable que puede ser utilizado por otros desarrolladores, es una buena idea manejar el caso de que los argumentos de entrada sean refs en lugar de valores crudos. La función de ayuda [`unref()`](/api/reactivity-utilities#unref) será muy útil para este propósito:
+Un composable puede aceptar argumentos de referencia o getters incluso si no depende de ellos para la reactividad. Si estás escribiendo un composable que puede ser utilizado por otros desarrolladores, es una buena idea manejar el caso de que los argumentos de entrada sean refs o getters en lugar de valores crudos. La función de ayuda [`toValue()`](/api/reactivity-utilities#tovalue) será muy útil para este propósito:
 
 ```js
-import { unref } from 'vue'
+import { toValue } from 'vue'
 
-function useFeature(maybeRef) {
-  // si maybeRef es efectivamente una ref, se devolverá su .value
-  // en caso contrario, maybeRef se devuelve tal cual
-  const value = unref(maybeRef)
+function useFeature(maybeRefOrGetter) {
+  // si maybeRefOrGetter es una ref o un getter
+  // su valor normalizado será retornado
+  // de lo contrario, retorna el valor como tal
+  const value = toValue(maybeRefOrGetter)
 }
 ```
 
-Si tu composable crea efectos reactivos cuando la entrada es una ref, asegúrate de vigilar explícitamente la ref con `watch()`, o llama a `unref()` dentro de un `watchEffect()` para que sea rastreado correctamente.
+Si tu composable crea efectos reactivos cuando la entrada es una ref o un getter,asegúrate de vigilar explícitamente la ref / getter con `watch()`, o llama a `toValue()` dentro de un `watchEffect()` para que sea rastreado correctamente.
+
+La [implementación de useFetch() discutida anteriormente](#accepting-reactive-state) da un ejemplo concreto de una composable que acepta refs, getters y valores simples como argumento de entrada.
 
 ### Valores de Retorno {#return-values}
 
