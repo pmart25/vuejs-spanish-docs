@@ -108,6 +108,12 @@ La Options API te permite "pensar menos" cuando escribes código de componentes,
 
 Sí, en términos de lógica de estado. Cuando se utiliza la Composition API, sólo hay unas pocas opciones que pueden seguir siendo necesarias: `props`, `emits`, `name`, y `inheritAttrs`. Si se utiliza `<script setup>`, entonces `inheritAttrs` es normalmente la única opción que puede requerir un bloque normal separado `<script>`.
 
+:::tip
+
+Desde la versión 3.3 puedes usar directamente `defineOptions` en `<script setup>` para establecer el nombre del componente o la propiedad `inheritAttrs`
+
+:::
+
 Si tienes la intención de utilizar exclusivamente la Composition API (junto con las opciones mencionadas anteriormente), puedes reducir algunos kbs de tu paquete de producción mediante una [bandera de compilación](https://github.com/vuejs/core/tree/main/packages/vue#bundler-build-feature-flags) que elimina el código relacionado con la Options API de Vue. Ten en cuenta que esto también afecta a los componentes de Vue en tus dependencias.
 
 ### ¿Puedo utilizar ambas APIs en el mismo componente? {#can-i-use-both-apis-in-the-same-component}
