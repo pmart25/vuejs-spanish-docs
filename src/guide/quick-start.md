@@ -98,7 +98,7 @@ El enlace anterior carga la _compilaci처n global_ de Vue, donde todas las APIs d
 </script>
 ```
 
-[JSFiddle demo](https://jsfiddle.net/yyx990803/nw1xg8Lj/)
+[Codepen demo](https://codepen.io/vuejs-examples/pen/QWJwJLp)
 
 ### Usando el M처dulo de Construcci처n ES {#using-the-es-module-build}
 
@@ -122,7 +122,7 @@ En el resto de la documentaci처n, utilizaremos principalmente la sintaxis de [m�
 
 Observa que estamos usando `<script type="module">`, y que la URL importada del CDN apunta a la **compilaci처n de m처dulos ES** de Vue.
 
-[JSFiddle demo](https://jsfiddle.net/yyx990803/vo23c470/)
+[Codepen demo](https://codepen.io/vuejs-examples/pen/VwVYVZO)
 
 ### Habilitar mapas de importaci처n {#enabling-import-maps}
 
