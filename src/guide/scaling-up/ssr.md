@@ -227,7 +227,7 @@ Una implementación completa sería bastante compleja y depende de la cadena de 
 
 ### Vite SSR {#vite-ssr}
 
-Vite proporciona soporte incorporado para el [renderizado del lado del servidor de Vue](https://vitejs.dev/guide/ssr.html), pero es intencionalmente de bajo nivel. Si deseas ir directamente con Vite, consulta [vite-plugin-ssr](https://vite-plugin-ssr.com/), un complemento de la comunidad que abstrae muchos detalles difíciles por ti.
+Vite proporciona soporte incorporado para el [renderizado del lado del servidor de Vue](https://vitejs.dev/guide/ssr.html), pero es intencionalmente de bajo nivel. Si deseas ir directamente con Vite, consulta [vite-plugin-ssr](https://vite-plugin-ssr.com/), un plugin de la comunidad que abstrae muchos detalles difíciles por ti.
 
 También puedes encontrar un proyecto de ejemplo de Vue + Vite SSR utilizando la configuración manual [aquí](https://github.com/vitejs/vite/tree/main/playground/ssr-vue), que puede servir como base para compilar. Ten en cuenta que esto solo se recomienda si tienes experiencia con SSR/herramientas de compilación y realmente quieres tener un control completo sobre la arquitectura de alto nivel.
 

@@ -37,7 +37,7 @@ Las dos zonas de práctica mencionadas arriba, también soportan la descarga de 
 Para información sobre la migración de Vue CLI a Vite:
 
 - [Vue CLI -> Guía de migración a Vite de VueSchool.io](https://vueschool.io/articles/vuejs-tutorials/how-to-migrate-from-vue-cli-to-vite/)
-- [Herramientas / Complementos que ayudan a la migración automática](https://github.com/vitejs/awesome-vite#vue-cli)
+- [Herramientas / plugins que ayudan a la migración automática](https://github.com/vitejs/awesome-vite#vue-cli)
 
 ### Nota sobre la Compilación de Plantillas en el Navegador {#note-on-in-browser-template-compilation}
 
@@ -79,7 +79,7 @@ La extensión de herramientas de desarrollo del navegador (Devtools) de Vue le p
 
 - [Documentación](https://devtools.vuejs.org/)
 - [Extensión para Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-- [Complemento para Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+- [Plugin para Firefox](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
 - [Aplicación independiente de Electron](https://devtools.vuejs.org/guide/installation.html#standalone)
 
 ## TypeScript {#typescript}
@@ -102,7 +102,7 @@ Artículo principal: [Guía de Testing](/guide/scaling-up/testing).
 
 ## Limpieza (Linting) {#linting}
 
-El equipo de Vue mantiene [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue), un complemento de [ESLint](https://eslint.org/) que soporta reglas de linting específicas de SFC.
+El equipo de Vue mantiene [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue), un plugin de [ESLint](https://eslint.org/) que soporta reglas de linting específicas de SFC.
 
 Los usuarios que anteriormente usaban Vue CLI pueden estar acostumbrados a tener linters configurados a través de cargadores de webpack. Sin embargo, cuando se utiliza una configuración de compilación basada en Vite, nuestra recomendación general es:
 
@@ -124,7 +124,7 @@ Los usuarios que anteriormente usaban Vue CLI pueden estar acostumbrados a tener
 
 Los bloques personalizados se compilan en importaciones al mismo archivo de Vue con diferentes consultas de solicitudes de consulta. Depende de la herramienta de compilación subyacente manejar estas solicitudes de importación.
 
-- Si estás usando Vite, se debe usar un complemento personalizado de Vite para transformar los bloques personalizados en JavaScript ejecutable. [Ejemplo](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#example-for-transforming-custom-blocks)
+- Si estás usando Vite, se debe usar un plugin personalizado de Vite para transformar los bloques personalizados en JavaScript ejecutable. [Ejemplo](https://github.com/vitejs/vite/tree/main/packages/plugin-vue#example-for-transforming-custom-blocks)
 
 - Si estás usando Vue CLI o webpack simple, se debe configurar un cargador de webpack para transformar los bloques coincidentes. [Ejemplo](https://vue-loader.vuejs.org/guide/custom-blocks.html)
 
@@ -146,7 +146,7 @@ Siempre es preferible usar este paquete a través de la importación profunda de
 
 - [Documentación](https://github.com/vitejs/vite/tree/main/packages/plugin-vue)
 
-Complemento oficial que proporciona soporte a los SFC de Vue en Vite.
+Plugin oficial que proporciona soporte a los SFC de Vue en Vite.
 
 ### `vue-loader` {#vue-loader}
 

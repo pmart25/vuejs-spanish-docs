@@ -127,7 +127,8 @@ El uso de eventos para comunicarse entre diferentes partes de un programa es com
 
 Para obtener más detalles, consulta:
 
-- [Guía - Manejo de Eventos](/guide/essentials/event-handling.html), [Guía - Eventos de Componentes](/guide/components/events.html)
+- [Guía - Manejo de Eventos](/guide/essentials/event-handling.html)
+- [Guía - Eventos de Componentes](/guide/components/events.html)
 
 ## Fragmento {#fragment}
 
@@ -147,7 +148,7 @@ Una definición de componente suele ser un objeto que contiene opciones. Puede q
 
 Un _componente funcional_ es una forma alternativa de componente que se declara mediante una función. Esa función actúa como la [función de renderizado](#render-function) para el componente.
 
-Un componente funcional no puede tener su propio estado. Tampoco pasa por el ciclo de vida normal del componente, por lo que no se pueden usar hooks de ciclo de vida. Esto los hace ligeramente más livianos que los componentes normales y que contienen estado.
+Un componente funcional no puede tener su propio estado. Tampoco pasa por el ciclo de vida normal del componente, por lo que no se pueden usar hooks de ciclo de vida. Esto los hace ligeramente más livianos que los componentes normales que contienen estado.
 
 Para más detalles, consulta:
 
@@ -219,15 +220,15 @@ Algunas opciones, como `props`, `emits` e `inheritAttrs`, se pueden utilizar al 
 
 La función `setup()` en sí es una opción del componente, por lo que _podría_ describirse como parte de la Options API. Sin embargo, esto no es lo que normalmente se entiende por el término 'Options API'. En cambio, la función `setup()` se considera parte de la Composition API.
 
-## Complemento {#plugin}
+## Plugin {#plugin}
 
-Si bien el término _complemento_ se puede utilizar en una amplia variedad de contextos, Vue tiene un concepto específico de complemento como una forma de agregar funcionalidad a una aplicación.
+Si bien el término _plugin_ se puede utilizar en una amplia variedad de contextos, Vue tiene un concepto específico de plugin como una forma de agregar funcionalidad a una aplicación.
 
-Los complementos se agregan a una aplicación llamando a `app.use(plugin)`. El complemento en sí es una función o un objeto con una función `install`. Esa función recibirá la instancia de la aplicación y luego puede hacer lo que necesite hacer.
+Los plugins se agregan a una aplicación llamando a `app.use(plugin)`. Un plugin en sí es una función o un objeto con una función `install`. Esa función recibirá la instancia de la aplicación y luego puede hacer lo que necesite hacer.
 
 Para más detalles, consulta:
 
-- [Guía - Complementos](/guide/reusability/plugins.html)
+- [Guía - Plugins](/guide/reusability/plugins.html)
 
 ## Prop {#prop}
 
