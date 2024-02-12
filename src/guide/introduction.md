@@ -30,6 +30,8 @@ Vue (pronunciado /vjuː/, como **view**) es un framework de JavaScript para crea
 
 Aquí tienes un pequeño ejemplo:
 
+<div class="options-api">
+
 ```js
 import { createApp } from 'vue'
 
@@ -41,6 +43,23 @@ createApp({
   }
 }).mount('#app')
 ```
+
+</div>
+<div class="composition-api">
+
+```js
+import { createApp, ref } from 'vue'
+
+createApp({
+  setup() {
+    return {
+      count: ref(0)
+    }
+  }
+}).mount('#app')
+```
+
+</div>
 
 ```vue-html
 <div id="app">
@@ -96,6 +115,8 @@ A pesar de su flexibilidad, el conocimiento central sobre cómo funciona Vue se 
 
 En la mayoría de los proyectos de Vue habilitados para herramientas de compilación, creamos componentes de Vue utilizando un formato de archivo similar a HTML llamado **Componente de un Solo Archivo** (también conocido como archivos `*.vue`, abreviado como **SFC**). Un SFC de Vue, como sugiere el nombre, encapsula la lógica del componente (JavaScript), la plantilla (HTML) y los estilos (CSS) en un solo archivo. Aquí está el ejemplo anterior, escrito en formato SFC:
 
+<div class="options-api">
+
 ```vue
 <script>
 export default {
@@ -117,6 +138,26 @@ button {
 }
 </style>
 ```
+
+</div>
+<div class="composition-api">
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const count = ref(0)
+</script>
+<template>
+  <button @click="count++">Count is: {{ count }}</button>
+</template>
+<style scoped>
+button {
+  font-weight: bold;
+}
+</style>
+```
+
+</div>
 
 SFC es una característica definitoria de Vue y es la forma recomendada de crear componentes de Vue **si** tu caso de uso justifica una configuración de compilación. Puedes aprender más sobre el [cómo y por qué de SFC](/guide/scaling-up/sfc) en su sección dedicada, pero por ahora entiende que Vue se encargará de configurar todas las herramientas de compilación por ti.
 

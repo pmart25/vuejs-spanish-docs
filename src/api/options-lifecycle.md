@@ -20,7 +20,7 @@ Se llama cuando se inicializa la instancia.
 
   Se llama inmediatamente cuando se inicializa la instancia, después de la resolución de propiedades (props), antes de procesar otras opciones como `data()` o `computed`.
 
-  Tenga en cuenta que el hook `setup()` de la API de composición se llama antes de cualquier hook de la API de opciones, incluso antes de `beforeCreate()`.
+  Tenga en cuenta que el hook `setup()` de la Composition API se llama antes de cualquier hook de la Options API, incluso antes de `beforeCreate()`.
 
 ## created {#created}
 
@@ -321,7 +321,7 @@ Función asíncrona a resolverse antes de que la instancia del componente se ren
     async mounted() {
       if (!this.data) {
         // si los datos son nulos en el montaje, significa que el componente
-        // se renderiza dinámicamente en el cliente. 
+        // se renderiza dinámicamente en el cliente.
         // De lo contrario realiza una petición fetch en el lado del cliente.
         this.data = await fetchOnClient(/* ... */)
       }

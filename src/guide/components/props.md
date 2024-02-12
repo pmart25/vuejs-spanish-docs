@@ -612,4 +612,4 @@ export default {
 
 </div>
 
-Las reglas de asignación para `Boolean` se aplicarán independientemente del orden de aparición del tipo.
+Si el array de tipos incluye `Boolean`, entonces se aplicarán las reglas de conversión para `Boolean`, a menos que `String` aparezca antes en el array.
