@@ -280,7 +280,7 @@ Cuando las pruebas de extremo a extremo (E2E) se ejecutan en canalizaciones de i
 
 - [Nightwatch](https://nightwatchjs.org/) es una solución de pruebas de extremo a extremo (E2E) basada en [Selenium WebDriver](https://www.npmjs.com/package/selenium-webdriver). Esto le otorga la gama más amplia de compatibilidad con navegadores.
 
-- [WebdriverIO](https://webdriver.io/) es un marco de automatización de pruebas para pruebas web y móviles basado en el protocolo WebDriver.
+- [WebdriverIO](https://webdriver.io/) es un framework de automatización de pruebas para web y móviles basado en el protocolo WebDriver.
 
 ## Instrucciones {#recipes}
 

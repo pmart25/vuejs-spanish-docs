@@ -233,7 +233,7 @@ export function useFetch(url) {
 
 `toValue()` es una API añadida en la versión 3.3. Está diseñada para normalizar refs o getters en valores. Si el argumento es una ref, el retorno será el valor de la ref; si el argumento es una función, llamará la función y dará su valor de retorno. De lo contrario, devolverá el argumento como tal. Funciona de manera similar a [`unref()`](/api/reactivity-utilities.html#unref), pero con un tratamiento especial para funciones.
 
-Nota como `toValue(url)` es llamado **dentro** de la llamada de retorno de  `watchEffect`. Esto asegura que cualquier dependencia reactiva accedida durante la normalización de `toValue()` sea rastreada por el watcher.
+Nota como `toValue(url)` es llamado **dentro** de la llamada de retorno de `watchEffect`. Esto asegura que cualquier dependencia reactiva accedida durante la normalización de `toValue()` sea rastreada por el watcher.
 
 Esta versión de `useFetch()` acepta ahora tanto cadenas de URL estáticas, refs y getters, haciéndola mucho más flexible. El efecto observador se ejecutará inmediatamente, y rastreará cualquier dependencia accedida durante `toValue()`. Si ninguna dependencia es rastreada (por ejemplo, url ya es una cadena de texto), el efecto se ejecuta solo una vez; de lo contrario, volverá a ser ejecutado cuando una dependencia rastreada cambie.
 
@@ -297,9 +297,9 @@ Está bien utilizar efectos secundarios (por ejemplo, añadir escuchadores de ev
 
 ### Restricciones de Uso {#usage-restrictions}
 
-Los "composables" deberían ser llamados solo en `<script setup>` o en el hook `setup()`. También deberían ser llamados de manera **sincrónica** en estos contextos. En algunos casos, también puedes llamarlos en hooks del ciclo de vida como `onMounted()`.
+Los composables solo deben ser llamados solo en `<script setup>` o en el hook `setup()`. También deben ser llamados de manera **sincrónica** en estos contextos. En algunos casos, también puedes llamarlos en hooks del ciclo de vida como `onMounted()`.
 
-Estas restricciones son importantes porque son los contextos donde Vue puede determinar la instancia activa actual del componente. El acceso a una instancia activa del componente es necesario para que:
+Estas restricciones son importantes porque estos son los contextos donde Vue puede determinar la instancia activa actual del componente. El acceso a una instancia activa del componente es necesario para que:
 
 1. Los hooks del ciclo de vida puedan ser registrados en ella.
 

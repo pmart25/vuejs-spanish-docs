@@ -64,7 +64,7 @@ La palabra 'componente' también aparece en varios otros términos:
 
 ## Composable {#composable}
 
-El término _composable_ describe un patrón de uso común en Vue. No es una característica separada de Vue, es simplemente una forma de usar la [Composition API](#composition-api) del marco.
+El término _composable_ describe un patrón de uso común en Vue. No es una característica separada de Vue, es simplemente una forma de usar la [Composition API](#composition-api) del framework.
 
 - Un composable es una función.
 - Los composables se utilizan para encapsular y reutilizar la lógica con estado.
@@ -76,31 +76,60 @@ Al igual que con muchos patrones, puede haber cierta discrepancia sobre si un c�
 
 Consulta la [Guía - Composables](/guide/reusability/composables.html) para obtener más detalles sobre cómo escribir composables.
 
-### Composition API {#composition-api}
+## Composition API {#composition-api}
 
-La _Composition API_ es una colección de funciones utilizadas para escribir componentes y composables en Vue. El término también se usa para describir uno de los dos estilos principales utilizados para escribir componentes, siendo el otro la [Options API](#options-api). Los componentes escritos utilizando la Composition API utilizan ya sea `<script setup>` o una función `setup()` explícita. Consulta las [preguntas frecuentes sobre la Composition API](/guide/extras/composition-api-faq) para obtener más detalles.
+La _Composition API_ es una colección de funciones utilizadas para escribir componentes y composables en Vue.
 
-### Elementos personalizados {#custom-element}
+El término también se usa para describir uno de los dos estilos principales utilizados para escribir componentes, siendo el otro la [Options API](#options-api). Los componentes escritos utilizando la Composition API utilizan ya sea `<script setup>` o una función `setup()` explícita.
 
-Un _elemento personalizado_ es una característica del estándar [Web Components](#web-components), que está implementado en navegadores web modernos. Se refiere a la capacidad de utilizar un elemento HTML personalizado en tu marcado HTML para incluir un componente web en ese punto de la página. Vue tiene soporte incorporado para representar elementos personalizados y permite su uso directo en las plantillas de componentes de Vue. No se debe confundir los elementos personalizados con la capacidad de incluir componentes Vue como etiquetas dentro de la plantilla de otro componente Vue. Los elementos personalizados se utilizan para crear componentes web. Para obtener más detalles, consulta: [Guía - Vue y Web Components](/guide/extras/web-components.html)
+Consulta las [preguntas frecuentes sobre la Composition API](/guide/extras/composition-api-faq) para obtener más detalles.
 
-### Directiva {#directive}
+## Elementos personalizados {#custom-element}
 
-El término _directiva_ se refiere a atributos de plantilla que comienzan con el prefijo `v-`, o sus equivalentes abreviados. Las directivas integradas incluyen `v-if`, `v-for`, `v-bind`, `v-on` y `v-slot`. Vue también admite la creación de directivas personalizadas, aunque generalmente solo se utilizan como una "salida de emergencia" para manipular nodos DOM directamente. Las directivas personalizadas generalmente no se pueden utilizar para recrear la funcionalidad de las directivas integradas. Para obtener más detalles, consulta: [Guía - Sintaxis de Plantilla - Directivas](/guide/essentials/template-syntax.html#directives), [Guía - Directivas Personalizadas](/guide/reusability/custom-directives.html)
+Un _elemento personalizado_ es una característica del estándar [Web Components](#web-components), que está implementado en navegadores web modernos. Se refiere a la capacidad de utilizar un elemento HTML personalizado en tu marcado HTML para incluir un componente web en ese punto de la página.
 
-### Componente dinámico {#dynamic-component}
+Vue tiene soporte incorporado para representar elementos personalizados y permite su uso directo en las plantillas de componentes de Vue. No se debe confundir los elementos personalizados con la capacidad de incluir componentes Vue como etiquetas dentro de la plantilla de otro componente Vue.
 
-El término _componente dinámico_ se utiliza para describir casos en los que la elección de qué componente hijo representar debe realizarse de forma dinámica. Típicamente, esto se logra utilizando `<component :is="tipo">`. Un componente dinámico no es un tipo especial de componente. Cualquier componente puede usarse como un componente dinámico. Es la elección del componente lo que es dinámico, en lugar del componente en sí. Para obtener más detalles, consulta: [Guía - Conceptos Básicos de Componentes - Componentes Dinámicos](/guide/essentials/component-basics.html#dynamic-components)
+Los elementos personalizados se utilizan para crear componentes web. Para obtener más detalles, consulta:
 
-### Efecto {#effect}
+- [Guía - Vue y Web Components](/guide/extras/web-components.html)
+
+## Directiva {#directive}
+
+El término _directiva_ se refiere a atributos de plantilla que comienzan con el prefijo `v-`, o sus abreviaturas equivalentes.
+
+Las directivas integradas incluyen `v-if`, `v-for`, `v-bind`, `v-on` y `v-slot`.
+
+Vue también admite la creación de directivas personalizadas, aunque generalmente solo se utilizan como una "salida de emergencia" para manipular nodos DOM directamente. Las directivas personalizadas generalmente no se pueden utilizar para recrear la funcionalidad de las directivas integradas.
+
+Para obtener más detalles, consulta:
+
+- [Guía - Sintaxis de Plantilla - Directivas](/guide/essentials/template-syntax.html#directives)
+- [Guía - Directivas Personalizadas](/guide/reusability/custom-directives.html)
+
+## Componente dinámico {#dynamic-component}
+
+El término componente dinámico se utiliza para describir casos en los que la elección del componente hijo que se va a renderizar debe hacerse de forma dinámica. Normalmente esto se logra utilizando `<component :is="tipo">`.
+
+Un componente dinámico no es un tipo especial de componente. Cualquier componente puede usarse como un componente dinámico. Es la elección del componente lo que es dinámico, en lugar del componente en sí.
+
+Para obtener más detalles, consulta:
+
+- [Guía - Conceptos Básicos de Componentes - Componentes Dinámicos](/guide/essentials/component-basics.html#dynamic-components)
+
+## Efecto {#effect}
 
 Consulta [efecto reactivo](#reactive-effect) y [efecto secundario](#side-effect).
 
-### Evento {#event}
+## Evento {#event}
 
-El uso de eventos para comunicarse entre diferentes partes de un programa es común en muchas áreas diferentes de la programación. Dentro de Vue, el término se aplica comúnmente tanto a eventos nativos de elementos HTML como a eventos de componentes Vue. La directiva `v-on` se utiliza en plantillas para escuchar ambos tipos de eventos. Para obtener más detalles, consulta: [Guía - Manejo de Eventos](/guide/essentials/event-handling.html), [Guía - Eventos de Componentes](/guide/components/events.html)
+El uso de eventos para comunicarse entre diferentes partes de un programa es común en muchas áreas diferentes de la programación. Dentro de Vue, el término se aplica comúnmente tanto a eventos nativos de elementos HTML como a eventos de componentes Vue. La directiva `v-on` se utiliza en plantillas para escuchar ambos tipos de eventos.
 
-### Fragmento {#fragment}
+Para obtener más detalles, consulta:
+
+- [Guía - Manejo de Eventos](/guide/essentials/event-handling.html), [Guía - Eventos de Componentes](/guide/components/events.html)
+
+## Fragmento {#fragment}
 
 El término _fragmento_ se refiere a un tipo especial de [VNode](#vnode) que se utiliza como padre para otros VNodes, pero que no renderiza ningún elemento en sí mismo.
 
@@ -112,19 +141,19 @@ Los fragmentos también son utilizados por el compilador de plantillas como una 
 
 Actualmente, los nodos de fragmento se representan en el DOM como nodos de texto vacíos, aunque eso es un detalle de implementación. Puedes encontrarte con esos nodos de texto si usas `$el` o intentas recorrer el DOM con las API integradas del navegador.
 
-### Componente funcional {#functional-component}
+## Componente funcional {#functional-component}
 
 Una definición de componente suele ser un objeto que contiene opciones. Puede que no parezca así si estás usando `<script setup>`, pero el componente exportado desde el archivo `.vue` seguirá siendo un objeto.
 
 Un _componente funcional_ es una forma alternativa de componente que se declara mediante una función. Esa función actúa como la [función de renderizado](#render-function) para el componente.
 
-Un componente funcional no puede tener su propio estado. Tampoco pasa por el ciclo de vida normal del componente, por lo que no se pueden usar hooks de ciclo de vida. Esto los hace ligeramente más livianos que los componentes normales y con estado.
+Un componente funcional no puede tener su propio estado. Tampoco pasa por el ciclo de vida normal del componente, por lo que no se pueden usar hooks de ciclo de vida. Esto los hace ligeramente más livianos que los componentes normales y que contienen estado.
 
 Para más detalles, consulta:
 
 - [Guía - Funciones de Renderizado y JSX - Componentes Funcionales](/guide/extras/render-function.html#functional-components)
 
-### Hoisting {#hoisting}
+## Hoisting {#hoisting}
 
 El término _hoisting_ se utiliza para describir la ejecución de una sección de código antes de que se alcance, adelantándose a otro código. La ejecución se "eleva" a un punto anterior.
 
@@ -136,9 +165,9 @@ Para más detalles, consulta:
 
 - [Guía - Mecanismo de Renderizado - Hoisting Estático](/guide/extras/rendering-mechanism.html#static-hoisting)
 
-### Plantilla en el DOM {#in-dom-template}
+## Plantilla en el DOM {#in-dom-template}
 
-Hay varias formas de especificar una plantilla para un componente. En la mayoría de los casos, la plantilla se proporciona como una cadena.
+Hay varias formas de especificar una plantilla para un componente. En la mayoría de los casos, la plantilla se proporciona como una cadena de texto.
 
 El término _plantilla en el DOM_ se refiere al escenario en el que la plantilla se proporciona en forma de nodos DOM, en lugar de una cadena. Vue luego convierte los nodos DOM en una cadena de plantilla usando `innerHTML`.
 
@@ -150,11 +179,11 @@ Para más detalles, consulta:
 - [Guía - Conceptos Básicos de Componentes - Precauciones al Analizar Plantillas en el DOM](/guide/essentials/component-basics.html#dom-template-parsing-caveats)
 - [Opciones: Renderizado - template](/api/options-rendering.html#template)
 
-### inject {#inject}
+## inject {#inject}
 
 Consulta [provide / inject](#provide-inject).
 
-### Hooks de ciclo de vida {#lifecycle-hooks}
+## Hooks de ciclo de vida {#lifecycle-hooks}
 
 Una instancia de componente Vue atraviesa un ciclo de vida. Por ejemplo, se crea, se monta, se actualiza y se desmonta.
 
@@ -166,7 +195,7 @@ Para más detalles, consulta:
 
 - [Guía - Hooks de Ciclo de Vida](/guide/essentials/lifecycle.html)
 
-### Macro {#macro}
+## Macro {#macro}
 
 Consulta [macro de compilador](#compiler-macro).
 
@@ -182,7 +211,7 @@ Para más detalles, consulta:
 
 Los componentes Vue se definen utilizando objetos. Las propiedades de estos objetos de componente se conocen como _opciones_.
 
-Los componentes pueden escribirse de dos maneras. Un estilo utiliza la [Composition API](#composition-api) en conjunto con `setup` (ya sea a través de una opción `setup()` o `<script setup>`). El otro estilo hace muy poco uso directo de la Composition API, en su lugar utiliza varias opciones del componente para lograr un resultado similar. Las opciones del componente que se utilizan de esta manera se denominan _Options API_.
+Los componentes pueden escribirse de dos estilos. Un estilo utiliza la [Composition API](#composition-api) en conjunto con `setup` (ya sea a través de una opción `setup()` o `<script setup>`). El otro estilo hace muy poco uso directo de la Composition API, en su lugar utiliza varias opciones del componente para lograr un resultado similar. Las opciones del componente que se utilizan de esta manera se denominan _Options API_.
 
 La Options API incluye opciones como `data()`, `computed`, `methods` y `created()`.
 
@@ -200,7 +229,7 @@ Para más detalles, consulta:
 
 - [Guía - Complementos](/guide/reusability/plugins.html)
 
-## Props {#prop}
+## Prop {#prop}
 
 Hay tres usos comunes del término _prop_ en Vue:
 
@@ -226,7 +255,7 @@ Para más detalles, consulta:
 
 ## provide / inject {#provide-inject}
 
-`provide` e `inject` son una forma de comunicación intercomponente.
+`provide` e `inject` son una forma de comunicación entre componentes.
 
 Cuando un componente _proporciona_ un valor, todos los descendientes de ese componente pueden elegir tomar ese valor, usando `inject`. A diferencia de los props, el componente que proporciona no sabe exactamente qué componente está recibiendo el valor.
 
@@ -240,13 +269,13 @@ Para más detalles, consulta:
 
 ## Efecto reactivo {#reactive-effect}
 
-Un _efecto reactivo_ es parte del sistema de reactividad de Vue. Se refiere al proceso de realizar un seguimiento de las dependencias de una función y volver a ejecutar esa función cuando los valores de esas dependencias cambian.
+Un _efecto reactivo_ es parte del sistema de reactividad de Vue. Se refiere al proceso de realizar un seguimiento de las dependencias de una función y volver a ejecutar esa función cuando los valores de esas dependencias cambien.
 
 `watchEffect()` es la forma más directa de crear un efecto. Varias otras partes de Vue utilizan efectos internamente, como las actualizaciones de renderizado de componentes, `computed()` y `watch()`.
 
 Vue solo puede realizar un seguimiento de las dependencias reactivas dentro de un efecto reactivo. Si el valor de una propiedad se lee fuera de un efecto reactivo, perderá la _reactividad_, en el sentido de que Vue no sabrá qué hacer si esa propiedad cambia posteriormente.
 
-El término se deriva de 'efecto secundario'. Llamar a la función de efecto es un efecto secundario del cambio del valor de la propiedad.
+El término se deriva de 'efecto secundario'. Llamar a la función de efecto es un efecto secundario del valor de la propiedad que se está cambiando.
 
 Para más detalles, consulta:
 
@@ -334,13 +363,11 @@ Ver [Componente de Archivo Único](#single-file-component).
 
 El término _efecto secundario_ no es específico de Vue. Se utiliza para describir operaciones o funciones que hacen algo más allá de su ámbito local.
 
-Por ejemplo, en el contexto de establecer una propiedad como `user.name = null`, se espera que esto cambie el valor de `user.name`. Si también hace algo más, como activar el sistema de reactividad de Vue, entonces se describiría como un efecto secundario. Esta es la origen del término [efecto reactivo](#reactive-effect) dentro de Vue.
+Por ejemplo, en el contexto de establecer una propiedad como `user.name = null`, se espera que esto cambie el valor de `user.name`. Si también hace algo más, como activar el sistema de reactividad de Vue, entonces se describiría como un efecto secundario. Este es el origen del término [efecto reactivo](#reactive-effect) dentro de Vue.
 
 Cuando se dice que una función tiene efectos secundarios, significa que la función realiza algún tipo de acción que es observable fuera de la función, además de simplemente devolver un valor. Esto podría significar que actualiza un valor en el estado o activa una solicitud de red.
 
-El término se usa con frecuencia al describir la representación o las propiedades computadas. Se considera una buena práctica que el render
-
-izado no tenga efectos secundarios. De manera similar, la función getter para una propiedad computada no debe tener efectos secundarios.
+El término se usa con frecuencia al describir la representación o las propiedades computadas. Se considera una buena práctica que el renderizado no tenga efectos secundarios. De manera similar, la función getter para una propiedad computada no debe tener efectos secundarios.
 
 ## Componente de Archivo Único {#single-file-component}
 
@@ -383,7 +410,7 @@ El término _DOM virtual_ (VDOM) no es exclusivo de Vue. Es un enfoque común ut
 
 Los navegadores utilizan un árbol de nodos para representar el estado actual de la página. Ese árbol y las API de JavaScript utilizadas para interactuar con él se denominan _modelo de objetos del documento_, o _DOM_.
 
-Manipular el DOM es un importante cuello de botella de rendimiento. El DOM virtual proporciona una estrategia para gestionar eso.
+Manipular el DOM es un gran obstaculo para el rendimiento. El DOM virtual proporciona una estrategia para gestionar eso.
 
 En lugar de crear nodos DOM directamente, los componentes de Vue generan una descripción de los nodos DOM que desean. Estos descriptores son objetos JavaScript simples, conocidos como VNodes (nodos DOM virtuales). La creación de VNodes es relativamente económica.
 

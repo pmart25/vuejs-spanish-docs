@@ -314,7 +314,7 @@ const attrs = useAttrs()
 
 `<script setup>` se puede usar junto a un `<script>` normal. Es posible que se necesite un `<script>` normal en los casos en que necesitemos:
 
-- Declarar opciones que no se pueden expresar en `<script setup>`, por ejemplo, `inheritAttrs` u opciones personalizadas habilitadas a través de plugins (puede ser reemplazado utilizando [`defineOptions`](/api/sfc-script-setup#defineoptions) en 3.3+).
+- Declarar opciones que no se pueden expresar en `<script setup>`, por ejemplo, `inheritAttrs` u opciones personalizadas habilitadas a través de plugins (puede ser reemplazado utilizando [`defineOptions`](/api/sfc-script-setup#defineoptions) desde la versión 3.3+).
 - Declarar exportaciones con nombre.
 - Ejecutar efectos secundarios o crear objetos que sólo deben ejecutarse una vez.
 
