@@ -447,7 +447,7 @@ La API `reactive()` tiene algunas limitaciones:
    state = reactive({ count: 1 })
    ```
 
-3. **No es amigable con la desestructuración:** cuando desestructuramos la primitiva tipo propiedad de un objeto reactivo en variables locales, o cuando pasamos esa propiedad a una función, perderemos la conexión de reactividad:
+3. **No es amigable con la desestructuración:** cuando desestructuramos una propiedad de tipo primitivo de un objeto reactivo en variables locales, o cuando pasamos esa propiedad a una función, perderemos la conexión de reactividad:
 
    ```js
    const state = reactive({ count: 0 })
