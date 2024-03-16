@@ -196,7 +196,7 @@ Te puedes estar preguntando la razón de necesitar refs con el `.value` en vez d
 
 Cuando usas una ref en la plantilla, y después cambias el valor de la ref, Vue detecta el cambio automáticamente y actualiza el DOM como corresponda. Esto es posible con un sistema de reactividad basado en el seguimiento de dependencias. Cuando un componente es renderizado por primera vez, Vue **rastrea** cada ref que fue usada durante la renderización. Luego, cuando alguna ref mute, **activará** una nueva renderización de los componentes que la están rastreando.
 
-En JavaScript estándar, no hay una manera de detectar el acceso o mutación de variables simples. Sin embargo, podemos interceptar las operaciones  get y set de las propiedades del objecto usando métodos getter y setter.
+En JavaScript estándar, no hay una manera de detectar el acceso o mutación de variables simples. Sin embargo, podemos interceptar las operaciones  get y set de las propiedades del objeto usando métodos getter y setter.
 
 La propiedad `.value` le da a Vue la oportunidad de detectar cuando una ref ha sido accedida o mutada. Bajo la superficie, Vue realiza el seguimiento en su getter, y activa en su setter. Conceptualmente, puedes pensar en una ref como un objeto que se ve así:
 
